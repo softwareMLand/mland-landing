@@ -1,16 +1,17 @@
-// Menú móvil simple
+// Menú móvil
 const toggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.nav');
+const nav = document.querySelector('#main-nav');
 
 if (toggle && nav) {
   toggle.addEventListener('click', () => {
-    nav.classList.toggle('open');
+    const isOpen = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
   });
 
-  // Cerrar al hacer clic en un enlace
   nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
     });
   });
 }

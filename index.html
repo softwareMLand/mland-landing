@@ -3,35 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MLand Software | Web + Google Maps para atraer más clientes locales</title>
-  <meta name="description" content="Ayudo a negocios locales a aparecer en Google y Google Maps para que reciban más llamadas y clientes. Web rápida + posicionamiento local. Servicio 100% remoto desde Ecuador.">
-  <meta name="keywords" content="web para negocios, google maps, posicionamiento local, SEO local Ecuador, página web Guayaquil, más clientes">
+  <title>MLand Software | Web + Google Maps para atraer más clientes locales en Ecuador</title>
+  <meta name="description" content="Ayudo a negocios locales en Ecuador a aparecer en Google y Google Maps. Web rápida + ficha optimizada para recibir más llamadas y clientes. Servicio 100% remoto.">
+  <meta name="keywords" content="web para negocios Ecuador, Google Maps Guayaquil, posicionamiento local, SEO local Ecuador, página web negocios, más clientes Google">
   <meta name="author" content="MLand Software - Benito Montoya">
   <meta name="robots" content="index, follow">
+  <meta name="google-site-verification" content="e34Txkkmpu1eo88nSMDNGmorwFULilsLxfYSQ1G27-A">
 
   <!-- Open Graph -->
   <meta property="og:title" content="MLand Software | Más clientes con Web + Google Maps">
-  <meta property="og:description" content="Web optimizada + ficha de Google Maps para que tu negocio aparezca cuando te buscan cerca.">
+  <meta property="og:description" content="Web optimizada + ficha de Google Maps para que tu negocio aparezca cuando te buscan cerca. Servicio remoto en Ecuador.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_EC">
+  <meta property="og:site_name" content="MLand Software">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://mland-landing.pages.dev/">
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Schema.org ProfessionalService -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "MLand Software",
+    "description": "Web + Google Maps optimizado para negocios locales. Más clientes a través de posicionamiento local.",
+    "url": "https://mland-landing.pages.dev/",
+    "telephone": "+593978868363",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Guayaquil",
+      "addressCountry": "EC"
+    },
+    "areaServed": ["Ecuador", "Latam"],
+    "priceRange": "$$",
+    "founder": {
+      "@type": "Person",
+      "name": "Benito Montoya"
+    }
+  }
+  </script>
 </head>
 <body>
 
   <!-- Header -->
   <header class="header">
     <div class="container header-inner">
-      <a href="#" class="logo">MLand <span>Software</span></a>
-      <nav class="nav">
+      <a href="/" class="logo">MLand <span>Software</span></a>
+      <nav class="nav" id="main-nav">
         <a href="#como-funciona">Cómo funciona</a>
         <a href="#paquetes">Paquetes</a>
-        <a href="#contacto" class="btn btn-sm">Hablar por WhatsApp</a>
+        <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20información%20sobre%20web%20y%20Google%20Maps" class="btn btn-sm" target="_blank" rel="noopener">WhatsApp</a>
       </nav>
-      <button class="menu-toggle" aria-label="Menú">
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -47,7 +75,7 @@
           Te ayudo a tener una web rápida y una ficha de Google bien configurada para que recibas más llamadas, mensajes y clientes reales.
         </p>
         <div class="hero-cta">
-          <a href="#contacto" class="btn btn-primary">Quiero más clientes</a>
+          <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20más%20clientes%20con%20web%20y%20Google%20Maps" class="btn btn-primary" target="_blank" rel="noopener">Quiero más clientes</a>
           <a href="#como-funciona" class="btn btn-outline">Ver cómo funciona</a>
         </div>
         <p class="hero-note">Servicio 100% remoto · Atiendo donde te quede cómodo</p>
@@ -60,21 +88,21 @@
     <div class="container">
       <h2>¿Te suena familiar?</h2>
       <div class="problem-grid">
-        <div class="problem-card">
-          <div class="icon">📍</div>
+        <article class="problem-card">
+          <div class="icon" aria-hidden="true">📍</div>
           <h3>Tu competencia aparece en Maps y tú no</h3>
           <p>Cuando alguien busca un servicio cerca, Google muestra a otros y tú quedas invisible.</p>
-        </div>
-        <div class="problem-card">
-          <div class="icon">🌐</div>
+        </article>
+        <article class="problem-card">
+          <div class="icon" aria-hidden="true">🌐</div>
           <h3>Tienes web pero nadie la encuentra</h3>
           <p>La página está online, pero no está optimizada para búsquedas locales ni para móvil.</p>
-        </div>
-        <div class="problem-card">
-          <div class="icon">📞</div>
+        </article>
+        <article class="problem-card">
+          <div class="icon" aria-hidden="true">📞</div>
           <h3>Pocas llamadas y pocos mensajes</h3>
           <p>Inviertes tiempo y dinero pero los clientes no llegan de forma constante.</p>
-        </div>
+        </article>
       </div>
     </div>
   </section>
@@ -128,7 +156,7 @@
   <section class="section packages" id="paquetes">
     <div class="container">
       <h2>Paquetes simples</h2>
-      <p class="section-intro">Precios claros. Sin sorpresas. Elige según lo que necesites ahora.</p>
+      <p class="section-intro">Precios claros, aproximadamente 20% por debajo del promedio del mercado en Ecuador. Sin sorpresas.</p>
 
       <div class="packages-grid">
         <div class="package">
@@ -140,8 +168,8 @@
             <li>Configuración móvil</li>
             <li>Guía de primeros pasos</li>
           </ul>
-          <p class="price">Desde $XXX</p>
-          <a href="#contacto" class="btn btn-outline">Consultar</a>
+          <p class="price">$490</p>
+          <a href="https://wa.me/593978868363?text=Hola%2C%20me%20interesa%20el%20pack%20Presencia%20Local" class="btn btn-outline" target="_blank" rel="noopener">Consultar por WhatsApp</a>
         </div>
 
         <div class="package featured">
@@ -155,8 +183,8 @@
             <li>Seguimiento 30 días</li>
             <li>Recomendaciones de reseñas</li>
           </ul>
-          <p class="price">Desde $XXX</p>
-          <a href="#contacto" class="btn btn-primary">Consultar</a>
+          <p class="price">$890</p>
+          <a href="https://wa.me/593978868363?text=Hola%2C%20me%20interesa%20el%20pack%20Local%20%2B%20Crecimiento" class="btn btn-primary" target="_blank" rel="noopener">Consultar por WhatsApp</a>
         </div>
 
         <div class="package">
@@ -168,11 +196,11 @@
             <li>Pequeños ajustes en la web</li>
             <li>Reporte mensual simple</li>
           </ul>
-          <p class="price">Desde $XX / mes</p>
-          <a href="#contacto" class="btn btn-outline">Consultar</a>
+          <p class="price">$79 <span class="price-period">/ mes</span></p>
+          <a href="https://wa.me/593978868363?text=Hola%2C%20me%20interesa%20el%20mantenimiento%20mensual" class="btn btn-outline" target="_blank" rel="noopener">Consultar por WhatsApp</a>
         </div>
       </div>
-      <p class="packages-note">Los precios se confirman según el tamaño y sector de tu negocio. Te doy una cotización clara antes de empezar.</p>
+      <p class="packages-note">Precios en dólares. Se confirman según el tamaño y sector de tu negocio. Te doy una cotización clara antes de empezar.</p>
     </div>
   </section>
 
@@ -183,7 +211,7 @@
         <h2>Trabajo contigo de forma directa</h2>
         <p>Soy Benito Montoya, desarrollador independiente bajo la marca <strong>MLand Software</strong>.</p>
         <p>No soy una agencia grande con procesos lentos. Trabajo de forma personalizada, te explico todo en lenguaje claro y me enfoco en que veas resultados reales: más clientes.</p>
-        <p>Atiendo de forma <strong>100% remota</strong>. Nos coordinamos por WhatsApp o videollamada, en el horario que te quede bien.</p>
+        <p>Atiendo de forma <strong>100% remota</strong>. Nos coordinamos por WhatsApp o videollamada, en el horario que te quede bien. Guayaquil, Ecuador.</p>
       </div>
     </div>
   </section>
@@ -193,10 +221,9 @@
     <div class="container">
       <h2>¿Listo para que te encuentren más fácil?</h2>
       <p>Escríbeme por WhatsApp y te respondo en el menor tiempo posible. Sin compromiso.</p>
-      <a href="https://wa.me/593XXXXXXXXX" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+      <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20información%20sobre%20cómo%20aparecer%20mejor%20en%20Google%20y%20Maps" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
         Escribir por WhatsApp
       </a>
-      <p class="cta-note">Reemplaza el número en el enlace con tu WhatsApp real</p>
     </div>
   </section>
 
@@ -205,6 +232,7 @@
     <div class="container">
       <p><strong>MLand Software</strong> · Guayaquil, Ecuador · Servicio remoto</p>
       <p class="footer-small">Web + Google Maps para que tu negocio reciba más clientes</p>
+      <p class="footer-small"><a href="https://wa.me/593978868363" target="_blank" rel="noopener">+593 97 886 8363</a></p>
     </div>
   </footer>
 
