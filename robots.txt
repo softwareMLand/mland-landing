@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mland-landing.pages.dev/sitemap.xml
+Sitemap: https://mland-landing.montoyasud.workers.dev/sitemap.xml
