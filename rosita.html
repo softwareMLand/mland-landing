@@ -46,16 +46,24 @@ a{color:inherit;text-decoration:none}
 .ds-section{padding:1.5rem 1.15rem}
 .ds-section h4{font-size:1.08rem;color:var(--ocean);margin-bottom:.25rem}
 .ds-section .sub{font-size:.85rem;color:var(--muted);margin-bottom:1rem}
-.tours-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.15rem}
-.t-card{border:1px solid var(--border);border-radius:14px;overflow:hidden;background:#fff;display:flex;flex-direction:column;box-shadow:0 4px 14px rgba(11,61,92,.06);transition:transform .2s,box-shadow .2s}
-.t-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(11,61,92,.14)}
-.t-card .img{height:220px;background-size:cover;background-position:center;position:relative}
-.t-card .img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(11,61,92,.35))}
-.t-card .body{padding:1rem 1.05rem 1.1rem;display:flex;flex-direction:column;flex:1;gap:.35rem}
-.t-card h5{font-size:1.05rem;color:var(--ocean)}
-.t-card .meta{font-size:.82rem;color:var(--muted)}
-.t-card .price{font-weight:700;color:var(--teal);font-size:1.08rem;margin-top:auto;padding-top:.4rem}
-.t-card .btn{display:block;text-align:center;margin-top:.55rem;background:var(--ocean);color:#fff;font-size:.88rem;font-weight:600;padding:.65rem;border-radius:8px}
+.trust-bar{display:flex;flex-wrap:wrap;gap:.65rem 1.25rem;justify-content:center;padding:.9rem 1rem;background:#fff;border-bottom:1px solid var(--border);font-size:.78rem;font-weight:600;color:var(--muted)}
+.trust-bar span{display:inline-flex;align-items:center;gap:.3rem}
+.tours-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.2rem}
+.t-card{border:1px solid var(--border);border-radius:14px;overflow:hidden;background:#fff;display:flex;flex-direction:column;box-shadow:0 4px 16px rgba(11,61,92,.07);transition:transform .2s,box-shadow .2s;position:relative}
+.t-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(11,61,92,.16)}
+.t-card .img{height:200px;background-size:cover;background-position:center;position:relative}
+.t-card .badge-hot{position:absolute;top:.65rem;left:.65rem;z-index:2;background:#ea580c;color:#fff;font-size:.68rem;font-weight:700;padding:.28rem .55rem;border-radius:6px;letter-spacing:.02em;text-transform:uppercase}
+.t-card .badge-rate{position:absolute;top:.65rem;right:.65rem;z-index:2;background:rgba(15,23,42,.82);color:#fff;font-size:.72rem;font-weight:600;padding:.28rem .5rem;border-radius:6px;backdrop-filter:blur(4px)}
+.t-card .body{padding:1rem 1.05rem 1.15rem;display:flex;flex-direction:column;flex:1;gap:.3rem}
+.t-card h5{font-size:1.02rem;color:var(--ocean);line-height:1.3}
+.t-card .meta{font-size:.8rem;color:var(--muted)}
+.t-card .chips{display:flex;flex-wrap:wrap;gap:.3rem;margin:.25rem 0 .15rem}
+.t-card .chips span{font-size:.68rem;font-weight:600;background:#f0f9ff;color:var(--ocean);padding:.2rem .45rem;border-radius:999px;border:1px solid #e0f2fe}
+.t-card .price-row{display:flex;align-items:baseline;justify-content:space-between;gap:.5rem;margin-top:auto;padding-top:.55rem}
+.t-card .price-row .from{font-size:.72rem;color:var(--muted);font-weight:500}
+.t-card .price{font-weight:700;color:var(--teal);font-size:1.2rem;line-height:1}
+.t-card .btn{display:block;text-align:center;margin-top:.55rem;background:var(--ocean);color:#fff;font-size:.88rem;font-weight:600;padding:.7rem;border-radius:8px}
+.sec-label{display:inline-block;font-size:.72rem;font-weight:700;color:#ea580c;text-transform:uppercase;letter-spacing:.04em;margin-bottom:.35rem}
 .why-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.75rem;background:var(--sand);padding:1.35rem 1.15rem}
 .why-g div{background:#fff;border-radius:10px;padding:.85rem;border:1px solid #e0f2fe;font-size:.8rem;color:var(--muted)}
 .why-g strong{display:block;color:var(--ocean);font-size:.86rem;margin-bottom:.2rem}
@@ -140,7 +148,7 @@ footer strong{color:#e2e8f0}
 
 <section class="block block-alt" id="demo"><div class="container">
 <h2 data-i18n="demo-title">1. Vista previa de la nueva web</h2>
-<p class="lead" data-i18n="demo-lead">Pensada para que el turista confíe y reserve. Cambia el idioma arriba: el demo y toda la propuesta se traducen.</p>
+<p class="lead" data-i18n="demo-lead">Pensada para que el turista confíe y reserve — estilo marketplace (como tur.com): más vendidos, valoraciones y precios claros.</p>
 <p class="lang-hint" data-i18n="lang-hint">Usa English / Español en la barra superior.</p>
 <div class="demo-frame">
 <div class="demo-chrome"><div class="demo-dots"><span></span><span></span><span></span></div><span>rositatours.com · demo</span></div>
@@ -154,16 +162,24 @@ footer strong{color:#e2e8f0}
 <p data-i18n="hero-text">Isla Salango, Isla de la Plata, ballenas y pesca deportiva. Más de 10 años en la costa.</p>
 <span class="cta" data-i18n="hero-cta">Reservar por WhatsApp</span>
 </div></div>
+<div class="trust-bar">
+<span data-i18n="tb1">✓ Reserva por WhatsApp</span>
+<span data-i18n="tb2">✓ +10 años de experiencia</span>
+<span data-i18n="tb3">✓ Guías locales</span>
+<span data-i18n="tb4">✓ Frente al muelle</span>
+<span data-i18n="tb5">★ 4.9 reseñas</span>
+</div>
 <div class="ds-section">
+<span class="sec-label" data-i18n="sec-hot">🔥 Los más pedidos</span>
 <h4 data-i18n="tours-title">Nuestros tours</h4>
-<p class="sub" data-i18n="tours-sub">Elige tu experiencia. Precios de referencia — confirmamos por WhatsApp.</p>
+<p class="sub" data-i18n="tours-sub">Elige tu experiencia. Precios de referencia — confirmamos cupo por WhatsApp.</p>
 <div class="tours-g">
-<article class="t-card"><div class="img" style="background-image:url('https://static.wixstatic.com/media/73fccb_63c3008cadb74d17ba8c1d664735443a~mv2.jpg/v1/fill/w_900,h_600,al_c,q_85/foto-isla-salango_edited.jpg')"></div><div class="body"><h5 data-i18n="t1">Tour Isla Salango</h5><p class="meta" data-i18n="t1m">Snorkel · Kayak · Playa · ~6–7 h</p><p class="meta" data-i18n="t1d">Aventura a bordo: islotes, snorkel y Salango.</p><div class="price">desde $35</div><span class="btn" data-i18n="book">Reservar este tour</span></div></article>
-<article class="t-card"><div class="img" style="background-image:url('https://static.wixstatic.com/media/73fccb_4a68bd5fa3af4521908bf81c1227be7e~mv2.jpg/v1/fill/w_900,h_600,al_c,q_85/IMG-20220306-WA0009.jpg')"></div><div class="body"><h5 data-i18n="t2">Tour 4 Islas</h5><p class="meta" data-i18n="t2m">3 islotes + 1 isla · Día completo</p><p class="meta" data-i18n="t2d">Los sitios más bellos frente a Puerto López.</p><div class="price">desde $35</div><span class="btn" data-i18n="book">Reservar este tour</span></div></article>
-<article class="t-card"><div class="img" style="background-image:url('https://static.wixstatic.com/media/73fccb_9573c5622d2241559fbb2b92597f7932~mv2.jpg/v1/fill/w_900,h_600,al_c,q_85/Isla%20de%20la%20Plata%20_3_edited.jpg')"></div><div class="body"><h5 data-i18n="t3">Isla de la Plata</h5><p class="meta" data-i18n="t3m">Mini Galápagos · Caminata + snorkel</p><p class="meta" data-i18n="t3d">Piqueros de patas azules y fauna del Parque Machalilla.</p><div class="price">desde $40</div><span class="btn" data-i18n="book">Reservar este tour</span></div></article>
-<article class="t-card"><div class="img" style="background-image:url('https://static.wixstatic.com/media/73fccb_e33888db9d8f4996a4512fa1c399fd7a~mv2.jpeg/v1/fill/w_900,h_600,al_c,q_85/vallarta-scaled.jpeg')"></div><div class="body"><h5 data-i18n="t4">Avistamiento de ballenas</h5><p class="meta" data-i18n="t4m">Solo jun–oct · Espectáculo natural</p><p class="meta" data-i18n="t4d">Ballenas jorobadas en el Pacífico de Manabí.</p><div class="price" data-i18n="ask">Consultar temporada</div><span class="btn" data-i18n="book">Reservar este tour</span></div></article>
-<article class="t-card"><div class="img" style="background-image:url('https://static.wixstatic.com/media/73fccb_7a55a3756b6b4c37a7eb3a72bde75efe~mv2.jpg/v1/fill/w_900,h_600,al_c,q_85/IMG-20210923-WA0066.jpg')"></div><div class="body"><h5 data-i18n="t5">Pesca deportiva</h5><p class="meta" data-i18n="t5m">Marlin · Altura · Todos los niveles</p><p class="meta" data-i18n="t5d">Salidas con equipo y tripulación experimentada.</p><div class="price" data-i18n="ask2">Consultar por WhatsApp</div><span class="btn" data-i18n="book">Reservar este tour</span></div></article>
-<article class="t-card"><div class="img" style="background-image:url('https://static.wixstatic.com/media/73fccb_85ce98a22d074a62a52d52bda8cd7018~mv2.jpg/v1/fill/w_900,h_600,al_c,q_85/IMG-20211113-WA0015.jpg')"></div><div class="body"><h5 data-i18n="t6">Tours privados / grupos</h5><p class="meta" data-i18n="t6m">Familias · Grupos · Charter</p><p class="meta" data-i18n="t6d">Horario e itinerario a tu medida.</p><div class="price" data-i18n="ask3">Cotización personalizada</div><span class="btn" data-i18n="book">Reservar este tour</span></div></article>
+<article class="t-card"><div class="img" style="background-image:url('https://static.wixstatic.com/media/73fccb_63c3008cadb74d17ba8c1d664735443a~mv2.jpg/v1/fill/w_900,h_600,al_c,q_85/foto-isla-salango_edited.jpg')"><span class="badge-hot" data-i18n="best">🏆 Más vendido</span><span class="badge-rate">★ 4.9</span></div><div class="body"><h5 data-i18n="t1">Tour Isla Salango</h5><p class="meta" data-i18n="t1m">Snorkel · Kayak · Playa · ~6–7 h</p><div class="chips"><span data-i18n="c1a">Snorkel</span><span data-i18n="c1b">Kayak</span><span data-i18n="c1c">Guía local</span></div><div class="price-row"><span><span class="from" data-i18n="from">Desde</span><br><span class="price">$35</span></span></div><span class="btn" data-i18n="book">Reservar este tour</span></div></article>
+<article class="t-card"><div class="img" style="background-image:url('https://static.wixstatic.com/media/73fccb_4a68bd5fa3af4521908bf81c1227be7e~mv2.jpg/v1/fill/w_900,h_600,al_c,q_85/IMG-20220306-WA0009.jpg')"><span class="badge-rate">★ 4.8</span></div><div class="body"><h5 data-i18n="t2">Tour 4 Islas</h5><p class="meta" data-i18n="t2m">3 islotes + 1 isla · Día completo</p><div class="chips"><span data-i18n="c2a">Día completo</span><span data-i18n="c2b">Islas</span></div><div class="price-row"><span><span class="from" data-i18n="from">Desde</span><br><span class="price">$35</span></span></div><span class="btn" data-i18n="book">Reservar este tour</span></div></article>
+<article class="t-card"><div class="img" style="background-image:url('https://static.wixstatic.com/media/73fccb_9573c5622d2241559fbb2b92597f7932~mv2.jpg/v1/fill/w_900,h_600,al_c,q_85/Isla%20de%20la%20Plata%20_3_edited.jpg')"><span class="badge-hot" data-i18n="best2">⭐ Top rated</span><span class="badge-rate">★ 5.0</span></div><div class="body"><h5 data-i18n="t3">Isla de la Plata</h5><p class="meta" data-i18n="t3m">Mini Galápagos · Caminata + snorkel</p><div class="chips"><span data-i18n="c3a">Fauna</span><span data-i18n="c3b">Snorkel</span><span data-i18n="c3c">Caminata</span></div><div class="price-row"><span><span class="from" data-i18n="from">Desde</span><br><span class="price">$40</span></span></div><span class="btn" data-i18n="book">Reservar este tour</span></div></article>
+<article class="t-card"><div class="img" style="background-image:url('https://static.wixstatic.com/media/73fccb_e33888db9d8f4996a4512fa1c399fd7a~mv2.jpeg/v1/fill/w_900,h_600,al_c,q_85/vallarta-scaled.jpeg')"><span class="badge-rate">★ 4.9</span></div><div class="body"><h5 data-i18n="t4">Avistamiento de ballenas</h5><p class="meta" data-i18n="t4m">Solo jun–oct · Espectáculo natural</p><div class="chips"><span data-i18n="c4a">Temporada</span><span data-i18n="c4b">Ballenas</span></div><div class="price-row"><span><span class="from" data-i18n="ask">Consultar temporada</span><br><span class="price" style="font-size:1rem" data-i18n="ask-short">Consultar</span></span></div><span class="btn" data-i18n="book">Reservar este tour</span></div></article>
+<article class="t-card"><div class="img" style="background-image:url('https://static.wixstatic.com/media/73fccb_7a55a3756b6b4c37a7eb3a72bde75efe~mv2.jpg/v1/fill/w_900,h_600,al_c,q_85/IMG-20210923-WA0066.jpg')"><span class="badge-rate">★ 4.7</span></div><div class="body"><h5 data-i18n="t5">Pesca deportiva</h5><p class="meta" data-i18n="t5m">Marlin · Altura · Todos los niveles</p><div class="chips"><span data-i18n="c5a">Equipo</span><span data-i18n="c5b">Tripulación</span></div><div class="price-row"><span><span class="from" data-i18n="ask2">Consultar por WhatsApp</span><br><span class="price" style="font-size:1rem" data-i18n="ask-short">Consultar</span></span></div><span class="btn" data-i18n="book">Reservar este tour</span></div></article>
+<article class="t-card"><div class="img" style="background-image:url('https://static.wixstatic.com/media/73fccb_85ce98a22d074a62a52d52bda8cd7018~mv2.jpg/v1/fill/w_900,h_600,al_c,q_85/IMG-20211113-WA0015.jpg')"><span class="badge-rate">★ 4.8</span></div><div class="body"><h5 data-i18n="t6">Tours privados / grupos</h5><p class="meta" data-i18n="t6m">Familias · Grupos · Charter</p><div class="chips"><span data-i18n="c6a">Privado</span><span data-i18n="c6b">A medida</span></div><div class="price-row"><span><span class="from" data-i18n="ask3">Cotización personalizada</span><br><span class="price" style="font-size:1rem" data-i18n="ask-short">Consultar</span></span></div><span class="btn" data-i18n="book">Reservar este tour</span></div></article>
 </div></div>
 <div class="why-g">
 <div><strong data-i18n="w1t">+10 años</strong><span data-i18n="w1d">Familias y turistas</span></div>
@@ -203,7 +219,7 @@ footer strong{color:#e2e8f0}
 </div>
 <div class="ds-footer"><div><strong>Rosita Tours</strong> · <span data-i18n="foot-tag">Tours en yate · Puerto López</span></div><div data-i18n="foot-demo">Demo · MLand Software</div></div>
 </div>
-<p class="note" data-i18n="demo-note">Esta vista previa es la base. Ajustamos fotos, precios y textos con ustedes antes de publicar. Dominio + hosting del primer año incluidos en el pack.</p>
+<p class="note" data-i18n="demo-note">Vista previa estilo marketplace. Ajustamos fotos, precios y textos con ustedes. Dominio + hosting del primer año incluidos.</p>
 </div></section>
 
 <section class="block block-sand" id="problemas"><div class="container">
@@ -217,29 +233,27 @@ footer strong{color:#e2e8f0}
 <li data-i18n="p3">Tiene que adivinar detalles y muchos se van sin escribir</li>
 <li data-i18n="p4">El visitante en inglés encuentra menos apoyo</li>
 </ul>
-<p class="extra" data-i18n="p-extra">No es falta de turismo: es conversión. Gente interesada que no termina reservando con ustedes.</p>
+<p class="extra" data-i18n="p-extra">No es falta de turismo: es conversión.</p>
 </div>
 <div class="card"><h3 data-i18n="sol-h">Cuando la web vende por ustedes</h3>
 <ul class="list good">
-<li data-i18n="s1">Cada tour con foto grande, precio y “Reservar” a WhatsApp</li>
+<li data-i18n="s1">Cada tour con foto, valoración, precio y “Reservar” a WhatsApp</li>
 <li data-i18n="s2">Español e inglés</li>
-<li data-i18n="s3">Testimonios y fotos reales generan confianza</li>
+<li data-i18n="s3">Testimonios y badges de más vendido generan confianza</li>
 <li data-i18n="s4">Google Maps alineado para búsquedas locales</li>
 </ul>
-<p class="extra" data-i18n="s-extra">Objetivo: más conversaciones de reserva, no solo “una web bonita”.</p>
 </div></div></div></section>
 
 <section class="block block-alt" id="incluye"><div class="container">
-<h2 data-i18n="inc-title">3. Qué reciben (y por qué empuja las ventas)</h2>
+<h2 data-i18n="inc-title">3. Qué reciben</h2>
 <p class="lead" data-i18n="inc-lead">Herramienta de ventas online: celular, WhatsApp y confianza en segundos.</p>
 <div class="inc-grid">
-<div class="inc-item"><h3 data-i18n="i1t">Web lista para convertir</h3><p data-i18n="i1d">Home, tours con fotos amplias, testimonios y contacto orientados a reservar. Base: esta demo; afinamos con ustedes.</p></div>
-<div class="inc-item"><h3 data-i18n="i2t">Español + inglés</h3><p data-i18n="i2d">Misma experiencia en ambos idiomas para no perder turistas extranjeros.</p></div>
-<div class="inc-item"><h3 data-i18n="i3t">WhatsApp como canal de venta</h3><p data-i18n="i3d">Botones en hero, cada tour y flotante, con mensajes listos por tipo de tour.</p></div>
-<div class="inc-item"><h3 data-i18n="i4t">Google Maps / Business</h3><p data-i18n="i4d">Ficha optimizada para aparecer en búsquedas de tours en la zona.</p></div>
-<div class="inc-item"><h3 data-i18n="i5t">Prueba social y fotos</h3><p data-i18n="i5d">Reseñas y galería con material de su operación.</p></div>
-<div class="inc-item"><h3 data-i18n="i6t">Dominio + hosting 1 año</h3><p data-i18n="i6d">Incluidos el primer año: publican sin pagar infraestructura aparte.</p></div>
-<div class="inc-item"><h3 data-i18n="i7t">30 días de acompañamiento</h3><p data-i18n="i7d">Ajustes tras publicar, reseñas y revisión de mensajes.</p></div>
+<div class="inc-item"><h3 data-i18n="i1t">Web lista para convertir</h3><p data-i18n="i1d">Estilo marketplace: más vendidos, estrellas, precios y CTAs claros.</p></div>
+<div class="inc-item"><h3 data-i18n="i2t">Español + inglés</h3><p data-i18n="i2d">Misma experiencia en ambos idiomas.</p></div>
+<div class="inc-item"><h3 data-i18n="i3t">WhatsApp como canal de venta</h3><p data-i18n="i3d">Botones en hero, cada tour y flotante.</p></div>
+<div class="inc-item"><h3 data-i18n="i4t">Google Maps / Business</h3><p data-i18n="i4d">Ficha optimizada para tours en la zona.</p></div>
+<div class="inc-item"><h3 data-i18n="i5t">Dominio + hosting 1 año</h3><p data-i18n="i5d">Incluidos el primer año.</p></div>
+<div class="inc-item"><h3 data-i18n="i6t">30 días de acompañamiento</h3><p data-i18n="i6d">Ajustes, reseñas y revisión de mensajes.</p></div>
 </div></div></section>
 
 <section class="block block-sand" id="inversion"><div class="container">
@@ -249,26 +263,24 @@ footer strong{color:#e2e8f0}
 <div class="label" data-i18n="pack-label">Pack Presencia + Resultados</div>
 <div class="pack" data-i18n="pack-name">Web orientada a ventas + Google Maps</div>
 <div class="amount">$890</div>
-<p class="value-note" data-i18n="value-note">Menos de lo que suelen costar 2–3 reservas de un tour de grupo. Incluye dominio + hosting 1 año.</p>
+<p class="value-note" data-i18n="value-note">Menos de 2–3 reservas de un tour de grupo. Incluye dominio + hosting 1 año.</p>
 <ul>
-<li data-i18n="pk1">Web bilingüe orientada a reservas por WhatsApp</li>
-<li data-i18n="pk2">Tours, testimonios, galería y contacto claros</li>
-<li data-i18n="pk3">Google Business / Maps optimizado</li>
-<li data-i18n="pk4">Dominio + hosting incluidos por 1 año</li>
-<li data-i18n="pk5">Seguimiento 30 días y apoyo en reseñas</li>
+<li data-i18n="pk1">Web bilingüe orientada a reservas</li>
+<li data-i18n="pk2">Estilo marketplace + Maps</li>
+<li data-i18n="pk3">Dominio + hosting 1 año</li>
+<li data-i18n="pk4">Seguimiento 30 días</li>
 </ul>
 <div class="pay-row">
 <span class="pay-badge" data-i18n="pay1">💳 Tarjeta</span>
 <span class="pay-badge" data-i18n="pay2">🅿️ PayPal</span>
-<span class="pay-badge" data-i18n="pay3">📱 Transferencia / WhatsApp</span>
+<span class="pay-badge" data-i18n="pay3">📱 Transferencia</span>
 </div></div>
-<div class="roi" data-i18n="roi"><strong>En perspectiva:</strong> con pocas reservas extra al mes, el proyecto se paga solo. El resto del año es margen adicional.</div>
-<p class="optional" data-i18n="optional"><strong>Opcional:</strong> Cuidado Continuo $79/mes.</p>
+<div class="roi" data-i18n="roi"><strong>En perspectiva:</strong> con pocas reservas extra al mes, el proyecto se paga solo.</div>
 </div></section>
 
 <section class="block block-alt final-cta" id="cerrar"><div class="container">
 <h2 data-i18n="close-title">5. ¿Damos el siguiente paso?</h2>
-<p data-i18n="close-text">Si les gusta el demo, coordinamos una llamada corta y arrancamos. Pago con tarjeta, PayPal o transferencia.</p>
+<p data-i18n="close-text">Si les gusta el demo, coordinamos una llamada corta y arrancamos.</p>
 <a class="btn-wa" href="https://wa.me/593978868363?text=Hola%2C%20vi%20la%20propuesta%20de%20Rosita%20Tours%20y%20quiero%20avanzar" target="_blank" rel="noopener" data-i18n="close-cta">Sí, quiero avanzar · WhatsApp</a>
 <p class="final-note" data-i18n="close-note">Benito Montoya · MLand Software · +593 97 886 8363</p>
 </div></section>
@@ -282,21 +294,26 @@ step1:'1. Cómo quedaría',step2:'2. Situación actual',step3:'3. Qué incluye',
 'intro-text':'Vista previa en español e inglés, con fotos de su sitio, testimonios y reservas por WhatsApp. Incluye dominio + hosting por 1 año.',
 'intro-see':'Ver cómo quedaría ↓','intro-wa':'Quiero esto · WhatsApp',
 'demo-title':'1. Vista previa de la nueva web',
-'demo-lead':'Pensada para que el turista confíe y reserve. Cambia el idioma arriba: el demo y toda la propuesta se traducen.',
+'demo-lead':'Pensada para que el turista confíe y reserve — estilo marketplace (como tur.com): más vendidos, valoraciones y precios claros.',
 'lang-hint':'Usa English / Español en la barra superior.',
 'nav-tours':'Tours','nav-why':'Por qué nosotros','nav-rev':'Reseñas','nav-contact':'Contacto',
 'hero-kicker':'Puerto López · Frente al muelle',
 'hero-title':'Tours en yate por las islas y el mar de Manabí',
 'hero-text':'Isla Salango, Isla de la Plata, ballenas y pesca deportiva. Más de 10 años en la costa.',
 'hero-cta':'Reservar por WhatsApp','tours-title':'Nuestros tours',
-'tours-sub':'Elige tu experiencia. Precios de referencia — confirmamos por WhatsApp.',
-t1:'Tour Isla Salango',t1m:'Snorkel · Kayak · Playa · ~6–7 h',t1d:'Aventura a bordo: islotes, snorkel y Salango.',
-t2:'Tour 4 Islas',t2m:'3 islotes + 1 isla · Día completo',t2d:'Los sitios más bellos frente a Puerto López.',
-t3:'Isla de la Plata',t3m:'Mini Galápagos · Caminata + snorkel',t3d:'Piqueros de patas azules y fauna del Parque Machalilla.',
-t4:'Avistamiento de ballenas',t4m:'Solo jun–oct · Espectáculo natural',t4d:'Ballenas jorobadas en el Pacífico de Manabí.',
-t5:'Pesca deportiva',t5m:'Marlin · Altura · Todos los niveles',t5d:'Salidas con equipo y tripulación experimentada.',
-t6:'Tours privados / grupos',t6m:'Familias · Grupos · Charter',t6d:'Horario e itinerario a tu medida.',
+'tours-sub':'Elige tu experiencia. Precios de referencia — confirmamos cupo por WhatsApp.',
+t1:'Tour Isla Salango',t1m:'Snorkel · Kayak · Playa · ~6–7 h',
+t2:'Tour 4 Islas',t2m:'3 islotes + 1 isla · Día completo',
+t3:'Isla de la Plata',t3m:'Mini Galápagos · Caminata + snorkel',
+t4:'Avistamiento de ballenas',t4m:'Solo jun–oct · Espectáculo natural',
+t5:'Pesca deportiva',t5m:'Marlin · Altura · Todos los niveles',
+t6:'Tours privados / grupos',t6m:'Familias · Grupos · Charter',
 book:'Reservar este tour',ask:'Consultar temporada',ask2:'Consultar por WhatsApp',ask3:'Cotización personalizada',
+best:'🏆 Más vendido',best2:'⭐ Top rated',from:'Desde','ask-short':'Consultar',
+tb1:'✓ Reserva por WhatsApp',tb2:'✓ +10 años de experiencia',tb3:'✓ Guías locales',tb4:'✓ Frente al muelle',tb5:'★ 4.9 reseñas',
+'sec-hot':'🔥 Los más pedidos',
+c1a:'Snorkel',c1b:'Kayak',c1c:'Guía local',c2a:'Día completo',c2b:'Islas',c3a:'Fauna',c3b:'Snorkel',c3c:'Caminata',
+c4a:'Temporada',c4b:'Ballenas',c5a:'Equipo',c5b:'Tripulación',c6a:'Privado',c6b:'A medida',
 w1t:'+10 años',w1d:'Familias y turistas',w2t:'Frente al muelle',w2d:'Puerto López',w3t:'Tours reales',w3d:'Islas, ballenas, pesca',w4t:'Reserva fácil',w4d:'WhatsApp el mismo día',
 'gal-title':'Momentos a bordo','gal-sub':'Fotos reales de sus salidas',
 'about-title':'Sobre Rosita Tours','about-text':'Empresa familiar frente al Muelle Turístico de Puerto López. Grupos, familias y viajeros nacionales e internacionales.',
@@ -309,7 +326,7 @@ r4:'“Excelente compañía, personal amable. Llenan las expectativas.”',
 where:'Dónde estamos',addr:'Malecón Julio Izurieta<br>Frente al Muelle Turístico<br>Puerto López, Manabí',
 'contact-cta':'Escribir por WhatsApp',map:'📍 Google Maps<br><small>(versión final)</small>',
 'foot-tag':'Tours en yate · Puerto López','foot-demo':'Demo · MLand Software',
-'demo-note':'Esta vista previa es la base. Ajustamos fotos, precios y textos con ustedes antes de publicar. Dominio + hosting del primer año incluidos en el pack.',
+'demo-note':'Vista previa estilo marketplace. Ajustamos fotos, precios y textos con ustedes. Dominio + hosting del primer año incluidos.',
 'prob-title':'2. Situación actual: por qué se pierden reservas',
 'prob-lead':'Ya tienen experiencia, ubicación y buenas opiniones. El freno está en cómo los encuentran y deciden reservar online.',
 'prob-h':'Lo que pasa con un turista típico','sol-h':'Cuando la web vende por ustedes',
@@ -317,39 +334,34 @@ p1:'Busca tours en Google y a menudo llega a competidores con web y ficha más c
 p2:'En la web actual no ve de inmediato precio ni un botón grande de WhatsApp',
 p3:'Tiene que adivinar detalles y muchos se van sin escribir',
 p4:'El visitante en inglés encuentra menos apoyo',
-'p-extra':'No es falta de turismo: es conversión. Gente interesada que no termina reservando con ustedes.',
-s1:'Cada tour con foto grande, precio y “Reservar” a WhatsApp',s2:'Español e inglés',s3:'Testimonios y fotos reales generan confianza',s4:'Google Maps alineado para búsquedas locales',
-'s-extra':'Objetivo: más conversaciones de reserva, no solo “una web bonita”.',
-'inc-title':'3. Qué reciben (y por qué empuja las ventas)',
-'inc-lead':'Herramienta de ventas online: celular, WhatsApp y confianza en segundos.',
-'i1t':'Web lista para convertir','i1d':'Home, tours con fotos amplias, testimonios y contacto orientados a reservar. Base: esta demo; afinamos con ustedes.',
-'i2t':'Español + inglés','i2d':'Misma experiencia en ambos idiomas para no perder turistas extranjeros.',
-'i3t':'WhatsApp como canal de venta','i3d':'Botones en hero, cada tour y flotante, con mensajes listos por tipo de tour.',
-'i4t':'Google Maps / Business','i4d':'Ficha optimizada para aparecer en búsquedas de tours en la zona.',
-'i5t':'Prueba social y fotos','i5d':'Reseñas y galería con material de su operación.',
-'i6t':'Dominio + hosting 1 año','i6d':'Incluidos el primer año: publican sin pagar infraestructura aparte.',
-'i7t':'30 días de acompañamiento','i7d':'Ajustes tras publicar, reseñas y revisión de mensajes.',
+'p-extra':'No es falta de turismo: es conversión.',
+s1:'Cada tour con foto, valoración, precio y “Reservar” a WhatsApp',s2:'Español e inglés',s3:'Testimonios y badges de más vendido generan confianza',s4:'Google Maps alineado para búsquedas locales',
+'inc-title':'3. Qué reciben','inc-lead':'Herramienta de ventas online: celular, WhatsApp y confianza en segundos.',
+'i1t':'Web lista para convertir','i1d':'Estilo marketplace: más vendidos, estrellas, precios y CTAs claros.',
+'i2t':'Español + inglés','i2d':'Misma experiencia en ambos idiomas.',
+'i3t':'WhatsApp como canal de venta','i3d':'Botones en hero, cada tour y flotante.',
+'i4t':'Google Maps / Business','i4d':'Ficha optimizada para tours en la zona.',
+'i5t':'Dominio + hosting 1 año','i5d':'Incluidos el primer año.',
+'i6t':'30 días de acompañamiento','i6d':'Ajustes, reseñas y revisión de mensajes.',
 'inv-title':'4. Inversión y formas de pago',
 'inv-lead':'Un solo pago por un sistema pensado para generar más reservas.',
 'pack-label':'Pack Presencia + Resultados','pack-name':'Web orientada a ventas + Google Maps',
-'value-note':'Menos de lo que suelen costar 2–3 reservas de un tour de grupo. Incluye dominio + hosting 1 año.',
-pk1:'Web bilingüe orientada a reservas por WhatsApp',pk2:'Tours, testimonios, galería y contacto claros',
-pk3:'Google Business / Maps optimizado',pk4:'Dominio + hosting incluidos por 1 año',pk5:'Seguimiento 30 días y apoyo en reseñas',
-pay1:'💳 Tarjeta',pay2:'🅿️ PayPal',pay3:'📱 Transferencia / WhatsApp',
-roi:'<strong>En perspectiva:</strong> con pocas reservas extra al mes, el proyecto se paga solo. El resto del año es margen adicional.',
-optional:'<strong>Opcional:</strong> Cuidado Continuo $79/mes.',
+'value-note':'Menos de 2–3 reservas de un tour de grupo. Incluye dominio + hosting 1 año.',
+pk1:'Web bilingüe orientada a reservas',pk2:'Estilo marketplace + Maps',pk3:'Dominio + hosting 1 año',pk4:'Seguimiento 30 días',
+pay1:'💳 Tarjeta',pay2:'🅿️ PayPal',pay3:'📱 Transferencia',
+roi:'<strong>En perspectiva:</strong> con pocas reservas extra al mes, el proyecto se paga solo.',
 'close-title':'5. ¿Damos el siguiente paso?',
-'close-text':'Si les gusta el demo, coordinamos una llamada corta y arrancamos. Pago con tarjeta, PayPal o transferencia.',
+'close-text':'Si les gusta el demo, coordinamos una llamada corta y arrancamos.',
 'close-cta':'Sí, quiero avanzar · WhatsApp',
 'close-note':'Benito Montoya · MLand Software · +593 97 886 8363'
 },en:{
 topbar:'<strong>MLand Software</strong> · Rosita Tours proposal · ES / EN',
 step1:'1. How it would look',step2:'2. Current situation',step3:'3. What’s included',step4:'4. Investment',step5:'5. Next step',
 'intro-title':'This is how Rosita Tours’ website could look',
-'intro-text':'Preview in Spanish and English, with their photos, testimonials and WhatsApp booking. Domain + hosting for 1 year included.',
+'intro-text':'Preview in Spanish and English. Domain + hosting for 1 year included.',
 'intro-see':'See the preview ↓','intro-wa':'I want this · WhatsApp',
 'demo-title':'1. Preview of the new website',
-'demo-lead':'Built so tourists trust and book. Switch language above: the demo and full proposal translate together.',
+'demo-lead':'Built so tourists trust and book — marketplace style (like tur.com): bestsellers, ratings and clear prices.',
 'lang-hint':'Use English / Español in the top bar.',
 'nav-tours':'Tours','nav-why':'Why us','nav-rev':'Reviews','nav-contact':'Contact',
 'hero-kicker':'Puerto López · At the pier',
@@ -357,16 +369,21 @@ step1:'1. How it would look',step2:'2. Current situation',step3:'3. What’s inc
 'hero-text':'Salango Island, Isla de la Plata, whales and sport fishing. 10+ years on the coast.',
 'hero-cta':'Book on WhatsApp','tours-title':'Our tours',
 'tours-sub':'Choose your experience. Reference prices — we confirm on WhatsApp.',
-t1:'Salango Island Tour',t1m:'Snorkel · Kayak · Beach · ~6–7 h',t1d:'Adventure on board: islets, snorkeling and Salango.',
-t2:'4 Islands Tour',t2m:'3 islets + 1 island · Full day',t2d:'The most beautiful spots off Puerto López.',
-t3:'Isla de la Plata',t3m:'Mini Galápagos · Hike + snorkel',t3d:'Blue-footed boobies and Machalilla wildlife.',
-t4:'Whale watching',t4m:'Jun–Oct only · Natural spectacle',t4d:'Humpback whales on the Manabí Pacific.',
-t5:'Sport fishing',t5m:'Marlin · Offshore · All levels',t5d:'Trips with gear and experienced crew.',
-t6:'Private / group tours',t6m:'Families · Groups · Charter',t6d:'Schedule and itinerary built around you.',
+t1:'Salango Island Tour',t1m:'Snorkel · Kayak · Beach · ~6–7 h',
+t2:'4 Islands Tour',t2m:'3 islets + 1 island · Full day',
+t3:'Isla de la Plata',t3m:'Mini Galápagos · Hike + snorkel',
+t4:'Whale watching',t4m:'Jun–Oct only · Natural spectacle',
+t5:'Sport fishing',t5m:'Marlin · Offshore · All levels',
+t6:'Private / group tours',t6m:'Families · Groups · Charter',
 book:'Book this tour',ask:'Ask for season',ask2:'Ask on WhatsApp',ask3:'Custom quote',
+best:'🏆 Bestseller',best2:'⭐ Top rated',from:'From','ask-short':'Ask us',
+tb1:'✓ Book on WhatsApp',tb2:'✓ 10+ years experience',tb3:'✓ Local guides',tb4:'✓ At the pier',tb5:'★ 4.9 reviews',
+'sec-hot':'🔥 Most booked',
+c1a:'Snorkel',c1b:'Kayak',c1c:'Local guide',c2a:'Full day',c2b:'Islands',c3a:'Wildlife',c3b:'Snorkel',c3c:'Hike',
+c4a:'Season',c4b:'Whales',c5a:'Gear',c5b:'Crew',c6a:'Private',c6b:'Custom',
 w1t:'10+ years',w1d:'Families & travelers',w2t:'At the pier',w2d:'Puerto López',w3t:'Real tours',w3d:'Islands, whales, fishing',w4t:'Easy booking',w4d:'WhatsApp same day',
 'gal-title':'Moments on board','gal-sub':'Real photos from their trips',
-'about-title':'About Rosita Tours','about-text':'Family-run company at the Puerto López Tourist Pier. Groups, families and national and international travelers.',
+'about-title':'About Rosita Tours','about-text':'Family-run company at the Puerto López Tourist Pier.',
 stat1:'Years',stat2:'Tours',stat3:'Local',
 'rev-title':'What travelers say','rev-sub':'Real reviews',
 r1:'“Excellent service, experienced guides. Great adventure at Salango Island.”',
@@ -376,37 +393,32 @@ r4:'“Excellent company, kind staff. They meet expectations.”',
 where:'Where we are',addr:'Malecón Julio Izurieta<br>In front of the Tourist Pier<br>Puerto López, Manabí',
 'contact-cta':'Message on WhatsApp',map:'📍 Google Maps<br><small>(final version)</small>',
 'foot-tag':'Yacht tours · Puerto López','foot-demo':'Demo · MLand Software',
-'demo-note':'This preview is the base. We refine photos, prices and copy with you before launch. Domain + hosting for year one included in the package.',
+'demo-note':'Marketplace-style preview. We refine photos, prices and copy with you. Domain + hosting year one included.',
 'prob-title':'2. Current situation: why bookings are lost',
-'prob-lead':'You already have experience, location and good reviews. The bottleneck is how people find you and decide to book online.',
+'prob-lead':'You already have experience, location and good reviews. The bottleneck is online conversion.',
 'prob-h':'What a typical tourist does','sol-h':'When the site sells for you',
-p1:'They search for tours on Google and often land on competitors with clearer sites and profiles',
-p2:'On the current site they don’t immediately see price or a big WhatsApp button',
-p3:'They have to guess details and many leave without writing',
+p1:'They search for tours and often land on clearer competitors',
+p2:'On the current site they don’t see price or a big WhatsApp button',
+p3:'They guess details and many leave without writing',
 p4:'English-speaking visitors get less support',
-'p-extra':'Not a lack of tourism — a conversion issue. Interested people who never book with you.',
-s1:'Each tour with a large photo, price and “Book” to WhatsApp',s2:'Spanish and English',s3:'Testimonials and real photos build trust',s4:'Google Maps aligned for local searches',
-'s-extra':'Goal: more booking conversations, not just a pretty site.',
-'inc-title':'3. What you get (and why it drives sales)',
-'inc-lead':'An online sales tool: phone, WhatsApp and trust in seconds.',
-'i1t':'A site built to convert','i1d':'Home, tours with large photos, testimonials and contact aimed at booking. Base: this demo; we refine with you.',
-'i2t':'Spanish + English','i2d':'Same experience in both languages so you don’t lose foreign visitors.',
-'i3t':'WhatsApp as the sales channel','i3d':'Buttons in the hero, on each tour and floating, with ready messages by tour type.',
-'i4t':'Google Maps / Business','i4d':'Optimized profile to show up in local tour searches.',
-'i5t':'Social proof and photos','i5d':'Reviews and gallery from your operation.',
-'i6t':'Domain + hosting 1 year','i6d':'Included for the first year — go live without extra infrastructure cost.',
-'i7t':'30-day support','i7d':'Post-launch tweaks, reviews and message review.',
+'p-extra':'Not a lack of tourism — a conversion issue.',
+s1:'Each tour with photo, rating, price and Book on WhatsApp',s2:'Spanish and English',s3:'Testimonials and bestseller badges build trust',s4:'Google Maps aligned for local searches',
+'inc-title':'3. What you get','inc-lead':'An online sales tool: phone, WhatsApp and trust in seconds.',
+'i1t':'A site built to convert','i1d':'Marketplace style: bestsellers, stars, prices and clear CTAs.',
+'i2t':'Spanish + English','i2d':'Same experience in both languages.',
+'i3t':'WhatsApp as the sales channel','i3d':'Buttons in the hero, on each tour and floating.',
+'i4t':'Google Maps / Business','i4d':'Optimized profile for local tour searches.',
+'i5t':'Domain + hosting 1 year','i5d':'Included for the first year.',
+'i6t':'30-day support','i6d':'Tweaks, reviews and message review.',
 'inv-title':'4. Investment and payment options',
 'inv-lead':'One payment for a system built to generate more bookings.',
 'pack-label':'Presence + Results package','pack-name':'Sales-focused web + Google Maps',
-'value-note':'Less than what 2–3 group-tour bookings often cost. Domain + hosting for 1 year included.',
-pk1:'Bilingual site focused on WhatsApp bookings',pk2:'Clear tours, testimonials, gallery and contact',
-pk3:'Optimized Google Business / Maps',pk4:'Domain + hosting included for 1 year',pk5:'30-day follow-up and review support',
-pay1:'💳 Card',pay2:'🅿️ PayPal',pay3:'📱 Transfer / WhatsApp',
-roi:'<strong>In perspective:</strong> a few extra bookings a month and the project pays for itself. The rest of the year is extra margin.',
-optional:'<strong>Optional:</strong> Ongoing Care $79/month.',
+'value-note':'Less than 2–3 group-tour bookings. Domain + hosting 1 year included.',
+pk1:'Bilingual site focused on bookings',pk2:'Marketplace style + Maps',pk3:'Domain + hosting 1 year',pk4:'30-day follow-up',
+pay1:'💳 Card',pay2:'🅿️ PayPal',pay3:'📱 Transfer',
+roi:'<strong>In perspective:</strong> a few extra bookings a month and the project pays for itself.',
 'close-title':'5. Ready for the next step?',
-'close-text':'If you like the demo, we schedule a short call and get started. Pay by card, PayPal or transfer.',
+'close-text':'If you like the demo, we schedule a short call and get started.',
 'close-cta':'Yes, let’s move forward · WhatsApp',
 'close-note':'Benito Montoya · MLand Software · +593 97 886 8363'
 }};
