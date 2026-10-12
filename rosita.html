@@ -1,432 +1,141 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rosita Tours · Propuesta MLand Software</title>
-  <meta name="robots" content="noindex, nofollow">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --ocean: #0c4a6e;
-      --ocean-mid: #0369a1;
-      --teal: #0d9488;
-      --sand: #f0f9ff;
-      --text: #0f172a;
-      --muted: #475569;
-      --border: #e2e8f0;
-      --white: #fff;
-      --wa: #25D366;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Inter, system-ui, sans-serif; color: var(--text); line-height: 1.55; background: #f8fafc; }
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(1100px, 100% - 2rem); margin-inline: auto; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rosita Tours · Propuesta MLand Software</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ocean:#0b3d5c;--ocean2:#0c4a6e;--teal:#0d9488;--sand:#f0f9ff;--text:#0f172a;--muted:#475569;--border:#e2e8f0;--white:#fff;--wa:#25D366}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;color:var(--text);line-height:1.55;background:#f8fafc}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:min(1120px,100% - 2rem);margin-inline:auto}
 
-    /* Top bar MLand */
-    .topbar {
-      background: #0f172a;
-      color: #cbd5e1;
-      font-size: 0.8rem;
-      padding: 0.55rem 0;
-    }
-    .topbar-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .topbar strong { color: #38bdf8; }
-    .topbar .lang-btn {
-      background: rgba(255,255,255,0.1);
-      border: none;
-      color: #e2e8f0;
-      font-weight: 600;
-      font-size: 0.75rem;
-      padding: 0.3rem 0.65rem;
-      border-radius: 999px;
-      cursor: pointer;
-    }
+.topbar{background:#0f172a;color:#cbd5e1;font-size:.8rem;padding:.55rem 0}
+.topbar-inner{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.topbar strong{color:#38bdf8}
+.lang-btn{background:rgba(255,255,255,.12);border:none;color:#e2e8f0;font-weight:600;font-size:.75rem;padding:.3rem .7rem;border-radius:999px;cursor:pointer}
 
-    /* Sticky nav journey */
-    .journey-nav {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      padding: 0.65rem 0;
-    }
-    .journey-steps {
-      display: flex;
-      gap: 0.5rem;
-      overflow-x: auto;
-      font-size: 0.82rem;
-      font-weight: 600;
-    }
-    .journey-steps a {
-      white-space: nowrap;
-      padding: 0.4rem 0.85rem;
-      border-radius: 999px;
-      color: var(--muted);
-      background: #f1f5f9;
-    }
-    .journey-steps a:hover, .journey-steps a.active {
-      background: var(--ocean);
-      color: var(--white);
-    }
+.journey-nav{position:sticky;top:0;z-index:40;background:var(--white);border-bottom:1px solid var(--border);padding:.6rem 0}
+.journey-steps{display:flex;gap:.45rem;overflow-x:auto;font-size:.8rem;font-weight:600;-webkit-overflow-scrolling:touch}
+.journey-steps a{white-space:nowrap;padding:.38rem .8rem;border-radius:999px;color:var(--muted);background:#f1f5f9}
+.journey-steps a:hover{background:var(--ocean);color:#fff}
 
-    /* Intro */
-    .intro {
-      background: linear-gradient(160deg, var(--ocean) 0%, #075985 100%);
-      color: var(--white);
-      padding: 2.5rem 0 2.75rem;
-    }
-    .intro h1 {
-      font-size: clamp(1.45rem, 3.5vw, 1.95rem);
-      line-height: 1.25;
-      margin-bottom: 0.65rem;
-    }
-    .intro p { opacity: 0.92; max-width: 38rem; margin-bottom: 1.25rem; }
-    .intro-actions { display: flex; flex-wrap: wrap; gap: 0.65rem; }
-    .btn-wa {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: var(--wa);
-      color: var(--white);
-      font-weight: 600;
-      padding: 0.75rem 1.2rem;
-      border-radius: 999px;
-      font-size: 0.92rem;
-    }
-    .btn-ghost {
-      display: inline-flex;
-      background: transparent;
-      color: var(--white);
-      border: 1.5px solid rgba(255,255,255,0.5);
-      font-weight: 600;
-      padding: 0.75rem 1.2rem;
-      border-radius: 999px;
-      font-size: 0.92rem;
-    }
+.intro{background:linear-gradient(160deg,var(--ocean) 0%,#075985 100%);color:#fff;padding:2.4rem 0 2.6rem}
+.intro h1{font-size:clamp(1.4rem,3.5vw,1.9rem);line-height:1.25;margin-bottom:.6rem}
+.intro p{opacity:.93;max-width:40rem;margin-bottom:1.2rem}
+.intro-actions{display:flex;flex-wrap:wrap;gap:.6rem}
+.btn-wa{display:inline-flex;align-items:center;gap:.4rem;background:var(--wa);color:#fff;font-weight:600;padding:.72rem 1.15rem;border-radius:999px;font-size:.9rem}
+.btn-ghost{display:inline-flex;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55);font-weight:600;padding:.72rem 1.15rem;border-radius:999px;font-size:.9rem}
 
-    /* Section blocks */
-    .block {
-      padding: 2.75rem 0;
-    }
-    .block-alt { background: var(--white); }
-    .block-sand { background: var(--sand); }
-    .block-dark {
-      background: var(--ocean);
-      color: var(--white);
-    }
-    .block h2 {
-      font-size: 1.35rem;
-      color: var(--ocean);
-      margin-bottom: 0.4rem;
-    }
-    .block-dark h2 { color: var(--white); }
-    .block .lead {
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-      max-width: 36rem;
-    }
-    .block-dark .lead { color: rgba(255,255,255,0.85); }
+.block{padding:2.6rem 0}
+.block-alt{background:var(--white)}
+.block-sand{background:var(--sand)}
+.block h2{font-size:1.3rem;color:var(--ocean);margin-bottom:.35rem}
+.block .lead{color:var(--muted);margin-bottom:1.4rem;max-width:38rem}
 
-    /* Demo site chrome */
-    .demo-frame {
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-      background: var(--white);
-      box-shadow: 0 12px 40px rgba(15,23,42,0.08);
-    }
-    .demo-chrome {
-      background: #f1f5f9;
-      padding: 0.55rem 0.85rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-    .demo-dots span {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #cbd5e1;
-      margin-right: 3px;
-    }
-    .demo-dots span:nth-child(1) { background: #f87171; }
-    .demo-dots span:nth-child(2) { background: #fbbf24; }
-    .demo-dots span:nth-child(3) { background: #34d399; }
+/* ===== DEMO SITE ===== */
+.demo-frame{border:1px solid var(--border);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 16px 48px rgba(15,23,42,.1)}
+.demo-chrome{background:#f1f5f9;padding:.5rem .85rem;display:flex;align-items:center;gap:.5rem;border-bottom:1px solid var(--border);font-size:.75rem;color:var(--muted)}
+.demo-dots span{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:3px}
+.demo-dots span:nth-child(1){background:#f87171}
+.demo-dots span:nth-child(2){background:#fbbf24}
+.demo-dots span:nth-child(3){background:#34d399}
 
-    /* Mini site styles inside demo */
-    .site-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.85rem 1.15rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .site-brand { font-weight: 700; color: var(--ocean); }
-    .site-brand span { color: var(--teal); }
-    .site-nav {
-      display: flex;
-      gap: 0.85rem;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--muted);
-      align-items: center;
-    }
-    .site-nav .pill {
-      background: var(--wa);
-      color: var(--white);
-      padding: 0.35rem 0.75rem;
-      border-radius: 999px;
-      font-size: 0.78rem;
-    }
-    .site-hero {
-      min-height: 280px;
-      background:
-        linear-gradient(180deg, rgba(12,74,110,0.3) 0%, rgba(12,74,110,0.82) 100%),
-        url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1400&q=80') center/cover;
-      color: var(--white);
-      display: flex;
-      align-items: flex-end;
-      padding: 1.75rem 1.25rem;
-    }
-    .site-hero h3 {
-      font-size: clamp(1.2rem, 3vw, 1.55rem);
-      line-height: 1.2;
-      margin-bottom: 0.4rem;
-    }
-    .site-hero p { font-size: 0.9rem; opacity: 0.92; margin-bottom: 0.9rem; max-width: 28rem; }
-    .site-hero .cta {
-      display: inline-block;
-      background: var(--wa);
-      color: var(--white);
-      font-weight: 600;
-      font-size: 0.85rem;
-      padding: 0.55rem 1rem;
-      border-radius: 999px;
-    }
-    .site-section { padding: 1.5rem 1.15rem; }
-    .site-section h4 {
-      font-size: 1.05rem;
-      color: var(--ocean);
-      margin-bottom: 0.85rem;
-    }
-    .tours-mini {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 0.85rem;
-    }
-    .tour-mini {
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    .tour-mini .img {
-      height: 100px;
-      background-size: cover;
-      background-position: center;
-    }
-    .tour-mini .body { padding: 0.75rem; }
-    .tour-mini h5 { font-size: 0.88rem; color: var(--ocean); margin-bottom: 0.2rem; }
-    .tour-mini p { font-size: 0.75rem; color: var(--muted); }
-    .tour-mini .price { font-weight: 700; color: var(--teal); font-size: 0.88rem; margin-top: 0.35rem; }
-    .tour-mini .btn {
-      display: block;
-      text-align: center;
-      margin-top: 0.5rem;
-      background: var(--ocean);
-      color: var(--white);
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 0.45rem;
-      border-radius: 6px;
-    }
-    .why-mini {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 0.65rem;
-      background: var(--sand);
-      padding: 1.25rem 1.15rem;
-    }
-    .why-mini div {
-      background: var(--white);
-      border-radius: 10px;
-      padding: 0.75rem;
-      border: 1px solid #e0f2fe;
-      font-size: 0.78rem;
-    }
-    .why-mini strong { display: block; color: var(--ocean); margin-bottom: 0.2rem; font-size: 0.82rem; }
-    .contact-mini {
-      padding: 1.25rem 1.15rem 1.5rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-    @media (max-width: 640px) {
-      .contact-mini { grid-template-columns: 1fr; }
-      .site-nav span:not(.pill) { display: none; }
-    }
-    .contact-mini .info {
-      background: var(--sand);
-      border-radius: 10px;
-      padding: 1rem;
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-    .contact-mini .info strong { color: var(--ocean); display: block; margin-bottom: 0.35rem; }
-    .contact-mini .map {
-      background: linear-gradient(135deg, #bae6fd, #e0f2fe);
-      border-radius: 10px;
-      min-height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--ocean);
-      text-align: center;
-      padding: 0.75rem;
-    }
+.ds-header{display:flex;justify-content:space-between;align-items:center;padding:.7rem 1.1rem;border-bottom:1px solid var(--border);gap:.75rem;flex-wrap:wrap}
+.ds-logo{height:36px;width:auto}
+.ds-nav{display:flex;gap:.75rem;align-items:center;font-size:.8rem;font-weight:500;color:var(--muted)}
+.ds-nav .pill{background:var(--wa);color:#fff;padding:.32rem .7rem;border-radius:999px;font-size:.76rem}
 
-    /* Problems / benefits */
-    .list { list-style: none; display: grid; gap: 0.55rem; }
-    .list li {
-      position: relative;
-      padding-left: 1.5rem;
-      font-size: 0.92rem;
-      color: var(--muted);
-    }
-    .list.bad li::before { content: "✕"; position: absolute; left: 0; color: #dc2626; font-weight: 700; }
-    .list.good li::before { content: "✓"; position: absolute; left: 0; color: #059669; font-weight: 700; }
+.ds-hero{position:relative;min-height:340px;display:flex;align-items:flex-end;color:#fff;
+background:linear-gradient(180deg,rgba(11,61,92,.2) 0%,rgba(11,61,92,.85) 100%),url('https://static.wixstatic.com/media/73fccb_529deac8ad4844b2a3ccf8c74b3b6c9e~mv2.jpg/v1/fit/w_1600,h_900,q_90/73fccb_529deac8ad4844b2a3ccf8c74b3b6c9e~mv2.jpg') center/cover no-repeat}
+.ds-hero-inner{padding:2rem 1.25rem 1.75rem;max-width:34rem}
+.ds-hero .kicker{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:.25rem .7rem;font-size:.75rem;margin-bottom:.65rem}
+.ds-hero h3{font-size:clamp(1.25rem,3.2vw,1.7rem);line-height:1.2;margin-bottom:.45rem}
+.ds-hero p{font-size:.92rem;opacity:.95;margin-bottom:1rem}
+.ds-hero .cta{display:inline-block;background:var(--wa);color:#fff;font-weight:600;font-size:.88rem;padding:.6rem 1.1rem;border-radius:999px}
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
-    }
-    @media (max-width: 700px) { .grid-2 { grid-template-columns: 1fr; } }
+.ds-section{padding:1.5rem 1.15rem}
+.ds-section h4{font-size:1.08rem;color:var(--ocean);margin-bottom:.25rem}
+.ds-section .sub{font-size:.85rem;color:var(--muted);margin-bottom:1rem}
 
-    .card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.15rem;
-    }
-    .card h3 { font-size: 0.95rem; color: var(--ocean); margin-bottom: 0.5rem; }
+.tours-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1rem}
+.t-card{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff;display:flex;flex-direction:column;transition:box-shadow .2s}
+.t-card:hover{box-shadow:0 8px 24px rgba(11,61,92,.12)}
+.t-card .img{height:150px;background-size:cover;background-position:center}
+.t-card .body{padding:.9rem;display:flex;flex-direction:column;flex:1;gap:.3rem}
+.t-card h5{font-size:.95rem;color:var(--ocean)}
+.t-card .meta{font-size:.78rem;color:var(--muted)}
+.t-card .price{font-weight:700;color:var(--teal);font-size:.95rem;margin-top:auto;padding-top:.35rem}
+.t-card .btn{display:block;text-align:center;margin-top:.5rem;background:var(--ocean);color:#fff;font-size:.8rem;font-weight:600;padding:.5rem;border-radius:8px}
 
-    /* Price */
-    .price-box {
-      border: 2px solid var(--teal);
-      border-radius: 16px;
-      padding: 1.5rem;
-      background: linear-gradient(180deg, #f0fdfa, var(--white));
-      text-align: center;
-      max-width: 420px;
-      margin: 0 auto;
-    }
-    .price-box .label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--teal);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .price-box .pack { font-weight: 700; margin: 0.35rem 0 0.15rem; color: var(--ocean); }
-    .price-box .amount {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--ocean);
-      line-height: 1.1;
-    }
-    .price-box ul {
-      list-style: none;
-      text-align: left;
-      margin: 1.1rem 0 0;
-      display: grid;
-      gap: 0.4rem;
-    }
-    .price-box li {
-      font-size: 0.88rem;
-      color: var(--muted);
-      padding-left: 1.3rem;
-      position: relative;
-    }
-    .price-box li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: var(--teal);
-      font-weight: 700;
-    }
-    .optional {
-      margin-top: 1rem;
-      font-size: 0.88rem;
-      color: var(--muted);
-      text-align: center;
-    }
+.why-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.75rem;background:var(--sand);padding:1.35rem 1.15rem}
+.why-g div{background:#fff;border-radius:10px;padding:.85rem;border:1px solid #e0f2fe;font-size:.8rem;color:var(--muted)}
+.why-g strong{display:block;color:var(--ocean);font-size:.86rem;margin-bottom:.2rem}
 
-    /* Final CTA */
-    .final-cta {
-      text-align: center;
-      padding: 2.5rem 0 3rem;
-    }
-    .final-cta h2 {
-      font-size: 1.4rem;
-      color: var(--ocean);
-      margin-bottom: 0.5rem;
-    }
-    .final-cta p { color: var(--muted); margin-bottom: 1.25rem; }
-    .final-cta .btn-wa { font-size: 1rem; padding: 0.9rem 1.5rem; }
-    .final-note { margin-top: 0.85rem; font-size: 0.85rem; color: var(--muted); }
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;padding:0 1.15rem 1.25rem}
+.gallery div{height:110px;border-radius:10px;background-size:cover;background-position:center}
+@media(max-width:640px){.gallery{grid-template-columns:repeat(2,1fr)}.gallery div{height:100px}}
 
-    footer {
-      background: #0f172a;
-      color: #94a3b8;
-      text-align: center;
-      padding: 1.5rem 1rem;
-      font-size: 0.85rem;
-    }
-    footer strong { color: #e2e8f0; }
+.reviews-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.85rem}
+.rev{border:1px solid var(--border);border-radius:12px;padding:1rem;background:#fff}
+.stars{color:#f59e0b;letter-spacing:1px;font-size:.85rem;margin-bottom:.35rem}
+.rev p{font-size:.86rem;color:var(--muted);margin-bottom:.5rem}
+.rev strong{font-size:.8rem;color:var(--ocean)}
 
-    .float-wa {
-      position: fixed;
-      bottom: 1.15rem;
-      right: 1.15rem;
-      z-index: 50;
-      width: 54px;
-      height: 54px;
-      border-radius: 50%;
-      background: var(--wa);
-      color: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      box-shadow: 0 6px 20px rgba(37,211,102,0.4);
-    }
+.about-band{background:var(--ocean);color:#fff;padding:1.5rem 1.15rem;display:grid;grid-template-columns:1.4fr 1fr;gap:1.25rem;align-items:center}
+@media(max-width:700px){.about-band{grid-template-columns:1fr}}
+.about-band h4{font-size:1.05rem;margin-bottom:.4rem}
+.about-band p{font-size:.88rem;opacity:.92}
+.about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+.about-stats div{text-align:center;background:rgba(255,255,255,.12);border-radius:10px;padding:.75rem .4rem}
+.about-stats .n{font-size:1.4rem;font-weight:700;line-height:1.1}
+.about-stats .l{font-size:.72rem;opacity:.85;margin-top:.15rem}
 
-    .note {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-top: 0.85rem;
-      padding: 0.7rem 0.85rem;
-      background: #fffbeb;
-      border: 1px solid #fde68a;
-      border-radius: 8px;
-    }
-  </style>
+.contact-g{display:grid;grid-template-columns:1.1fr 1fr;gap:1rem;padding:1.25rem 1.15rem 1.5rem}
+@media(max-width:640px){.contact-g{grid-template-columns:1fr}.ds-nav span:not(.pill){display:none}}
+.contact-info{background:var(--sand);border-radius:12px;padding:1.1rem;font-size:.86rem;color:var(--muted)}
+.contact-info strong{color:var(--ocean);display:block;margin-bottom:.35rem;font-size:.92rem}
+.contact-info .wa-link{display:inline-block;margin-top:.85rem;background:var(--wa);color:#fff;font-weight:600;font-size:.84rem;padding:.5rem .95rem;border-radius:999px}
+.map-ph{background:linear-gradient(135deg,#bae6fd,#e0f2fe);border-radius:12px;min-height:160px;display:flex;align-items:center;justify-content:center;font-weight:600;color:var(--ocean);text-align:center;padding:1rem;font-size:.9rem}
+
+.ds-footer{background:#0f172a;color:#94a3b8;padding:1rem 1.15rem;font-size:.8rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.ds-footer strong{color:#e2e8f0}
+
+/* rest of proposal */
+.list{list-style:none;display:grid;gap:.5rem}
+.list li{position:relative;padding-left:1.45rem;font-size:.9rem;color:var(--muted)}
+.list.bad li::before{content:"✕";position:absolute;left:0;color:#dc2626;font-weight:700}
+.list.good li::before{content:"✓";position:absolute;left:0;color:#059669;font-weight:700}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.15rem}
+@media(max-width:700px){.grid-2{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.1rem}
+.card h3{font-size:.95rem;color:var(--ocean);margin-bottom:.5rem}
+
+.price-box{border:2px solid var(--teal);border-radius:16px;padding:1.5rem;background:linear-gradient(180deg,#f0fdfa,#fff);text-align:center;max-width:420px;margin:0 auto}
+.price-box .label{font-size:.78rem;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:.04em}
+.price-box .pack{font-weight:700;margin:.3rem 0 .1rem;color:var(--ocean)}
+.price-box .amount{font-size:2.5rem;font-weight:700;color:var(--ocean);line-height:1.1}
+.price-box ul{list-style:none;text-align:left;margin:1rem 0 0;display:grid;gap:.38rem}
+.price-box li{font-size:.86rem;color:var(--muted);padding-left:1.25rem;position:relative}
+.price-box li::before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:700}
+.optional{margin-top:1rem;font-size:.86rem;color:var(--muted);text-align:center}
+
+.final-cta{text-align:center;padding:2.4rem 0 2.8rem}
+.final-cta h2{font-size:1.35rem;color:var(--ocean);margin-bottom:.45rem}
+.final-cta p{color:var(--muted);margin-bottom:1.2rem}
+.final-note{margin-top:.8rem;font-size:.84rem;color:var(--muted)}
+
+footer{background:#0f172a;color:#94a3b8;text-align:center;padding:1.4rem 1rem;font-size:.84rem}
+footer strong{color:#e2e8f0}
+.float-wa{position:fixed;bottom:1.1rem;right:1.1rem;z-index:50;width:54px;height:54px;border-radius:50%;background:var(--wa);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.45rem;box-shadow:0 6px 20px rgba(37,211,102,.4)}
+.note{font-size:.84rem;color:var(--muted);margin-top:.9rem;padding:.7rem .85rem;background:#fffbeb;border:1px solid #fde68a;border-radius:8px}
+</style>
 </head>
 <body>
 
@@ -447,23 +156,22 @@
   </div>
 </nav>
 
-<!-- INTRO -->
 <div class="intro">
   <div class="container">
     <h1 data-i18n="intro-title">Así puede quedar la web de Rosita Tours</h1>
-    <p data-i18n="intro-text">Abajo verás una vista previa del rediseño (orientado a que los turistas reserven por WhatsApp), luego la propuesta y cómo avanzar. Los detalles se ajustan juntos en una breve reunión.</p>
+    <p data-i18n="intro-text">Vista previa elaborada con fotos de su propio sitio, testimonios y botones de reserva por WhatsApp. Abajo: demo → situación actual → qué incluye → inversión → cómo avanzar. Los detalles se ajustan en una reunión corta.</p>
     <div class="intro-actions">
       <a class="btn-ghost" href="#demo" data-i18n="intro-see">Ver cómo quedaría ↓</a>
-      <a class="btn-wa" href="https://wa.me/593978868363?text=Hola%2C%20vi%20la%20propuesta%20de%20Rosita%20Tours%20y%20quiero%20avanzar" target="_blank" rel="noopener" data-i18n="intro-wa">Quiero esto · WhatsApp</a>
+      <a class="btn-wa" href="https://wa.me/593978868363?text=Hola%2C%20vi%20la%20propuesta%20completa%20de%20Rosita%20Tours%20y%20quiero%20avanzar" target="_blank" rel="noopener" data-i18n="intro-wa">Quiero esto · WhatsApp</a>
     </div>
   </div>
 </div>
 
-<!-- 1. DEMO -->
+<!-- 1 DEMO -->
 <section class="block block-alt" id="demo">
   <div class="container">
     <h2 data-i18n="demo-title">1. Vista previa de la nueva web</h2>
-    <p class="lead" data-i18n="demo-lead">Esto es un mockup. Fotos, precios exactos y textos se afinan con ustedes. La idea es que el visitante reserve en menos de un minuto.</p>
+    <p class="lead" data-i18n="demo-lead">Diseñada para que el turista confíe y reserve. Usa imágenes de su página actual; en la versión final se pueden sumar más fotos del yate y de cada salida.</p>
 
     <div class="demo-frame">
       <div class="demo-chrome">
@@ -471,92 +179,175 @@
         <span>rositatours.com · demo</span>
       </div>
 
-      <div class="site-header">
-        <div class="site-brand">Rosita <span>Tours</span></div>
-        <div class="site-nav">
+      <div class="ds-header">
+        <img class="ds-logo" src="https://static.wixstatic.com/media/73fccb_6829a4a230f647c0a20acba067732651~mv2.png/v1/fill/w_240,h_57,al_c,q_85,usm_0.66_1.00_0.01/LOGO-ROSITA.png" alt="Rosita Tours" width="160" height="38">
+        <div class="ds-nav">
           <span data-i18n="nav-tours">Tours</span>
           <span data-i18n="nav-why">Por qué nosotros</span>
+          <span data-i18n="nav-rev">Reseñas</span>
           <span data-i18n="nav-contact">Contacto</span>
           <span class="pill">WhatsApp</span>
         </div>
       </div>
 
-      <div class="site-hero">
-        <div>
+      <div class="ds-hero">
+        <div class="ds-hero-inner">
+          <span class="kicker" data-i18n="hero-kicker">Puerto López · Frente al muelle turístico</span>
           <h3 data-i18n="hero-title">Tours en yate por las islas y el mar de Manabí</h3>
-          <p data-i18n="hero-text">Isla Salango, Isla de la Plata, ballenas y pesca deportiva. Más de 10 años en Puerto López.</p>
+          <p data-i18n="hero-text">Isla Salango, Isla de la Plata, avistamiento de ballenas y pesca deportiva. Más de 10 años mostrando lo mejor de la costa.</p>
           <span class="cta" data-i18n="hero-cta">Reservar por WhatsApp</span>
         </div>
       </div>
 
-      <div class="site-section">
+      <div class="ds-section">
         <h4 data-i18n="tours-title">Nuestros tours</h4>
-        <div class="tours-mini">
-          <div class="tour-mini">
-            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=600&q=80')"></div>
+        <p class="sub" data-i18n="tours-sub">Elige tu experiencia. Precios de referencia — confirmamos cupo por WhatsApp.</p>
+        <div class="tours-g">
+          <article class="t-card">
+            <div class="img" style="background-image:url('https://static.wixstatic.com/media/73fccb_63c3008cadb74d17ba8c1d664735443a~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80/foto-isla-salango_edited.jpg')"></div>
             <div class="body">
               <h5 data-i18n="t1">Tour Isla Salango</h5>
-              <p data-i18n="t1m">Snorkel · Kayak · ~6–7 h</p>
+              <p class="meta" data-i18n="t1m">Snorkel · Kayak · Playa · ~6–7 h</p>
+              <p class="meta" data-i18n="t1d">Aventura a bordo del yate: islotes, snorkel y la belleza de Salango.</p>
               <div class="price">desde $35</div>
               <span class="btn" data-i18n="book">Reservar este tour</span>
             </div>
-          </div>
-          <div class="tour-mini">
-            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80')"></div>
+          </article>
+          <article class="t-card">
+            <div class="img" style="background-image:url('https://static.wixstatic.com/media/73fccb_4a68bd5fa3af4521908bf81c1227be7e~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80/IMG-20220306-WA0009.jpg')"></div>
             <div class="body">
               <h5 data-i18n="t2">Tour 4 Islas</h5>
-              <p data-i18n="t2m">Día completo · 3 islotes + isla</p>
+              <p class="meta" data-i18n="t2m">3 islotes + 1 isla · Día completo</p>
+              <p class="meta" data-i18n="t2d">Recorrido por los sitios más bellos frente a Puerto López.</p>
               <div class="price">desde $35</div>
               <span class="btn" data-i18n="book">Reservar este tour</span>
             </div>
-          </div>
-          <div class="tour-mini">
-            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1551244072-5d12893278ab?auto=format&fit=crop&w=600&q=80')"></div>
+          </article>
+          <article class="t-card">
+            <div class="img" style="background-image:url('https://static.wixstatic.com/media/73fccb_9573c5622d2241559fbb2b92597f7932~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80/Isla%20de%20la%20Plata%20_3_edited.jpg')"></div>
             <div class="body">
               <h5 data-i18n="t3">Isla de la Plata</h5>
-              <p data-i18n="t3m">Mini Galápagos · Caminata + snorkel</p>
+              <p class="meta" data-i18n="t3m">“Mini Galápagos” · Caminata + snorkel</p>
+              <p class="meta" data-i18n="t3d">Piqueros de patas azules y fauna única del Parque Machalilla.</p>
               <div class="price">desde $40</div>
               <span class="btn" data-i18n="book">Reservar este tour</span>
             </div>
-          </div>
-          <div class="tour-mini">
-            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1568430462989-44163eb1752f?auto=format&fit=crop&w=600&q=80')"></div>
+          </article>
+          <article class="t-card">
+            <div class="img" style="background-image:url('https://static.wixstatic.com/media/73fccb_e33888db9d8f4996a4512fa1c399fd7a~mv2.jpeg/v1/fill/w_600,h_400,al_c,q_80/vallarta-scaled.jpeg')"></div>
             <div class="body">
               <h5 data-i18n="t4">Avistamiento de ballenas</h5>
-              <p data-i18n="t4m">Solo jun–oct · Temporada</p>
-              <div class="price" data-i18n="ask">Consultar</div>
+              <p class="meta" data-i18n="t4m">Solo jun–oct · Espectáculo natural</p>
+              <p class="meta" data-i18n="t4d">Ballenas jorobadas en temporada en el Pacífico de Manabí.</p>
+              <div class="price" data-i18n="ask">Consultar temporada</div>
               <span class="btn" data-i18n="book">Reservar este tour</span>
             </div>
-          </div>
+          </article>
+          <article class="t-card">
+            <div class="img" style="background-image:url('https://static.wixstatic.com/media/73fccb_7a55a3756b6b4c37a7eb3a72bde75efe~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80/IMG-20210923-WA0066.jpg')"></div>
+            <div class="body">
+              <h5 data-i18n="t5">Pesca deportiva</h5>
+              <p class="meta" data-i18n="t5m">Marlin · Altura · Todos los niveles</p>
+              <p class="meta" data-i18n="t5d">Salidas con equipo y tripulación experimentada.</p>
+              <div class="price" data-i18n="ask2">Consultar por WhatsApp</div>
+              <span class="btn" data-i18n="book">Reservar este tour</span>
+            </div>
+          </article>
+          <article class="t-card">
+            <div class="img" style="background-image:url('https://static.wixstatic.com/media/73fccb_85ce98a22d074a62a52d52bda8cd7018~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80/IMG-20211113-WA0015.jpg')"></div>
+            <div class="body">
+              <h5 data-i18n="t6">Tours privados / grupos</h5>
+              <p class="meta" data-i18n="t6m">Familias · Grupos · Charter</p>
+              <p class="meta" data-i18n="t6d">Salida a tu medida: horario, itinerario y ritmo del grupo.</p>
+              <div class="price" data-i18n="ask3">Cotización personalizada</div>
+              <span class="btn" data-i18n="book">Reservar este tour</span>
+            </div>
+          </article>
         </div>
       </div>
 
-      <div class="why-mini">
-        <div><strong data-i18n="w1t">+10 años</strong><span data-i18n="w1d">Familias y turistas</span></div>
-        <div><strong data-i18n="w2t">Frente al muelle</strong><span data-i18n="w2d">Puerto López</span></div>
+      <div class="why-g">
+        <div><strong data-i18n="w1t">+10 años</strong><span data-i18n="w1d">Familias, grupos y turistas</span></div>
+        <div><strong data-i18n="w2t">Frente al muelle</strong><span data-i18n="w2d">Malecón · Puerto López</span></div>
         <div><strong data-i18n="w3t">Tours reales</strong><span data-i18n="w3d">Islas, ballenas, pesca</span></div>
         <div><strong data-i18n="w4t">Reserva fácil</strong><span data-i18n="w4d">WhatsApp el mismo día</span></div>
       </div>
 
-      <div class="contact-mini">
-        <div class="info">
-          <strong data-i18n="where">Dónde estamos</strong>
-          <span data-i18n="addr">Malecón Julio Izurieta · Frente al Muelle Turístico · Puerto López</span><br><br>
-          WhatsApp: +593 98 699 8485
+      <div class="ds-section" style="padding-bottom:.5rem">
+        <h4 data-i18n="gal-title">Momentos a bordo</h4>
+        <p class="sub" data-i18n="gal-sub">Fotos reales de sus salidas</p>
+      </div>
+      <div class="gallery">
+        <div style="background-image:url('https://static.wixstatic.com/media/73fccb_63c3008cadb74d17ba8c1d664735443a~mv2.jpg/v1/fill/w_400,h_300,al_c,q_80/foto-isla-salango_edited.jpg')"></div>
+        <div style="background-image:url('https://static.wixstatic.com/media/73fccb_9573c5622d2241559fbb2b92597f7932~mv2.jpg/v1/fill/w_400,h_300,al_c,q_80/Isla%20de%20la%20Plata%20_3_edited.jpg')"></div>
+        <div style="background-image:url('https://static.wixstatic.com/media/73fccb_4a68bd5fa3af4521908bf81c1227be7e~mv2.jpg/v1/fill/w_400,h_300,al_c,q_80/IMG-20220306-WA0009.jpg')"></div>
+        <div style="background-image:url('https://static.wixstatic.com/media/73fccb_7a55a3756b6b4c37a7eb3a72bde75efe~mv2.jpg/v1/fill/w_400,h_300,al_c,q_80/IMG-20210923-WA0066.jpg')"></div>
+      </div>
+
+      <div class="about-band">
+        <div>
+          <h4 data-i18n="about-title">Sobre Rosita Tours</h4>
+          <p data-i18n="about-text">Empresa familiar y profesional frente al Muelle Turístico de Puerto López. Atendemos grupos, familias y viajeros nacionales y extranjeros con seguridad y cercanía.</p>
         </div>
-        <div class="map" data-i18n="map">📍 Google Maps<br><small>(versión final)</small></div>
+        <div class="about-stats">
+          <div><div class="n">10+</div><div class="l" data-i18n="stat1">Años</div></div>
+          <div><div class="n">6</div><div class="l" data-i18n="stat2">Tours</div></div>
+          <div><div class="n">100%</div><div class="l" data-i18n="stat3">Local</div></div>
+        </div>
+      </div>
+
+      <div class="ds-section">
+        <h4 data-i18n="rev-title">Lo que dicen quienes ya navegaron</h4>
+        <p class="sub" data-i18n="rev-sub">Opiniones reales de viajeros</p>
+        <div class="reviews-g">
+          <div class="rev">
+            <div class="stars">★★★★★</div>
+            <p data-i18n="r1">“Excelente servicio, guías experimentados. Muy buena aventura en Isla Salango. Totalmente recomendado.”</p>
+            <strong>— B. C.</strong>
+          </div>
+          <div class="rev">
+            <div class="stars">★★★★★</div>
+            <p data-i18n="r2">“Profesionalidad, calidez y cercanía. Hasta se preocupan si alguien se marea. Volvería sin duda.”</p>
+            <strong>— M. Q.</strong>
+          </div>
+          <div class="rev">
+            <div class="stars">★★★★★</div>
+            <p data-i18n="r3">“El personal del yate muy carismático. Experiencia inolvidable en Isla de la Plata y alrededores.”</p>
+            <strong>— K. C.</strong>
+          </div>
+          <div class="rev">
+            <div class="stars">★★★★★</div>
+            <p data-i18n="r4">“Excelente compañía de turismo, personal muy amable. Colaboran con todo y llenan las expectativas.”</p>
+            <strong>— G. V.</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-g">
+        <div class="contact-info">
+          <strong data-i18n="where">Dónde estamos</strong>
+          <span data-i18n="addr">Malecón Julio Izurieta<br>Frente a la entrada del Muelle Turístico<br>Puerto López, Manabí, Ecuador</span>
+          <p style="margin-top:.75rem"><strong>WhatsApp</strong><br>+593 98 699 8485<br>+593 99 763 8407</p>
+          <a class="wa-link" href="https://wa.me/593986998485?text=Hola%2C%20quiero%20información%20sobre%20los%20tours" target="_blank" rel="noopener" data-i18n="contact-cta">Escribir por WhatsApp</a>
+        </div>
+        <div class="map-ph" data-i18n="map">📍 Google Maps<br><small style="font-weight:500;opacity:.85">(se integra en la versión final)</small></div>
+      </div>
+
+      <div class="ds-footer">
+        <div><strong>Rosita Tours</strong> · <span data-i18n="foot-tag">Tours en yate · Puerto López</span></div>
+        <div data-i18n="foot-demo">Demo de rediseño · MLand Software</div>
       </div>
     </div>
 
-    <p class="note" data-i18n="demo-note">Demo orientativo. En la versión final usamos sus fotos del yate, precios reales, horarios y textos que ustedes aprueben.</p>
+    <p class="note" data-i18n="demo-note">Demo con imágenes de su sitio actual. En la versión final: más fotos del yate, precios y horarios exactos, mapa embebido y textos que ustedes aprueben.</p>
   </div>
 </section>
 
-<!-- 2. PROBLEMAS -->
+<!-- 2 -->
 <section class="block block-sand" id="problemas">
   <div class="container">
     <h2 data-i18n="prob-title">2. Situación actual de rositatours.com</h2>
-    <p class="lead" data-i18n="prob-lead">La web actual no refleja los +10 años de experiencia ni convierte visitas en reservas.</p>
+    <p class="lead" data-i18n="prob-lead">Tienen experiencia y buenas opiniones; la web no está a la altura para convertir visitas en reservas.</p>
     <div class="grid-2">
       <div class="card">
         <h3 data-i18n="prob-h">Lo que frena reservas hoy</h3>
@@ -570,47 +361,47 @@
       <div class="card">
         <h3 data-i18n="sol-h">Lo que cambia con el rediseño</h3>
         <ul class="list good">
-          <li data-i18n="s1">Cada tour con precio y botón de reserva</li>
+          <li data-i18n="s1">Cada tour con precio, foto y botón de reserva</li>
           <li data-i18n="s2">WhatsApp visible en toda la web</li>
           <li data-i18n="s3">Español + inglés, móvil primero</li>
-          <li data-i18n="s4">Ficha de Google Maps optimizada</li>
+          <li data-i18n="s4">Ficha de Google Maps optimizada + testimonios</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 3. INCLUYE -->
+<!-- 3 -->
 <section class="block block-alt" id="incluye">
   <div class="container">
     <h2 data-i18n="inc-title">3. Qué incluye el trabajo</h2>
-    <p class="lead" data-i18n="inc-lead">Todo orientado a más mensajes y reservas, no solo a “verse bonito”.</p>
+    <p class="lead" data-i18n="inc-lead">Orientado a más mensajes y reservas, no solo a “verse bonito”.</p>
     <ul class="list good">
-      <li data-i18n="i1">Rediseño completo de la web (estructura nueva, no solo colores)</li>
+      <li data-i18n="i1">Rediseño completo (estructura nueva, no solo colores)</li>
       <li data-i18n="i2">Páginas de tours listas para reservar por WhatsApp</li>
       <li data-i18n="i3">Versión en español e inglés</li>
-      <li data-i18n="i4">Optimización de la ficha de Google Business / Maps</li>
-      <li data-i18n="i5">Web rápida y adaptable a celular</li>
-      <li data-i18n="i6">Seguimiento 30 días + recomendaciones de reseñas</li>
+      <li data-i18n="i4">Sección de testimonios y galería con sus fotos</li>
+      <li data-i18n="i5">Optimización de ficha Google Business / Maps</li>
+      <li data-i18n="i6">Web rápida, móvil y seguimiento 30 días</li>
     </ul>
   </div>
 </section>
 
-<!-- 4. PRECIO -->
+<!-- 4 -->
 <section class="block block-sand" id="inversion">
   <div class="container">
-    <h2 data-i18n="inv-title" style="text-align:center;">4. Inversión</h2>
-    <p class="lead" style="margin-left:auto;margin-right:auto;text-align:center;" data-i18n="inv-lead">Pack que aplica a este rediseño orientado a resultados.</p>
+    <h2 data-i18n="inv-title" style="text-align:center">4. Inversión</h2>
+    <p class="lead" style="margin-inline:auto;text-align:center" data-i18n="inv-lead">Pack que aplica a este rediseño orientado a resultados.</p>
     <div class="price-box">
       <div class="label" data-i18n="pack-label">Pack recomendado</div>
       <div class="pack" data-i18n="pack-name">Presencia + Resultados</div>
       <div class="amount">$890</div>
-      <p style="font-size:0.88rem;color:var(--muted);" data-i18n="pack-once">Pago único · Dólares estadounidenses</p>
+      <p style="font-size:.86rem;color:var(--muted)" data-i18n="pack-once">Pago único · Dólares estadounidenses</p>
       <ul>
         <li data-i18n="pk1">Rediseño web orientado a reservas</li>
         <li data-i18n="pk2">Sitio bilingüe (ES / EN)</li>
         <li data-i18n="pk3">Google Business optimizado</li>
-        <li data-i18n="pk4">Contenido claro por tour + WhatsApp</li>
+        <li data-i18n="pk4">Tours, testimonios, galería y WhatsApp</li>
         <li data-i18n="pk5">Seguimiento 30 días y reseñas</li>
       </ul>
     </div>
@@ -618,7 +409,7 @@
   </div>
 </section>
 
-<!-- 5. CERRAR -->
+<!-- 5 -->
 <section class="block block-alt final-cta" id="cerrar">
   <div class="container">
     <h2 data-i18n="close-title">5. ¿Damos el siguiente paso?</h2>
@@ -635,106 +426,124 @@
 <a class="float-wa" href="https://wa.me/593978868363?text=Hola%2C%20vi%20la%20propuesta%20de%20Rosita%20Tours" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
 
 <script>
-const T = {
-es: {
-  topbar: '<strong>MLand Software</strong> · Propuesta para Rosita Tours · Un solo recorrido',
-  step1: '1. Cómo quedaría', step2: '2. Situación actual', step3: '3. Qué incluye', step4: '4. Inversión', step5: '5. Siguiente paso',
-  'intro-title': 'Así puede quedar la web de Rosita Tours',
-  'intro-text': 'Abajo verás una vista previa del rediseño (orientado a que los turistas reserven por WhatsApp), luego la propuesta y cómo avanzar. Los detalles se ajustan juntos en una breve reunión.',
-  'intro-see': 'Ver cómo quedaría ↓', 'intro-wa': 'Quiero esto · WhatsApp',
-  'demo-title': '1. Vista previa de la nueva web',
-  'demo-lead': 'Esto es un mockup. Fotos, precios exactos y textos se afinan con ustedes. La idea es que el visitante reserve en menos de un minuto.',
-  'nav-tours': 'Tours', 'nav-why': 'Por qué nosotros', 'nav-contact': 'Contacto',
-  'hero-title': 'Tours en yate por las islas y el mar de Manabí',
-  'hero-text': 'Isla Salango, Isla de la Plata, ballenas y pesca deportiva. Más de 10 años en Puerto López.',
-  'hero-cta': 'Reservar por WhatsApp', 'tours-title': 'Nuestros tours',
-  t1: 'Tour Isla Salango', t1m: 'Snorkel · Kayak · ~6–7 h',
-  t2: 'Tour 4 Islas', t2m: 'Día completo · 3 islotes + isla',
-  t3: 'Isla de la Plata', t3m: 'Mini Galápagos · Caminata + snorkel',
-  t4: 'Avistamiento de ballenas', t4m: 'Solo jun–oct · Temporada',
-  book: 'Reservar este tour', ask: 'Consultar',
-  w1t: '+10 años', w1d: 'Familias y turistas', w2t: 'Frente al muelle', w2d: 'Puerto López',
-  w3t: 'Tours reales', w3d: 'Islas, ballenas, pesca', w4t: 'Reserva fácil', w4d: 'WhatsApp el mismo día',
-  where: 'Dónde estamos', addr: 'Malecón Julio Izurieta · Frente al Muelle Turístico · Puerto López',
-  map: '📍 Google Maps<br><small>(versión final)</small>',
-  'demo-note': 'Demo orientativo. En la versión final usamos sus fotos del yate, precios reales, horarios y textos que ustedes aprueben.',
-  'prob-title': '2. Situación actual de rositatours.com',
-  'prob-lead': 'La web actual no refleja los +10 años de experiencia ni convierte visitas en reservas.',
-  'prob-h': 'Lo que frena reservas hoy', 'sol-h': 'Lo que cambia con el rediseño',
-  p1: 'Pocos botones claros de “Reservar por WhatsApp”', p2: 'Tours sin precio, duración ni “qué incluye” a la vista',
-  p3: 'Estructura genérica (Wix) y URLs confusas', p4: 'Poca optimización para aparecer en Google',
-  s1: 'Cada tour con precio y botón de reserva', s2: 'WhatsApp visible en toda la web',
-  s3: 'Español + inglés, móvil primero', s4: 'Ficha de Google Maps optimizada',
-  'inc-title': '3. Qué incluye el trabajo', 'inc-lead': 'Todo orientado a más mensajes y reservas, no solo a “verse bonito”.',
-  i1: 'Rediseño completo de la web (estructura nueva, no solo colores)',
-  i2: 'Páginas de tours listas para reservar por WhatsApp', i3: 'Versión en español e inglés',
-  i4: 'Optimización de la ficha de Google Business / Maps', i5: 'Web rápida y adaptable a celular',
-  i6: 'Seguimiento 30 días + recomendaciones de reseñas',
-  'inv-title': '4. Inversión', 'inv-lead': 'Pack que aplica a este rediseño orientado a resultados.',
-  'pack-label': 'Pack recomendado', 'pack-name': 'Presencia + Resultados', 'pack-once': 'Pago único · Dólares estadounidenses',
-  pk1: 'Rediseño web orientado a reservas', pk2: 'Sitio bilingüe (ES / EN)', pk3: 'Google Business optimizado',
-  pk4: 'Contenido claro por tour + WhatsApp', pk5: 'Seguimiento 30 días y reseñas',
-  optional: '<strong>Opcional después:</strong> Cuidado Continuo — $79/mes (actualizaciones y monitoreo).',
-  'close-title': '5. ¿Damos el siguiente paso?',
-  'close-text': 'Si les gusta la dirección del demo, coordinamos una llamada corta, ajustamos fotos, precios y textos, y arrancamos.',
-  'close-cta': 'Sí, quiero avanzar · WhatsApp',
-  'close-note': 'Benito Montoya · MLand Software · +593 97 886 8363 · 100% remoto'
+const T={
+es:{
+topbar:'<strong>MLand Software</strong> · Propuesta para Rosita Tours · Un solo recorrido',
+step1:'1. Cómo quedaría',step2:'2. Situación actual',step3:'3. Qué incluye',step4:'4. Inversión',step5:'5. Siguiente paso',
+'intro-title':'Así puede quedar la web de Rosita Tours',
+'intro-text':'Vista previa elaborada con fotos de su propio sitio, testimonios y botones de reserva por WhatsApp. Abajo: demo → situación actual → qué incluye → inversión → cómo avanzar. Los detalles se ajustan en una reunión corta.',
+'intro-see':'Ver cómo quedaría ↓','intro-wa':'Quiero esto · WhatsApp',
+'demo-title':'1. Vista previa de la nueva web',
+'demo-lead':'Diseñada para que el turista confíe y reserve. Usa imágenes de su página actual; en la versión final se pueden sumar más fotos del yate y de cada salida.',
+'nav-tours':'Tours','nav-why':'Por qué nosotros','nav-rev':'Reseñas','nav-contact':'Contacto',
+'hero-kicker':'Puerto López · Frente al muelle turístico',
+'hero-title':'Tours en yate por las islas y el mar de Manabí',
+'hero-text':'Isla Salango, Isla de la Plata, avistamiento de ballenas y pesca deportiva. Más de 10 años mostrando lo mejor de la costa.',
+'hero-cta':'Reservar por WhatsApp','tours-title':'Nuestros tours',
+'tours-sub':'Elige tu experiencia. Precios de referencia — confirmamos cupo por WhatsApp.',
+t1:'Tour Isla Salango',t1m:'Snorkel · Kayak · Playa · ~6–7 h',t1d:'Aventura a bordo del yate: islotes, snorkel y la belleza de Salango.',
+t2:'Tour 4 Islas',t2m:'3 islotes + 1 isla · Día completo',t2d:'Recorrido por los sitios más bellos frente a Puerto López.',
+t3:'Isla de la Plata',t3m:'“Mini Galápagos” · Caminata + snorkel',t3d:'Piqueros de patas azules y fauna única del Parque Machalilla.',
+t4:'Avistamiento de ballenas',t4m:'Solo jun–oct · Espectáculo natural',t4d:'Ballenas jorobadas en temporada en el Pacífico de Manabí.',
+t5:'Pesca deportiva',t5m:'Marlin · Altura · Todos los niveles',t5d:'Salidas con equipo y tripulación experimentada.',
+t6:'Tours privados / grupos',t6m:'Familias · Grupos · Charter',t6d:'Salida a tu medida: horario, itinerario y ritmo del grupo.',
+book:'Reservar este tour',ask:'Consultar temporada',ask2:'Consultar por WhatsApp',ask3:'Cotización personalizada',
+w1t:'+10 años',w1d:'Familias, grupos y turistas',w2t:'Frente al muelle',w2d:'Malecón · Puerto López',
+w3t:'Tours reales',w3d:'Islas, ballenas, pesca',w4t:'Reserva fácil',w4d:'WhatsApp el mismo día',
+'gal-title':'Momentos a bordo','gal-sub':'Fotos reales de sus salidas',
+'about-title':'Sobre Rosita Tours',
+'about-text':'Empresa familiar y profesional frente al Muelle Turístico de Puerto López. Atendemos grupos, familias y viajeros nacionales y extranjeros con seguridad y cercanía.',
+stat1:'Años',stat2:'Tours',stat3:'Local',
+'rev-title':'Lo que dicen quienes ya navegaron','rev-sub':'Opiniones reales de viajeros',
+r1:'“Excelente servicio, guías experimentados. Muy buena aventura en Isla Salango. Totalmente recomendado.”',
+r2:'“Profesionalidad, calidez y cercanía. Hasta se preocupan si alguien se marea. Volvería sin duda.”',
+r3:'“El personal del yate muy carismático. Experiencia inolvidable en Isla de la Plata y alrededores.”',
+r4:'“Excelente compañía de turismo, personal muy amable. Colaboran con todo y llenan las expectativas.”',
+where:'Dónde estamos',addr:'Malecón Julio Izurieta<br>Frente a la entrada del Muelle Turístico<br>Puerto López, Manabí, Ecuador',
+'contact-cta':'Escribir por WhatsApp',map:'📍 Google Maps<br><small style="font-weight:500;opacity:.85">(se integra en la versión final)</small>',
+'foot-tag':'Tours en yate · Puerto López','foot-demo':'Demo de rediseño · MLand Software',
+'demo-note':'Demo con imágenes de su sitio actual. En la versión final: más fotos del yate, precios y horarios exactos, mapa embebido y textos que ustedes aprueben.',
+'prob-title':'2. Situación actual de rositatours.com',
+'prob-lead':'Tienen experiencia y buenas opiniones; la web no está a la altura para convertir visitas en reservas.',
+'prob-h':'Lo que frena reservas hoy','sol-h':'Lo que cambia con el rediseño',
+p1:'Pocos botones claros de “Reservar por WhatsApp”',p2:'Tours sin precio, duración ni “qué incluye” a la vista',
+p3:'Estructura genérica (Wix) y URLs confusas',p4:'Poca optimización para aparecer en Google',
+s1:'Cada tour con precio, foto y botón de reserva',s2:'WhatsApp visible en toda la web',
+s3:'Español + inglés, móvil primero',s4:'Ficha de Google Maps optimizada + testimonios',
+'inc-title':'3. Qué incluye el trabajo','inc-lead':'Orientado a más mensajes y reservas, no solo a “verse bonito”.',
+i1:'Rediseño completo (estructura nueva, no solo colores)',i2:'Páginas de tours listas para reservar por WhatsApp',
+i3:'Versión en español e inglés',i4:'Sección de testimonios y galería con sus fotos',
+i5:'Optimización de ficha Google Business / Maps',i6:'Web rápida, móvil y seguimiento 30 días',
+'inv-title':'4. Inversión','inv-lead':'Pack que aplica a este rediseño orientado a resultados.',
+'pack-label':'Pack recomendado','pack-name':'Presencia + Resultados','pack-once':'Pago único · Dólares estadounidenses',
+pk1:'Rediseño web orientado a reservas',pk2:'Sitio bilingüe (ES / EN)',pk3:'Google Business optimizado',
+pk4:'Tours, testimonios, galería y WhatsApp',pk5:'Seguimiento 30 días y reseñas',
+optional:'<strong>Opcional después:</strong> Cuidado Continuo — $79/mes (actualizaciones y monitoreo).',
+'close-title':'5. ¿Damos el siguiente paso?',
+'close-text':'Si les gusta la dirección del demo, coordinamos una llamada corta, ajustamos fotos, precios y textos, y arrancamos.',
+'close-cta':'Sí, quiero avanzar · WhatsApp',
+'close-note':'Benito Montoya · MLand Software · +593 97 886 8363 · 100% remoto'
 },
-en: {
-  topbar: '<strong>MLand Software</strong> · Proposal for Rosita Tours · One continuous journey',
-  step1: '1. How it would look', step2: '2. Current situation', step3: '3. What’s included', step4: '4. Investment', step5: '5. Next step',
-  'intro-title': 'This is how Rosita Tours’ website could look',
-  'intro-text': 'Below you’ll see a redesign preview (built so tourists book on WhatsApp), then the offer and how to move forward. Details are adjusted together in a short meeting.',
-  'intro-see': 'See the preview ↓', 'intro-wa': 'I want this · WhatsApp',
-  'demo-title': '1. Preview of the new website',
-  'demo-lead': 'This is a mockup. Photos, exact prices and copy are refined with you. The goal is that a visitor books in under a minute.',
-  'nav-tours': 'Tours', 'nav-why': 'Why us', 'nav-contact': 'Contact',
-  'hero-title': 'Yacht tours to the islands and the sea of Manabí',
-  'hero-text': 'Salango Island, Isla de la Plata, whales and sport fishing. 10+ years in Puerto López.',
-  'hero-cta': 'Book on WhatsApp', 'tours-title': 'Our tours',
-  t1: 'Salango Island Tour', t1m: 'Snorkel · Kayak · ~6–7 h',
-  t2: '4 Islands Tour', t2m: 'Full day · 3 islets + island',
-  t3: 'Isla de la Plata', t3m: 'Mini Galápagos · Hike + snorkel',
-  t4: 'Whale watching', t4m: 'Jun–Oct only · Season',
-  book: 'Book this tour', ask: 'Ask us',
-  w1t: '10+ years', w1d: 'Families & travelers', w2t: 'At the pier', w2d: 'Puerto López',
-  w3t: 'Real tours', w3d: 'Islands, whales, fishing', w4t: 'Easy booking', w4d: 'WhatsApp same day',
-  where: 'Where we are', addr: 'Malecón Julio Izurieta · In front of the Tourist Pier · Puerto López',
-  map: '📍 Google Maps<br><small>(final version)</small>',
-  'demo-note': 'Indicative demo. The final version uses your yacht photos, real prices, schedules and copy you approve.',
-  'prob-title': '2. Current situation of rositatours.com',
-  'prob-lead': 'The current site does not reflect 10+ years of experience or turn visits into bookings.',
-  'prob-h': 'What holds bookings back today', 'sol-h': 'What the redesign changes',
-  p1: 'Few clear “Book on WhatsApp” buttons', p2: 'Tours without price, duration or inclusions in view',
-  p3: 'Generic Wix structure and confusing URLs', p4: 'Weak optimization to show up on Google',
-  s1: 'Each tour with price and book button', s2: 'WhatsApp visible across the site',
-  s3: 'Spanish + English, mobile-first', s4: 'Optimized Google Maps profile',
-  'inc-title': '3. What’s included', 'inc-lead': 'Everything aimed at more messages and bookings — not just looking nice.',
-  i1: 'Full website redesign (new structure, not only colors)',
-  i2: 'Tour pages ready for WhatsApp booking', i3: 'Spanish and English versions',
-  i4: 'Google Business / Maps optimization', i5: 'Fast, mobile-friendly site',
-  i6: '30-day follow-up + review recommendations',
-  'inv-title': '4. Investment', 'inv-lead': 'Package that fits this results-focused redesign.',
-  'pack-label': 'Recommended package', 'pack-name': 'Presence + Results', 'pack-once': 'One-time · US dollars',
-  pk1: 'Conversion-focused website redesign', pk2: 'Bilingual site (ES / EN)', pk3: 'Optimized Google Business',
-  pk4: 'Clear tour content + WhatsApp', pk5: '30-day follow-up and reviews',
-  optional: '<strong>Optional afterward:</strong> Ongoing Care — $79/month (updates and monitoring).',
-  'close-title': '5. Ready for the next step?',
-  'close-text': 'If you like the direction of the demo, we schedule a short call, adjust photos, prices and copy, and get started.',
-  'close-cta': 'Yes, let’s move forward · WhatsApp',
-  'close-note': 'Benito Montoya · MLand Software · +593 97 886 8363 · 100% remote'
+en:{
+topbar:'<strong>MLand Software</strong> · Proposal for Rosita Tours · One continuous journey',
+step1:'1. How it would look',step2:'2. Current situation',step3:'3. What’s included',step4:'4. Investment',step5:'5. Next step',
+'intro-title':'This is how Rosita Tours’ website could look',
+'intro-text':'Detailed preview using photos from their own site, testimonials and WhatsApp booking buttons. Below: demo → current situation → what’s included → investment → next step. Details are adjusted in a short meeting.',
+'intro-see':'See the preview ↓','intro-wa':'I want this · WhatsApp',
+'demo-title':'1. Preview of the new website',
+'demo-lead':'Built so tourists trust and book. Uses images from their current page; the final version can add more yacht and tour photos.',
+'nav-tours':'Tours','nav-why':'Why us','nav-rev':'Reviews','nav-contact':'Contact',
+'hero-kicker':'Puerto López · In front of the tourist pier',
+'hero-title':'Yacht tours to the islands and the sea of Manabí',
+'hero-text':'Salango Island, Isla de la Plata, whale watching and sport fishing. Over 10 years showing the best of the coast.',
+'hero-cta':'Book on WhatsApp','tours-title':'Our tours',
+'tours-sub':'Choose your experience. Reference prices — we confirm spots on WhatsApp.',
+t1:'Salango Island Tour',t1m:'Snorkel · Kayak · Beach · ~6–7 h',t1d:'Adventure on the yacht: islets, snorkeling and Salango.',
+t2:'4 Islands Tour',t2m:'3 islets + 1 island · Full day',t2d:'Route through the most beautiful spots off Puerto López.',
+t3:'Isla de la Plata',t3m:'“Mini Galápagos” · Hike + snorkel',t3d:'Blue-footed boobies and unique wildlife in Machalilla.',
+t4:'Whale watching',t4m:'Jun–Oct only · Natural spectacle',t4d:'Humpback whales in season on the Manabí Pacific.',
+t5:'Sport fishing',t5m:'Marlin · Offshore · All levels',t5d:'Trips with gear and experienced crew.',
+t6:'Private / group tours',t6m:'Families · Groups · Charter',t6d:'Trip built around you: schedule, itinerary and group pace.',
+book:'Book this tour',ask:'Ask for season',ask2:'Ask on WhatsApp',ask3:'Custom quote',
+w1t:'10+ years',w1d:'Families, groups & travelers',w2t:'At the pier',w2d:'Malecón · Puerto López',
+w3t:'Real tours',w3d:'Islands, whales, fishing',w4t:'Easy booking',w4d:'WhatsApp same day',
+'gal-title':'Moments on board','gal-sub':'Real photos from their trips',
+'about-title':'About Rosita Tours',
+'about-text':'Family-run professional company in front of the Puerto López Tourist Pier. We welcome groups, families and national and international travelers with safety and care.',
+stat1:'Years',stat2:'Tours',stat3:'Local',
+'rev-title':'What travelers say','rev-sub':'Real guest reviews',
+r1:'“Excellent service, experienced guides. Great adventure at Salango Island. Fully recommended.”',
+r2:'“Professional, warm and close. They even care if someone gets seasick. I would go again.”',
+r3:'“Very charismatic yacht crew. Unforgettable experience at Isla de la Plata and nearby.”',
+r4:'“Excellent tourism company, very kind staff. They help with everything and meet expectations.”',
+where:'Where we are',addr:'Malecón Julio Izurieta<br>In front of the Tourist Pier entrance<br>Puerto López, Manabí, Ecuador',
+'contact-cta':'Message on WhatsApp',map:'📍 Google Maps<br><small style="font-weight:500;opacity:.85">(embedded in the final version)</small>',
+'foot-tag':'Yacht tours · Puerto López','foot-demo':'Redesign demo · MLand Software',
+'demo-note':'Demo with images from their current site. Final version: more yacht photos, exact prices and schedules, embedded map and copy you approve.',
+'prob-title':'2. Current situation of rositatours.com',
+'prob-lead':'They have experience and good reviews; the site is not converting visits into bookings.',
+'prob-h':'What holds bookings back today','sol-h':'What the redesign changes',
+p1:'Few clear “Book on WhatsApp” buttons',p2:'Tours without price, duration or inclusions in view',
+p3:'Generic Wix structure and confusing URLs',p4:'Weak optimization to show up on Google',
+s1:'Each tour with price, photo and book button',s2:'WhatsApp visible across the site',
+s3:'Spanish + English, mobile-first',s4:'Optimized Google Maps profile + testimonials',
+'inc-title':'3. What’s included','inc-lead':'Aimed at more messages and bookings — not just looking nice.',
+i1:'Full redesign (new structure, not only colors)',i2:'Tour pages ready for WhatsApp booking',
+i3:'Spanish and English versions',i4:'Testimonials section and gallery with their photos',
+i5:'Google Business / Maps optimization',i6:'Fast mobile site and 30-day follow-up',
+'inv-title':'4. Investment','inv-lead':'Package that fits this results-focused redesign.',
+'pack-label':'Recommended package','pack-name':'Presence + Results','pack-once':'One-time · US dollars',
+pk1:'Conversion-focused website redesign',pk2:'Bilingual site (ES / EN)',pk3:'Optimized Google Business',
+pk4:'Tours, testimonials, gallery and WhatsApp',pk5:'30-day follow-up and reviews',
+optional:'<strong>Optional afterward:</strong> Ongoing Care — $79/month (updates and monitoring).',
+'close-title':'5. Ready for the next step?',
+'close-text':'If you like the direction of the demo, we schedule a short call, adjust photos, prices and copy, and get started.',
+'close-cta':'Yes, let’s move forward · WhatsApp',
+'close-note':'Benito Montoya · MLand Software · +593 97 886 8363 · 100% remote'
 }
 };
-let lang = 'es';
-function toggleLang() {
-  lang = lang === 'es' ? 'en' : 'es';
-  document.getElementById('langBtn').textContent = lang === 'es' ? 'English' : 'Español';
-  document.documentElement.lang = lang;
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const k = el.getAttribute('data-i18n');
-    if (T[lang][k]) el.innerHTML = T[lang][k];
-  });
-}
+let lang='es';
+function toggleLang(){lang=lang==='es'?'en':'es';document.getElementById('langBtn').textContent=lang==='es'?'English':'Español';document.documentElement.lang=lang;document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(T[lang][k])el.innerHTML=T[lang][k]});}
 </script>
 </body>
 </html>
