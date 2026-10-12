@@ -1,1 +1,356 @@
-PLACEHOLDER
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MLand Software | Web + Google Maps para negocios de habla hispana</title>
+  <meta name="description" content="Web rápida + Google Maps optimizado para que tu negocio de habla hispana aparezca cuando te buscan. Más llamadas y clientes. 100% remoto.">
+  <meta name="google-site-verification" content="e34Txkkmpu1eo88nSMDNGmorwFULilsLxfYSQ1G27-A">
+  <link rel="canonical" href="https://mland-landing.montoyasud.workers.dev/">
+  <meta property="og:title" content="MLand Software | Web + Google Maps">
+  <meta property="og:description" content="Aparece en Google y Maps. Más clientes para tu negocio local. Servicio 100% remoto.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mland-landing.montoyasud.workers.dev/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0f2744;
+      --navy-light: #1a3a5c;
+      --teal: #0d9488;
+      --teal-dark: #0f766e;
+      --teal-soft: #ccfbf1;
+      --sand: #f8fafc;
+      --white: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --wa: #25D366;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "DM Sans", system-ui, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--white);
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1100px, 100% - 2rem); margin-inline: auto; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      font-weight: 600; font-size: 0.95rem; padding: 0.85rem 1.4rem;
+      border-radius: 999px; border: none; cursor: pointer; transition: 0.2s;
+    }
+    .btn-primary { background: var(--teal); color: #fff; }
+    .btn-primary:hover { background: var(--teal-dark); }
+    .btn-outline {
+      background: transparent; color: var(--navy); border: 2px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
+    .btn-wa { background: var(--wa); color: #fff; }
+    .btn-wa:hover { filter: brightness(0.95); }
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.9rem 0; gap: 1rem;
+    }
+    .logo { font-weight: 700; font-size: 1.15rem; color: var(--navy); }
+    .logo span { color: var(--teal); }
+    .nav-links { display: flex; gap: 1.25rem; align-items: center; font-size: 0.9rem; font-weight: 500; color: var(--muted); }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-cta { display: none; }
+    @media (min-width: 768px) {
+      .nav-cta { display: inline-flex; }
+      .nav-links { gap: 1.5rem; }
+    }
+    .hero {
+      background: linear-gradient(165deg, var(--navy) 0%, var(--navy-light) 55%, #0c4a6e 100%);
+      color: #fff; padding: 3.5rem 0 4rem;
+    }
+    .hero-grid {
+      display: grid; gap: 2rem; align-items: center;
+    }
+    @media (min-width: 900px) {
+      .hero-grid { grid-template-columns: 1.15fr 0.85fr; gap: 3rem; }
+    }
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.6rem); line-height: 1.2;
+      margin-bottom: 1rem; font-weight: 700;
+    }
+    .hero p.lead {
+      font-size: 1.05rem; opacity: 0.92; max-width: 34rem; margin-bottom: 1.5rem;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .hero-card {
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 16px; padding: 1.5rem;
+    }
+    .hero-card h3 { font-size: 0.95rem; margin-bottom: 0.75rem; opacity: 0.9; }
+    .hero-card ul { list-style: none; display: grid; gap: 0.55rem; font-size: 0.9rem; }
+    .hero-card li { display: flex; gap: 0.5rem; align-items: flex-start; }
+    .hero-card li::before { content: "✓"; color: #5eead4; font-weight: 700; }
+    .section { padding: 3.5rem 0; }
+    .section-alt { background: var(--sand); }
+    .section h2 {
+      font-size: clamp(1.4rem, 3vw, 1.85rem); color: var(--navy);
+      margin-bottom: 0.5rem; font-weight: 700;
+    }
+    .section .sub {
+      color: var(--muted); max-width: 36rem; margin-bottom: 2rem;
+    }
+    .grid-3 {
+      display: grid; gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .card {
+      background: #fff; border: 1px solid var(--border); border-radius: 14px;
+      padding: 1.35rem 1.4rem;
+    }
+    .card h3 { font-size: 1.05rem; color: var(--navy); margin-bottom: 0.4rem; }
+    .card p { font-size: 0.92rem; color: var(--muted); }
+    .icon-badge {
+      width: 2.4rem; height: 2.4rem; border-radius: 10px;
+      background: var(--teal-soft); color: var(--teal-dark);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; margin-bottom: 0.85rem;
+    }
+    .packages-grid {
+      display: grid; gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      align-items: stretch;
+    }
+    .package {
+      background: #fff; border: 1px solid var(--border); border-radius: 16px;
+      padding: 1.5rem; display: flex; flex-direction: column;
+    }
+    .package.featured {
+      border: 2px solid var(--teal); box-shadow: 0 12px 32px rgba(13,148,136,0.12);
+      position: relative;
+    }
+    .package .badge {
+      position: absolute; top: -0.7rem; left: 1.2rem;
+      background: var(--teal); color: #fff; font-size: 0.72rem; font-weight: 700;
+      padding: 0.25rem 0.65rem; border-radius: 999px; text-transform: uppercase;
+    }
+    .package h3 { font-size: 1.15rem; color: var(--navy); margin-bottom: 0.35rem; }
+    .package-desc { font-size: 0.88rem; color: var(--muted); margin-bottom: 1rem; }
+    .package ul {
+      list-style: none; display: grid; gap: 0.45rem;
+      font-size: 0.88rem; color: var(--muted); margin-bottom: 1.25rem; flex: 1;
+    }
+    .package ul li { padding-left: 1.2rem; position: relative; }
+    .package ul li::before { content: "✓"; position: absolute; left: 0; color: var(--teal); font-weight: 700; }
+    .price {
+      font-size: 2rem; font-weight: 700; color: var(--navy); margin-bottom: 1rem;
+    }
+    .price-period { font-size: 0.95rem; font-weight: 500; color: var(--muted); }
+    .packages-note {
+      text-align: center; font-size: 0.85rem; color: var(--muted); margin-top: 1.5rem;
+    }
+    .testimonials-grid {
+      display: grid; gap: 1.15rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .testimonial {
+      background: #fff; border: 1px solid var(--border); border-radius: 14px;
+      padding: 1.25rem 1.35rem;
+    }
+    .testimonial .stars { color: #f59e0b; letter-spacing: 1px; margin-bottom: 0.4rem; font-size: 0.9rem; }
+    .testimonial p { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.75rem; }
+    .testimonial strong { font-size: 0.85rem; color: var(--navy); }
+    .testimonial a { color: var(--teal); font-size: 0.8rem; }
+    .cta-band {
+      background: linear-gradient(135deg, var(--navy), #0c4a6e);
+      color: #fff; border-radius: 20px; padding: 2.5rem 1.75rem; text-align: center;
+    }
+    .cta-band h2 { color: #fff; margin-bottom: 0.5rem; }
+    .cta-band p { opacity: 0.9; margin-bottom: 1.25rem; max-width: 28rem; margin-inline: auto; }
+    footer {
+      background: var(--navy); color: #94a3b8; padding: 2rem 0; font-size: 0.88rem;
+    }
+    footer .footer-inner {
+      display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center;
+    }
+    footer strong { color: #e2e8f0; }
+    .float-wa {
+      position: fixed; bottom: 1.2rem; right: 1.2rem; z-index: 60;
+      width: 56px; height: 56px; border-radius: 50%; background: var(--wa); color: #fff;
+      display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+      box-shadow: 0 8px 24px rgba(37,211,102,0.4);
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "MLand Software",
+    "description": "Web posicionada y optimización de Google Maps para negocios de habla hispana.",
+    "url": "https://mland-landing.montoyasud.workers.dev/",
+    "telephone": "+593978868363",
+    "areaServed": "Worldwide",
+    "availableLanguage": ["es", "en"],
+    "priceRange": "$$",
+    "founder": { "@type": "Person", "name": "Benito Montoya" }
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="/" class="logo">MLand <span>Software</span></a>
+      <nav class="nav-links">
+        <a href="#como">Cómo funciona</a>
+        <a href="#paquetes">Paquetes</a>
+        <a href="#casos">Casos</a>
+        <a class="nav-cta btn btn-primary" href="https://wa.me/593978868363?text=Hola%2C%20quiero%20aparecer%20mejor%20en%20Google%20y%20Maps" target="_blank" rel="noopener">WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Aparece en Google y Maps cuando te buscan clientes cerca</h1>
+        <p class="lead">Web rápida + ficha de Google optimizada para negocios de habla hispana. Más llamadas y visitas, sin oficina física. 100% remoto.</p>
+        <div class="hero-actions">
+          <a class="btn btn-wa" href="https://wa.me/593978868363?text=Hola%2C%20quiero%20aparecer%20mejor%20en%20Google%20y%20Maps" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+          <a class="btn btn-outline" href="#paquetes" style="border-color:rgba(255,255,255,0.35);color:#fff">Ver paquetes</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Qué obtienes</h3>
+        <ul>
+          <li>Web pensada para convertir visitas en WhatsApp o llamadas</li>
+          <li>Google Business / Maps listo y optimizado</li>
+          <li>Servicio remoto: atendemos donde estés</li>
+          <li>Precios claros, sin letra chica</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="como">
+    <div class="container">
+      <h2>Cómo te ayudamos a conseguir más clientes</h2>
+      <p class="sub">No vendemos “una página bonita”. Armamos la presencia online para que te encuentren y te escriban.</p>
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon-badge">1</div>
+          <h3>Web que convierte</h3>
+          <p>Sitio claro, rápido y orientado a que el visitante reserve, llame o escriba por WhatsApp.</p>
+        </div>
+        <div class="card">
+          <div class="icon-badge">2</div>
+          <h3>Google Maps</h3>
+          <p>Ficha de negocio optimizada para aparecer cuando buscan servicios cerca de ti.</p>
+        </div>
+        <div class="card">
+          <div class="icon-badge">3</div>
+          <h3>Acompañamiento</h3>
+          <p>Te dejamos listo y te apoyamos los primeros días para que las consultas empiecen a llegar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="paquetes">
+    <div class="container">
+      <h2>Paquetes claros</h2>
+      <p class="sub">Elige según en qué punto estás. Todos incluyen soporte por WhatsApp.</p>
+      <div class="packages-grid">
+        <div class="package">
+          <h3>Arranque Local</h3>
+          <p class="package-desc">La forma más rápida de empezar a aparecer mejor en Google Maps y tener una web profesional.</p>
+          <ul>
+            <li>Web de presencia (1–3 secciones)</li>
+            <li>Optimización de Google Business Profile</li>
+            <li>Botón y mensaje de WhatsApp</li>
+            <li>Dominio + hosting 1 año</li>
+          </ul>
+          <p class="price">$290</p>
+          <a href="https://wa.me/593978868363?text=Hola%2C%20me%20interesa%20el%20pack%20Arranque%20Local" class="btn btn-outline" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        </div>
+
+        <div class="package featured">
+          <span class="badge">Más elegido</span>
+          <h3>Presencia + Resultados</h3>
+          <p class="package-desc">Para quien quiere ver resultados reales en las próximas semanas, no solo tener presencia.</p>
+          <ul>
+            <li>Todo lo incluido en Arranque Local</li>
+            <li>Web completa orientada a conversión</li>
+            <li>Estructura de tours/servicios y CTAs claros</li>
+            <li>Seguimiento 30 días + apoyo en reseñas</li>
+          </ul>
+          <p class="price">$500</p>
+          <a href="https://wa.me/593978868363?text=Hola%2C%20me%20interesa%20el%20pack%20Presencia%20%2B%20Resultados" class="btn btn-primary" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        </div>
+
+        <div class="package">
+          <h3>Cuidado Continuo</h3>
+          <p class="package-desc">Mantén y mejora lo construido para que siga generando clientes mes a mes.</p>
+          <ul>
+            <li>Ajustes menores de web</li>
+            <li>Publicaciones en Google Business</li>
+            <li>Revisión de mensajes y reseñas</li>
+            <li>Soporte prioritario por WhatsApp</li>
+          </ul>
+          <p class="price">$49 <span class="price-period">/ mes</span></p>
+          <a href="https://wa.me/593978868363?text=Hola%2C%20me%20interesa%20el%20Cuidado%20Continuo" class="btn btn-outline" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        </div>
+      </div>
+      <p class="packages-note">Precios en dólares estadounidenses. Válidos para negocios de habla hispana en cualquier país. Te confirmo el alcance exacto antes de empezar.</p>
+    </div>
+  </section>
+
+  <section class="section" id="casos">
+    <div class="container">
+      <h2>Negocios que ya se hacen ver</h2>
+      <p class="sub">Casos reales de distintos nichos. Pedimos permiso antes de mostrar cada nombre.</p>
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p>“Ahora nos encuentran cuando buscan hotel en la zona. Las reservas por WhatsApp subieron.”</p>
+          <strong>Hotel · Costa</strong>
+        </div>
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p>“La ficha de Maps y la web clara hicieron que más turistas nos escriban antes de llegar.”</p>
+          <strong>Turismo · Operador local</strong>
+        </div>
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p>“Pasamos de ser invisibles en Google a recibir llamadas de clientes nuevos cada semana.”</p>
+          <strong>Servicios locales</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="cta-band">
+        <h2>¿Listo para que te encuentren?</h2>
+        <p>Escríbeme por WhatsApp y te digo qué pack encaja con tu negocio. Sin compromiso.</p>
+        <a class="btn btn-wa" href="https://wa.me/593978868363?text=Hola%2C%20quiero%20saber%20qué%20pack%20me%20conviene" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div><strong>MLand Software</strong> · Benito Montoya</div>
+      <div>+593 97 886 8363 · Servicio remoto</div>
+    </div>
+  </footer>
+
+  <a class="float-wa" href="https://wa.me/593978868363?text=Hola%2C%20vengo%20de%20tu%20web" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+</body>
+</html>
