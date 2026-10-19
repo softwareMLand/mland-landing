@@ -1,64 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Demo · Negocio local | MLand Software</title>
 <meta name="robots" content="noindex,follow">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#0d9488;--navy:#0f2744;--muted:#64748b;--border:#e2e8f0;--wa:#25D366}
+:root{--purple:#6d28d9;--lilac:#ede9fe;--ink:#1e1b4b;--muted:#6b7280;--green:#10b981}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,sans-serif;color:#1e293b;line-height:1.55;background:#f8fafc}
+body{font-family:"Poppins",system-ui,sans-serif;background:#fafafa;color:var(--ink);line-height:1.5}
 a{color:inherit;text-decoration:none}
-.top{background:#0f172a;color:#94a3b8;font-size:.78rem;padding:.5rem 1rem;text-align:center}
-.top strong{color:#38bdf8}
-.top a{color:#5eead4;font-weight:600}
-header{display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.25rem;background:#fff;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:.5rem}
-.logo{font-weight:700;color:var(--navy)}
-.logo span{color:var(--accent)}
-.wa{background:var(--wa);color:#fff;font-weight:600;font-size:.85rem;padding:.45rem .9rem;border-radius:999px}
-.hero{background:linear-gradient(160deg,var(--navy),var(--accent));color:#fff;padding:2.75rem 1.25rem 3rem}
-.hero .k{display:inline-block;font-size:.75rem;opacity:.9;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:.2rem .65rem;margin-bottom:.7rem}
-.hero h1{font-size:clamp(1.4rem,4vw,2rem);line-height:1.2;margin-bottom:.5rem;max-width:28rem}
-.hero p{opacity:.93;max-width:28rem;margin-bottom:1.1rem;font-size:.95rem}
-.hero .cta{display:inline-block;background:var(--wa);color:#fff;font-weight:600;padding:.65rem 1.15rem;border-radius:999px}
-.wrap{width:min(960px,100% - 2rem);margin:0 auto;padding:2rem 0 2.5rem}
-.wrap h2{font-size:1.2rem;color:var(--navy);margin-bottom:.35rem}
-.wrap .sub{color:var(--muted);font-size:.9rem;margin-bottom:1.25rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
-.card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.15rem 1.2rem;display:flex;flex-direction:column}
-.card h3{font-size:1rem;color:var(--navy);margin-bottom:.3rem}
-.card p{font-size:.86rem;color:var(--muted);flex:1;margin-bottom:.75rem}
-.card .btn{display:block;text-align:center;background:var(--navy);color:#fff;font-weight:600;font-size:.85rem;padding:.55rem;border-radius:8px}
-.trust{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;justify-content:center;padding:1rem;background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border);font-size:.8rem;font-weight:600;color:var(--muted)}
-.note{text-align:center;font-size:.82rem;color:var(--muted);padding:1.25rem;background:#fffbeb;border-top:1px solid #fde68a}
-.note a{color:var(--accent);font-weight:600}
-footer{background:#0f172a;color:#94a3b8;text-align:center;padding:1.1rem;font-size:.8rem}
+.mland-note{background:var(--ink);color:#a5b4fc;font-size:.75rem;text-align:center;padding:.5rem 1rem}
+.mland-note a{color:#c4b5fd;font-weight:600;margin:0 .35rem}
+.wrap{max-width:480px;margin:0 auto;padding:2rem 1.25rem 2.5rem}
+.badge{display:inline-block;background:var(--lilac);color:var(--purple);font-size:.72rem;font-weight:700;padding:.3rem .7rem;border-radius:999px;margin-bottom:1rem}
+h1{font-size:1.65rem;line-height:1.25;margin-bottom:.5rem}
+.lead{color:var(--muted);font-size:.92rem;margin-bottom:1.5rem}
+.cta{display:block;text-align:center;background:var(--purple);color:#fff;font-weight:700;padding:.85rem;border-radius:14px;margin-bottom:1.75rem;box-shadow:0 8px 20px rgba(109,40,217,.25)}
+.box{background:#fff;border-radius:16px;padding:1.15rem 1.2rem;margin-bottom:.85rem;border:1px solid #eee;display:flex;gap:.9rem;align-items:flex-start}
+.box .n{width:36px;height:36px;border-radius:10px;background:var(--lilac);color:var(--purple);font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.box h3{font-size:.95rem;margin-bottom:.15rem}
+.box p{font-size:.82rem;color:var(--muted)}
+.maps{background:linear-gradient(135deg,var(--lilac),#d1fae5);border-radius:16px;padding:1.25rem;text-align:center;margin-top:1rem}
+.maps strong{display:block;margin-bottom:.35rem}
+.maps span{font-size:.82rem;color:var(--muted)}
+footer{text-align:center;padding:1rem;font-size:.75rem;color:var(--muted)}
 </style>
 </head>
 <body>
-<div class="top"><strong>Demo de estilo</strong> · MLand Software · <a href="/#demos">← Volver al portafolio</a></div>
-<header>
-  <div class="logo">Negocio <span>Demo</span></div>
-  <a class="wa" href="https://wa.me/593978868363?text=Hola%2C%20me%20gusta%20el%20estilo%20local" target="_blank" rel="noopener">WhatsApp</a>
-</header>
-<section class="hero">
-  <span class="k">Ejemplo · Negocio local</span>
-  <h1>Que te encuentren cuando buscan cerca</h1>
-  <p>Presencia clara en web y Google Maps para más llamadas y visitas.</p>
-  <a class="cta" href="https://wa.me/593978868363?text=Hola%2C%20me%20gusta%20el%20estilo%20local" target="_blank" rel="noopener">Escribir por WhatsApp</a>
-</section>
-<div class="trust"><span>✓ WhatsApp directo</span><span>✓ Pensado para celular</span><span>✓ Listo para Google Maps</span></div>
+<div class="mland-note">Demo de estilo · MLand Software · <a href="/#demos">Volver al portafolio</a> · <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20estilo%20local" target="_blank" rel="noopener">Pedir este estilo</a></div>
 <div class="wrap">
-  <h2>Lo que el cliente ve primero</h2>
-  <p class="sub">Estructura clara: oferta, confianza y un solo paso para contactarte.</p>
-  <div class="grid">
-<div class="card"><h3>Quiénes somos</h3><p>Qué ofreces en una frase</p><a class="btn" href="https://wa.me/593978868363?text=Hola%2C%20vi%20la%20demo%20local" target="_blank" rel="noopener">Escribir por WhatsApp</a></div>
-<div class="card"><h3>Cómo te contactan</h3><p>WhatsApp y ubicación</p><a class="btn" href="https://wa.me/593978868363?text=Hola%2C%20vi%20la%20demo%20local" target="_blank" rel="noopener">Escribir por WhatsApp</a></div>
-<div class="card"><h3>Por qué elegirte</h3><p>Confianza y cercanía</p><a class="btn" href="https://wa.me/593978868363?text=Hola%2C%20vi%20la%20demo%20local" target="_blank" rel="noopener">Escribir por WhatsApp</a></div>
-  </div>
+<span class="badge">Demo · Negocio de barrio</span>
+<h1>Que te encuentren cuando buscan cerca</h1>
+<p class="lead">Presencia clara en web y Google Maps para más llamadas y visitas al local.</p>
+<a class="cta" href="https://wa.me/593978868363?text=estilo%20local" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+<div class="box"><div class="n">1</div><div><h3>Quiénes somos</h3><p>Tu oferta en una frase, fácil de entender en el celular.</p></div></div>
+<div class="box"><div class="n">2</div><div><h3>Cómo contactarte</h3><p>WhatsApp y ubicación a un toque.</p></div></div>
+<div class="box"><div class="n">3</div><div><h3>Por qué elegirte</h3><p>Confianza, cercanía y reseñas visibles.</p></div></div>
+<div class="maps"><strong>📍 Listo para Google Maps</strong><span>Aparece cuando buscan servicios cerca de ti</span></div>
 </div>
-<div class="note">Esta es una <strong>demo de estilo</strong>, no un sitio de cliente real. ¿Te gusta este formato? <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20una%20web%20estilo%20local" target="_blank" rel="noopener">Pide la tuya por WhatsApp</a></div>
-<footer>MLand Software · Demo de portafolio</footer>
-</body>
-</html>
+<footer>Ejemplo de estilo negocio local · No es un sitio de cliente real</footer>
+</body></html>

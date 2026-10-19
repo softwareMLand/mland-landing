@@ -1,70 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Demo · Turismo y tours | MLand Software</title>
 <meta name="robots" content="noindex,follow">
-<meta name="description" content="Ejemplo de estilo web para Turismo y tours. Demo de MLand Software.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#0d9488;--navy:#0f2744;--muted:#64748b;--border:#e2e8f0;--wa:#25D366}
+:root{--ocean:#0a4d68;--teal:#088395;--sand:#f7f3e9;--ink:#1a2b3c;--muted:#5a6a7a;--hot:#e85d04}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,sans-serif;color:#1e293b;line-height:1.55;background:#f8fafc}
+body{font-family:"DM Sans",system-ui,sans-serif;background:var(--sand);color:var(--ink);line-height:1.5}
 a{color:inherit;text-decoration:none}
-.top{background:#0f172a;color:#94a3b8;font-size:.78rem;padding:.5rem 1rem;text-align:center}
-.top strong{color:#38bdf8}
-.top a{color:#5eead4;font-weight:600}
-header{display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.25rem;background:#fff;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:.5rem}
-.logo{font-weight:700;color:var(--navy)}
-.logo span{color:var(--accent)}
-.wa{background:var(--wa);color:#fff;font-weight:600;font-size:.85rem;padding:.45rem .9rem;border-radius:999px}
-.hero{background:linear-gradient(160deg,var(--navy),var(--accent));color:#fff;padding:2.75rem 1.25rem 3rem}
-.hero .k{display:inline-block;font-size:.75rem;opacity:.9;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:.2rem .65rem;margin-bottom:.7rem}
-.hero h1{font-size:clamp(1.4rem,4vw,2rem);line-height:1.2;margin-bottom:.5rem;max-width:28rem}
-.hero p{opacity:.93;max-width:28rem;margin-bottom:1.1rem;font-size:.95rem}
-.hero .cta{display:inline-block;background:var(--wa);color:#fff;font-weight:600;padding:.65rem 1.15rem;border-radius:999px}
-.wrap{width:min(960px,100% - 2rem);margin:0 auto;padding:2rem 0 2.5rem}
-.wrap h2{font-size:1.2rem;color:var(--navy);margin-bottom:.35rem}
-.wrap .sub{color:var(--muted);font-size:.9rem;margin-bottom:1.25rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
-.card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.15rem 1.2rem;display:flex;flex-direction:column}
-.card h3{font-size:1rem;color:var(--navy);margin-bottom:.3rem}
-.card p{font-size:.86rem;color:var(--muted);flex:1;margin-bottom:.75rem}
-.card .price{font-weight:700;color:var(--accent);margin-bottom:.65rem;font-size:1.1rem}
-.card .btn{display:block;text-align:center;background:var(--navy);color:#fff;font-weight:600;font-size:.85rem;padding:.55rem;border-radius:8px}
-.trust{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;justify-content:center;padding:1rem;background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border);font-size:.8rem;font-weight:600;color:var(--muted)}
-.note{text-align:center;font-size:.82rem;color:var(--muted);padding:1.25rem;background:#fffbeb;border-top:1px solid #fde68a}
-.note a{color:var(--accent);font-weight:600}
-footer{background:#0f172a;color:#94a3b8;text-align:center;padding:1.1rem;font-size:.8rem}
+.mland-note{background:#0f172a;color:#94a3b8;font-size:.75rem;text-align:center;padding:.5rem 1rem}
+.mland-note a{color:#5eead4;font-weight:600;margin:0 .35rem}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem;background:#fff;border-bottom:1px solid #e8e0d0}
+.brand{font-family:"Playfair Display",serif;font-size:1.35rem;color:var(--ocean)}
+.nav-wa{background:#25D366;color:#fff;font-weight:600;font-size:.85rem;padding:.5rem 1rem;border-radius:999px}
+.hero{min-height:320px;background:linear-gradient(135deg,rgba(10,77,104,.85),rgba(8,131,149,.7)),url("https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=80") center/cover;color:#fff;display:flex;align-items:flex-end;padding:2.5rem 1.5rem}
+.hero h1{font-family:"Playfair Display",serif;font-size:clamp(1.6rem,4vw,2.4rem);max-width:20ch;line-height:1.15;margin-bottom:.5rem}
+.hero p{opacity:.95;max-width:36ch;margin-bottom:1rem}
+.hero .cta{display:inline-block;background:var(--hot);color:#fff;font-weight:700;padding:.7rem 1.3rem;border-radius:8px}
+.trust{display:flex;flex-wrap:wrap;gap:.75rem 1.5rem;justify-content:center;padding:.9rem;background:#fff;font-size:.8rem;font-weight:600;color:var(--muted);border-bottom:1px solid #e8e0d0}
+.sec{width:min(1000px,100% - 2rem);margin:2rem auto}
+.sec h2{font-family:"Playfair Display",serif;color:var(--ocean);margin-bottom:.3rem}
+.sec .sub{color:var(--muted);font-size:.9rem;margin-bottom:1.25rem}
+.tours{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.15rem}
+.t{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(10,77,104,.08);display:flex;flex-direction:column;border:1px solid #e8e0d0}
+.t .img{height:160px;background-size:cover;background-position:center;position:relative}
+.t .badge{position:absolute;top:.6rem;left:.6rem;background:var(--hot);color:#fff;font-size:.68rem;font-weight:700;padding:.25rem .5rem;border-radius:4px;text-transform:uppercase}
+.t .body{padding:1rem 1.1rem 1.15rem;flex:1;display:flex;flex-direction:column}
+.t h3{font-size:1.05rem;color:var(--ocean);margin-bottom:.25rem}
+.t .meta{font-size:.8rem;color:var(--muted);margin-bottom:.5rem}
+.t .price{font-weight:700;color:var(--teal);font-size:1.15rem;margin-top:auto}
+.t .btn{display:block;text-align:center;margin-top:.7rem;background:var(--ocean);color:#fff;font-weight:600;font-size:.88rem;padding:.65rem;border-radius:8px}
+footer{text-align:center;padding:1.5rem;font-size:.8rem;color:var(--muted)}
 </style>
 </head>
 <body>
-<div class="top"><strong>Demo de estilo</strong> · MLand Software · <a href="/#demos">← Volver al portafolio</a></div>
-<header>
-  <div class="logo">Turismo <span>Demo</span></div>
-  <a class="wa" href="https://wa.me/593978868363?text=Hola%2C%20me%20gusta%20el%20estilo%20turismo" target="_blank" rel="noopener">WhatsApp</a>
-</header>
-<section class="hero">
-  <span class="k">Ejemplo · Turismo y tours</span>
-  <h1>Tours y experiencias que se reservan en un toque</h1>
-  <p>Precios visibles, lo más pedido destacado y WhatsApp en cada tour.</p>
-  <a class="cta" href="https://wa.me/593978868363?text=Hola%2C%20me%20gusta%20el%20estilo%20turismo" target="_blank" rel="noopener">Reservar por WhatsApp</a>
-</section>
-<div class="trust">
-  <span>✓ WhatsApp directo</span>
-  <span>✓ Pensado para celular</span>
-  <span>✓ Listo para Google Maps</span>
+<div class="mland-note">Demo de estilo · MLand Software · <a href="/#demos">Volver al portafolio</a> · <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20estilo%20turismo" target="_blank" rel="noopener">Pedir este estilo</a></div>
+<nav><div class="brand">Costa Tours</div><a class="nav-wa" href="https://wa.me/593978868363?text=Hola%2C%20estilo%20turismo" target="_blank" rel="noopener">WhatsApp</a></nav>
+<section class="hero"><div>
+<span style="font-size:.75rem;opacity:.9;letter-spacing:.05em;text-transform:uppercase">Demo · Operador turístico</span>
+<h1>Islas, snorkel y el mar al alcance de un mensaje</h1>
+<p>Precios claros, lo más pedido y reserva directa por WhatsApp.</p>
+<a class="cta" href="https://wa.me/593978868363?text=Hola%2C%20estilo%20turismo" target="_blank" rel="noopener">Ver tours y reservar</a>
+</div></section>
+<div class="trust"><span>✓ Reserva por WhatsApp</span><span>✓ Guías locales</span><span>✓ Pensado para celular</span></div>
+<div class="sec">
+<h2>Tours destacados</h2>
+<p class="sub">Estilo marketplace: cada experiencia con precio y botón de reserva.</p>
+<div class="tours">
+<article class="t"><div class="img" style="background-image:url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=80')"><span class="badge">Más vendido</span></div><div class="body"><h3>Tour isla + snorkel</h3><p class="meta">~6 h · Equipo incluido</p><div class="price">Desde $35</div><a class="btn" href="https://wa.me/593978868363?text=Tour%20isla" target="_blank" rel="noopener">Reservar</a></div></article>
+<article class="t"><div class="img" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80')"></div><div class="body"><h3>Día completo en el mar</h3><p class="meta">Varias paradas · Almuerzo opcional</p><div class="price">Desde $45</div><a class="btn" href="https://wa.me/593978868363?text=Tour%20dia" target="_blank" rel="noopener">Reservar</a></div></article>
+<article class="t"><div class="img" style="background-image:url('https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?w=600&q=80')"></div><div class="body"><h3>Charter privado</h3><p class="meta">Familia o grupo · Horario flexible</p><div class="price">Consultar</div><a class="btn" href="https://wa.me/593978868363?text=Charter" target="_blank" rel="noopener">Reservar</a></div></article>
 </div>
-<div class="wrap">
-  <h2>Lo que el cliente ve primero</h2>
-  <p class="sub">Estructura clara: oferta, confianza y un solo paso para contactarte.</p>
-  <div class="grid">
-<div class="card"><h3>Tour isla / snorkel</h3><p>Medio día · Equipo incluido</p><div class="price">Desde $35</div><a class="btn" href="https://wa.me/593978868363?text=Hola%2C%20vi%20la%20demo%20turismo" target="_blank" rel="noopener">Reservar por WhatsApp</a></div>
-<div class="card"><h3>Tour día completo</h3><p>Varias paradas · Almuerzo opcional</p><div class="price">Desde $45</div><a class="btn" href="https://wa.me/593978868363?text=Hola%2C%20vi%20la%20demo%20turismo" target="_blank" rel="noopener">Reservar por WhatsApp</a></div>
-<div class="card"><h3>Experiencia privada</h3><p>Grupo o familia · Horario flexible</p><div class="price">Consultar</div><a class="btn" href="https://wa.me/593978868363?text=Hola%2C%20vi%20la%20demo%20turismo" target="_blank" rel="noopener">Reservar por WhatsApp</a></div>
-  </div>
 </div>
-<div class="note">Esta es una <strong>demo de estilo</strong>, no un sitio de cliente real. ¿Te gusta este formato? <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20una%20web%20estilo%20turismo" target="_blank" rel="noopener">Pide la tuya por WhatsApp</a></div>
-<footer>MLand Software · Demo de portafolio</footer>
-</body>
-</html>
+<footer>Ejemplo de estilo turismo · No es un sitio de cliente real</footer>
+</body></html>
