@@ -1,82 +1,267 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Demo · Educación | MLand Software</title>
 <meta name="robots" content="noindex,follow">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--ivory:#faf6f1;--burgundy:#6b2d3c;--terra:#c45c26;--ink:#2a2420;--muted:#7a6f68;--line:#e8dfd4}
+:root{
+  --sky:#3b82f6;
+  --sky-soft:#dbeafe;
+  --sun:#fbbf24;
+  --sun-soft:#fef3c7;
+  --coral:#f97316;
+  --coral-soft:#ffedd5;
+  --mint:#10b981;
+  --mint-soft:#d1fae5;
+  --grape:#a855f7;
+  --grape-soft:#f3e8ff;
+  --pink:#ec4899;
+  --ink:#1e293b;
+  --muted:#64748b;
+  --white:#ffffff;
+  --bg:#fff9f0;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Manrope",system-ui,sans-serif;background:var(--ivory);color:var(--ink);line-height:1.55}
+body{font-family:"Quicksand",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
 a{color:inherit;text-decoration:none}
-.mland-note{background:var(--burgundy);color:#d4a5ae;font-size:.75rem;text-align:center;padding:.5rem 1rem}
-.mland-note a{color:#f0c4cc;font-weight:600;margin:0 .35rem}
-.mast{text-align:center;padding:2.25rem 1.25rem 1.75rem;border-bottom:1px solid var(--line)}
-.crest{width:56px;height:56px;margin:0 auto .9rem;border:2px solid var(--burgundy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Fraunces",serif;font-weight:700;font-size:1.25rem;color:var(--burgundy)}
-.mast .name{font-family:"Fraunces",serif;font-size:1.55rem;font-weight:600;color:var(--burgundy);letter-spacing:-.01em}
-.mast .tag{font-size:.72rem;text-transform:uppercase;letter-spacing:.18em;color:var(--terra);margin-top:.4rem;font-weight:600}
-.hero{max-width:640px;margin:0 auto;padding:2.5rem 1.35rem 2rem;text-align:center}
-.hero .open{font-size:.8rem;font-weight:600;color:var(--terra);margin-bottom:.75rem}
-.hero h1{font-family:"Fraunces",serif;font-size:clamp(1.65rem,4.2vw,2.35rem);font-weight:600;line-height:1.2;color:var(--ink);margin-bottom:.75rem}
-.hero p{color:var(--muted);font-size:.95rem;max-width:38ch;margin:0 auto 1.5rem}
-.hero .cta{display:inline-block;background:var(--burgundy);color:#fff;font-weight:700;font-size:.9rem;padding:.75rem 1.5rem;border-radius:999px}
-.band{background:var(--burgundy);color:#fff;padding:1.1rem 1.25rem;text-align:center}
-.band strong{display:block;font-family:"Fraunces",serif;font-size:1.15rem;margin-bottom:.25rem}
-.band span{font-size:.85rem;opacity:.85}
-.programs{max-width:720px;margin:0 auto;padding:2rem 1.25rem}
-.programs h2{font-family:"Fraunces",serif;font-size:1.2rem;color:var(--burgundy);text-align:center;margin-bottom:1.25rem;font-weight:600}
-.prog{display:grid;grid-template-columns:72px 1fr auto;gap:1rem;align-items:center;padding:1.15rem 0;border-bottom:1px solid var(--line)}
-@media(max-width:520px){.prog{grid-template-columns:56px 1fr}.prog .ask{grid-column:2;margin-top:.35rem;justify-self:start}}
-.prog .num{font-family:"Fraunces",serif;font-size:1.75rem;font-weight:700;color:var(--terra);line-height:1}
-.prog h3{font-size:1rem;font-weight:700;margin-bottom:.15rem;color:var(--ink)}
-.prog p{font-size:.82rem;color:var(--muted)}
-.prog .ask{font-size:.78rem;font-weight:700;color:var(--burgundy);border-bottom:2px solid var(--terra);padding-bottom:1px}
-.why{max-width:720px;margin:0 auto 2rem;padding:0 1.25rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:.75rem}
-@media(max-width:560px){.why{grid-template-columns:1fr}}
-.why div{background:#fff;border:1px solid var(--line);padding:1rem 1.05rem;border-radius:4px}
-.why strong{display:block;font-family:"Fraunces",serif;font-size:.95rem;color:var(--burgundy);margin-bottom:.3rem}
-.why span{font-size:.8rem;color:var(--muted)}
-.enroll{max-width:480px;margin:0 auto 2.5rem;padding:1.5rem 1.35rem;background:#fff;border:1px solid var(--line);text-align:center;border-radius:4px}
-.enroll h2{font-family:"Fraunces",serif;font-size:1.25rem;color:var(--burgundy);margin-bottom:.4rem}
-.enroll p{font-size:.88rem;color:var(--muted);margin-bottom:1.1rem}
-.enroll a{display:block;background:var(--terra);color:#fff;font-weight:700;padding:.8rem;border-radius:999px}
-footer{text-align:center;padding:1.25rem;font-size:.78rem;color:var(--muted);border-top:1px solid var(--line)}
+.mland-note{background:linear-gradient(90deg,var(--sky),var(--grape),var(--coral));color:#fff;font-size:.75rem;text-align:center;padding:.55rem 1rem;font-weight:600}
+.mland-note a{color:#fff;text-decoration:underline;margin:0 .3rem}
+
+/* NAV */
+.top{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.25rem;background:var(--white);box-shadow:0 2px 12px rgba(0,0,0,.06);position:sticky;top:0;z-index:20}
+.logo{font-family:"Fredoka",sans-serif;font-weight:700;font-size:1.35rem}
+.logo span{color:var(--coral)}
+.logo .dot{color:var(--sky)}
+.logo .dot2{color:var(--mint)}
+.wa{background:var(--coral);color:#fff;font-weight:700;font-size:.8rem;padding:.55rem 1rem;border-radius:999px;box-shadow:0 4px 0 #c2410c}
+.wa:active{transform:translateY(2px);box-shadow:0 2px 0 #c2410c}
+
+/* HERO */
+.hero{padding:2.5rem 1.25rem 2rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:var(--sun-soft);top:-40px;left:-40px;z-index:0}
+.hero::after{content:"";position:absolute;width:140px;height:140px;border-radius:50%;background:var(--grape-soft);bottom:10px;right:-30px;z-index:0}
+.hero-inner{position:relative;z-index:1;max-width:560px;margin:0 auto}
+.badge{display:inline-block;background:var(--mint-soft);color:var(--mint);font-weight:700;font-size:.75rem;padding:.35rem .85rem;border-radius:999px;margin-bottom:1rem}
+.hero h1{font-family:"Fredoka",sans-serif;font-size:clamp(1.7rem,5vw,2.5rem);font-weight:700;line-height:1.15;margin-bottom:.75rem}
+.hero h1 .c1{color:var(--sky)}.hero h1 .c2{color:var(--coral)}.hero h1 .c3{color:var(--grape)}
+.hero p{color:var(--muted);font-size:.98rem;max-width:36ch;margin:0 auto 1.35rem;font-weight:500}
+.hero-cta{display:inline-flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+.btn-main{background:var(--sky);color:#fff;font-weight:700;padding:.75rem 1.4rem;border-radius:999px;font-size:.9rem;box-shadow:0 4px 0 #1d4ed8}
+.btn-soft{background:var(--white);color:var(--ink);font-weight:700;padding:.75rem 1.2rem;border-radius:999px;font-size:.9rem;border:2px solid #e2e8f0}
+
+/* BUBBLES STATS */
+.stats{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;padding:0 1.25rem 2rem;position:relative;z-index:1}
+.stat{background:var(--white);border-radius:20px;padding:1rem 1.2rem;min-width:120px;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,.05)}
+.stat .n{font-family:"Fredoka",sans-serif;font-size:1.6rem;font-weight:700}
+.stat:nth-child(1) .n{color:var(--sky)}
+.stat:nth-child(2) .n{color:var(--coral)}
+.stat:nth-child(3) .n{color:var(--mint)}
+.stat:nth-child(4) .n{color:var(--grape)}
+.stat .l{font-size:.75rem;font-weight:600;color:var(--muted);margin-top:.15rem}
+
+/* ABOUT */
+.sec{max-width:900px;margin:0 auto;padding:0 1.25rem 2.5rem}
+.sec-title{font-family:"Fredoka",sans-serif;font-size:1.45rem;font-weight:700;text-align:center;margin-bottom:.4rem}
+.sec-sub{text-align:center;color:var(--muted);font-size:.9rem;font-weight:500;margin-bottom:1.5rem;max-width:40ch;margin-left:auto;margin-right:auto}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:600px){.about-grid{grid-template-columns:1fr}}
+.about-card{background:var(--white);border-radius:24px;padding:1.35rem 1.25rem;box-shadow:0 4px 16px rgba(0,0,0,.04)}
+.about-card .icon{width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.35rem;margin-bottom:.75rem}
+.about-card:nth-child(1) .icon{background:var(--sky-soft)}
+.about-card:nth-child(2) .icon{background:var(--sun-soft)}
+.about-card:nth-child(3) .icon{background:var(--mint-soft)}
+.about-card:nth-child(4) .icon{background:var(--grape-soft)}
+.about-card h3{font-family:"Fredoka",sans-serif;font-size:1.05rem;margin-bottom:.35rem}
+.about-card p{font-size:.85rem;color:var(--muted);font-weight:500}
+
+/* PROGRAMS strip */
+.prog-strip{background:linear-gradient(135deg,var(--sky),var(--grape));padding:2rem 1.25rem;margin-bottom:2.5rem;color:#fff}
+.prog-strip h2{font-family:"Fredoka",sans-serif;font-size:1.4rem;text-align:center;margin-bottom:.35rem}
+.prog-strip .sub{text-align:center;opacity:.9;font-size:.88rem;margin-bottom:1.25rem;font-weight:500}
+.prog-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem;max-width:800px;margin:0 auto}
+@media(max-width:640px){.prog-row{grid-template-columns:1fr}}
+.prog-item{background:rgba(255,255,255,.18);backdrop-filter:blur(6px);border-radius:18px;padding:1.15rem 1rem;text-align:center;border:1px solid rgba(255,255,255,.25)}
+.prog-item .emoji{font-size:1.75rem;display:block;margin-bottom:.4rem}
+.prog-item h3{font-family:"Fredoka",sans-serif;font-size:1rem;margin-bottom:.25rem}
+.prog-item p{font-size:.78rem;opacity:.9;font-weight:500}
+
+/* EXTRAS */
+.extras{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.85rem}
+.extra{border-radius:20px;padding:1.25rem 1rem;text-align:center;color:#fff;font-weight:600;transition:transform .15s}
+.extra:hover{transform:scale(1.03)}
+.extra .e{font-size:1.8rem;display:block;margin-bottom:.4rem}
+.extra h3{font-family:"Fredoka",sans-serif;font-size:.95rem;margin-bottom:.2rem}
+.extra p{font-size:.72rem;opacity:.92;font-weight:500}
+.extra.a{background:linear-gradient(145deg,#3b82f6,#60a5fa)}
+.extra.b{background:linear-gradient(145deg,#f97316,#fb923c)}
+.extra.c{background:linear-gradient(145deg,#10b981,#34d399)}
+.extra.d{background:linear-gradient(145deg,#a855f7,#c084fc)}
+.extra.e2{background:linear-gradient(145deg,#ec4899,#f472b6)}
+.extra.f{background:linear-gradient(145deg,#fbbf24,#fcd34d);color:#78350f}
+
+/* HORARIO / INFO */
+.info-bar{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+@media(max-width:560px){.info-bar{grid-template-columns:1fr}}
+.info-box{background:var(--white);border-radius:20px;padding:1.25rem;border:3px solid transparent}
+.info-box.y{border-color:var(--sun)}
+.info-box.m{border-color:var(--mint)}
+.info-box h3{font-family:"Fredoka",sans-serif;font-size:1rem;margin-bottom:.5rem}
+.info-box ul{list-style:none;font-size:.85rem;font-weight:500;color:var(--muted)}
+.info-box li{padding:.25rem 0;padding-left:1.1rem;position:relative}
+.info-box li::before{content:"★";position:absolute;left:0;color:var(--sun);font-size:.7rem;top:.4rem}
+.info-box.m li::before{color:var(--mint)}
+
+/* SOCIAL */
+.social-sec{text-align:center;padding:2rem 1.25rem 2.5rem}
+.social-sec h2{font-family:"Fredoka",sans-serif;font-size:1.35rem;margin-bottom:.35rem}
+.social-sec p{color:var(--muted);font-size:.88rem;margin-bottom:1.25rem;font-weight:500}
+.socials{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap}
+.soc{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.35rem;color:#fff;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,.12)}
+.soc.ig{background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af)}
+.soc.fb{background:#1877f2}
+.soc.tt{background:#000}
+.soc.yt{background:#ff0000}
+.soc.wa2{background:#25d366}
+
+/* CTA final */
+.final{max-width:480px;margin:0 auto 2.5rem;padding:1.75rem 1.35rem;background:linear-gradient(145deg,var(--coral),var(--pink));border-radius:28px;text-align:center;color:#fff;box-shadow:0 12px 32px rgba(249,115,22,.3)}
+.final h2{font-family:"Fredoka",sans-serif;font-size:1.35rem;margin-bottom:.4rem}
+.final p{font-size:.9rem;opacity:.95;margin-bottom:1.1rem;font-weight:500}
+.final a{display:inline-block;background:#fff;color:var(--coral);font-weight:700;padding:.75rem 1.5rem;border-radius:999px;font-size:.9rem}
+
+footer{text-align:center;padding:1.25rem;font-size:.78rem;color:var(--muted);font-weight:500}
 </style>
 </head>
 <body>
-<div class="mland-note">Demo de estilo · MLand Software · <a href="/#demos">Volver al portafolio</a> · <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20estilo%20educacion" target="_blank" rel="noopener">Pedir este estilo</a></div>
-<div class="mast">
-  <div class="crest">AN</div>
-  <div class="name">Academia Norte</div>
-  <div class="tag">Nueva institución · Matrículas abiertas</div>
-</div>
+<div class="mland-note">Demo de estilo · MLand Software · <a href="/#demos">Volver al portafolio</a> · <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20estilo%20educacion%20para%20niños">Pedir este estilo</a></div>
+
+<header class="top">
+  <div class="logo">Kids<span class="dot">.</span>Color<span class="dot2">.</span><span>Academy</span></div>
+  <a class="wa" href="https://wa.me/593978868363?text=Hola%2C%20quiero%20info%20de%20matrícula" target="_blank" rel="noopener">WhatsApp</a>
+</header>
+
 <section class="hero">
-  <div class="open">Demo · Educación</div>
-  <h1>Una nueva institución para formar con propósito</h1>
-  <p>Programas claros, fechas de matrícula y un solo mensaje para inscribirse o pedir información.</p>
-  <a class="cta" href="https://wa.me/593978868363?text=Quiero%20informacion%20de%20matrícula" target="_blank" rel="noopener">Solicitar información</a>
+  <div class="hero-inner">
+    <span class="badge">✨ Nueva institución · Matrículas abiertas</span>
+    <h1>Donde aprender es <span class="c1">jugar</span>, <span class="c2">crear</span> y <span class="c3">crecer</span></h1>
+    <p>Espacio pensado para niños: aulas alegres, docentes cercanos y actividades que despiertan curiosidad todos los días.</p>
+    <div class="hero-cta">
+      <a class="btn-main" href="https://wa.me/593978868363?text=Quiero%20conocer%20la%20academia" target="_blank" rel="noopener">Quiero conocer más</a>
+      <a class="btn-soft" href="#extras">Ver extracurriculares</a>
+    </div>
+  </div>
 </section>
-<div class="band">
-  <strong>Matrículas 2026 abiertas</strong>
-  <span>Cupos limitados · Respuesta por WhatsApp el mismo día</span>
+
+<div class="stats">
+  <div class="stat"><div class="n">15+</div><div class="l">Años de experiencia</div></div>
+  <div class="stat"><div class="n">180</div><div class="l">Estudiantes</div></div>
+  <div class="stat"><div class="n">12</div><div class="l">Docentes</div></div>
+  <div class="stat"><div class="n">8</div><div class="l">Extracurriculares</div></div>
 </div>
-<div class="programs">
-  <h2>Programas</h2>
-  <div class="prog"><div class="num">01</div><div><h3>Inicial y primaria</h3><p>Bases sólidas · Acompañamiento cercano</p></div><a class="ask" href="https://wa.me/593978868363?text=Programa%20inicial" target="_blank" rel="noopener">Consultar</a></div>
-  <div class="prog"><div class="num">02</div><div><h3>Secundaria</h3><p>Proyecto de vida · Orientación académica</p></div><a class="ask" href="https://wa.me/593978868363?text=Programa%20secundaria" target="_blank" rel="noopener">Consultar</a></div>
-  <div class="prog"><div class="num">03</div><div><h3>Cursos y refuerzo</h3><p>Talleres · Idiomas · Apoyo escolar</p></div><a class="ask" href="https://wa.me/593978868363?text=Cursos%20refuerzo" target="_blank" rel="noopener">Consultar</a></div>
+
+<div class="sec">
+  <h2 class="sec-title">¿Cómo es nuestra institución?</h2>
+  <p class="sec-sub">Todo diseñado para que los niños se sientan seguros, motivados y con ganas de volver mañana.</p>
+  <div class="about-grid">
+    <div class="about-card">
+      <div class="icon">🏫</div>
+      <h3>Ambientes coloridos</h3>
+      <p>Aulas luminosas, rincones de lectura y zonas de juego donde el color invita a explorar.</p>
+    </div>
+    <div class="about-card">
+      <div class="icon">👩‍🏫</div>
+      <h3>Docentes cercanos</h3>
+      <p>Grupos reducidos. Cada niño es acompañado de cerca en su ritmo de aprendizaje.</p>
+    </div>
+    <div class="about-card">
+      <div class="icon">🌱</div>
+      <h3>Aprendizaje activo</h3>
+      <p>Proyectos, experimentos y juegos que conectan lo que ven en clase con la vida real.</p>
+    </div>
+    <div class="about-card">
+      <div class="icon">🤝</div>
+      <h3>Familias informadas</h3>
+      <p>Comunicación constante por WhatsApp y reuniones claras sobre el progreso de cada hijo.</p>
+    </div>
+  </div>
 </div>
-<div class="why">
-  <div><strong>Docentes cercanos</strong><span>Grupos reducidos y seguimiento real</span></div>
-  <div><strong>Instalaciones listas</strong><span>Ambientes pensados para aprender</span></div>
-  <div><strong>Inscripción simple</strong><span>Todo el proceso por WhatsApp</span></div>
+
+<div class="prog-strip">
+  <h2>Niveles que ofrecemos</h2>
+  <p class="sub">Desde los primeros pasos hasta el refuerzo escolar</p>
+  <div class="prog-row">
+    <div class="prog-item">
+      <span class="emoji">🧸</span>
+      <h3>Inicial</h3>
+      <p>2 a 5 años · Juego, motricidad y primeros números y letras</p>
+    </div>
+    <div class="prog-item">
+      <span class="emoji">📚</span>
+      <h3>Primaria</h3>
+      <p>Lectura, mates y proyectos · Acompañamiento diario</p>
+    </div>
+    <div class="prog-item">
+      <span class="emoji">✏️</span>
+      <h3>Refuerzo</h3>
+      <p>Apoyo en tareas, idiomas y preparación de evaluaciones</p>
+    </div>
+  </div>
 </div>
-<div class="enroll">
-  <h2>¿Listo para conocer la academia?</h2>
-  <p>Agenda una visita o pide el folleto de matrícula. Sin compromiso.</p>
-  <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20conocer%20Academia%20Norte" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+
+<div class="sec" id="extras">
+  <h2 class="sec-title">Actividades extracurriculares</h2>
+  <p class="sec-sub">Porque el aprendizaje también pasa por el cuerpo, la música y la imaginación.</p>
+  <div class="extras">
+    <div class="extra a"><span class="e">⚽</span><h3>Fútbol</h3><p>Martes y jueves</p></div>
+    <div class="extra b"><span class="e">🎨</span><h3>Arte y pintura</h3><p>Miércoles</p></div>
+    <div class="extra c"><span class="e">💃</span><h3>Danza</h3><p>Lunes y viernes</p></div>
+    <div class="extra d"><span class="e">🎹</span><h3>Música</h3><p>Jueves</p></div>
+    <div class="extra e2"><span class="e">🧩</span><h3>Robótica</h3><p>Viernes</p></div>
+    <div class="extra f"><span class="e">📖</span><h3>Club de lectura</h3><p>Miércoles</p></div>
+  </div>
+
+  <div class="info-bar">
+    <div class="info-box y">
+      <h3>Horario de clases</h3>
+      <ul>
+        <li>Lunes a viernes 7:30 – 13:00</li>
+        <li>Extracurriculares 14:00 – 16:00</li>
+        <li>Sábados: talleres especiales</li>
+      </ul>
+    </div>
+    <div class="info-box m">
+      <h3>Qué incluye la matrícula</h3>
+      <ul>
+        <li>Material básico del aula</li>
+        <li>Seguro estudiantil</li>
+        <li>1 actividad extracurricular</li>
+        <li>Reportes mensuales a padres</li>
+      </ul>
+    </div>
+  </div>
 </div>
-<footer>Ejemplo de estilo educativo · No es un sitio de cliente real</footer>
+
+<div class="social-sec">
+  <h2>Síguenos y mira el día a día</h2>
+  <p>Fotos de actividades, avisos y momentos de los niños (con permiso de las familias).</p>
+  <div class="socials">
+    <a class="soc ig" href="https://www.instagram.com/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">IG</a>
+    <a class="soc fb" href="https://www.facebook.com/" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">f</a>
+    <a class="soc tt" href="https://www.tiktok.com/" target="_blank" rel="noopener" title="TikTok" aria-label="TikTok">♪</a>
+    <a class="soc yt" href="https://www.youtube.com/" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube">▶</a>
+    <a class="soc wa2" href="https://wa.me/593978868363?text=Hola%2C%20vengo%20de%20la%20web%20de%20la%20academia" target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp">WA</a>
+  </div>
+</div>
+
+<div class="final">
+  <h2>¿Listo para una visita guiada?</h2>
+  <p>Agenda un recorrido por las aulas y conoce a los docentes. Sin compromiso.</p>
+  <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20agendar%20una%20visita%20a%20la%20academia" target="_blank" rel="noopener">Agendar por WhatsApp</a>
+</div>
+
+<footer>Ejemplo de estilo educativo · No es un sitio de cliente real · MLand Software</footer>
 </body>
 </html>
