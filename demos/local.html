@@ -6,9 +6,10 @@
 :root{--purple:#6d28d9;--lilac:#ede9fe;--ink:#1e1b4b;--muted:#6b7280}
 *{box-sizing:border-box;margin:0;padding:0}body{font-family:Poppins,system-ui,sans-serif;background:#fafafa;color:var(--ink);line-height:1.5}a{color:inherit;text-decoration:none}
 .mland-note{background:var(--ink);color:#a5b4fc;font-size:.75rem;text-align:center;padding:.5rem 1rem;display:flex;flex-wrap:wrap;gap:.35rem;justify-content:center;align-items:center}
-.mland-note a{color:#c4b5fd;font-weight:600}.lang-switch{display:inline-flex;border:1.5px solid currentColor;border-radius:999px;overflow:hidden;font-size:.72rem;font-weight:700}
-.lang-switch button{border:0;background:transparent;color:inherit;padding:.28rem .55rem;cursor:pointer;font:inherit;opacity:.55}
-.lang-switch button.active{opacity:1;background:rgba(255,255,255,.22)}
+.mland-note a{color:#c4b5fd;font-weight:600}
+.lang-switch{display:inline-flex;border:1.5px solid #e2e8f0;border-radius:999px;overflow:hidden;font-size:.72rem;font-weight:700}
+.lang-btn{padding:.32rem .58rem;background:transparent;border:none;cursor:pointer;color:#64748b;font:inherit}
+.lang-btn.active{background:#0d9488;color:#fff}
 .wrap{max-width:480px;margin:0 auto;padding:2rem 1.25rem}
 .badge{display:inline-block;background:var(--lilac);color:var(--purple);font-size:.72rem;font-weight:700;padding:.3rem .7rem;border-radius:999px;margin-bottom:1rem}
 h1{font-size:1.65rem;line-height:1.25;margin-bottom:.5rem}.lead{color:var(--muted);font-size:.92rem;margin-bottom:1.5rem}
@@ -18,42 +19,17 @@ h1{font-size:1.65rem;line-height:1.25;margin-bottom:.5rem}.lead{color:var(--mute
 .box h3{font-size:.95rem}.box p{font-size:.82rem;color:var(--muted)}
 footer{text-align:center;padding:1rem;font-size:.75rem;color:var(--muted)}
 </style></head><body>
-<div class="mland-note"><span data-es="Demo de estilo · MLand Software" data-en="Style demo · MLand Software">Demo de estilo · MLand Software</span> · <a href="/#demos" data-es="Volver al portafolio" data-en="Back to portfolio">Volver al portafolio</a> · <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20estilo%20local" data-es-href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20estilo%20local" data-en-href="https://wa.me/593978868363?text=Hi%2C%20I%20want%20local%20business%20style" data-es="Pedir este estilo" data-en="Request this style">Pedir este estilo</a> · <span class="lang-switch"><button type="button" data-set-lang="es" onclick="mlandSetLang('es')">ES</button><button type="button" data-set-lang="en" onclick="mlandSetLang('en')">EN</button></span></div>
+<div class="mland-note"><span data-es="Demo de estilo · MLand Software" data-en="Style demo · MLand Software">Demo de estilo · MLand Software</span> · <a href="/#demos" data-es="Volver al portafolio" data-en="Back to portfolio">Volver al portafolio</a> · <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20estilo%20local" data-es-href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20estilo%20local" data-en-href="https://wa.me/593978868363?text=Hi%2C%20I%20want%20local%20business%20style" data-es="Pedir este estilo" data-en="Request this style">Pedir este estilo</a></div>
+<div style="display:flex;justify-content:flex-end;padding:.45rem 1rem 0"><div class="lang-switch" role="group" aria-label="Language"><button type="button" class="lang-btn active" data-set-lang="es">ES</button><button type="button" class="lang-btn" data-set-lang="en">EN</button></div></div>
 <div class="wrap">
 <span class="badge" data-es="Demo · Negocio de barrio" data-en="Demo · Neighborhood business">Demo · Negocio de barrio</span>
 <h1 data-es="Que te encuentren cuando buscan cerca" data-en="Get found when people search nearby">Que te encuentren cuando buscan cerca</h1>
 <p class="lead" data-es="Presencia clara en web y Google Maps para que te escriban por WhatsApp." data-en="Clear web + Google Maps presence so people message you on WhatsApp.">Presencia clara en web y Google Maps para que te escriban por WhatsApp.</p>
-<a class="cta" href="https://wa.me/593978868363?text=info" data-es-href="https://wa.me/593978868363?text=info" data-en-href="https://wa.me/593978868363?text=info" data-es="Escribir por WhatsApp" data-en="Message on WhatsApp">Escribir por WhatsApp</a>
+<a class="cta" href="https://wa.me/593978868363?text=info" data-es-href="https://wa.me/593978868363?text=info" data-en-href="https://wa.me/593978868363?text=Hi%2C%20I%20want%20info" data-es="Escribir por WhatsApp" data-en="Message on WhatsApp">Escribir por WhatsApp</a>
 <div class="box"><div class="n">1</div><div><h3 data-es="Web simple" data-en="Simple website">Web simple</h3><p data-es="Quién eres, qué ofreces y cómo contactarte." data-en="Who you are, what you offer and how to reach you.">Quién eres, qué ofreces y cómo contactarte.</p></div></div>
 <div class="box"><div class="n">2</div><div><h3 data-es="Google Maps" data-en="Google Maps">Google Maps</h3><p data-es="Aparece cuando buscan tu servicio cerca." data-en="Show up when people search nearby.">Aparece cuando buscan tu servicio cerca.</p></div></div>
 <div class="box"><div class="n">3</div><div><h3 data-es="WhatsApp directo" data-en="Direct WhatsApp">WhatsApp directo</h3><p data-es="Un toque y ya te escriben." data-en="One tap and they message you.">Un toque y ya te escriben.</p></div></div>
 </div>
 <footer data-es="Ejemplo de estilo · MLand Software" data-en="Style example · MLand Software">Ejemplo de estilo · MLand Software</footer>
-<script>
-(function(){
-  var KEY='mland_lang';
-  function apply(lang){
-    document.documentElement.lang=lang;
-    document.querySelectorAll('[data-es]').forEach(function(el){
-      var v=el.getAttribute('data-'+lang);
-      if(v!==null) el.textContent=v;
-    });
-    document.querySelectorAll('[data-es-html]').forEach(function(el){
-      var v=el.getAttribute('data-'+lang+'-html');
-      if(v!==null) el.innerHTML=v;
-    });
-    document.querySelectorAll('[data-es-href]').forEach(function(el){
-      var v=el.getAttribute('data-'+lang+'-href');
-      if(v!==null) el.setAttribute('href',v);
-    });
-    document.querySelectorAll('.lang-switch button').forEach(function(b){
-      b.classList.toggle('active', b.getAttribute('data-set-lang')===lang);
-    });
-    try{localStorage.setItem(KEY,lang)}catch(e){}
-  }
-  window.mlandSetLang=function(lang){apply(lang==='en'?'en':'es')};
-  var start='es';
-  try{start=localStorage.getItem(KEY)||'es'}catch(e){}
-  apply(start==='en'?'en':'es');
-})();
-</script></body></html>
+<script src="/js/i18n.js"></script>
+</body></html>
