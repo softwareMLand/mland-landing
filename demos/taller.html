@@ -1,47 +1,58 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Demo · Taller | MLand Software</title>
-<meta name="robots" content="noindex,follow">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Demo · Workshop | MLand Software</title><meta name="robots" content="noindex,follow">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--y:#f5c518;--bg:#111;--panel:#1a1a1a;--line:#333;--txt:#e8e8e8;--dim:#888}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"IBM Plex Sans",system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.5}
-a{color:inherit;text-decoration:none}
-.mland-note{background:#000;color:#555;font-size:.72rem;text-align:center;padding:.45rem 1rem;font-family:"IBM Plex Mono",monospace}
-.mland-note a{color:var(--y);font-weight:600;margin:0 .3rem}
-.bar{background:var(--y);color:#111;padding:.65rem 1.25rem;display:flex;justify-content:space-between;align-items:center;font-family:"IBM Plex Mono",monospace;font-weight:700;font-size:.9rem}
-.bar a{background:#111;color:var(--y);padding:.4rem .8rem;font-size:.75rem}
-.hero{padding:2.25rem 1.25rem;border-bottom:4px solid var(--y)}
-.hero .code{font-family:"IBM Plex Mono",monospace;font-size:.75rem;color:var(--y);margin-bottom:.5rem}
-.hero h1{font-family:"IBM Plex Mono",monospace;font-size:clamp(1.35rem,3.5vw,1.85rem);line-height:1.25;max-width:22ch;margin-bottom:.6rem}
-.hero p{color:var(--dim);max-width:36ch;font-size:.92rem;margin-bottom:1.1rem}
-.hero .cta{display:inline-block;background:var(--y);color:#111;font-family:"IBM Plex Mono",monospace;font-weight:700;padding:.65rem 1.1rem;font-size:.85rem}
-.list{max-width:560px;margin:0 auto;padding:1.5rem 1.25rem 2rem}
-.list h2{font-family:"IBM Plex Mono",monospace;font-size:.85rem;color:var(--y);margin-bottom:1rem;text-transform:uppercase;letter-spacing:.08em}
-.svc{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--y);padding:1rem 1.1rem;margin-bottom:.75rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
-.svc h3{font-family:"IBM Plex Mono",monospace;font-size:.95rem;margin-bottom:.2rem}
-.svc p{font-size:.8rem;color:var(--dim)}
-.svc .go{font-family:"IBM Plex Mono",monospace;font-size:.75rem;font-weight:700;color:var(--y);border:1px solid var(--y);padding:.35rem .65rem;white-space:nowrap}
-footer{text-align:center;padding:1.25rem;font-size:.72rem;color:#555;font-family:"IBM Plex Mono",monospace;border-top:1px solid var(--line)}
-</style>
-</head>
-<body>
-<div class="mland-note">Demo de estilo · MLand Software · <a href="/#demos">Volver al portafolio</a> · <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20estilo%20taller" target="_blank" rel="noopener">Pedir este estilo</a></div>
-<div class="bar"><span>// TALLER RÁPIDO</span><a href="https://wa.me/593978868363?text=estilo%20taller" target="_blank" rel="noopener">WHATSAPP</a></div>
-<section class="hero">
-<div class="code">DEMO · SERVICIOS LOCALES</div>
-<h1>Cotiza en minutos. Sin dar vueltas.</h1>
-<p>Servicios claros, zona de cobertura y mensaje listo para WhatsApp.</p>
-<a class="cta" href="https://wa.me/593978868363?text=Cotizacion%20taller" target="_blank" rel="noopener">PEDIR COTIZACIÓN →</a>
-</section>
-<div class="list">
-<h2>Qué hacemos</h2>
-<div class="svc"><div><h3>01 · Diagnóstico</h3><p>Revisión rápida · Sin compromiso</p></div><a class="go" href="https://wa.me/593978868363?text=Diagnostico" target="_blank" rel="noopener">PEDIR</a></div>
-<div class="svc"><div><h3>02 · Reparación</h3><p>Según el trabajo · Presupuesto claro</p></div><a class="go" href="https://wa.me/593978868363?text=Reparacion" target="_blank" rel="noopener">PEDIR</a></div>
-<div class="svc"><div><h3>03 · Mantenimiento</h3><p>Programado o a domicilio</p></div><a class="go" href="https://wa.me/593978868363?text=Mantenimiento" target="_blank" rel="noopener">PEDIR</a></div>
+:root{--bg:#111;--yellow:#facc15;--dim:#a3a3a3}*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"IBM Plex Sans",system-ui,sans-serif;background:var(--bg);color:#fafafa;line-height:1.5}a{color:inherit;text-decoration:none}
+.mland-note{background:#000;color:#666;font-size:.75rem;text-align:center;padding:.5rem 1rem;display:flex;flex-wrap:wrap;gap:.35rem;justify-content:center;align-items:center}
+.mland-note a{color:var(--yellow);font-weight:600}.lang-switch{display:inline-flex;border:1.5px solid currentColor;border-radius:999px;overflow:hidden;font-size:.72rem;font-weight:700}
+.lang-switch button{border:0;background:transparent;color:inherit;padding:.28rem .55rem;cursor:pointer;font:inherit;opacity:.55}
+.lang-switch button.active{opacity:1;background:var(--yellow);color:#111}
+.top{display:flex;justify-content:space-between;padding:1rem 1.25rem;border-bottom:2px solid var(--yellow)}
+.logo{font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--yellow)}.wa{background:var(--yellow);color:#111;font-weight:700;padding:.45rem .9rem;font-size:.8rem}
+.hero{padding:2.5rem 1.25rem;max-width:560px}.hero .k{font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--yellow);margin-bottom:.6rem}
+.hero h1{font-family:"IBM Plex Mono",monospace;font-size:clamp(1.4rem,4vw,1.9rem);margin-bottom:.6rem}
+.hero p{color:var(--dim);margin-bottom:1.25rem}.hero .cta{display:inline-block;background:var(--yellow);color:#111;font-weight:700;padding:.7rem 1.2rem}
+.list{max-width:560px;margin:0 auto 2rem;padding:0 1.25rem}.list h2{font-family:"IBM Plex Mono",monospace;font-size:1rem;color:var(--yellow);margin-bottom:1rem}
+.svc{border:1px solid #333;padding:1rem;margin-bottom:.65rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.svc h3{font-size:.95rem;font-weight:600}.svc p{font-size:.8rem;color:var(--dim)}
+.svc a{font-family:"IBM Plex Mono",monospace;font-size:.75rem;color:var(--yellow);border-bottom:1px solid var(--yellow)}
+footer{text-align:center;padding:1rem;font-size:.75rem;color:#555}
+</style></head><body>
+<div class="mland-note"><span data-es="Demo de estilo · MLand Software" data-en="Style demo · MLand Software">Demo de estilo · MLand Software</span> · <a href="/#demos" data-es="Volver al portafolio" data-en="Back to portfolio">Volver al portafolio</a> · <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20taller" data-es-href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20taller" data-en-href="https://wa.me/593978868363?text=Hi%2C%20I%20want%20workshop%20website" data-es="Pedir este estilo" data-en="Request this style">Pedir este estilo</a> · <span class="lang-switch"><button type="button" data-set-lang="es" onclick="mlandSetLang('es')">ES</button><button type="button" data-set-lang="en" onclick="mlandSetLang('en')">EN</button></span></div>
+<div class="top"><div class="logo">TALLER 24</div><a class="wa" href="https://wa.me/593978868363" data-es="Cotizar" data-en="Quote">Cotizar</a></div>
+<section class="hero"><div class="k" data-es="Demo · Taller" data-en="Demo · Workshop">Demo · Taller</div>
+<h1 data-es="Reparaciones claras. Respuesta rápida." data-en="Clear repairs. Fast reply.">Reparaciones claras. Respuesta rápida.</h1>
+<p data-es="Servicios y cotización por WhatsApp." data-en="Services and WhatsApp quotes.">Servicios y cotización por WhatsApp.</p>
+<a class="cta" href="https://wa.me/593978868363?text=cotizacion" data-es="Pedir cotización" data-en="Request a quote">Pedir cotización</a></section>
+<div class="list"><h2 data-es="// Servicios" data-en="// Services">// Servicios</h2>
+<div class="svc"><div><h3 data-es="Diagnóstico" data-en="Diagnosis">Diagnóstico</h3><p data-es="Revisión y presupuesto" data-en="Inspection and estimate">Revisión y presupuesto</p></div><a href="https://wa.me/593978868363" data-es="Pedir" data-en="Ask">Pedir</a></div>
+<div class="svc"><div><h3 data-es="Mantenimiento" data-en="Maintenance">Mantenimiento</h3><p data-es="Preventivo y correctivo" data-en="Preventive and corrective">Preventivo y correctivo</p></div><a href="https://wa.me/593978868363" data-es="Pedir" data-en="Ask">Pedir</a></div>
+<div class="svc"><div><h3 data-es="Urgencias" data-en="Emergencies">Urgencias</h3><p data-es="Atención prioritaria" data-en="Priority service">Atención prioritaria</p></div><a href="https://wa.me/593978868363" data-es="Pedir" data-en="Ask">Pedir</a></div>
 </div>
-<footer>Ejemplo estilo taller · No es cliente real</footer>
-</body></html>
+<footer data-es="Ejemplo de estilo · MLand Software" data-en="Style example · MLand Software">Ejemplo de estilo · MLand Software</footer>
+<script>
+(function(){
+  var KEY='mland_lang';
+  function apply(lang){
+    document.documentElement.lang=lang;
+    document.querySelectorAll('[data-es]').forEach(function(el){
+      var v=el.getAttribute('data-'+lang);
+      if(v!==null) el.textContent=v;
+    });
+    document.querySelectorAll('[data-es-href]').forEach(function(el){
+      var v=el.getAttribute('data-'+lang+'-href');
+      if(v!==null) el.setAttribute('href',v);
+    });
+    document.querySelectorAll('.lang-switch button').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-set-lang')===lang);
+    });
+    try{localStorage.setItem(KEY,lang)}catch(e){}
+  }
+  window.mlandSetLang=function(lang){apply(lang==='en'?'en':'es')};
+  var start='es';
+  try{start=localStorage.getItem(KEY)||'es'}catch(e){}
+  apply(start==='en'?'en':'es');
+})();
+</script></body></html>

@@ -1,47 +1,60 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Demo · Clínica | MLand Software</title>
-<meta name="robots" content="noindex,follow">
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Demo · Clinic | MLand Software</title><meta name="robots" content="noindex,follow">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--sky:#e8f4f8;--blue:#3d8b9c;--deep:#1e4a54;--soft:#5a7a82;--white:#fff}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Outfit",system-ui,sans-serif;background:var(--sky);color:var(--deep);line-height:1.55}
-a{color:inherit;text-decoration:none}
-.mland-note{background:var(--deep);color:#8ab4bc;font-size:.75rem;text-align:center;padding:.5rem 1rem}
-.mland-note a{color:#7dd3e0;font-weight:600;margin:0 .35rem}
-nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem;background:var(--white);box-shadow:0 1px 0 rgba(30,74,84,.06)}
-.brand{font-family:"Lora",serif;font-size:1.25rem;color:var(--deep)}
-.nav-cta{background:var(--blue);color:#fff;font-weight:600;font-size:.85rem;padding:.5rem 1.1rem;border-radius:999px}
-.hero{max-width:640px;margin:0 auto;padding:2.75rem 1.5rem 2rem;text-align:center}
-.hero .pill{display:inline-block;background:#d4eef3;color:var(--blue);font-size:.75rem;font-weight:600;padding:.3rem .75rem;border-radius:999px;margin-bottom:1rem}
-.hero h1{font-family:"Lora",serif;font-size:clamp(1.55rem,4vw,2.1rem);line-height:1.25;margin-bottom:.6rem}
-.hero p{color:var(--soft);margin-bottom:1.35rem;font-size:.95rem}
-.hero .cta{display:inline-block;background:var(--blue);color:#fff;font-weight:600;padding:.7rem 1.4rem;border-radius:999px;box-shadow:0 4px 14px rgba(61,139,156,.35)}
-.cards{max-width:900px;margin:0 auto;padding:0 1.25rem 2.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
-.card{background:var(--white);border-radius:20px;padding:1.4rem 1.35rem;box-shadow:0 4px 24px rgba(30,74,84,.06)}
-.card .icon{width:40px;height:40px;border-radius:12px;background:var(--sky);display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:.85rem}
-.card h3{font-family:"Lora",serif;font-size:1.1rem;margin-bottom:.35rem}
-.card p{font-size:.88rem;color:var(--soft);margin-bottom:1rem}
-.card a{font-weight:600;color:var(--blue);font-size:.88rem}
-footer{text-align:center;padding:1.25rem;font-size:.78rem;color:var(--soft)}
-</style>
-</head>
-<body>
-<div class="mland-note">Demo de estilo · MLand Software · <a href="/#demos">Volver al portafolio</a> · <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20estilo%20clinica" target="_blank" rel="noopener">Pedir este estilo</a></div>
-<nav><div class="brand">Centro Bienestar</div><a class="nav-cta" href="https://wa.me/593978868363?text=estilo%20clinica" target="_blank" rel="noopener">Pedir cita</a></nav>
-<section class="hero">
-<span class="pill">Demo · Salud y bienestar</span>
-<h1>Pedir cita sin fricción, desde el celular</h1>
-<p>Servicios claros, confianza y un solo paso para escribirte.</p>
-<a class="cta" href="https://wa.me/593978868363?text=Quiero%20cita" target="_blank" rel="noopener">Agendar por WhatsApp</a>
-</section>
+:root{--bg:#f0f9ff;--blue:#0284c7;--ink:#0c4a6e;--muted:#64748b}*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Outfit,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}a{color:inherit;text-decoration:none}
+.mland-note{background:var(--ink);color:#7dd3fc;font-size:.75rem;text-align:center;padding:.5rem 1rem;display:flex;flex-wrap:wrap;gap:.35rem;justify-content:center;align-items:center}
+.mland-note a{color:#bae6fd;font-weight:600}.lang-switch{display:inline-flex;border:1.5px solid currentColor;border-radius:999px;overflow:hidden;font-size:.72rem;font-weight:700}
+.lang-switch button{border:0;background:transparent;color:inherit;padding:.28rem .55rem;cursor:pointer;font:inherit;opacity:.55}
+.lang-switch button.active{opacity:1;background:rgba(255,255,255,.22)}
+header{display:flex;justify-content:space-between;padding:1.1rem 1.25rem;background:#fff}
+.logo{font-family:Lora,serif;font-weight:600;font-size:1.25rem}.wa{background:var(--blue);color:#fff;font-weight:600;padding:.5rem 1rem;border-radius:999px;font-size:.8rem}
+.hero{padding:2.5rem 1.25rem;text-align:center;max-width:560px;margin:0 auto}
+.hero .k{font-size:.75rem;color:var(--blue);font-weight:600;margin-bottom:.5rem}
+.hero h1{font-family:Lora,serif;font-size:clamp(1.5rem,4vw,2rem);margin-bottom:.6rem}
+.hero p{color:var(--muted);margin-bottom:1.25rem}.hero .cta{display:inline-block;background:var(--blue);color:#fff;font-weight:600;padding:.7rem 1.3rem;border-radius:999px}
+.cards{display:grid;gap:.85rem;max-width:560px;margin:0 auto 2rem;padding:0 1.25rem;grid-template-columns:1fr 1fr}
+@media(max-width:520px){.cards{grid-template-columns:1fr}}
+.card{background:#fff;border-radius:16px;padding:1.15rem;box-shadow:0 4px 16px rgba(2,132,199,.08)}
+.card h3{font-family:Lora,serif;margin-bottom:.3rem}.card p{font-size:.85rem;color:var(--muted)}
+footer{text-align:center;padding:1rem;font-size:.75rem;color:var(--muted)}
+</style></head><body>
+<div class="mland-note"><span data-es="Demo de estilo · MLand Software" data-en="Style demo · MLand Software">Demo de estilo · MLand Software</span> · <a href="/#demos" data-es="Volver al portafolio" data-en="Back to portfolio">Volver al portafolio</a> · <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20clinica" data-es-href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20clinica" data-en-href="https://wa.me/593978868363?text=Hi%2C%20I%20want%20clinic%20website" data-es="Pedir este estilo" data-en="Request this style">Pedir este estilo</a> · <span class="lang-switch"><button type="button" data-set-lang="es" onclick="mlandSetLang('es')">ES</button><button type="button" data-set-lang="en" onclick="mlandSetLang('en')">EN</button></span></div>
+<header><div class="logo">Clínica Serena</div><a class="wa" href="https://wa.me/593978868363" data-es="Pedir cita" data-en="Book visit">Pedir cita</a></header>
+<section class="hero"><div class="k" data-es="Demo · Clínica" data-en="Demo · Clinic">Demo · Clínica</div>
+<h1 data-es="Cuidado cercano, cita sin fricción" data-en="Close care, friction-free booking">Cuidado cercano, cita sin fricción</h1>
+<p data-es="Servicios claros y agenda por WhatsApp." data-en="Clear services and WhatsApp scheduling.">Servicios claros y agenda por WhatsApp.</p>
+<a class="cta" href="https://wa.me/593978868363?text=cita" data-es="Agendar por WhatsApp" data-en="Book on WhatsApp">Agendar por WhatsApp</a></section>
 <div class="cards">
-<div class="card"><div class="icon">🩺</div><h3>Consulta general</h3><p>Evaluación y plan de tratamiento orientado a tu caso.</p><a href="https://wa.me/593978868363?text=Consulta" target="_blank" rel="noopener">Agendar →</a></div>
-<div class="card"><div class="icon">✨</div><h3>Especialidades</h3><p>Áreas de atención según tu necesidad.</p><a href="https://wa.me/593978868363?text=Especialidad" target="_blank" rel="noopener">Consultar →</a></div>
-<div class="card"><div class="icon">⚡</div><h3>Prioridad</h3><p>Respuesta rápida por WhatsApp cuando lo necesitas.</p><a href="https://wa.me/593978868363?text=Urgente" target="_blank" rel="noopener">Escribir ahora →</a></div>
+<div class="card"><h3 data-es="Consulta general" data-en="General visit">Consulta general</h3><p data-es="Evaluación y seguimiento" data-en="Assessment and follow-up">Evaluación y seguimiento</p></div>
+<div class="card"><h3 data-es="Especialidades" data-en="Specialties">Especialidades</h3><p data-es="Según disponibilidad" data-en="Based on availability">Según disponibilidad</p></div>
+<div class="card"><h3 data-es="Urgencias leves" data-en="Minor emergencies">Urgencias leves</h3><p data-es="Orientación el mismo día" data-en="Same-day guidance">Orientación el mismo día</p></div>
+<div class="card"><h3 data-es="Resultados" data-en="Results">Resultados</h3><p data-es="Explicación clara" data-en="Clear explanation">Explicación clara</p></div>
 </div>
-<footer>Ejemplo de estilo clínica · No es un sitio de cliente real</footer>
-</body></html>
+<footer data-es="Ejemplo de estilo · MLand Software" data-en="Style example · MLand Software">Ejemplo de estilo · MLand Software</footer>
+<script>
+(function(){
+  var KEY='mland_lang';
+  function apply(lang){
+    document.documentElement.lang=lang;
+    document.querySelectorAll('[data-es]').forEach(function(el){
+      var v=el.getAttribute('data-'+lang);
+      if(v!==null) el.textContent=v;
+    });
+    document.querySelectorAll('[data-es-href]').forEach(function(el){
+      var v=el.getAttribute('data-'+lang+'-href');
+      if(v!==null) el.setAttribute('href',v);
+    });
+    document.querySelectorAll('.lang-switch button').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-set-lang')===lang);
+    });
+    try{localStorage.setItem(KEY,lang)}catch(e){}
+  }
+  window.mlandSetLang=function(lang){apply(lang==='en'?'en':'es')};
+  var start='es';
+  try{start=localStorage.getItem(KEY)||'es'}catch(e){}
+  apply(start==='en'?'en':'es');
+})();
+</script></body></html>
