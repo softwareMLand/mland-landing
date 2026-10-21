@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Demo · Workshop | MLand Software</title><meta name="robots" content="noindex,follow">
+<title>Demo · Taller | MLand Software</title><meta name="robots" content="noindex,follow">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#111;--yellow:#facc15;--dim:#a3a3a3}*{box-sizing:border-box;margin:0;padding:0}
 body{font-family:"IBM Plex Sans",system-ui,sans-serif;background:var(--bg);color:#fafafa;line-height:1.5}a{color:inherit;text-decoration:none}
 .mland-note{background:#000;color:#666;font-size:.75rem;text-align:center;padding:.5rem 1rem;display:flex;flex-wrap:wrap;gap:.35rem;justify-content:center;align-items:center}
-.mland-note a{color:var(--yellow);font-weight:600}.lang-switch{display:inline-flex;border:1.5px solid currentColor;border-radius:999px;overflow:hidden;font-size:.72rem;font-weight:700}
-.lang-switch button{border:0;background:transparent;color:inherit;padding:.28rem .55rem;cursor:pointer;font:inherit;opacity:.55}
-.lang-switch button.active{opacity:1;background:var(--yellow);color:#111}
+.mland-note a{color:var(--yellow);font-weight:600}
+.lang-switch{display:inline-flex;border:1.5px solid currentColor;border-radius:999px;overflow:hidden;font-size:.72rem;font-weight:700}
+.lang-btn{border:0;background:transparent;color:inherit;padding:.28rem .55rem;cursor:pointer;font:inherit;opacity:.55}
+.lang-btn.active{opacity:1;background:var(--yellow);color:#111}
 .top{display:flex;justify-content:space-between;padding:1rem 1.25rem;border-bottom:2px solid var(--yellow)}
 .logo{font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--yellow)}.wa{background:var(--yellow);color:#111;font-weight:700;padding:.45rem .9rem;font-size:.8rem}
 .hero{padding:2.5rem 1.25rem;max-width:560px}.hero .k{font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--yellow);margin-bottom:.6rem}
@@ -20,39 +21,17 @@ body{font-family:"IBM Plex Sans",system-ui,sans-serif;background:var(--bg);color
 .svc a{font-family:"IBM Plex Mono",monospace;font-size:.75rem;color:var(--yellow);border-bottom:1px solid var(--yellow)}
 footer{text-align:center;padding:1rem;font-size:.75rem;color:#555}
 </style></head><body>
-<div class="mland-note"><span data-es="Demo de estilo · MLand Software" data-en="Style demo · MLand Software">Demo de estilo · MLand Software</span> · <a href="/#demos" data-es="Volver al portafolio" data-en="Back to portfolio">Volver al portafolio</a> · <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20taller" data-es-href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20taller" data-en-href="https://wa.me/593978868363?text=Hi%2C%20I%20want%20workshop%20website" data-es="Pedir este estilo" data-en="Request this style">Pedir este estilo</a> · <span class="lang-switch"><button type="button" data-set-lang="es" onclick="mlandSetLang('es')">ES</button><button type="button" data-set-lang="en" onclick="mlandSetLang('en')">EN</button></span></div>
-<div class="top"><div class="logo">TALLER 24</div><a class="wa" href="https://wa.me/593978868363" data-es="Cotizar" data-en="Quote">Cotizar</a></div>
-<section class="hero"><div class="k" data-es="Demo · Taller" data-en="Demo · Workshop">Demo · Taller</div>
-<h1 data-es="Reparaciones claras. Respuesta rápida." data-en="Clear repairs. Fast reply.">Reparaciones claras. Respuesta rápida.</h1>
-<p data-es="Servicios y cotización por WhatsApp." data-en="Services and WhatsApp quotes.">Servicios y cotización por WhatsApp.</p>
-<a class="cta" href="https://wa.me/593978868363?text=cotizacion" data-es="Pedir cotización" data-en="Request a quote">Pedir cotización</a></section>
-<div class="list"><h2 data-es="// Servicios" data-en="// Services">// Servicios</h2>
-<div class="svc"><div><h3 data-es="Diagnóstico" data-en="Diagnosis">Diagnóstico</h3><p data-es="Revisión y presupuesto" data-en="Inspection and estimate">Revisión y presupuesto</p></div><a href="https://wa.me/593978868363" data-es="Pedir" data-en="Ask">Pedir</a></div>
-<div class="svc"><div><h3 data-es="Mantenimiento" data-en="Maintenance">Mantenimiento</h3><p data-es="Preventivo y correctivo" data-en="Preventive and corrective">Preventivo y correctivo</p></div><a href="https://wa.me/593978868363" data-es="Pedir" data-en="Ask">Pedir</a></div>
-<div class="svc"><div><h3 data-es="Urgencias" data-en="Emergencies">Urgencias</h3><p data-es="Atención prioritaria" data-en="Priority service">Atención prioritaria</p></div><a href="https://wa.me/593978868363" data-es="Pedir" data-en="Ask">Pedir</a></div>
+<div class="mland-note"><span data-es="Demo de estilo · MLand Software" data-en="Style demo · MLand Software">Demo de estilo · MLand Software</span> · <a href="/#demos" data-es="Volver al portafolio" data-en="Back to portfolio">Volver al portafolio</a> · <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20estilo%20taller" data-es="Pedir este estilo" data-en="Request this style">Pedir este estilo</a> · <span class="lang-switch"><button type="button" class="lang-btn active" data-set-lang="es">ES</button><button type="button" class="lang-btn" data-set-lang="en">EN</button></span></div>
+<div class="top"><div class="logo">TALLER 24/7</div><a class="wa" href="https://wa.me/593978868363?text=cotizar">WhatsApp</a></div>
+<section class="hero"><div class="k" data-es="Demo · Taller / servicios" data-en="Demo · Workshop / services">Demo · Taller / servicios</div>
+<h1 data-es="Reparación rápida. Cotización por WhatsApp." data-en="Fast repair. Quote on WhatsApp.">Reparación rápida. Cotización por WhatsApp.</h1>
+<p data-es="Servicios claros, zona de cobertura y respuesta el mismo día." data-en="Clear services, coverage area and same-day response.">Servicios claros, zona de cobertura y respuesta el mismo día.</p>
+<a class="cta" href="https://wa.me/593978868363?text=cotizar" data-es="Cotizar ahora" data-en="Get a quote">Cotizar ahora</a></section>
+<div class="list"><h2 data-es="Servicios" data-en="Services">Servicios</h2>
+<div class="svc"><div><h3 data-es="Diagnóstico" data-en="Diagnostics">Diagnóstico</h3><p data-es="Revisión y presupuesto sin compromiso" data-en="Inspection and quote, no commitment">Revisión y presupuesto sin compromiso</p></div><a href="https://wa.me/593978868363?text=diagnostico" data-es="Cotizar" data-en="Quote">Cotizar</a></div>
+<div class="svc"><div><h3 data-es="Mantenimiento" data-en="Maintenance">Mantenimiento</h3><p data-es="Preventivo y correctivo" data-en="Preventivo y correctivo">Preventivo y correctivo</p></div><a href="https://wa.me/593978868363?text=mantenimiento" data-es="Cotizar" data-en="Quote">Cotizar</a></div>
+<div class="svc"><div><h3 data-es="Urgencias" data-en="Emergencies">Urgencias</h3><p data-es="Atención prioritaria en zona" data-en="Priority service in coverage area">Atención prioritaria en zona</p></div><a href="https://wa.me/593978868363?text=urgencia" data-es="Cotizar" data-en="Quote">Cotizar</a></div>
 </div>
 <footer data-es="Ejemplo de estilo · MLand Software" data-en="Style example · MLand Software">Ejemplo de estilo · MLand Software</footer>
-<script>
-(function(){
-  var KEY='mland_lang';
-  function apply(lang){
-    document.documentElement.lang=lang;
-    document.querySelectorAll('[data-es]').forEach(function(el){
-      var v=el.getAttribute('data-'+lang);
-      if(v!==null) el.textContent=v;
-    });
-    document.querySelectorAll('[data-es-href]').forEach(function(el){
-      var v=el.getAttribute('data-'+lang+'-href');
-      if(v!==null) el.setAttribute('href',v);
-    });
-    document.querySelectorAll('.lang-switch button').forEach(function(b){
-      b.classList.toggle('active', b.getAttribute('data-set-lang')===lang);
-    });
-    try{localStorage.setItem(KEY,lang)}catch(e){}
-  }
-  window.mlandSetLang=function(lang){apply(lang==='en'?'en':'es')};
-  var start='es';
-  try{start=localStorage.getItem(KEY)||'es'}catch(e){}
-  apply(start==='en'?'en':'es');
-})();
-</script></body></html>
+<script src="/js/i18n.js"></script>
+</body></html>
