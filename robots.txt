@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
 
+# Portfolio demos and private proposals — noindex, do not crawl
+Disallow: /demos/
+Disallow: /rosita.html
+Disallow: /demo-rosita.html
+Disallow: /propuesta-rosita.html
+
 Sitemap: https://mland-landing.montoyasud.workers.dev/sitemap.xml
