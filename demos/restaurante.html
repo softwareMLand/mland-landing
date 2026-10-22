@@ -1,45 +1,239 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Demo · Restaurante | MLand Software</title><meta name="robots" content="noindex,follow">
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Demo · Restaurante | MLand Software</title>
+<meta name="robots" content="noindex,follow">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#121212;--orange:#ff6b35;--cream:#f5f0e8;--muted:#9a9590}*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Nunito",system-ui,sans-serif;background:var(--bg);color:var(--cream);line-height:1.5}a{color:inherit;text-decoration:none}
-.mland-note{background:#000;color:#666;font-size:.75rem;text-align:center;padding:.5rem 1rem;display:flex;flex-wrap:wrap;gap:.35rem;justify-content:center;align-items:center}
+:root{
+  --bg:#121212;--card:#1a1a1a;--orange:#ff6b35;--cream:#f5f0e8;
+  --muted:#9a9590;--line:#2a2a2a;--warm:#2a1810;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Nunito,system-ui,sans-serif;background:var(--bg);color:var(--cream);line-height:1.55}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.mland-note{background:#000;color:#666;font-size:.75rem;text-align:center;padding:.55rem 1rem;display:flex;flex-wrap:wrap;gap:.35rem;justify-content:center;align-items:center}
 .mland-note a{color:var(--orange);font-weight:600}
 .lang-switch{display:inline-flex;border:1.5px solid currentColor;border-radius:999px;overflow:hidden;font-size:.72rem;font-weight:700}
 .lang-btn{border:0;background:transparent;color:inherit;padding:.28rem .55rem;cursor:pointer;font:inherit;opacity:.55}
-.lang-btn.active{opacity:1;background:rgba(255,255,255,.2)}
-header{padding:1.5rem 1.25rem 1rem;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--orange)}
-.logo{font-family:"Oswald",sans-serif;font-size:1.5rem;letter-spacing:.06em;text-transform:uppercase}.logo span{color:var(--orange)}
-.wa{background:var(--orange);color:#fff;font-weight:700;font-size:.8rem;padding:.5rem 1rem;border-radius:4px;text-transform:uppercase}
-.hero{padding:2.5rem 1.25rem 2rem;text-align:center;background:radial-gradient(ellipse at top,#2a1810 0%,var(--bg) 70%)}
-.hero h1{font-family:"Oswald",sans-serif;font-size:clamp(1.8rem,5vw,2.8rem);text-transform:uppercase;letter-spacing:.04em;line-height:1.1;margin-bottom:.6rem}
-.hero p{color:var(--muted);max-width:28rem;margin:0 auto 1.25rem}
-.hero .cta{display:inline-block;background:var(--orange);color:#fff;font-family:"Oswald",sans-serif;font-size:.95rem;padding:.7rem 1.4rem;text-transform:uppercase}
-.menu{max-width:520px;margin:0 auto;padding:1.5rem 1.25rem 2.5rem}
-.menu h2{font-family:"Oswald",sans-serif;font-size:1.1rem;color:var(--orange);text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem;border-bottom:1px solid #333;padding-bottom:.5rem}
-.item{display:flex;justify-content:space-between;gap:1rem;padding:.85rem 0;border-bottom:1px dashed #333}
-.item h3{font-size:1rem;font-weight:700;margin-bottom:.15rem}.item p{font-size:.82rem;color:var(--muted)}
-.item .p{font-family:"Oswald",sans-serif;color:var(--orange);font-size:1.1rem;white-space:nowrap}
-.foot-cta{text-align:center;padding:0 1rem 2.5rem}
-.foot-cta a{display:inline-block;border:2px solid var(--orange);color:var(--orange);font-family:"Oswald",sans-serif;padding:.65rem 1.3rem;text-transform:uppercase;letter-spacing:.05em}
-footer{text-align:center;padding:1rem;font-size:.75rem;color:#555}
-</style></head><body>
-<div class="mland-note"><span data-es="Demo de estilo · MLand Software" data-en="Style demo · MLand Software">Demo de estilo · MLand Software</span> · <a href="/#demos" data-es="Volver al portafolio" data-en="Back to portfolio">Volver al portafolio</a> · <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20restaurante" data-es="Pedir este estilo" data-en="Request this style">Pedir este estilo</a> · <span class="lang-switch"><button type="button" class="lang-btn active" data-set-lang="es">ES</button><button type="button" class="lang-btn" data-set-lang="en">EN</button></span></div>
-<header><div class="logo">Fuego <span>&amp;</span> Mesa</div><a class="wa" href="https://wa.me/593978868363?text=reserva">WhatsApp</a></header>
-<section class="hero">
-<h1><span data-es="La mesa se reserva" data-en="Tables are reserved">La mesa se reserva</span><br><span data-es="antes de llegar" data-en="before you arrive">antes de llegar</span></h1>
-<p data-es="Menú, horarios y un toque para no perder comensales." data-en="Menu, hours and one tap so you never lose diners.">Menú, horarios y un toque para no perder comensales.</p>
-<a class="cta" href="https://wa.me/593978868363?text=reserva" data-es="Reservar mesa" data-en="Reserve a table">Reservar mesa</a>
-</section>
-<div class="menu"><h2 data-es="Carta destacada" data-en="Featured menu">Carta destacada</h2>
-<div class="item"><div><h3 data-es="Menú del día" data-en="Daily special">Menú del día</h3><p data-es="Entrada + plato + bebida" data-en="Starter + main + drink">Entrada + plato + bebida</p></div><span class="p">$8</span></div>
-<div class="item"><div><h3 data-es="Especialidad de la casa" data-en="House specialty">Especialidad de la casa</h3><p data-es="Lo más pedido · Porción generosa" data-en="Most ordered · Generous portion">Lo más pedido · Porción generosa</p></div><span class="p">$12</span></div>
-<div class="item"><div><h3 data-es="Para compartir" data-en="To share">Para compartir</h3><p data-es="Tabla · Ideal 2–4 personas" data-en="Board · Ideal for 2–4">Tabla · Ideal 2–4 personas</p></div><span class="p">$18</span></div>
-<div class="item"><div><h3 data-es="Eventos y grupos" data-en="Events &amp; groups">Eventos y grupos</h3><p data-es="Mesas grandes · Menú cerrado" data-en="Large tables · Set menu">Mesas grandes · Menú cerrado</p></div><span class="p">—</span></div>
+.lang-btn.active{opacity:1;background:rgba(255,255,255,.15)}
+header{padding:1.15rem 1.25rem;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--orange);position:sticky;top:0;z-index:40;background:rgba(18,18,18,.95);backdrop-filter:blur(8px);gap:.75rem;flex-wrap:wrap}
+.logo{font-family:Oswald,sans-serif;font-size:1.45rem;letter-spacing:.06em;text-transform:uppercase}
+.logo span{color:var(--orange)}
+.nav-mini{display:none;gap:1.15rem;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+@media(min-width:720px){.nav-mini{display:flex}}
+.nav-mini a:hover{color:var(--orange)}
+.wa{background:var(--orange);color:#fff;font-weight:700;font-size:.78rem;padding:.55rem 1rem;border-radius:4px;text-transform:uppercase;letter-spacing:.04em}
+.hero{
+  position:relative;min-height:72vh;display:flex;align-items:flex-end;
+  background:linear-gradient(to top,rgba(18,18,18,.95) 0%,rgba(18,18,18,.45) 50%,rgba(42,24,16,.3) 100%),
+    url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&q=80") center/cover no-repeat;
+  padding:0 1.25rem 3rem;
+}
+.hero-inner{max-width:720px;margin:0 auto;width:100%;text-align:center}
+.hero .k{font-family:Oswald,sans-serif;font-size:.8rem;color:var(--orange);letter-spacing:.18em;text-transform:uppercase;margin-bottom:.75rem}
+.hero h1{font-family:Oswald,sans-serif;font-size:clamp(2rem,6vw,3.2rem);text-transform:uppercase;letter-spacing:.04em;line-height:1.05;margin-bottom:.75rem}
+.hero p{color:var(--muted);max-width:36ch;margin:0 auto 1.5rem;font-size:1.02rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.65rem;justify-content:center}
+.cta{display:inline-block;background:var(--orange);color:#fff;font-family:Oswald,sans-serif;font-size:.95rem;padding:.75rem 1.4rem;text-transform:uppercase;letter-spacing:.05em;border-radius:4px}
+.cta.ghost{background:transparent;border:2px solid var(--orange);color:var(--orange)}
+.about{max-width:900px;margin:0 auto;padding:3rem 1.25rem 0;display:grid;grid-template-columns:1fr 1.1fr;gap:1.5rem;align-items:center}
+@media(max-width:700px){.about{grid-template-columns:1fr}}
+.about .ph{border-radius:6px;min-height:280px;background:url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80") center/cover}
+.about-copy h2{font-family:Oswald,sans-serif;font-size:1.5rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:.75rem}
+.about-copy h2 span{color:var(--orange)}
+.about-copy p{color:var(--muted);margin-bottom:.85rem;font-size:.95rem}
+.about-copy .meta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1rem}
+.about-copy .meta span{border:1px solid var(--line);padding:.4rem .75rem;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--orange)}
+.sec{max-width:980px;margin:0 auto;padding:3rem 1.25rem 0}
+.sec h2{font-family:Oswald,sans-serif;font-size:clamp(1.25rem,3vw,1.6rem);text-transform:uppercase;letter-spacing:.08em;text-align:center;margin-bottom:.4rem}
+.sec h2 span{color:var(--orange)}
+.sec .sub{text-align:center;color:var(--muted);font-size:.92rem;margin-bottom:1.75rem;max-width:40ch;margin-left:auto;margin-right:auto}
+.sigs{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media(max-width:700px){.sigs{grid-template-columns:1fr}}
+.sig{background:var(--card);border-radius:6px;overflow:hidden;border:1px solid var(--line)}
+.sig .ph{height:180px;background-size:cover;background-position:center}
+.sig .body{padding:1.1rem 1.15rem 1.25rem}
+.sig h3{font-family:Oswald,sans-serif;font-size:1.15rem;text-transform:uppercase;letter-spacing:.03em;margin-bottom:.25rem}
+.sig p{font-size:.85rem;color:var(--muted);margin-bottom:.5rem}
+.sig .p{font-family:Oswald,sans-serif;color:var(--orange);font-size:1.15rem}
+.menu-block{max-width:640px;margin:0 auto}
+.menu-block .cat{font-family:Oswald,sans-serif;font-size:1rem;color:var(--orange);text-transform:uppercase;letter-spacing:.12em;margin:1.75rem 0 .75rem;border-bottom:1px solid var(--line);padding-bottom:.45rem}
+.menu-block .cat:first-child{margin-top:0}
+.item{display:grid;grid-template-columns:72px 1fr auto;gap:.9rem;padding:1rem 0;border-bottom:1px dashed var(--line);align-items:center}
+@media(max-width:480px){.item{grid-template-columns:1fr auto}.item .thumb{display:none}}
+.item .thumb{width:72px;height:72px;border-radius:4px;background-size:cover;background-position:center}
+.item h3{font-size:1rem;font-weight:700;margin-bottom:.15rem}
+.item p{font-size:.8rem;color:var(--muted)}
+.item .price{font-family:Oswald,sans-serif;color:var(--orange);font-size:1.15rem;white-space:nowrap}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:140px;gap:.55rem}
+@media(max-width:640px){.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:120px}}
+.gallery .g{border-radius:4px;background-size:cover;background-position:center;border:1px solid var(--line)}
+.gallery .g.wide{grid-column:span 2}
+.gallery .g.tall{grid-row:span 2}
+.panel{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:640px){.panel{grid-template-columns:1fr}}
+.panel-box{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1.5rem 1.35rem}
+.panel-box h3{font-family:Oswald,sans-serif;font-size:1.1rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:1rem;color:var(--orange)}
+.panel-box li{list-style:none;font-size:.9rem;padding:.4rem 0;border-bottom:1px dashed var(--line);display:flex;justify-content:space-between;gap:1rem;color:var(--muted)}
+.panel-box li:last-child{border-bottom:0}
+.panel-box li strong{color:var(--cream);font-weight:700}
+.panel-cta{background:linear-gradient(160deg,var(--warm),#1a0f0a);border-color:#3d2818}
+.panel-cta p{color:var(--muted);margin-bottom:1.15rem;font-size:.95rem}
+.panel-cta a{display:inline-block;background:var(--orange);color:#fff;font-family:Oswald,sans-serif;padding:.7rem 1.25rem;text-transform:uppercase;letter-spacing:.05em;border-radius:4px}
+.quotes{display:grid;gap:1rem}
+@media(min-width:700px){.quotes{grid-template-columns:1fr 1fr}}
+.quote{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1.35rem 1.4rem;border-left:3px solid var(--orange)}
+.quote .stars{color:var(--orange);letter-spacing:1px;margin-bottom:.4rem}
+.quote p{font-size:.9rem;color:var(--muted);font-style:italic;margin-bottom:.85rem}
+.quote strong{font-size:.86rem;display:block}
+.quote span{font-size:.74rem;color:#666}
+.enroll{
+  margin:3rem 1.25rem 0;max-width:980px;margin-left:auto;margin-right:auto;
+  background:radial-gradient(ellipse at center,var(--warm) 0%,var(--card) 70%);
+  border:1px solid #3d2818;border-radius:6px;padding:2.25rem 1.5rem;text-align:center;
+}
+.enroll h2{font-family:Oswald,sans-serif;font-size:clamp(1.3rem,3vw,1.7rem);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem}
+.enroll p{color:var(--muted);margin-bottom:1.25rem;max-width:36ch;margin-left:auto;margin-right:auto}
+.enroll a{display:inline-block;background:var(--orange);color:#fff;font-family:Oswald,sans-serif;padding:.8rem 1.5rem;text-transform:uppercase;letter-spacing:.05em;border-radius:4px}
+footer{text-align:center;padding:2rem 1rem 2.5rem;font-size:.75rem;color:#555}
+.float-wa{position:fixed;bottom:1.2rem;right:1.2rem;z-index:50;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 8px 24px rgba(37,211,102,.4)}
+</style>
+</head>
+<body>
+
+<div class="mland-note">
+  <span data-es="Demo de estilo · MLand Software" data-en="Style demo · MLand Software">Demo de estilo · MLand Software</span> ·
+  <a href="/#demos" data-es="Volver al portafolio" data-en="Back to portfolio">Volver al portafolio</a> ·
+  <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20estilo%20restaurante" data-es="Pedir este estilo" data-en="Request this style">Pedir este estilo</a> ·
+  <span class="lang-switch">
+    <button type="button" class="lang-btn active" data-set-lang="es">ES</button>
+    <button type="button" class="lang-btn" data-set-lang="en">EN</button>
+  </span>
 </div>
-<div class="foot-cta"><a href="https://wa.me/593978868363?text=reserva" data-es="Escribir por WhatsApp" data-en="Message on WhatsApp">Escribir por WhatsApp</a></div>
-<footer data-es="Ejemplo de estilo · MLand Software" data-en="Style example · MLand Software">Ejemplo de estilo · MLand Software</footer>
+
+<header>
+  <div class="logo">Fuego <span>&amp;</span> Mesa</div>
+  <nav class="nav-mini">
+    <a href="#firma" data-es="Firma" data-en="Signature">Firma</a>
+    <a href="#carta" data-es="Carta" data-en="Menu">Carta</a>
+    <a href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
+    <a href="#reserva" data-es="Reserva" data-en="Reserve">Reserva</a>
+  </nav>
+  <a class="wa" href="https://wa.me/593978868363?text=reserva" data-es="Reservar" data-en="Reserve">Reservar</a>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="k" data-es="Cocina de fuego · Ambiente de noche" data-en="Fire kitchen · Night atmosphere">Cocina de fuego · Ambiente de noche</div>
+    <h1 data-es="Sabores que se quedan" data-en="Flavors that stay with you">Sabores que se quedan</h1>
+    <p data-es="Carta corta, productos de temporada y mesa lista para compartir. Reserva en un mensaje." data-en="A short menu, seasonal produce and a table made for sharing. Book in one message.">Carta corta, productos de temporada y mesa lista para compartir. Reserva en un mensaje.</p>
+    <div class="hero-actions">
+      <a class="cta" href="https://wa.me/593978868363?text=reserva" data-es="Reservar mesa" data-en="Book a table">Reservar mesa</a>
+      <a class="cta ghost" href="#carta" data-es="Ver la carta" data-en="See the menu">Ver la carta</a>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="ph" role="img" aria-label="Plato del restaurante"></div>
+  <div class="about-copy">
+    <h2 data-es="Menos ruido, <span>más sabor</span>" data-en="Less noise, <span>more flavor</span>">Menos ruido, <span>más sabor</span></h2>
+    <p data-es="Cocinamos a la vista, servimos sin prisa y cuidamos cada detalle de la mesa. Ideal para cenas en pareja, grupos pequeños y celebraciones íntimas." data-en="We cook in view, serve without rush and care for every detail at the table. Ideal for date nights, small groups and intimate celebrations.">Cocinamos a la vista, servimos sin prisa y cuidamos cada detalle de la mesa. Ideal para cenas en pareja, grupos pequeños y celebraciones íntimas.</p>
+    <p data-es="La carta cambia con la estación. Si tienes alergias o preferencias, avísanos al reservar." data-en="The menu shifts with the season. If you have allergies or preferences, tell us when you book.">La carta cambia con la estación. Si tienes alergias o preferencias, avísanos al reservar.</p>
+    <div class="meta">
+      <span data-es="Cocina abierta" data-en="Open kitchen">Cocina abierta</span>
+      <span data-es="Carta de temporada" data-en="Seasonal menu">Carta de temporada</span>
+      <span data-es="Terraza" data-en="Terrace">Terraza</span>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="firma">
+  <h2 data-es="Platos <span>firma</span>" data-en="Signature <span>dishes</span>">Platos <span>firma</span></h2>
+  <p class="sub" data-es="Los que más piden. Fotos reales del plato, no de stock genérico de ‘comida’." data-en="Our most ordered. Real plate photos—not generic ‘food’ stock.">Los que más piden. Fotos reales del plato, no de stock genérico de ‘comida’.</p>
+  <div class="sigs">
+    <article class="sig"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80')"></div><div class="body"><h3 data-es="Costilla ahumada" data-en="Smoked ribs">Costilla ahumada</h3><p data-es="12 h de smoke, glaseado de chile y miel, ensalada de col." data-en="12h smoke, chili-honey glaze, coleslaw.">12 h de smoke, glaseado de chile y miel, ensalada de col.</p><div class="p">$18</div></div></article>
+    <article class="sig"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&q=80')"></div><div class="body"><h3 data-es="Salmón a la parrilla" data-en="Grilled salmon">Salmón a la parrilla</h3><p data-es="Piel crujiente, limón confitado y verduras de temporada." data-en="Crispy skin, confit lemon and seasonal vegetables.">Piel crujiente, limón confitado y verduras de temporada.</p><div class="p">$22</div></div></article>
+    <article class="sig"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80')"></div><div class="body"><h3 data-es="Pizza de fuego" data-en="Fire pizza">Pizza de fuego</h3><p data-es="Masa 48 h, mozzarella, pepperoni y aceite de ajo." data-en="48h dough, mozzarella, pepperoni and garlic oil.">Masa 48 h, mozzarella, pepperoni y aceite de ajo.</p><div class="p">$14</div></div></article>
+  </div>
+</section>
+
+<section class="sec" id="carta">
+  <h2 data-es="La <span>carta</span>" data-en="The <span>menu</span>">La <span>carta</span></h2>
+  <p class="sub" data-es="Corta a propósito. Mejor pocos platos bien hechos que una lista interminable." data-en="Short on purpose. Better a few dishes done right than an endless list.">Corta a propósito. Mejor pocos platos bien hechos que una lista interminable.</p>
+  <div class="menu-block">
+    <div class="cat" data-es="Entradas" data-en="Starters">Entradas</div>
+    <div class="item"><div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1541014741259-de529411b96a?w=200&q=80')"></div><div><h3 data-es="Croquetas de jamón" data-en="Ham croquettes">Croquetas de jamón</h3><p data-es="Bechamel intensa, 6 unidades" data-en="Rich bechamel, 6 pieces">Bechamel intensa, 6 unidades</p></div><div class="price">$9</div></div>
+    <div class="item"><div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=200&q=80')"></div><div><h3 data-es="Tartar de res" data-en="Beef tartare">Tartar de res</h3><p data-es="Yema curada, tostadas de sourdough" data-en="Cured yolk, sourdough toasts">Yema curada, tostadas de sourdough</p></div><div class="price">$12</div></div>
+    <div class="item"><div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=200&q=80')"></div><div><h3 data-es="Ensalada de temporada" data-en="Seasonal salad">Ensalada de temporada</h3><p data-es="Hojas, queso fresco, vinagreta cítrica" data-en="Greens, fresh cheese, citrus vinaigrette">Hojas, queso fresco, vinagreta cítrica</p></div><div class="price">$10</div></div>
+    <div class="cat" data-es="Principales" data-en="Mains">Principales</div>
+    <div class="item"><div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947?w=200&q=80')"></div><div><h3 data-es="Costilla ahumada" data-en="Smoked ribs">Costilla ahumada</h3><p data-es="Media ración o completa" data-en="Half or full rack">Media ración o completa</p></div><div class="price">$18</div></div>
+    <div class="item"><div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1432139509613-5c4255815697?w=200&q=80')"></div><div><h3 data-es="Entrecot a la brasa" data-en="Grilled ribeye">Entrecot a la brasa</h3><p data-es="300 g, mantequilla de hierbas" data-en="300g, herb butter">300 g, mantequilla de hierbas</p></div><div class="price">$26</div></div>
+    <div class="item"><div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=200&q=80')"></div><div><h3 data-es="Pasta al fuego" data-en="Fire pasta">Pasta al fuego</h3><p data-es="Tomate asado, burrata, albahaca" data-en="Roasted tomato, burrata, basil">Tomate asado, burrata, albahaca</p></div><div class="price">$15</div></div>
+    <div class="cat" data-es="Postres" data-en="Desserts">Postres</div>
+    <div class="item"><div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1571875257727-256c39da42af?w=200&q=80')"></div><div><h3 data-es="Tiramisú de la casa" data-en="House tiramisu">Tiramisú de la casa</h3><p data-es="Café espresso, cacao 70%" data-en="Espresso, 70% cocoa">Café espresso, cacao 70%</p></div><div class="price">$8</div></div>
+    <div class="item"><div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1488477181946-6428a0291777?w=200&q=80')"></div><div><h3 data-es="Brownie caliente" data-en="Warm brownie">Brownie caliente</h3><p data-es="Helado de vainilla, salsa de chocolate" data-en="Vanilla ice cream, chocolate sauce">Helado de vainilla, salsa de chocolate</p></div><div class="price">$7</div></div>
+  </div>
+</section>
+
+<section class="sec" id="galeria">
+  <h2 data-es="El <span>espacio</span>" data-en="The <span>space</span>">El <span>espacio</span></h2>
+  <p class="sub" data-es="Luz baja, madera y el olor a brasa. Así se ve cuando llegas." data-en="Low light, wood and the smell of the grill. This is what you see when you arrive.">Luz baja, madera y el olor a brasa. Así se ve cuando llegas.</p>
+  <div class="gallery">
+    <div class="g wide tall" style="background-image:url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&q=80')"></div>
+    <div class="g" style="background-image:url('https://images.unsplash.com/photo-1552566626-52f8b828add9?w=500&q=80')"></div>
+    <div class="g" style="background-image:url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=500&q=80')"></div>
+    <div class="g wide" style="background-image:url('https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=900&q=80')"></div>
+    <div class="g" style="background-image:url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=500&q=80')"></div>
+    <div class="g" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=500&q=80')"></div>
+  </div>
+</section>
+
+<section class="sec">
+  <h2 data-es="Lo que dicen <span>en la mesa</span>" data-en="What they say <span>at the table</span>">Lo que dicen <span>en la mesa</span></h2>
+  <p class="sub" data-es="Reseñas de quienes ya reservaron y volvieron." data-en="Reviews from guests who booked and came back.">Reseñas de quienes ya reservaron y volvieron.</p>
+  <div class="quotes">
+    <article class="quote"><div class="stars">★★★★★</div><p data-es="“La costilla vale cada dólar. Ambiente íntimo y la reserva por WhatsApp fue en minutos.”" data-en="“The ribs are worth every dollar. Intimate vibe and WhatsApp booking took minutes.”">“La costilla vale cada dólar. Ambiente íntimo y la reserva por WhatsApp fue en minutos.”</p><strong data-es="Camila R." data-en="Camila R.">Camila R.</strong><span data-es="Cena en pareja" data-en="Date night">Cena en pareja</span></article>
+    <article class="quote"><div class="stars">★★★★★</div><p data-es="“Carta corta y todo bien ejecutado. No hay relleno: cada plato tiene sentido.”" data-en="“Short menu and everything well executed. No filler—every dish has a point.”">“Carta corta y todo bien ejecutado. No hay relleno: cada plato tiene sentido.”</p><strong data-es="Jorge M." data-en="Jorge M.">Jorge M.</strong><span data-es="Grupo de 4" data-en="Group of 4">Grupo de 4</span></article>
+    <article class="quote"><div class="stars">★★★★★</div><p data-es="“Volvimos por el salmón y el tiramisú. Servicio atento sin ser invasivo.”" data-en="“Came back for the salmon and tiramisu. Attentive service without being pushy.”">“Volvimos por el salmón y el tiramisú. Servicio atento sin ser invasivo.”</p><strong data-es="Ana &amp; Luis" data-en="Ana &amp; Luis">Ana &amp; Luis</strong><span data-es="Aniversario" data-en="Anniversary">Aniversario</span></article>
+    <article class="quote"><div class="stars">★★★★★</div><p data-es="“La terraza de noche es otro nivel. Pedimos pizza de fuego y otra ronda de postre.”" data-en="“The terrace at night is another level. We ordered the fire pizza and another round of dessert.”">“La terraza de noche es otro nivel. Pedimos pizza de fuego y otra ronda de postre.”</p><strong data-es="Diego P." data-en="Diego P.">Diego P.</strong><span data-es="Terraza" data-en="Terrace">Terraza</span></article>
+  </div>
+</section>
+
+<section class="sec" id="reserva">
+  <h2 data-es="Horario y <span>reserva</span>" data-en="Hours &amp; <span>booking</span>">Horario y <span>reserva</span></h2>
+  <p class="sub" data-es="Mesas limitadas. Mejor reservar, sobre todo viernes y sábado." data-en="Limited tables. Best to book, especially Friday and Saturday.">Mesas limitadas. Mejor reservar, sobre todo viernes y sábado.</p>
+  <div class="panel">
+    <div class="panel-box">
+      <h3 data-es="Horario" data-en="Hours">Horario</h3>
+      <ul>
+        <li><span data-es="Mar – Jue" data-en="Tue – Thu">Mar – Jue</span><strong>18:00 – 22:30</strong></li>
+        <li><span data-es="Vie – Sáb" data-en="Fri – Sat">Vie – Sáb</span><strong>18:00 – 23:30</strong></li>
+        <li><span data-es="Domingo" data-en="Sunday">Domingo</span><strong>13:00 – 17:00</strong></li>
+        <li><span data-es="Lunes" data-en="Monday">Lunes</span><strong data-es="Cerrado" data-en="Closed">Cerrado</strong></li>
+      </ul>
+    </div>
+    <div class="panel-box panel-cta">
+      <h3 data-es="Reserva tu mesa" data-en="Book your table">Reserva tu mesa</h3>
+      <p data-es="Dinos día, hora y cuántos comensales. Te confirmamos por WhatsApp." data-en="Tell us day, time and party size. We’ll confirm on WhatsApp.">Dinos día, hora y cuántos comensales. Te confirmamos por WhatsApp.</p>
+      <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20reservar%20mesa%20en%20Fuego%20y%20Mesa" data-es="Reservar por WhatsApp" data-en="Book on WhatsApp">Reservar por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<div class="enroll">
+  <h2 data-es="Esta noche puede ser en Fuego &amp; Mesa" data-en="Tonight could be at Fuego &amp; Mesa">Esta noche puede ser en Fuego &amp; Mesa</h2>
+  <p data-es="Escribe y te guardamos mesa. Sin formularios, sin espera en línea." data-en="Message us and we’ll hold a table. No forms, no phone queue.">Escribe y te guardamos mesa. Sin formularios, sin espera en línea.</p>
+  <a href="https://wa.me/593978868363?text=reserva" data-es="Reservar ahora" data-en="Book now">Reservar ahora</a>
+</div>
+
+<footer data-es="Ejemplo de estilo restaurante · MLand Software · No es un sitio de cliente real" data-en="Restaurant style example · MLand Software · Not a real client site">Ejemplo de estilo restaurante · MLand Software · No es un sitio de cliente real</footer>
+
+<a class="float-wa" href="https://wa.me/593978868363?text=Hola%2C%20vengo%20de%20la%20demo%20restaurante" aria-label="WhatsApp">💬</a>
 <script src="/js/i18n.js"></script>
-</body></html>
+</body>
+</html>
