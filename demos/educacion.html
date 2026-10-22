@@ -1,87 +1,332 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Demo · Educación | MLand Software</title><meta name="robots" content="noindex,follow">
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Demo · Educación | MLand Software</title>
+<meta name="robots" content="noindex,follow">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--sky:#3b82f6;--sun:#fbbf24;--coral:#f97316;--mint:#10b981;--grape:#a855f7;--ink:#1e293b;--muted:#64748b;--bg:#fff9f0}
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:Quicksand,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-weight:500}a{color:inherit;text-decoration:none}
+:root{
+  --sky:#3b82f6;--sun:#fbbf24;--coral:#f97316;--mint:#10b981;--grape:#a855f7;
+  --pink:#ec4899;--ink:#1e293b;--muted:#64748b;--bg:#fff9f0;--white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Quicksand,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-weight:500}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
 .mland-note{background:linear-gradient(90deg,var(--sky),var(--grape),var(--coral));color:#fff;font-size:.75rem;text-align:center;padding:.55rem 1rem;font-weight:600;display:flex;flex-wrap:wrap;gap:.35rem;justify-content:center;align-items:center}
 .mland-note a{color:#fff;text-decoration:underline}
 .lang-switch{display:inline-flex;border:1.5px solid rgba(255,255,255,.5);border-radius:999px;overflow:hidden;font-size:.72rem;font-weight:700}
 .lang-btn{border:0;background:transparent;color:#fff;padding:.28rem .55rem;cursor:pointer;font:inherit;opacity:.7}
 .lang-btn.active{opacity:1;background:rgba(255,255,255,.25)}
-.top{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.25rem;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06);gap:.75rem;flex-wrap:wrap}
-.logo{font-family:Fredoka,sans-serif;font-weight:600;font-size:1.25rem}.logo .c{color:var(--coral)}.logo .s{color:var(--sky)}.logo .m{color:var(--mint)}
+.top{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.25rem;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06);gap:.75rem;flex-wrap:wrap;position:sticky;top:0;z-index:40}
+.logo{font-family:Fredoka,sans-serif;font-weight:600;font-size:1.25rem}
+.logo .c{color:var(--coral)}.logo .s{color:var(--sky)}.logo .m{color:var(--mint)}
+.nav-mini{display:none;gap:1rem;font-size:.85rem;font-weight:600;color:var(--muted)}
+@media(min-width:720px){.nav-mini{display:flex}}
+.nav-mini a:hover{color:var(--sky)}
 .wa{background:var(--coral);color:#fff;font-weight:700;font-size:.8rem;padding:.55rem 1rem;border-radius:999px}
-.hero{padding:2.5rem 1.25rem;text-align:center}
-.badge{display:inline-block;background:#d1fae5;color:var(--mint);font-weight:700;font-size:.75rem;padding:.35rem .85rem;border-radius:999px;margin-bottom:1rem}
-.hero h1{font-family:Fredoka,sans-serif;font-size:clamp(1.6rem,5vw,2.3rem);font-weight:600;line-height:1.25;margin-bottom:.75rem;letter-spacing:.015em}
-.hero h1 .c1{color:var(--sky)}.hero h1 .c2{color:var(--coral)}.hero h1 .c3{color:var(--grape)}
-.hero p{color:var(--muted);max-width:36ch;margin:0 auto 1.25rem}
-.cta{display:inline-block;background:var(--sky);color:#fff;font-weight:700;padding:.75rem 1.4rem;border-radius:999px;margin:.25rem}
-.stats{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;padding:0 1.25rem 2rem}
-.stat{background:#fff;border-radius:20px;padding:1rem 1.2rem;min-width:110px;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,.05)}
-.stat .n{font-family:Fredoka,sans-serif;font-size:1.5rem;font-weight:600}.stat:nth-child(1) .n{color:var(--sky)}.stat:nth-child(2) .n{color:var(--coral)}.stat:nth-child(3) .n{color:var(--mint)}.stat:nth-child(4) .n{color:var(--grape)}
-.stat .l{font-size:.72rem;font-weight:600;color:var(--muted)}
-.sec{max-width:900px;margin:0 auto;padding:0 1.25rem 2rem}
-.sec h2{font-family:Fredoka,sans-serif;font-size:1.35rem;font-weight:600;text-align:center;margin-bottom:.35rem;letter-spacing:.015em}
-.sec .sub{text-align:center;color:var(--muted);font-size:.9rem;margin-bottom:1.25rem}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-@media(max-width:560px){.grid{grid-template-columns:1fr}}
-.card{background:#fff;border-radius:20px;padding:1.25rem;box-shadow:0 4px 16px rgba(0,0,0,.04)}
-.card .icon{font-size:1.4rem;margin-bottom:.5rem}
-.card h3{font-family:Fredoka,sans-serif;font-size:1rem;font-weight:600;margin-bottom:.3rem}
-.card p{font-size:.85rem;color:var(--muted)}
-.extras{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.75rem}
-.extra{border-radius:18px;padding:1.1rem .9rem;text-align:center;color:#fff;font-weight:600}
-.extra .e{font-size:1.6rem;display:block;margin-bottom:.3rem}
-.extra h3{font-family:Fredoka,sans-serif;font-size:.9rem;font-weight:600}
-.extra p{font-size:.7rem;opacity:.9;font-weight:500}
-.extra.a{background:linear-gradient(145deg,#3b82f6,#60a5fa)}.extra.b{background:linear-gradient(145deg,#f97316,#fb923c)}.extra.c{background:linear-gradient(145deg,#10b981,#34d399)}.extra.d{background:linear-gradient(145deg,#a855f7,#c084fc)}
-.final{max-width:440px;margin:0 auto 2rem;padding:1.5rem;background:linear-gradient(145deg,var(--coral),#ec4899);border-radius:24px;text-align:center;color:#fff}
-.final h2{font-family:Fredoka,sans-serif;font-size:1.2rem;font-weight:600;margin-bottom:.4rem}
-.final p{font-size:.88rem;opacity:.95;margin-bottom:1rem}
-.final a{display:inline-block;background:#fff;color:var(--coral);font-weight:700;padding:.7rem 1.3rem;border-radius:999px}
-footer{text-align:center;padding:1rem;font-size:.75rem;color:var(--muted)}
-</style></head><body>
-<div class="mland-note"><span data-es="Demo de estilo · MLand Software" data-en="Style demo · MLand Software">Demo de estilo · MLand Software</span> · <a href="/#demos" data-es="Volver al portafolio" data-en="Back to portfolio">Volver al portafolio</a> · <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20educacion" data-es="Pedir este estilo" data-en="Request this style">Pedir este estilo</a> · <span class="lang-switch"><button type="button" class="lang-btn active" data-set-lang="es">ES</button><button type="button" class="lang-btn" data-set-lang="en">EN</button></span></div>
-<header class="top"><div class="logo">Kids<span class="s">.</span>Color<span class="m">.</span><span class="c">Academy</span></div><a class="wa" href="https://wa.me/593978868363?text=matricula">WhatsApp</a></header>
+.hero{
+  position:relative;min-height:78vh;display:flex;align-items:flex-end;
+  background:linear-gradient(to top,rgba(15,23,42,.72) 0%,rgba(15,23,42,.25) 45%,transparent 100%),
+    url("https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1600&q=80") center/cover no-repeat;
+  color:#fff;padding:0 1.25rem 3rem;
+}
+.hero-inner{max-width:720px;margin:0 auto;width:100%;text-align:center}
+.badge{display:inline-block;background:rgba(16,185,129,.95);color:#fff;font-weight:700;font-size:.78rem;padding:.4rem 1rem;border-radius:999px;margin-bottom:1rem;box-shadow:0 4px 14px rgba(16,185,129,.35)}
+.hero h1{font-family:Fredoka,sans-serif;font-size:clamp(1.85rem,5.5vw,2.85rem);font-weight:600;line-height:1.2;margin-bottom:.75rem;letter-spacing:.015em;text-shadow:0 2px 20px rgba(0,0,0,.25)}
+.hero h1 .c1{color:#93c5fd}.hero h1 .c2{color:#fdba74}.hero h1 .c3{color:#e9d5ff}
+.hero p{font-size:1.05rem;opacity:.95;max-width:38ch;margin:0 auto 1.5rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.65rem;justify-content:center}
+.cta{display:inline-block;background:var(--sky);color:#fff;font-weight:700;padding:.8rem 1.5rem;border-radius:999px;box-shadow:0 6px 20px rgba(59,130,246,.4)}
+.cta.alt{background:rgba(255,255,255,.18);border:2px solid rgba(255,255,255,.6);box-shadow:none}
+.stats{display:flex;flex-wrap:wrap;justify-content:center;gap:.85rem;padding:0 1.25rem;margin-top:-2rem;position:relative;z-index:5}
+.stat{background:#fff;border-radius:22px;padding:1.15rem 1.35rem;min-width:118px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.stat .n{font-family:Fredoka,sans-serif;font-size:1.65rem;font-weight:600}
+.stat:nth-child(1) .n{color:var(--sky)}.stat:nth-child(2) .n{color:var(--coral)}.stat:nth-child(3) .n{color:var(--mint)}.stat:nth-child(4) .n{color:var(--grape)}
+.stat .l{font-size:.72rem;font-weight:600;color:var(--muted);margin-top:.15rem}
+.sec{max-width:980px;margin:0 auto;padding:3rem 1.25rem 0}
+.sec h2{font-family:Fredoka,sans-serif;font-size:clamp(1.35rem,3vw,1.7rem);font-weight:600;text-align:center;margin-bottom:.4rem;letter-spacing:.015em}
+.sec .sub{text-align:center;color:var(--muted);font-size:.95rem;margin-bottom:1.75rem;max-width:42ch;margin-left:auto;margin-right:auto}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:640px){.about-grid{grid-template-columns:1fr}}
+.about-card{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 6px 22px rgba(0,0,0,.05);display:flex;flex-direction:column}
+.about-card .ph{height:160px;background-size:cover;background-position:center}
+.about-card .body{padding:1.15rem 1.25rem 1.35rem}
+.about-card h3{font-family:Fredoka,sans-serif;font-size:1.05rem;font-weight:600;margin-bottom:.35rem}
+.about-card p{font-size:.88rem;color:var(--muted)}
+.levels{display:grid;gap:1.15rem}
+.level{display:grid;grid-template-columns:140px 1fr;gap:1.15rem;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 6px 22px rgba(0,0,0,.05);align-items:stretch}
+@media(max-width:560px){.level{grid-template-columns:1fr}.level .ph{height:160px}}
+.level .ph{min-height:140px;background-size:cover;background-position:center}
+.level .body{padding:1.2rem 1.25rem 1.3rem}
+.level .tag{display:inline-block;font-size:.7rem;font-weight:700;padding:.25rem .65rem;border-radius:999px;margin-bottom:.45rem}
+.level:nth-child(1) .tag{background:#dbeafe;color:var(--sky)}
+.level:nth-child(2) .tag{background:#ffedd5;color:var(--coral)}
+.level:nth-child(3) .tag{background:#d1fae5;color:var(--mint)}
+.level h3{font-family:Fredoka,sans-serif;font-size:1.15rem;font-weight:600;margin-bottom:.3rem}
+.level p{font-size:.88rem;color:var(--muted);margin-bottom:.5rem}
+.level ul{list-style:none;font-size:.82rem;color:var(--ink)}
+.level ul li{padding:.15rem 0;padding-left:1.1rem;position:relative}
+.level ul li::before{content:"✓";position:absolute;left:0;color:var(--mint);font-weight:700}
+.day{background:#fff;border-radius:24px;padding:1.5rem 1.35rem;box-shadow:0 6px 22px rgba(0,0,0,.05)}
+.day-item{display:grid;grid-template-columns:70px 1fr;gap:1rem;padding:1rem 0;border-bottom:1px dashed #e2e8f0}
+.day-item:last-child{border-bottom:0;padding-bottom:0}
+.day-item:first-child{padding-top:0}
+.day-item .time{font-family:Fredoka,sans-serif;font-weight:600;font-size:.95rem;color:var(--sky)}
+.day-item h4{font-size:.95rem;font-weight:700;margin-bottom:.15rem}
+.day-item p{font-size:.82rem;color:var(--muted)}
+.extras{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem}
+.extra{border-radius:20px;overflow:hidden;position:relative;min-height:200px;box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.extra .ph{position:absolute;inset:0;background-size:cover;background-position:center}
+.extra .shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
+.extra .txt{position:relative;z-index:2;padding:1.15rem;height:100%;display:flex;flex-direction:column;justify-content:flex-end;color:#fff}
+.extra h3{font-family:Fredoka,sans-serif;font-size:1.1rem;font-weight:600;margin-bottom:.2rem}
+.extra p{font-size:.8rem;opacity:.92}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem}
+@media(max-width:600px){.gallery{grid-template-columns:repeat(2,1fr)}}
+.gallery .g{border-radius:16px;overflow:hidden;aspect-ratio:1;background-size:cover;background-position:center;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.gallery .g.wide{grid-column:span 2;aspect-ratio:2/1}
+@media(max-width:600px){.gallery .g.wide{grid-column:span 2}}
+.quotes{display:grid;gap:1rem}
+@media(min-width:700px){.quotes{grid-template-columns:1fr 1fr}}
+.quote{background:#fff;border-radius:22px;padding:1.35rem 1.4rem;box-shadow:0 6px 22px rgba(0,0,0,.05);border-left:4px solid var(--sun)}
+.quote .stars{color:#f59e0b;margin-bottom:.4rem;letter-spacing:1px}
+.quote p{font-size:.92rem;color:var(--muted);margin-bottom:.85rem;font-style:italic}
+.quote .who{display:flex;align-items:center;gap:.75rem}
+.quote .av{width:44px;height:44px;border-radius:50%;background-size:cover;background-position:center}
+.quote strong{font-size:.88rem;display:block}
+.quote span{font-size:.75rem;color:var(--muted)}
+.social{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}
+.soc{display:inline-flex;align-items:center;gap:.45rem;background:#fff;padding:.7rem 1.15rem;border-radius:999px;font-weight:700;font-size:.88rem;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.soc.ig{color:#e1306c}.soc.fb{color:#1877f2}.soc.yt{color:#ff0000}.soc.tt{color:#000}
+.enroll{
+  margin:3rem 1.25rem 0;max-width:980px;margin-left:auto;margin-right:auto;
+  background:linear-gradient(135deg,var(--coral),var(--pink),var(--grape));
+  border-radius:28px;padding:2.25rem 1.5rem;text-align:center;color:#fff;
+  box-shadow:0 16px 40px rgba(236,72,153,.25);
+}
+.enroll h2{font-family:Fredoka,sans-serif;font-size:clamp(1.3rem,3vw,1.7rem);font-weight:600;margin-bottom:.5rem}
+.enroll p{opacity:.95;margin-bottom:1.25rem;max-width:36ch;margin-left:auto;margin-right:auto}
+.enroll a{display:inline-block;background:#fff;color:var(--coral);font-weight:700;padding:.85rem 1.5rem;border-radius:999px}
+footer{text-align:center;padding:2rem 1rem 2.5rem;font-size:.78rem;color:var(--muted)}
+.float-wa{position:fixed;bottom:1.2rem;right:1.2rem;z-index:50;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 8px 24px rgba(37,211,102,.45)}
+.ribbon{background:linear-gradient(90deg,#fef3c7,#fce7f3,#e0e7ff);padding:1rem 1.25rem;text-align:center;font-size:.88rem;font-weight:600;color:var(--ink);margin-top:2.5rem}
+</style>
+</head>
+<body>
+
+<div class="mland-note">
+  <span data-es="Demo de estilo · MLand Software" data-en="Style demo · MLand Software">Demo de estilo · MLand Software</span> ·
+  <a href="/#demos" data-es="Volver al portafolio" data-en="Back to portfolio">Volver al portafolio</a> ·
+  <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20estilo%20educacion" data-es="Pedir este estilo" data-en="Request this style">Pedir este estilo</a> ·
+  <span class="lang-switch">
+    <button type="button" class="lang-btn active" data-set-lang="es">ES</button>
+    <button type="button" class="lang-btn" data-set-lang="en">EN</button>
+  </span>
+</div>
+
+<header class="top">
+  <div class="logo">Kids<span class="s">.</span>Color<span class="m">.</span><span class="c">Academy</span></div>
+  <nav class="nav-mini">
+    <a href="#nosotros" data-es="Nosotros" data-en="About">Nosotros</a>
+    <a href="#niveles" data-es="Niveles" data-en="Levels">Niveles</a>
+    <a href="#dia" data-es="Un día" data-en="A day">Un día</a>
+    <a href="#extras" data-es="Extras" data-en="Extras">Extras</a>
+    <a href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
+  </nav>
+  <a class="wa" href="https://wa.me/593978868363?text=matricula" data-es="Matricular" data-en="Enroll">Matricular</a>
+</header>
+
 <section class="hero">
-<span class="badge" data-es="✨ Matrículas abiertas" data-en="✨ Enrollment open">✨ Matrículas abiertas</span>
-<h1>Donde aprender es <span class="c1">jugar</span>, <span class="c2">crear</span> y <span class="c3">crecer</span></h1>
-<p data-es="Aulas alegres, docentes cercanos y actividades que despiertan curiosidad." data-en="Bright classrooms, caring teachers and activities that spark curiosity.">Aulas alegres, docentes cercanos y actividades que despiertan curiosidad.</p>
-<a class="cta" href="https://wa.me/593978868363?text=info" data-es="Quiero conocer más" data-en="Learn more">Quiero conocer más</a>
+  <div class="hero-inner">
+    <span class="badge" data-es="✨ Matrículas abiertas 2026" data-en="✨ Enrollment open 2026">✨ Matrículas abiertas 2026</span>
+    <h1>Donde aprender es <span class="c1">jugar</span>, <span class="c2">crear</span> y <span class="c3">crecer</span></h1>
+    <p data-es="Aulas alegres, docentes cercanos y un día lleno de descubrimiento. Pensado para que cada niño quiera volver mañana." data-en="Bright classrooms, caring teachers and a day full of discovery. Built so every child wants to come back tomorrow.">Aulas alegres, docentes cercanos y un día lleno de descubrimiento. Pensado para que cada niño quiera volver mañana.</p>
+    <div class="hero-actions">
+      <a class="cta" href="https://wa.me/593978868363?text=visita" data-es="Agendar visita guiada" data-en="Book a guided visit">Agendar visita guiada</a>
+      <a class="cta alt" href="#niveles" data-es="Ver niveles" data-en="See levels">Ver niveles</a>
+    </div>
+  </div>
 </section>
+
 <div class="stats">
-<div class="stat"><div class="n">15+</div><div class="l" data-es="Años" data-en="Years">Años</div></div>
-<div class="stat"><div class="n">180</div><div class="l" data-es="Estudiantes" data-en="Students">Estudiantes</div></div>
-<div class="stat"><div class="n">12</div><div class="l" data-es="Docentes" data-en="Teachers">Docentes</div></div>
-<div class="stat"><div class="n">8</div><div class="l" data-es="Extras" data-en="Extras">Extras</div></div>
+  <div class="stat"><div class="n">15+</div><div class="l" data-es="Años de experiencia" data-en="Years of experience">Años de experiencia</div></div>
+  <div class="stat"><div class="n">180</div><div class="l" data-es="Estudiantes" data-en="Students">Estudiantes</div></div>
+  <div class="stat"><div class="n">12</div><div class="l" data-es="Docentes" data-en="Teachers">Docentes</div></div>
+  <div class="stat"><div class="n">8</div><div class="l" data-es="Extracurriculares" data-en="Extracurriculars">Extracurriculares</div></div>
 </div>
-<div class="sec">
-<h2 data-es="¿Cómo es nuestra institución?" data-en="What is our school like?">¿Cómo es nuestra institución?</h2>
-<p class="sub" data-es="Diseñado para que los niños se sientan seguros y motivados." data-en="Designed so kids feel safe and motivated.">Diseñado para que los niños se sientan seguros y motivados.</p>
-<div class="grid">
-<div class="card"><div class="icon">🏫</div><h3 data-es="Ambientes coloridos" data-en="Colorful spaces">Ambientes coloridos</h3><p data-es="Aulas luminosas y zonas de juego." data-en="Bright classrooms and play areas.">Aulas luminosas y zonas de juego.</p></div>
-<div class="card"><div class="icon">👩‍🏫</div><h3 data-es="Docentes cercanos" data-en="Caring teachers">Docentes cercanos</h3><p data-es="Grupos reducidos y acompañamiento." data-en="Small groups and support.">Grupos reducidos y acompañamiento.</p></div>
-<div class="card"><div class="icon">🌱</div><h3 data-es="Aprendizaje activo" data-en="Active learning">Aprendizaje activo</h3><p data-es="Proyectos, experimentos y juegos." data-en="Projects, experiments and games.">Proyectos, experimentos y juegos.</p></div>
-<div class="card"><div class="icon">🤝</div><h3 data-es="Familias informadas" data-en="Informed families">Familias informadas</h3><p data-es="Comunicación constante por WhatsApp." data-en="Ongoing WhatsApp updates.">Comunicación constante por WhatsApp.</p></div>
+
+<section class="sec" id="nosotros">
+  <h2 data-es="¿Cómo es nuestra institución?" data-en="What is our school like?">¿Cómo es nuestra institución?</h2>
+  <p class="sub" data-es="Todo diseñado para que los niños se sientan seguros, motivados y con ganas de explorar." data-en="Everything designed so kids feel safe, motivated and eager to explore.">Todo diseñado para que los niños se sientan seguros, motivados y con ganas de explorar.</p>
+  <div class="about-grid">
+    <article class="about-card">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&q=80')"></div>
+      <div class="body">
+        <h3 data-es="Ambientes coloridos" data-en="Colorful spaces">Ambientes coloridos</h3>
+        <p data-es="Aulas luminosas, rincones de lectura y zonas de juego donde el color invita a explorar sin miedo a equivocarse." data-en="Bright classrooms, reading corners and play areas where color invites exploration without fear of mistakes.">Aulas luminosas, rincones de lectura y zonas de juego donde el color invita a explorar sin miedo a equivocarse.</p>
+      </div>
+    </article>
+    <article class="about-card">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80')"></div>
+      <div class="body">
+        <h3 data-es="Docentes cercanos" data-en="Caring teachers">Docentes cercanos</h3>
+        <p data-es="Grupos reducidos. Cada niño es acompañado de cerca en su ritmo de aprendizaje, con comunicación constante a las familias." data-en="Small groups. Every child is supported at their own pace, with ongoing communication to families.">Grupos reducidos. Cada niño es acompañado de cerca en su ritmo de aprendizaje, con comunicación constante a las familias.</p>
+      </div>
+    </article>
+    <article class="about-card">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?w=800&q=80')"></div>
+      <div class="body">
+        <h3 data-es="Aprendizaje activo" data-en="Active learning">Aprendizaje activo</h3>
+        <p data-es="Proyectos, experimentos y juegos que conectan lo que ven en clase con la vida real: ciencia, arte y movimiento todos los días." data-en="Projects, experiments and games that connect classroom learning to real life: science, art and movement every day.">Proyectos, experimentos y juegos que conectan lo que ven en clase con la vida real: ciencia, arte y movimiento todos los días.</p>
+      </div>
+    </article>
+    <article class="about-card">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=800&q=80')"></div>
+      <div class="body">
+        <h3 data-es="Familias informadas" data-en="Informed families">Familias informadas</h3>
+        <p data-es="Actualizaciones por WhatsApp, fotos de actividades (con permiso) y reuniones claras sobre el progreso de cada hijo." data-en="WhatsApp updates, activity photos (with permission) and clear meetings about each child's progress.">Actualizaciones por WhatsApp, fotos de actividades (con permiso) y reuniones claras sobre el progreso de cada hijo.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="sec" id="niveles">
+  <h2 data-es="Niveles que ofrecemos" data-en="Levels we offer">Niveles que ofrecemos</h2>
+  <p class="sub" data-es="Desde los primeros pasos hasta el refuerzo escolar, con un hilo conductor: curiosidad y confianza." data-en="From first steps to school support, with one thread: curiosity and confidence.">Desde los primeros pasos hasta el refuerzo escolar, con un hilo conductor: curiosidad y confianza.</p>
+  <div class="levels">
+    <article class="level">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80')"></div>
+      <div class="body">
+        <span class="tag" data-es="3–5 años" data-en="Ages 3–5">3–5 años</span>
+        <h3 data-es="Inicial / Preescolar" data-en="Early years / Preschool">Inicial / Preescolar</h3>
+        <p data-es="Juego guiado, motricidad, primeros números y letras, y hábitos de convivencia en un ambiente cálido." data-en="Guided play, motor skills, early numbers and letters, and social habits in a warm environment.">Juego guiado, motricidad, primeros números y letras, y hábitos de convivencia en un ambiente cálido.</p>
+        <ul>
+          <li data-es="Jornada completa o media jornada" data-en="Full or half day">Jornada completa o media jornada</li>
+          <li data-es="Materiales incluidos" data-en="Materials included">Materiales incluidos</li>
+          <li data-es="Informes mensuales a familias" data-en="Monthly reports to families">Informes mensuales a familias</li>
+        </ul>
+      </div>
+    </article>
+    <article class="level">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&q=80')"></div>
+      <div class="body">
+        <span class="tag" data-es="6–11 años" data-en="Ages 6–11">6–11 años</span>
+        <h3 data-es="Primaria" data-en="Primary">Primaria</h3>
+        <p data-es="Lectura, escritura, matemáticas y proyectos interdisciplinarios. Grupos pequeños para que nadie se quede atrás." data-en="Reading, writing, math and interdisciplinary projects. Small groups so no one is left behind.">Lectura, escritura, matemáticas y proyectos interdisciplinarios. Grupos pequeños para que nadie se quede atrás.</p>
+        <ul>
+          <li data-es="Inglés reforzado" data-en="Reinforced English">Inglés reforzado</li>
+          <li data-es="Ciencia y tecnología semanal" data-en="Weekly science &amp; tech">Ciencia y tecnología semanal</li>
+          <li data-es="Tutoría personalizada" data-en="Personalized tutoring">Tutoría personalizada</li>
+        </ul>
+      </div>
+    </article>
+    <article class="level">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80')"></div>
+      <div class="body">
+        <span class="tag" data-es="Refuerzo" data-en="Support">Refuerzo</span>
+        <h3 data-es="Apoyo escolar y tareas" data-en="Homework &amp; school support">Apoyo escolar y tareas</h3>
+        <p data-es="Espacio después de clase para reforzar, terminar deberes y ganar confianza antes del colegio del día siguiente." data-en="After-school space to reinforce, finish homework and build confidence for the next school day.">Espacio después de clase para reforzar, terminar deberes y ganar confianza antes del colegio del día siguiente.</p>
+        <ul>
+          <li data-es="Lunes a viernes · horarios flexibles" data-en="Mon–Fri · flexible hours">Lunes a viernes · horarios flexibles</li>
+          <li data-es="Seguimiento con el colegio" data-en="Follow-up with the school">Seguimiento con el colegio</li>
+          <li data-es="Grupos por nivel" data-en="Groups by level">Grupos por nivel</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="sec" id="dia">
+  <h2 data-es="Un día en la academia" data-en="A day at the academy">Un día en la academia</h2>
+  <p class="sub" data-es="Ritmo claro, pausas activas y mucho movimiento. Así se ve una mañana típica." data-en="Clear rhythm, active breaks and lots of movement. Here's a typical morning.">Ritmo claro, pausas activas y mucho movimiento. Así se ve una mañana típica.</p>
+  <div class="day">
+    <div class="day-item"><div class="time">07:30</div><div><h4 data-es="Llegada y bienvenida" data-en="Arrival &amp; welcome">Llegada y bienvenida</h4><p data-es="Los niños entran, saludan y eligen un rincón de juego libre mientras llegan todos." data-en="Kids arrive, say hello and choose a free-play corner while everyone gathers.">Los niños entran, saludan y eligen un rincón de juego libre mientras llegan todos.</p></div></div>
+    <div class="day-item"><div class="time">08:00</div><div><h4 data-es="Círculo de la mañana" data-en="Morning circle">Círculo de la mañana</h4><p data-es="Canciones, clima, calendario y el plan del día. Cada uno tiene voz." data-en="Songs, weather, calendar and the day's plan. Everyone has a voice.">Canciones, clima, calendario y el plan del día. Cada uno tiene voz.</p></div></div>
+    <div class="day-item"><div class="time">08:30</div><div><h4 data-es="Bloque de aprendizaje" data-en="Learning block">Bloque de aprendizaje</h4><p data-es="Lectura, números o proyecto según el nivel. Actividad corta, concreta y con materiales." data-en="Reading, numbers or project by level. Short, concrete activity with materials.">Lectura, números o proyecto según el nivel. Actividad corta, concreta y con materiales.</p></div></div>
+    <div class="day-item"><div class="time">10:00</div><div><h4 data-es="Snack y patio" data-en="Snack &amp; playground">Snack y patio</h4><p data-es="Comer juntos, correr y volver con energía. El movimiento es parte del aprendizaje." data-en="Eat together, run and come back with energy. Movement is part of learning.">Comer juntos, correr y volver con energía. El movimiento es parte del aprendizaje.</p></div></div>
+    <div class="day-item"><div class="time">10:40</div><div><h4 data-es="Arte, ciencia o música" data-en="Art, science or music">Arte, ciencia o música</h4><p data-es="Talleres rotativos: pintar, experimentar, cantar. Lo importante es probar." data-en="Rotating workshops: paint, experiment, sing. The point is to try.">Talleres rotativos: pintar, experimentar, cantar. Lo importante es probar.</p></div></div>
+    <div class="day-item"><div class="time">12:00</div><div><h4 data-es="Cierre y despedida" data-en="Closing &amp; goodbye">Cierre y despedida</h4><p data-es="Recuento del día, mensaje a casa y abrazos. Listos para volver mañana." data-en="Day recap, message home and hugs. Ready to come back tomorrow.">Recuento del día, mensaje a casa y abrazos. Listos para volver mañana.</p></div></div>
+  </div>
+</section>
+
+<section class="sec" id="extras">
+  <h2 data-es="Extracurriculares con alma" data-en="Extracurriculars with heart">Extracurriculares con alma</h2>
+  <p class="sub" data-es="Porque el aprendizaje también pasa por el cuerpo, la música y la imaginación." data-en="Because learning also happens through movement, music and imagination.">Porque el aprendizaje también pasa por el cuerpo, la música y la imaginación.</p>
+  <div class="extras">
+    <article class="extra"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=700&q=80')"></div><div class="shade"></div><div class="txt"><h3 data-es="Fútbol" data-en="Soccer">Fútbol</h3><p data-es="Mar y Jue · 16:00" data-en="Tue &amp; Thu · 4:00 pm">Mar y Jue · 16:00</p></div></article>
+    <article class="extra"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=700&q=80')"></div><div class="shade"></div><div class="txt"><h3 data-es="Arte y pintura" data-en="Art &amp; painting">Arte y pintura</h3><p data-es="Miércoles · 15:30" data-en="Wed · 3:30 pm">Miércoles · 15:30</p></div></article>
+    <article class="extra"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=700&q=80')"></div><div class="shade"></div><div class="txt"><h3 data-es="Danza" data-en="Dance">Danza</h3><p data-es="Lun y Vie · 16:00" data-en="Mon &amp; Fri · 4:00 pm">Lun y Vie · 16:00</p></div></article>
+    <article class="extra"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=700&q=80')"></div><div class="shade"></div><div class="txt"><h3 data-es="Música" data-en="Music">Música</h3><p data-es="Jueves · 15:00" data-en="Thu · 3:00 pm">Jueves · 15:00</p></div></article>
+    <article class="extra"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=700&q=80')"></div><div class="shade"></div><div class="txt"><h3 data-es="Robótica" data-en="Robotics">Robótica</h3><p data-es="Sábados · 10:00" data-en="Sat · 10:00 am">Sábados · 10:00</p></div></article>
+    <article class="extra"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1456513080880-7d36c172016b?w=700&q=80')"></div><div class="shade"></div><div class="txt"><h3 data-es="Club de lectura" data-en="Reading club">Club de lectura</h3><p data-es="Viernes · 15:00" data-en="Fri · 3:00 pm">Viernes · 15:00</p></div></article>
+  </div>
+</section>
+
+<section class="sec" id="galeria">
+  <h2 data-es="La academia en fotos" data-en="The academy in photos">La academia en fotos</h2>
+  <p class="sub" data-es="Rincones, patio, talleres y momentos del día a día (con permiso de las familias)." data-en="Corners, playground, workshops and everyday moments (with family permission).">Rincones, patio, talleres y momentos del día a día (con permiso de las familias).</p>
+  <div class="gallery">
+    <div class="g wide" style="background-image:url('https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?w=1200&q=80')"></div>
+    <div class="g" style="background-image:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80')"></div>
+    <div class="g" style="background-image:url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&q=80')"></div>
+    <div class="g" style="background-image:url('https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=600&q=80')"></div>
+    <div class="g wide" style="background-image:url('https://images.unsplash.com/photo-1567057419565-61500b9a4a0a?w=1200&q=80')"></div>
+  </div>
+</section>
+
+<section class="sec">
+  <h2 data-es="Lo que dicen las familias" data-en="What families say">Lo que dicen las familias</h2>
+  <p class="sub" data-es="Historias reales de papás y mamás que eligieron un lugar donde su hijo se siente visto." data-en="Real stories from parents who chose a place where their child feels seen.">Historias reales de papás y mamás que eligieron un lugar donde su hijo se siente visto.</p>
+  <div class="quotes">
+    <article class="quote">
+      <div class="stars">★★★★★</div>
+      <p data-es="“Mi hija sale corriendo a la academia. Antes le costaba levantarse; ahora pregunta si es día de pintura o de fútbol.”" data-en="“My daughter runs to the academy. She used to struggle to get up; now she asks if it's painting or soccer day.”">“Mi hija sale corriendo a la academia. Antes le costaba levantarse; ahora pregunta si es día de pintura o de fútbol.”</p>
+      <div class="who"><div class="av" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80')"></div><div><strong data-es="Ana R. · Mamá de Sofía" data-en="Ana R. · Sofía's mom">Ana R. · Mamá de Sofía</strong><span data-es="Inicial · 2 años con nosotros" data-en="Early years · 2 years with us">Inicial · 2 años con nosotros</span></div></div>
+    </article>
+    <article class="quote">
+      <div class="stars">★★★★★</div>
+      <p data-es="“Los grupos son pequeños y eso se nota. El profe sabe exactamente en qué va mi hijo y nos escribe por WhatsApp sin que lo pidamos.”" data-en="“Groups are small and it shows. The teacher knows exactly where my son is and messages us on WhatsApp without us asking.”">“Los grupos son pequeños y eso se nota. El profe sabe exactamente en qué va mi hijo y nos escribe por WhatsApp sin que lo pidamos.”</p>
+      <div class="who"><div class="av" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80')"></div><div><strong data-es="Carlos M. · Papá de Mateo" data-en="Carlos M. · Mateo's dad">Carlos M. · Papá de Mateo</strong><span data-es="Primaria · 1 año con nosotros" data-en="Primary · 1 year with us">Primaria · 1 año con nosotros</span></div></div>
+    </article>
+    <article class="quote">
+      <div class="stars">★★★★★</div>
+      <p data-es="“El refuerzo de la tarde nos salvó el año escolar. Tareas hechas, menos estrés en casa y él más seguro en clase.”" data-en="“After-school support saved our school year. Homework done, less stress at home and more confidence in class.”">“El refuerzo de la tarde nos salvó el año escolar. Tareas hechas, menos estrés en casa y él más seguro en clase.”</p>
+      <div class="who"><div class="av" style="background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&q=80')"></div><div><strong data-es="Lucía P. · Mamá de Diego" data-en="Lucía P. · Diego's mom">Lucía P. · Mamá de Diego</strong><span data-es="Refuerzo · 8 meses con nosotros" data-en="Support · 8 months with us">Refuerzo · 8 meses con nosotros</span></div></div>
+    </article>
+    <article class="quote">
+      <div class="stars">★★★★★</div>
+      <p data-es="“La visita guiada nos convenció: se ve el cuidado en cada rincón. No es solo ‘una guardería’, es un proyecto educativo de verdad.”" data-en="“The guided visit convinced us: you see care in every corner. It's not just ‘daycare’ — it's a real educational project.”">“La visita guiada nos convenció: se ve el cuidado en cada rincón. No es solo ‘una guardería’, es un proyecto educativo de verdad.”</p>
+      <div class="who"><div class="av" style="background-image:url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&q=80')"></div><div><strong data-es="María E. · Mamá de Valentina" data-en="María E. · Valentina's mom">María E. · Mamá de Valentina</strong><span data-es="Inicial · recién matriculados" data-en="Early years · newly enrolled">Inicial · recién matriculados</span></div></div>
+    </article>
+  </div>
+</section>
+
+<section class="sec">
+  <h2 data-es="Síguenos y mira el día a día" data-en="Follow us and see everyday life">Síguenos y mira el día a día</h2>
+  <p class="sub" data-es="Fotos de actividades, avisos y momentos de los niños (siempre con permiso de las familias)." data-en="Activity photos, notices and kids' moments (always with family permission).">Fotos de actividades, avisos y momentos de los niños (siempre con permiso de las familias).</p>
+  <div class="social">
+    <a class="soc ig" href="https://wa.me/593978868363?text=instagram" target="_blank" rel="noopener">📷 Instagram</a>
+    <a class="soc fb" href="https://wa.me/593978868363?text=facebook" target="_blank" rel="noopener">👍 Facebook</a>
+    <a class="soc yt" href="https://wa.me/593978868363?text=youtube" target="_blank" rel="noopener">▶️ YouTube</a>
+    <a class="soc tt" href="https://wa.me/593978868363?text=tiktok" target="_blank" rel="noopener">🎵 TikTok</a>
+  </div>
+</section>
+
+<div class="ribbon" data-es="📍 Visitas guiadas de lunes a sábado · Respuesta el mismo día por WhatsApp" data-en="📍 Guided visits Mon–Sat · Same-day reply on WhatsApp">📍 Visitas guiadas de lunes a sábado · Respuesta el mismo día por WhatsApp</div>
+
+<div class="enroll" id="matricula">
+  <h2 data-es="¿Listo para una visita guiada?" data-en="Ready for a guided visit?">¿Listo para una visita guiada?</h2>
+  <p data-es="Recorre las aulas, conoce a los docentes y pregunta todo lo que necesites. Sin compromiso y sin presión." data-en="Tour the classrooms, meet the teachers and ask anything you need. No commitment, no pressure.">Recorre las aulas, conoce a los docentes y pregunta todo lo que necesites. Sin compromiso y sin presión.</p>
+  <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20agendar%20una%20visita%20guiada" data-es="Agendar por WhatsApp" data-en="Book on WhatsApp">Agendar por WhatsApp</a>
 </div>
-</div>
-<div class="sec">
-<h2 data-es="Extracurriculares" data-en="Extracurriculars">Extracurriculares</h2>
-<div class="extras">
-<div class="extra a"><span class="e">⚽</span><h3 data-es="Fútbol" data-en="Soccer">Fútbol</h3><p data-es="Mar y Jue" data-en="Tue &amp; Thu">Mar y Jue</p></div>
-<div class="extra b"><span class="e">🎨</span><h3 data-es="Arte" data-en="Art">Arte</h3><p data-es="Miércoles" data-en="Wed">Miércoles</p></div>
-<div class="extra c"><span class="e">💃</span><h3 data-es="Danza" data-en="Dance">Danza</h3><p data-es="Lun y Vie" data-en="Mon &amp; Fri">Lun y Vie</p></div>
-<div class="extra d"><span class="e">🎹</span><h3 data-es="Música" data-en="Music">Música</h3><p data-es="Jueves" data-en="Thu">Jueves</p></div>
-</div>
-</div>
-<div class="final">
-<h2 data-es="¿Listo para una visita?" data-en="Ready for a visit?">¿Listo para una visita?</h2>
-<p data-es="Agenda un recorrido. Sin compromiso." data-en="Book a tour. No commitment.">Agenda un recorrido. Sin compromiso.</p>
-<a href="https://wa.me/593978868363?text=visita" data-es="Agendar por WhatsApp" data-en="Book on WhatsApp">Agendar por WhatsApp</a>
-</div>
-<footer data-es="Ejemplo de estilo educativo · MLand Software" data-en="Education style example · MLand Software">Ejemplo de estilo educativo · MLand Software</footer>
+
+<footer data-es="Ejemplo de estilo educativo · MLand Software · No es un sitio de cliente real" data-en="Education style example · MLand Software · Not a real client site">Ejemplo de estilo educativo · MLand Software · No es un sitio de cliente real</footer>
+
+<a class="float-wa" href="https://wa.me/593978868363?text=Hola%2C%20vengo%20de%20la%20demo%20educacion" aria-label="WhatsApp">💬</a>
+
 <script src="/js/i18n.js"></script>
-</body></html>
+</body>
+</html>
