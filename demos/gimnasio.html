@@ -1,48 +1,240 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Demo · Gimnasio | MLand Software</title><meta name="robots" content="noindex,follow">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Demo · Gimnasio | MLand Software</title>
+<meta name="robots" content="noindex,follow">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--lime:#c8ff00;--bg:#0a0a0a;--card:#161616;--muted:#888}*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:#fff;line-height:1.5}a{color:inherit;text-decoration:none}
-.mland-note{background:#000;color:#555;font-size:.75rem;text-align:center;padding:.5rem 1rem;display:flex;flex-wrap:wrap;gap:.35rem;justify-content:center;align-items:center}
+:root{
+  --lime:#c8ff00;--bg:#0a0a0a;--card:#141414;--muted:#8a8a8a;
+  --line:#222;--soft:#1a1a1a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:#fff;line-height:1.55}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.mland-note{background:#000;color:#555;font-size:.75rem;text-align:center;padding:.55rem 1rem;display:flex;flex-wrap:wrap;gap:.35rem;justify-content:center;align-items:center}
 .mland-note a{color:var(--lime);font-weight:600}
 .lang-switch{display:inline-flex;border:1.5px solid currentColor;border-radius:999px;overflow:hidden;font-size:.72rem;font-weight:700}
 .lang-btn{border:0;background:transparent;color:inherit;padding:.28rem .55rem;cursor:pointer;font:inherit;opacity:.55}
 .lang-btn.active{opacity:1;background:var(--lime);color:#000}
-.top{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.25rem;border-bottom:1px solid #222}
-.logo{font-family:"Bebas Neue",sans-serif;font-size:1.8rem;letter-spacing:.06em;color:var(--lime)}.wa{border:1.5px solid var(--lime);color:var(--lime);font-weight:700;padding:.4rem .9rem;font-size:.8rem}
-.hero{padding:3rem 1.25rem 2rem;text-align:center}.hero .k{font-size:.75rem;color:var(--lime);font-weight:700;margin-bottom:.5rem;letter-spacing:.1em;text-transform:uppercase}
-.hero h1{font-family:"Bebas Neue",sans-serif;font-size:clamp(2.5rem,10vw,4rem);line-height:.95;margin-bottom:.75rem;letter-spacing:.02em}
-.hero p{color:var(--muted);max-width:28rem;margin:0 auto 1.35rem}
-.hero .cta{display:inline-block;background:var(--lime);color:#000;font-weight:700;padding:.75rem 1.5rem;font-size:.9rem}
-.stats{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;padding:0 1.25rem 2rem}
-.stats .n{font-family:"Bebas Neue",sans-serif;font-size:1.8rem;color:var(--lime)}.stats .l{font-size:.75rem;color:var(--muted)}
-.plans{max-width:480px;margin:0 auto 2rem;padding:0 1.25rem}
-.plans h2{font-family:"Bebas Neue",sans-serif;font-size:1.5rem;margin-bottom:1rem;letter-spacing:.04em}
-.plan{background:var(--card);padding:1.15rem;margin-bottom:.65rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;border-left:3px solid var(--lime)}
-.plan h3{font-size:1rem;margin-bottom:.15rem}.plan p{font-size:.8rem;color:var(--muted)}
-.plan .go{background:var(--lime);color:#000;font-weight:700;padding:.45rem .9rem;font-size:.8rem}
-footer{text-align:center;padding:1rem;font-size:.75rem;color:#555}
-</style></head><body>
-<div class="mland-note"><span data-es="Demo de estilo · MLand Software" data-en="Style demo · MLand Software">Demo de estilo · MLand Software</span> · <a href="/#demos" data-es="Volver al portafolio" data-en="Back to portfolio">Volver al portafolio</a> · <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20gimnasio" data-es="Pedir este estilo" data-en="Request this style">Pedir este estilo</a> · <span class="lang-switch"><button type="button" class="lang-btn active" data-set-lang="es">ES</button><button type="button" class="lang-btn" data-set-lang="en">EN</button></span></div>
-<div class="top"><div class="logo">FORCE GYM</div><a class="wa" href="https://wa.me/593978868363?text=estilo%20gimnasio">WhatsApp</a></div>
+.top{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.25rem;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40;background:rgba(10,10,10,.95);backdrop-filter:blur(8px);gap:.75rem;flex-wrap:wrap}
+.logo{font-family:"Bebas Neue",sans-serif;font-size:1.85rem;letter-spacing:.06em;color:var(--lime)}
+.nav-mini{display:none;gap:1.2rem;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+@media(min-width:720px){.nav-mini{display:flex}}
+.nav-mini a:hover{color:var(--lime)}
+.wa{border:1.5px solid var(--lime);color:var(--lime);font-weight:700;padding:.45rem 1rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
+.hero{
+  position:relative;min-height:78vh;display:flex;align-items:flex-end;
+  background:linear-gradient(to top,rgba(10,10,10,.97) 0%,rgba(10,10,10,.55) 45%,rgba(10,10,10,.25) 100%),
+    url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80") center/cover no-repeat;
+  padding:0 1.25rem 3rem;
+}
+.hero-inner{max-width:800px;margin:0 auto;width:100%;text-align:center}
+.hero .k{font-size:.78rem;color:var(--lime);font-weight:700;margin-bottom:.65rem;letter-spacing:.14em;text-transform:uppercase}
+.hero h1{font-family:"Bebas Neue",sans-serif;font-size:clamp(2.8rem,11vw,4.5rem);line-height:.92;margin-bottom:.75rem;letter-spacing:.02em}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.hero p{color:var(--muted);max-width:36ch;margin:0 auto 1.5rem;font-size:1.02rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.65rem;justify-content:center}
+.cta{display:inline-block;background:var(--lime);color:#000;font-weight:700;padding:.8rem 1.5rem;font-size:.9rem;text-transform:uppercase;letter-spacing:.04em}
+.cta.ghost{background:transparent;border:1.5px solid var(--lime);color:var(--lime)}
+.stats{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;padding:0 1.25rem;margin-top:-1.5rem;position:relative;z-index:5}
+.stat{background:var(--card);border:1px solid var(--line);padding:1.1rem 1.35rem;min-width:120px;text-align:center}
+.stat .n{font-family:"Bebas Neue",sans-serif;font-size:2rem;color:var(--lime);line-height:1}
+.stat .l{font-size:.72rem;color:var(--muted);margin-top:.25rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.sec{max-width:980px;margin:0 auto;padding:3rem 1.25rem 0}
+.sec h2{font-family:"Bebas Neue",sans-serif;font-size:clamp(1.6rem,4vw,2.1rem);letter-spacing:.04em;text-align:center;margin-bottom:.35rem}
+.sec h2 em{font-style:normal;color:var(--lime)}
+.sec .sub{text-align:center;color:var(--muted);font-size:.92rem;margin-bottom:1.75rem;max-width:40ch;margin-left:auto;margin-right:auto}
+.classes{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media(max-width:700px){.classes{grid-template-columns:1fr}}
+.cls{position:relative;min-height:240px;overflow:hidden;border:1px solid var(--line)}
+.cls .ph{position:absolute;inset:0;background-size:cover;background-position:center}
+.cls .shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.2))}
+.cls .txt{position:relative;z-index:2;height:100%;padding:1.25rem;display:flex;flex-direction:column;justify-content:flex-end}
+.cls h3{font-family:"Bebas Neue",sans-serif;font-size:1.5rem;letter-spacing:.03em;margin-bottom:.2rem}
+.cls p{font-size:.82rem;color:#bbb;margin-bottom:.35rem}
+.cls .tag{font-size:.7rem;font-weight:700;color:var(--lime);text-transform:uppercase;letter-spacing:.08em}
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media(max-width:700px){.team{grid-template-columns:1fr}}
+.doc{background:var(--card);border:1px solid var(--line);overflow:hidden}
+.doc .ph{height:220px;background-size:cover;background-position:center top}
+.doc .body{padding:1.15rem 1.15rem 1.3rem}
+.doc h3{font-family:"Bebas Neue",sans-serif;font-size:1.35rem;letter-spacing:.03em;margin-bottom:.15rem}
+.doc .role{font-size:.78rem;font-weight:700;color:var(--lime);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem}
+.doc p{font-size:.85rem;color:var(--muted)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media(max-width:720px){.plans{grid-template-columns:1fr}}
+.plan{background:var(--card);border:1px solid var(--line);padding:1.5rem 1.25rem;display:flex;flex-direction:column}
+.plan.hot{border-color:var(--lime);position:relative}
+.plan.hot::before{content:"POPULAR";position:absolute;top:0;right:0;background:var(--lime);color:#000;font-size:.65rem;font-weight:800;padding:.25rem .55rem;letter-spacing:.06em}
+.plan h3{font-family:"Bebas Neue",sans-serif;font-size:1.5rem;letter-spacing:.04em;margin-bottom:.25rem}
+.plan .price{font-family:"Bebas Neue",sans-serif;font-size:2.4rem;color:var(--lime);line-height:1;margin:.5rem 0 .15rem}
+.plan .price span{font-size:1rem;color:var(--muted);font-family:Inter,sans-serif;font-weight:600}
+.plan .desc{font-size:.85rem;color:var(--muted);margin-bottom:1rem}
+.plan ul{list-style:none;margin-bottom:1.25rem;flex:1}
+.plan li{font-size:.85rem;padding:.35rem 0;border-bottom:1px solid var(--line);color:#ccc;padding-left:1.1rem;position:relative}
+.plan li::before{content:"▸";position:absolute;left:0;color:var(--lime)}
+.plan a{display:block;text-align:center;background:var(--lime);color:#000;font-weight:700;padding:.7rem 1rem;font-size:.85rem;text-transform:uppercase;letter-spacing:.04em}
+.plan:not(.hot) a{background:transparent;border:1.5px solid var(--lime);color:var(--lime)}
+.sched{background:var(--card);border:1px solid var(--line);overflow:hidden}
+.sched-row{display:grid;grid-template-columns:90px 1fr 1fr 1fr;gap:0;border-bottom:1px solid var(--line);font-size:.85rem}
+.sched-row:last-child{border-bottom:0}
+.sched-row.head{background:var(--soft);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.72rem;color:var(--lime)}
+.sched-row > div{padding:.75rem .85rem;border-right:1px solid var(--line)}
+.sched-row > div:last-child{border-right:0}
+.sched-row .day{font-weight:700;color:var(--lime)}
+@media(max-width:640px){
+  .sched-row{grid-template-columns:70px 1fr}
+  .sched-row .hide-m{display:none}
+}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:130px;gap:.5rem}
+@media(max-width:640px){.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:110px}}
+.gallery .g{background-size:cover;background-position:center;border:1px solid var(--line)}
+.gallery .g.wide{grid-column:span 2}
+.gallery .g.tall{grid-row:span 2}
+.quotes{display:grid;gap:1rem}
+@media(min-width:700px){.quotes{grid-template-columns:1fr 1fr}}
+.quote{background:var(--card);border:1px solid var(--line);padding:1.35rem 1.4rem;border-left:3px solid var(--lime)}
+.quote .stars{color:var(--lime);letter-spacing:1px;margin-bottom:.4rem;font-size:.85rem}
+.quote p{font-size:.9rem;color:var(--muted);font-style:italic;margin-bottom:.85rem}
+.quote strong{font-size:.86rem;display:block}
+.quote span{font-size:.74rem;color:#666}
+.enroll{
+  margin:3rem 1.25rem 0;max-width:980px;margin-left:auto;margin-right:auto;
+  background:var(--lime);color:#000;padding:2.25rem 1.5rem;text-align:center;
+}
+.enroll h2{font-family:"Bebas Neue",sans-serif;font-size:clamp(1.6rem,4vw,2.2rem);letter-spacing:.04em;margin-bottom:.4rem}
+.enroll p{opacity:.85;margin-bottom:1.2rem;max-width:36ch;margin-left:auto;margin-right:auto;font-weight:500}
+.enroll a{display:inline-block;background:#000;color:var(--lime);font-weight:700;padding:.8rem 1.5rem;text-transform:uppercase;letter-spacing:.05em;font-size:.9rem}
+footer{text-align:center;padding:2rem 1rem 2.5rem;font-size:.75rem;color:#555}
+.float-wa{position:fixed;bottom:1.2rem;right:1.2rem;z-index:50;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 8px 24px rgba(37,211,102,.4)}
+</style>
+</head>
+<body>
+
+<div class="mland-note">
+  <span data-es="Demo de estilo · MLand Software" data-en="Style demo · MLand Software">Demo de estilo · MLand Software</span> ·
+  <a href="/#demos" data-es="Volver al portafolio" data-en="Back to portfolio">Volver al portafolio</a> ·
+  <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20estilo%20gimnasio" data-es="Pedir este estilo" data-en="Request this style">Pedir este estilo</a> ·
+  <span class="lang-switch">
+    <button type="button" class="lang-btn active" data-set-lang="es">ES</button>
+    <button type="button" class="lang-btn" data-set-lang="en">EN</button>
+  </span>
+</div>
+
+<header class="top">
+  <div class="logo">FORCE GYM</div>
+  <nav class="nav-mini">
+    <a href="#clases" data-es="Clases" data-en="Classes">Clases</a>
+    <a href="#planes" data-es="Planes" data-en="Plans">Planes</a>
+    <a href="#coach" data-es="Coaches" data-en="Coaches">Coaches</a>
+    <a href="#horario" data-es="Horario" data-en="Schedule">Horario</a>
+  </nav>
+  <a class="wa" href="https://wa.me/593978868363?text=inscripcion" data-es="Inscribirme" data-en="Join now">Inscribirme</a>
+</header>
+
 <section class="hero">
-<div class="k" data-es="Demo · Fitness" data-en="Demo · Fitness">Demo · Fitness</div>
-<h1>ENTRENA.<br>RESERVA.<br>LLEGA.</h1>
-<p data-es="Planes claros y inscripción por WhatsApp en segundos." data-en="Clear plans and signup on WhatsApp in seconds.">Planes claros y inscripción por WhatsApp en segundos.</p>
-<a class="cta" href="https://wa.me/593978868363?text=Quiero%20inscribirme" data-es="Empezar hoy" data-en="Start today">Empezar hoy</a>
+  <div class="hero-inner">
+    <div class="k" data-es="Entrena sin excusas" data-en="Train with no excuses">Entrena sin excusas</div>
+    <h1 data-es-html="TU LÍMITE<br><em>EMPIEZA AQUÍ</em>" data-en-html="YOUR LIMIT<br><em>STARTS HERE</em>">TU LÍMITE<br><em>EMPIEZA AQUÍ</em></h1>
+    <p data-es="Máquinas, clases grupales y coaches que no te dejan a medias. Agenda tu clase de prueba por WhatsApp." data-en="Machines, group classes and coaches who don’t leave you halfway. Book a trial class on WhatsApp.">Máquinas, clases grupales y coaches que no te dejan a medias. Agenda tu clase de prueba por WhatsApp.</p>
+    <div class="hero-actions">
+      <a class="cta" href="https://wa.me/593978868363?text=clase%20prueba" data-es="Clase de prueba gratis" data-en="Free trial class">Clase de prueba gratis</a>
+      <a class="cta ghost" href="#planes" data-es="Ver planes" data-en="See plans">Ver planes</a>
+    </div>
+  </div>
 </section>
+
 <div class="stats">
-<div><div class="n">06:00</div><div class="l" data-es="Apertura" data-en="Opens">Apertura</div></div>
-<div><div class="n">22:00</div><div class="l" data-es="Cierre" data-en="Closes">Cierre</div></div>
-<div><div class="n">7/7</div><div class="l" data-es="Días" data-en="Days">Días</div></div>
+  <div class="stat"><div class="n">500+</div><div class="l" data-es="Miembros" data-en="Members">Miembros</div></div>
+  <div class="stat"><div class="n">18</div><div class="l" data-es="Clases / sem" data-en="Classes / wk">Clases / sem</div></div>
+  <div class="stat"><div class="n">6</div><div class="l" data-es="Coaches" data-en="Coaches">Coaches</div></div>
+  <div class="stat"><div class="n">5–22</div><div class="l" data-es="Horario" data-en="Hours">Horario</div></div>
 </div>
-<div class="plans"><h2 data-es="Planes" data-en="Plans">Planes</h2>
-<div class="plan"><div><h3 data-es="Mensual" data-en="Monthly">Mensual</h3><p data-es="Acceso completo · Sin permanencia" data-en="Full access · No lock-in">Acceso completo · Sin permanencia</p></div><a class="go" href="https://wa.me/593978868363?text=Plan%20mensual" data-es="Pedir" data-en="Join">Pedir</a></div>
-<div class="plan"><div><h3 data-es="Trimestral" data-en="Quarterly">Trimestral</h3><p data-es="Mejor precio · Clases incluidas" data-en="Best price · Classes included">Mejor precio · Clases incluidas</p></div><a class="go" href="https://wa.me/593978868363?text=Plan%20trimestral" data-es="Pedir" data-en="Join">Pedir</a></div>
-<div class="plan"><div><h3 data-es="Personal" data-en="Personal training">Personal</h3><p data-es="Entrenador 1 a 1 · Horario flexible" data-en="1-on-1 trainer · Flexible hours">Entrenador 1 a 1 · Horario flexible</p></div><a class="go" href="https://wa.me/593978868363?text=Plan%20personal" data-es="Pedir" data-en="Join">Pedir</a></div>
+
+<section class="sec" id="clases">
+  <h2 data-es-html="CLASES QUE <em>QUEMAN</em>" data-en-html="CLASSES THAT <em>HIT</em>">CLASES QUE <em>QUEMAN</em></h2>
+  <p class="sub" data-es="Elige intensidad. Todas con coach en sala y playlist que empuja." data-en="Pick your intensity. All with a coach on the floor and a playlist that pushes.">Elige intensidad. Todas con coach en sala y playlist que empuja.</p>
+  <div class="classes">
+    <article class="cls"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80')"></div><div class="shade"></div><div class="txt"><div class="tag" data-es="Fuerza" data-en="Strength">Fuerza</div><h3>HIIT POWER</h3><p data-es="Intervalos, sudor y cero tiempo muerto. 45 min." data-en="Intervals, sweat and zero downtime. 45 min.">Intervalos, sudor y cero tiempo muerto. 45 min.</p></div></article>
+    <article class="cls"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80')"></div><div class="shade"></div><div class="txt"><div class="tag" data-es="Funcional" data-en="Functional">Funcional</div><h3>CROSS FLOW</h3><p data-es="Movimiento completo: peso, cardio y core." data-en="Full movement: weights, cardio and core.">Movimiento completo: peso, cardio y core.</p></div></article>
+    <article class="cls"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80')"></div><div class="shade"></div><div class="txt"><div class="tag" data-es="Movilidad" data-en="Mobility">Movilidad</div><h3>YOGA FORCE</h3><p data-es="Flexibilidad y control. Ideal post-entreno." data-en="Flexibility and control. Ideal after training.">Flexibilidad y control. Ideal post-entreno.</p></div></article>
+    <article class="cls"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80')"></div><div class="shade"></div><div class="txt"><div class="tag" data-es="Baile" data-en="Dance">Baile</div><h3>SPIN &amp; BURN</h3><p data-es="Bici indoor + ritmo. Piernas y cardio a tope." data-en="Indoor bike + rhythm. Legs and cardio maxed.">Bici indoor + ritmo. Piernas y cardio a tope.</p></div></article>
+    <article class="cls"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&q=80')"></div><div class="shade"></div><div class="txt"><div class="tag" data-es="Box" data-en="Boxing">Box</div><h3>BOX FIT</h3><p data-es="Golpes, saco y agilidad. Sin contacto completo." data-en="Punches, bag and agility. No full contact.">Golpes, saco y agilidad. Sin contacto completo.</p></div></article>
+    <article class="cls"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=80')"></div><div class="shade"></div><div class="txt"><div class="tag" data-es="Zona libre" data-en="Open floor">Zona libre</div><h3 data-es="SALA ABIERTA" data-en="OPEN GYM">SALA ABIERTA</h3><p data-es="Máquinas y pesas 5:00–22:00 todos los días." data-en="Machines and weights 5:00–22:00 every day.">Máquinas y pesas 5:00–22:00 todos los días.</p></div></article>
+  </div>
+</section>
+
+<section class="sec" id="planes">
+  <h2 data-es-html="PLANES <em>CLAROS</em>" data-en-html="CLEAR <em>PLANS</em>">PLANES <em>CLAROS</em></h2>
+  <p class="sub" data-es="Sin letra chica rara. Entras, entrenas, progresas." data-en="No weird fine print. You walk in, train, progress.">Sin letra chica rara. Entras, entrenas, progresas.</p>
+  <div class="plans">
+    <article class="plan"><h3>BASIC</h3><div class="price">$29 <span data-es="/ mes" data-en="/ mo">/ mes</span></div><p class="desc" data-es="Acceso a sala y zona de cardio." data-en="Floor and cardio access.">Acceso a sala y zona de cardio.</p><ul><li data-es="Sala abierta todos los días" data-en="Open gym every day">Sala abierta todos los días</li><li data-es="Casillero el día de visita" data-en="Locker on visit day">Casillero el día de visita</li><li data-es="App de reservas" data-en="Booking app">App de reservas</li></ul><a href="https://wa.me/593978868363?text=plan%20basic" data-es="Elegir Basic" data-en="Choose Basic">Elegir Basic</a></article>
+    <article class="plan hot"><h3>PRO</h3><div class="price">$49 <span data-es="/ mes" data-en="/ mo">/ mes</span></div><p class="desc" data-es="Todo Basic + clases ilimitadas." data-en="Everything in Basic + unlimited classes.">Todo Basic + clases ilimitadas.</p><ul><li data-es="Clases grupales ilimitadas" data-en="Unlimited group classes">Clases grupales ilimitadas</li><li data-es="1 sesión con coach / mes" data-en="1 coach session / month">1 sesión con coach / mes</li><li data-es="Invitado 2 veces al mes" data-en="Guest 2× per month">Invitado 2 veces al mes</li><li data-es="Toalla y agua en recepción" data-en="Towel &amp; water at front desk">Toalla y agua en recepción</li></ul><a href="https://wa.me/593978868363?text=plan%20pro" data-es="Elegir Pro" data-en="Choose Pro">Elegir Pro</a></article>
+    <article class="plan"><h3>ELITE</h3><div class="price">$79 <span data-es="/ mes" data-en="/ mo">/ mes</span></div><p class="desc" data-es="Máximo acompañamiento y prioridad." data-en="Max support and priority access.">Máximo acompañamiento y prioridad.</p><ul><li data-es="Todo Pro incluido" data-en="Everything in Pro">Todo Pro incluido</li><li data-es="4 sesiones coach / mes" data-en="4 coach sessions / month">4 sesiones coach / mes</li><li data-es="Plan nutricional básico" data-en="Basic nutrition plan">Plan nutricional básico</li><li data-es="Acceso prioritario a clases" data-en="Priority class booking">Acceso prioritario a clases</li></ul><a href="https://wa.me/593978868363?text=plan%20elite" data-es="Elegir Elite" data-en="Choose Elite">Elegir Elite</a></article>
+  </div>
+</section>
+
+<section class="sec" id="coach">
+  <h2 data-es-html="COACHES QUE <em>EMPUJAN</em>" data-en-html="COACHES WHO <em>PUSH</em>">COACHES QUE <em>EMPUJAN</em></h2>
+  <p class="sub" data-es="No gritan por gritar. Corrigen, miden y te sacan del estancamiento." data-en="They don’t yell for show. They correct, measure and pull you out of plateaus.">No gritan por gritar. Corrigen, miden y te sacan del estancamiento.</p>
+  <div class="team">
+    <article class="doc"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80')"></div><div class="body"><h3>ANDRÉS V.</h3><div class="role" data-es="Fuerza &amp; HIIT" data-en="Strength &amp; HIIT">Fuerza &amp; HIIT</div><p data-es="Especialista en hipertrofia y acondicionamiento. 8 años en sala." data-en="Hypertrophy and conditioning specialist. 8 years on the floor.">Especialista en hipertrofia y acondicionamiento. 8 años en sala.</p></div></article>
+    <article class="doc"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1594381898411-846e7d193883?w=600&q=80')"></div><div class="body"><h3>MARÍA C.</h3><div class="role" data-es="Funcional &amp; Yoga" data-en="Functional &amp; Yoga">Funcional &amp; Yoga</div><p data-es="Movilidad, core y técnica limpia. Ideal si vuelves después de una lesión." data-en="Mobility, core and clean technique. Ideal if you’re coming back from injury.">Movilidad, core y técnica limpia. Ideal si vuelves después de una lesión.</p></div></article>
+    <article class="doc"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=600&q=80')"></div><div class="body"><h3>DIEGO R.</h3><div class="role" data-es="Box &amp; Cardio" data-en="Boxing &amp; Cardio">Box &amp; Cardio</div><p data-es="Ritmo alto, foco en agilidad y quema. Clases con energía de verdad." data-en="High pace, focus on agility and burn. Classes with real energy.">Ritmo alto, foco en agilidad y quema. Clases con energía de verdad.</p></div></article>
+  </div>
+</section>
+
+<section class="sec" id="horario">
+  <h2 data-es-html="HORARIO DE <em>CLASES</em>" data-en-html="CLASS <em>SCHEDULE</em>">HORARIO DE <em>CLASES</em></h2>
+  <p class="sub" data-es="Reserva tu cupo por WhatsApp o en la app. Sala abierta 5:00–22:00." data-en="Book your spot on WhatsApp or the app. Open gym 5:00–22:00.">Reserva tu cupo por WhatsApp o en la app. Sala abierta 5:00–22:00.</p>
+  <div class="sched">
+    <div class="sched-row head"><div data-es="Día" data-en="Day">Día</div><div>06:30</div><div class="hide-m">12:00</div><div class="hide-m">19:00</div></div>
+    <div class="sched-row"><div class="day" data-es="Lun" data-en="Mon">Lun</div><div>HIIT Power</div><div class="hide-m">Yoga Force</div><div class="hide-m">Cross Flow</div></div>
+    <div class="sched-row"><div class="day" data-es="Mar" data-en="Tue">Mar</div><div>Box Fit</div><div class="hide-m">HIIT Power</div><div class="hide-m">Spin &amp; Burn</div></div>
+    <div class="sched-row"><div class="day" data-es="Mié" data-en="Wed">Mié</div><div>Cross Flow</div><div class="hide-m">Yoga Force</div><div class="hide-m">HIIT Power</div></div>
+    <div class="sched-row"><div class="day" data-es="Jue" data-en="Thu">Jue</div><div>Spin &amp; Burn</div><div class="hide-m">Box Fit</div><div class="hide-m">Cross Flow</div></div>
+    <div class="sched-row"><div class="day" data-es="Vie" data-en="Fri">Vie</div><div>HIIT Power</div><div class="hide-m">Cross Flow</div><div class="hide-m">Yoga Force</div></div>
+    <div class="sched-row"><div class="day" data-es="Sáb" data-en="Sat">Sáb</div><div>Box Fit</div><div class="hide-m">HIIT Power</div><div class="hide-m">—</div></div>
+  </div>
+</section>
+
+<section class="sec">
+  <h2 data-es-html="LA <em>SALA</em>" data-en-html="THE <em>FLOOR</em>">LA <em>SALA</em></h2>
+  <p class="sub" data-es="Pesas libres, racks, cardio y zona de clases. Limpio y con espacio de verdad." data-en="Free weights, racks, cardio and class zone. Clean with real space.">Pesas libres, racks, cardio y zona de clases. Limpio y con espacio de verdad.</p>
+  <div class="gallery">
+    <div class="g wide tall" style="background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1000&q=80')"></div>
+    <div class="g" style="background-image:url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=500&q=80')"></div>
+    <div class="g" style="background-image:url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500&q=80')"></div>
+    <div class="g wide" style="background-image:url('https://images.unsplash.com/photo-1540496905036-5937c3caf2c0?w=900&q=80')"></div>
+    <div class="g" style="background-image:url('https://images.unsplash.com/photo-1576678927484-cc907957088c?w=500&q=80')"></div>
+    <div class="g" style="background-image:url('https://images.unsplash.com/photo-1558611848-73f7eb4001a1?w=500&q=80')"></div>
+  </div>
+</section>
+
+<section class="sec">
+  <h2 data-es-html="LO QUE DICEN <em>LOS MIEMBROS</em>" data-en-html="WHAT <em>MEMBERS</em> SAY">LO QUE DICEN <em>LOS MIEMBROS</em></h2>
+  <p class="sub" data-es="Resultados y constancia. Sin promesas mágicas." data-en="Results and consistency. No magic promises.">Resultados y constancia. Sin promesas mágicas.</p>
+  <div class="quotes">
+    <article class="quote"><div class="stars">★★★★★</div><p data-es="“En 3 meses bajé de peso y por fin entiendo las máquinas. El coach corrige de verdad.”" data-en="“In 3 months I lost weight and finally understand the machines. The coach actually corrects form.”">“En 3 meses bajé de peso y por fin entiendo las máquinas. El coach corrige de verdad.”</p><strong>Laura M.</strong><span data-es="Plan Pro · 4 meses" data-en="Pro plan · 4 months">Plan Pro · 4 meses</span></article>
+    <article class="quote"><div class="stars">★★★★★</div><p data-es="“Las clases de HIIT son brutales (en el buen sentido). Reservo por WhatsApp y listo.”" data-en="“HIIT classes are brutal (in a good way). I book on WhatsApp and I’m set.”">“Las clases de HIIT son brutales (en el buen sentido). Reservo por WhatsApp y listo.”</p><strong>Carlos T.</strong><span data-es="Plan Elite · 1 año" data-en="Elite plan · 1 year">Plan Elite · 1 año</span></article>
+    <article class="quote"><div class="stars">★★★★★</div><p data-es="“Volví después de una lesión. Yoga Force + sala abierta me devolvieron la confianza.”" data-en="“Came back after an injury. Yoga Force + open gym gave me my confidence back.”">“Volví después de una lesión. Yoga Force + sala abierta me devolvieron la confianza.”</p><strong>Sofía R.</strong><span data-es="Plan Pro · 6 meses" data-en="Pro plan · 6 months">Plan Pro · 6 meses</span></article>
+    <article class="quote"><div class="stars">★★★★★</div><p data-es="“Box Fit me enganchó. Ambiente serio, sin ego de espejo.”" data-en="“Box Fit hooked me. Serious vibe, no mirror ego.”">“Box Fit me enganchó. Ambiente serio, sin ego de espejo.”</p><strong>Miguel A.</strong><span data-es="Plan Basic · 2 meses" data-en="Basic plan · 2 months">Plan Basic · 2 meses</span></article>
+  </div>
+</section>
+
+<div class="enroll">
+  <h2 data-es="PRUEBA UNA CLASE. SIN COMPROMISO." data-en="TRY ONE CLASS. NO COMMITMENT.">PRUEBA UNA CLASE. SIN COMPROMISO.</h2>
+  <p data-es="Escríbenos, elige día y hora. Te confirmamos cupo en minutos." data-en="Message us, pick day and time. We’ll confirm your spot in minutes.">Escríbenos, elige día y hora. Te confirmamos cupo en minutos.</p>
+  <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20clase%20de%20prueba%20en%20Force%20Gym" data-es="Agendar por WhatsApp" data-en="Book on WhatsApp">Agendar por WhatsApp</a>
 </div>
-<footer data-es="Ejemplo de estilo · MLand Software" data-en="Style example · MLand Software">Ejemplo de estilo · MLand Software</footer>
+
+<footer data-es="Ejemplo de estilo gimnasio · MLand Software · No es un sitio de cliente real" data-en="Gym style example · MLand Software · Not a real client site">Ejemplo de estilo gimnasio · MLand Software · No es un sitio de cliente real</footer>
+
+<a class="float-wa" href="https://wa.me/593978868363?text=Hola%2C%20vengo%20de%20la%20demo%20gimnasio" aria-label="WhatsApp">💬</a>
 <script src="/js/i18n.js"></script>
-</body></html>
+</body>
+</html>
