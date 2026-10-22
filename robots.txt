@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
 
-# Portfolio demos and private proposals — noindex, do not crawl
 Disallow: /demos/
 Disallow: /rosita.html
 Disallow: /demo-rosita.html
