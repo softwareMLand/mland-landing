@@ -1,1 +1,239 @@
-LOADING
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MLand Software | Web + Google Maps para negocios de habla hispana</title>
+<meta name="description" content="Web rápida + Google Maps optimizado para que tu negocio de habla hispana aparezca cuando te buscan. Más llamadas y clientes. 100% remoto.">
+<meta name="google-site-verification" content="e34Txkkmpu1eo88nSMDNGmorwFULilsLxfYSQ1G27-A">
+<link rel="canonical" href="https://mland-landing.montoyasud.workers.dev/">
+<meta property="og:title" content="MLand Software | Web + Google Maps">
+<meta property="og:description" content="Aparece en Google y Maps. Más clientes para tu negocio local. Servicio 100% remoto.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mland-landing.montoyasud.workers.dev/">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f2744;--navy-light:#1a3a5c;--teal:#0d9488;--teal-dark:#0f766e;--teal-soft:#ccfbf1;--sand:#f8fafc;--white:#fff;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;--wa:#25D366}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:"DM Sans",system-ui,sans-serif;color:var(--text);line-height:1.6;background:var(--white)}
+a{color:inherit;text-decoration:none}
+.container{width:min(1100px,100% - 2rem);margin-inline:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:600;font-size:.95rem;padding:.85rem 1.4rem;border-radius:999px;border:none;cursor:pointer;transition:.2s}
+.btn-primary{background:var(--teal);color:#fff}.btn-primary:hover{background:var(--teal-dark)}
+.btn-outline{background:transparent;color:var(--navy);border:2px solid var(--border)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-sm{padding:.65rem 1.15rem;font-size:.88rem;width:100%}
+.trust-bar{background:var(--navy);color:#94a3b8;font-size:.78rem;text-align:center;padding:.45rem 1rem;font-weight:500}
+.trust-bar strong{color:#5eead4}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:.85rem 0;gap:1rem;flex-wrap:wrap}
+.logo{font-weight:700;font-size:1.15rem;color:var(--navy)}.logo span{color:var(--teal)}
+.nav-links{display:none;gap:1.1rem;align-items:center;font-size:.88rem;font-weight:500;color:var(--muted)}
+@media(min-width:900px){.nav-links{display:flex}}
+.nav-right{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+.hero{background:linear-gradient(165deg,var(--navy) 0%,var(--navy-light) 55%,#0c4a6e 100%);color:#fff;padding:3.25rem 0 3.75rem}
+.hero-grid{display:grid;gap:2rem;align-items:center}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.2fr .9fr;gap:2.75rem}}
+.hero .eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5eead4;margin-bottom:.75rem}
+.hero h1{font-size:clamp(1.7rem,4vw,2.55rem);line-height:1.18;margin-bottom:1rem;font-weight:700}
+.hero p.lead{font-size:1.05rem;opacity:.92;max-width:36rem;margin-bottom:1.15rem}
+.hero-micro{font-size:.82rem;opacity:.75;margin-bottom:1.35rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.hero-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:1.4rem 1.45rem}
+.hero-card h3{font-size:.95rem;margin-bottom:.75rem}
+.hero-card ul{list-style:none;display:grid;gap:.55rem;font-size:.9rem}
+.hero-card li{display:flex;gap:.5rem;align-items:flex-start}
+.hero-card li::before{content:"✓";color:#5eead4;font-weight:700}
+.proof{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;padding:0 1rem;margin-top:-1.35rem;position:relative;z-index:5}
+.proof-item{background:#fff;border:1px solid var(--border);border-radius:12px;padding:.9rem 1.2rem;text-align:center;min-width:130px;box-shadow:0 8px 24px rgba(15,39,68,.06)}
+.proof-item .n{font-size:1.25rem;font-weight:700;color:var(--navy)}
+.proof-item .l{font-size:.75rem;color:var(--muted);font-weight:600}
+.section{padding:3.5rem 0}.section-alt{background:var(--sand)}
+.section h2{font-size:clamp(1.4rem,3vw,1.85rem);color:var(--navy);margin-bottom:.5rem;font-weight:700}
+.section .sub{color:var(--muted);max-width:38rem;margin-bottom:2rem}
+.pain-grid,.grid-3,.steps,.demos-grid,.testimonials-grid,.packages-grid,.collab-grid{display:grid;gap:1.15rem}
+.pain-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.pain{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.3rem;border-left:3px solid var(--teal)}
+.pain h3{font-size:.98rem;color:var(--navy);margin-bottom:.35rem}.pain p{font-size:.88rem;color:var(--muted)}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.35rem 1.4rem}
+.card h3{font-size:1.05rem;color:var(--navy);margin-bottom:.4rem}.card p{font-size:.92rem;color:var(--muted)}
+.icon-badge{width:2.4rem;height:2.4rem;border-radius:10px;background:var(--teal-soft);color:var(--teal-dark);display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:.85rem}
+.steps{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.85rem}
+.step{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.15rem 1rem}
+.step .num{font-size:.8rem;font-weight:700;color:var(--teal);margin-bottom:.4rem}
+.step h3{font-size:.95rem;color:var(--navy);margin-bottom:.3rem}.step p{font-size:.82rem;color:var(--muted)}
+.demos-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.demo-card{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.demo-card .preview{height:140px;display:flex;align-items:flex-end;padding:1rem;color:#fff;font-weight:700}
+.demo-card .body{padding:1.15rem 1.25rem 1.35rem;flex:1;display:flex;flex-direction:column}
+.demo-card .for{font-size:.8rem;color:var(--teal);font-weight:600;margin-bottom:.35rem}
+.demo-card h3{font-size:1.05rem;color:var(--navy);margin-bottom:.4rem}
+.demo-card p{font-size:.88rem;color:var(--muted);margin-bottom:1rem;flex:1}
+.demo-card .btn{width:100%;text-align:center}
+.testimonials-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.testimonial{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.35rem}
+.testimonial .stars{color:#f59e0b;margin-bottom:.4rem}
+.testimonial p{font-size:.9rem;color:var(--muted);margin-bottom:.75rem}
+.testimonial a{color:var(--teal);font-weight:700}
+@media(min-width:900px){.packages-grid{grid-template-columns:repeat(3,1fr)}}
+.package{background:#fff;border:1px solid var(--border);border-radius:16px;padding:1.5rem 1.35rem;display:flex;flex-direction:column}
+.package.featured{border:2px solid var(--teal);box-shadow:0 12px 32px rgba(13,148,136,.12);position:relative}
+.package .badge{position:absolute;top:-.7rem;left:1.2rem;background:var(--teal);color:#fff;font-size:.72rem;font-weight:700;padding:.25rem .65rem;border-radius:999px;text-transform:uppercase}
+.package h3{font-size:1.15rem;color:var(--navy);margin-bottom:.35rem}
+.package-for{font-size:.82rem;color:var(--teal);font-weight:600;margin-bottom:.5rem}
+.package-desc{font-size:.88rem;color:var(--muted);margin-bottom:.85rem}
+.price{font-size:2rem;font-weight:700;color:var(--navy);margin-bottom:.35rem}
+.price-period{font-size:.95rem;font-weight:500;color:var(--muted)}
+.pkg-block{margin:.85rem 0 1rem}
+.pkg-block h4{font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;color:var(--navy);margin-bottom:.45rem}
+.package ul{list-style:none;display:grid;gap:.4rem;font-size:.85rem;color:var(--muted)}
+.package ul li{padding-left:1.15rem;position:relative}
+.package ul li::before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:700}
+.package .not li::before{content:"–";color:#94a3b8}
+.package .result{font-size:.85rem;color:var(--navy);font-weight:600;background:var(--teal-soft);padding:.65rem .85rem;border-radius:10px;margin:.85rem 0 1rem}
+.compare{overflow-x:auto;margin-top:2rem;border-radius:14px;border:1px solid var(--border);background:#fff}
+.compare table{width:100%;border-collapse:collapse;font-size:.88rem;min-width:520px}
+.compare th,.compare td{padding:.75rem 1rem;text-align:left;border-bottom:1px solid var(--border)}
+.compare th{background:var(--sand);color:var(--navy);font-weight:700}
+.compare td{color:var(--muted)}
+.packages-note{text-align:center;font-size:.85rem;color:var(--muted);margin-top:1.25rem}
+.collab-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.collab{background:#fff;border:1px solid var(--border);border-radius:16px;padding:1.4rem 1.35rem;text-align:center}
+.collab .avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--teal-soft),#e0f2fe);color:var(--teal-dark);font-weight:700;font-size:1.25rem;display:flex;align-items:center;justify-content:center;margin:0 auto .85rem}
+.collab.join .avatar{background:var(--navy);color:#5eead4;border:2px dashed #334155}
+.collab h3{font-size:1.05rem;color:var(--navy);margin-bottom:.25rem}
+.collab .role{font-size:.8rem;font-weight:700;color:var(--teal);margin-bottom:.5rem}
+.collab p{font-size:.88rem;color:var(--muted);margin-bottom:.85rem}
+.faq{display:grid;gap:.75rem;max-width:720px}
+.faq details{background:#fff;border:1px solid var(--border);border-radius:12px;padding:1rem 1.15rem}
+.faq summary{font-weight:600;color:var(--navy);cursor:pointer;list-style:none}
+.faq details p{margin-top:.55rem;font-size:.9rem;color:var(--muted)}
+.cta-band{background:linear-gradient(135deg,var(--navy),#0c4a6e);color:#fff;border-radius:20px;padding:2.5rem 1.75rem;text-align:center}
+.cta-band h2{color:#fff;margin-bottom:.5rem}
+.cta-band p{opacity:.9;margin-bottom:1.25rem;max-width:32rem;margin-inline:auto}
+footer{background:var(--navy);color:#94a3b8;padding:2rem 0;font-size:.88rem}
+footer .footer-inner{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center}
+footer strong{color:#e2e8f0}
+.float-wa{position:fixed;bottom:1.2rem;right:1.2rem;z-index:60;width:56px;height:56px;border-radius:50%;background:var(--wa);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 8px 24px rgba(37,211,102,.4)}
+.lang-switch{display:inline-flex;border:1.5px solid #e2e8f0;border-radius:999px;overflow:hidden;font-size:.72rem;font-weight:700}
+.lang-btn{padding:.32rem .58rem;background:transparent;border:none;cursor:pointer;color:#64748b;font:inherit}
+.lang-btn.active{background:#0d9488;color:#fff}
+</style>
+</head>
+<body>
+<div class="trust-bar"><span data-es="100% remoto · Negocios de habla hispana · Respuesta por WhatsApp" data-en="100% remote · Spanish-speaking businesses · WhatsApp reply"><strong>100% remoto</strong> · Negocios de habla hispana · Respuesta por WhatsApp</span></div>
+<header><div class="container nav">
+<a href="/" class="logo">MLand <span>Software</span></a>
+<div class="nav-right">
+<nav class="nav-links">
+<a href="#problema" data-es="Problema" data-en="Problem">Problema</a>
+<a href="#como" data-es="Cómo funciona" data-en="How it works">Cómo funciona</a>
+<a href="#demos" data-es="Demos" data-en="Demos">Demos</a>
+<a href="#paquetes" data-es="Paquetes" data-en="Packages">Paquetes</a>
+<a href="#equipo" data-es="Equipo" data-en="Team">Equipo</a>
+<a class="btn btn-primary" style="padding:.55rem 1rem;font-size:.85rem" href="https://wa.me/593978868363?text=Hola%2C%20quiero%20aparecer%20mejor%20en%20Google%20y%20Maps" target="_blank" rel="noopener">WhatsApp</a>
+</nav>
+<div class="lang-switch" role="group" aria-label="Language"><button type="button" class="lang-btn active" data-set-lang="es">ES</button><button type="button" class="lang-btn" data-set-lang="en">EN</button></div>
+</div></div></header>
+<section class="hero"><div class="container hero-grid">
+<div>
+<div class="eyebrow" data-es="Web + Google Maps · Resultados locales" data-en="Website + Google Maps · Local results">Web + Google Maps · Resultados locales</div>
+<h1 data-es="Tu negocio puede tener clientes cerca… y no aparecer cuando te buscan" data-en="You may have customers nearby—and still not show up when they search">Tu negocio puede tener clientes cerca… y no aparecer cuando te buscan</h1>
+<p class="lead" data-es="Diseñamos webs rápidas y optimizamos tu ficha de Google y Maps para que te llamen y te visiten. Para negocios de habla hispana. 100% remoto." data-en="We build fast websites and optimize your Google Business and Maps profile so people call and visit. For Spanish-speaking businesses. Fully remote.">Diseñamos webs rápidas y optimizamos tu ficha de Google y Maps para que te llamen y te visiten. Para negocios de habla hispana. 100% remoto.</p>
+<p class="hero-micro" data-es="Sin contratos eternos · Precios claros · Entrega desde 7–14 días según paquete" data-en="No endless contracts · Clear pricing · Delivery from 7–14 días según paquete">Sin contratos eternos · Precios claros · Entrega desde 7–14 días según paquete</p>
+<div class="hero-actions">
+<a class="btn btn-wa" href="https://wa.me/593978868363?text=Hola%2C%20quiero%20aparecer%20mejor%20en%20Google%20y%20Maps" target="_blank" rel="noopener" data-es="Hablar por WhatsApp" data-en="Chat on WhatsApp">Hablar por WhatsApp</a>
+<a class="btn btn-outline" href="#paquetes" style="border-color:rgba(255,255,255,.35);color:#fff" data-es="Ver paquetes" data-en="See packages">Ver paquetes</a>
+</div>
+</div>
+<div class="hero-card">
+<h3 data-es="Por qué confiar en MLand" data-en="Why trust MLand">Por qué confiar en MLand</h3>
+<ul>
+<li data-es="Enfoque en llamadas, WhatsApp y visitas — no en páginas solo bonitas" data-en="Focus on calls, WhatsApp and visits—not just pretty pages">Enfoque en llamadas, WhatsApp y visitas — no en páginas solo bonitas</li>
+<li data-es="Web + Google Maps en un solo proceso" data-en="Website + Google Maps in one process">Web + Google Maps en un solo proceso</li>
+<li data-es="Demos reales por tipo de negocio" data-en="Real demos by business type">Demos reales por tipo de negocio</li>
+<li data-es="Atención directa por WhatsApp, sin burocracia" data-en="Direct WhatsApp support, no bureaucracy">Atención directa por WhatsApp, sin burocracia</li>
+</ul>
+</div>
+</div></section>
+<div class="proof">
+<div class="proof-item"><div class="n">8</div><div class="l" data-es="Estilos de demo" data-en="Demo styles">Estilos de demo</div></div>
+<div class="proof-item"><div class="n">3</div><div class="l" data-es="Paquetes claros" data-en="Clear packages">Paquetes claros</div></div>
+<div class="proof-item"><div class="n">100%</div><div class="l" data-es="Remoto" data-en="Remote">Remoto</div></div>
+<div class="proof-item"><div class="n">ES</div><div class="l" data-es="Habla hispana" data-en="Spanish-speaking">Habla hispana</div></div>
+</div>
+<section class="section" id="problema"><div class="container">
+<h2 data-es="Si te pasa esto, te estamos hablando a ti" data-en="If this sounds like you, we’re talking to you">Si te pasa esto, te estamos hablando a ti</h2>
+<p class="sub" data-es="La mayoría de negocios locales no pierde clientes por el producto: los pierde porque no aparecen a tiempo." data-en="Most local businesses don’t lose customers because of the product—they lose them because they don’t show up in time.">La mayoría de negocios locales no pierde clientes por el producto: los pierde porque no aparecen a tiempo.</p>
+<div class="pain-grid">
+<div class="pain"><h3 data-es="No sales en Google Maps" data-en="You’re not on Google Maps">No sales en Google Maps</h3><p data-es="Buscan cerca de mí y solo ven a la competencia." data-en="People search near me and only see competitors.">Buscan cerca de mí y solo ven a la competencia.</p></div>
+<div class="pain"><h3 data-es="Tienes web… pero no convierte" data-en="You have a site… that doesn’t convert">Tienes web… pero no convierte</h3><p data-es="Se ve antigua, lenta o no deja claro cómo contactarte." data-en="It looks outdated, slow or unclear how to reach you.">Se ve antigua, lenta o no deja claro cómo contactarte.</p></div>
+<div class="pain"><h3 data-es="Dependes solo del boca a boca" data-en="You rely only on word of mouth">Dependes solo del boca a boca</h3><p data-es="Funciona, pero no escala cuando hay demanda cerca." data-en="It works, but it doesn’t scale when demand is nearby.">Funciona, pero no escala cuando hay demanda cerca.</p></div>
+<div class="pain"><h3 data-es="No sabes por dónde empezar" data-en="You don’t know where to start">No sabes por dónde empezar</h3><p data-es="Agencias caras o freelancers que solo entregan diseño." data-en="Expensive agencies or freelancers who only deliver design.">Agencias caras o freelancers que solo entregan diseño.</p></div>
+</div>
+</div></section>
+<section class="section section-alt" id="como"><div class="container">
+<h2 data-es="Qué entregamos (y para qué sirve)" data-en="What we deliver (and why it matters)">Qué entregamos (y para qué sirve)</h2>
+<p class="sub" data-es="Un sistema simple: que te encuentren y que te contacten." data-en="A simple system: get found and get contacted.">Un sistema simple: que te encuentren y que te contacten.</p>
+<div class="grid-3">
+<div class="card"><div class="icon-badge">1</div><h3 data-es="Web que convierte" data-en="Website that converts">Web que convierte</h3><p data-es="Rápida, móvil primero, con servicios, ubicación y botones a WhatsApp o llamada." data-en="Fast, mobile-first, with services, location and buttons to WhatsApp or call.">Rápida, móvil primero, con servicios, ubicación y botones a WhatsApp o llamada.</p></div>
+<div class="card"><div class="icon-badge">2</div><h3 data-es="Google Maps listo" data-en="Google Maps ready">Google Maps listo</h3><p data-es="Ficha de negocio optimizada: categorías, descripción, fotos y datos correctos." data-en="Optimized business profile: categories, description, photos and correct data.">Ficha de negocio optimizada: categorías, descripción, fotos y datos correctos.</p></div>
+<div class="card"><div class="icon-badge">3</div><h3 data-es="Camino a la acción" data-en="Path to action">Camino a la acción</h3><p data-es="WhatsApp, llamada o formulario visibles desde el primer segundo." data-en="WhatsApp, call or form visible from the first second.">WhatsApp, llamada o formulario visibles desde el primer segundo.</p></div>
+</div>
+<div style="margin-top:2rem">
+<h2 data-es="Cómo trabajamos" data-en="How we work">Cómo trabajamos</h2>
+<div class="steps" style="margin-top:1rem">
+<div class="step"><div class="num">01</div><h3 data-es="Diagnóstico" data-en="Diagnosis">Diagnóstico</h3><p data-es="Revisamos tu presencia actual y competencia local." data-en="We review your current presence and local competition.">Revisamos tu presencia actual y competencia local.</p></div>
+<div class="step"><div class="num">02</div><h3 data-es="Diseño + SEO local" data-en="Design + local SEO">Diseño + SEO local</h3><p data-es="Web y Maps alineados a tu tipo de negocio." data-en="Website and Maps aligned to your business type.">Web y Maps alineados a tu tipo de negocio.</p></div>
+<div class="step"><div class="num">03</div><h3 data-es="Publicación" data-en="Launch">Publicación</h3><p data-es="Dominio, hosting y ajustes finales." data-en="Domain, hosting and final tweaks.">Dominio, hosting y ajustes finales.</p></div>
+<div class="step"><div class="num">04</div><h3 data-es="Seguimiento" data-en="Follow-up">Seguimiento</h3><p data-es="Según el paquete: soporte y mejoras." data-en="Depending on the package: support and improvements.">Según el paquete: soporte y mejoras.</p></div>
+</div></div>
+</div></section>
+<section class="section" id="demos"><div class="container">
+<h2 data-es="Así puede quedar la web de tu negocio" data-en="How your business website can look">Así puede quedar la web de tu negocio</h2>
+<p class="sub" data-es="Cada demo es un estilo distinto. Ábrela y imagina tu logo y tus fotos ahí." data-en="Each demo is a different style. Open it and picture your logo and photos there.">Cada demo es un estilo distinto. Ábrela y imagina tu logo y tus fotos ahí.</p>
+<div class="demos-grid">
+<article class="demo-card"><div class="preview" style="background:linear-gradient(160deg,#1e3a5f,#2563eb)">Médico</div><div class="body"><span class="for" data-es="Profesionales · Consultorios" data-en="Professionals · Offices">Profesionales · Consultorios</span><h3 data-es="Médico especialista" data-en="Specialist doctor">Médico especialista</h3><p data-es="Perfil profesional, servicios y citas por WhatsApp." data-en="Professional profile, services and WhatsApp booking.">Perfil profesional, servicios y citas por WhatsApp.</p><a class="btn btn-primary" href="/demos/medico.html" data-es="Ver demo" data-en="View demo">Ver demo</a></div></article>
+<article class="demo-card"><div class="preview" style="background:linear-gradient(160deg,#0e7490,#0891b2)">Hotel</div><div class="body"><span class="for">Hoteles · Hostales</span><h3 data-es="Hotel / alojamiento" data-en="Hotel / lodging">Hotel / alojamiento</h3><p data-es="Estilo playa, habitaciones y reserva directa." data-en="Beach style, rooms and direct booking.">Estilo playa, habitaciones y reserva directa.</p><a class="btn btn-primary" href="/demos/hotel.html" data-es="Ver demo" data-en="View demo">Ver demo</a></div></article>
+<article class="demo-card"><div class="preview" style="background:linear-gradient(160deg,#0a0a0a,#c4a574);color:#f2ebe0">Restaurante</div><div class="body"><span class="for">Restaurantes · Cafés</span><h3 data-es="Restaurante / café" data-en="Restaurant / café">Restaurante / café</h3><p data-es="Menú y reserva de mesa por WhatsApp." data-en="Menu and table booking on WhatsApp.">Menú y reserva de mesa por WhatsApp.</p><a class="btn btn-primary" href="/demos/restaurante.html" data-es="Ver demo" data-en="View demo">Ver demo</a></div></article>
+<article class="demo-card"><div class="preview" style="background:linear-gradient(160deg,#111,#facc15);color:#111">Taller</div><div class="body"><span class="for">Talleres · Servicios</span><h3 data-es="Taller / servicios" data-en="Workshop / services">Taller / servicios</h3><p data-es="Mecánica, colisiones y cotización por WhatsApp." data-en="Mechanics, collision and quotes on WhatsApp.">Mecánica, colisiones y cotización por WhatsApp.</p><a class="btn btn-primary" href="/demos/taller.html" data-es="Ver demo" data-en="View demo">Ver demo</a></div></article>
+<article class="demo-card"><div class="preview" style="background:linear-gradient(160deg,#0f766e,#14b8a6)">Clínica</div><div class="body"><span class="for">Clínicas · Dentistas</span><h3 data-es="Clínica / salud" data-en="Clinic / health">Clínica / salud</h3><p data-es="Citas sin fricción desde el celular." data-en="Frictionless booking from the phone.">Citas sin fricción desde el celular.</p><a class="btn btn-primary" href="/demos/clinica.html" data-es="Ver demo" data-en="View demo">Ver demo</a></div></article>
+<article class="demo-card"><div class="preview" style="background:linear-gradient(160deg,#0f2744,#1a3a5c)">Local</div><div class="body"><span class="for">Negocio de barrio</span><h3 data-es="Negocio local" data-en="Local business">Negocio local</h3><p data-es="Presencia clara + Google Maps." data-en="Clear presence + Google Maps.">Presencia clara + Google Maps.</p><a class="btn btn-primary" href="/demos/local.html" data-es="Ver demo" data-en="View demo">Ver demo</a></div></article>
+<article class="demo-card"><div class="preview" style="background:linear-gradient(135deg,#3b82f6,#a855f7,#f97316)">Educación</div><div class="body"><span class="for">Colegios · Academias</span><h3 data-es="Educación" data-en="Education">Educación</h3><p data-es="Colores vivos e información para padres." data-en="Bright colors and info for parents.">Colores vivos e información para padres.</p><a class="btn btn-primary" href="/demos/educacion.html" data-es="Ver demo" data-en="View demo">Ver demo</a></div></article>
+<article class="demo-card"><div class="preview" style="background:linear-gradient(160deg,#0a0a0a,#1a1a1a);color:#c8ff00">Gym</div><div class="body"><span class="for">Gimnasios · Crossfit</span><h3 data-es="Gimnasio / fitness" data-en="Gym / fitness">Gimnasio / fitness</h3><p data-es="Planes e inscripción por WhatsApp." data-en="Plans and signup on WhatsApp.">Planes e inscripción por WhatsApp.</p><a class="btn btn-primary" href="/demos/gimnasio.html" data-es="Ver demo" data-en="View demo">Ver demo</a></div></article>
+</div>
+</div></section>
+<section class="section section-alt" id="paquetes"><div class="container">
+<h2 data-es="Paquetes claros" data-en="Clear packages">Paquetes claros</h2>
+<p class="sub" data-es="Elige según tu momento. Todos incluyen enfoque en aparecer y convertir." data-en="Choose by stage. All focus on getting found and converting.">Elige según tu momento. Todos incluyen enfoque en aparecer y convertir.</p>
+<div class="packages-grid">
+<div class="package"><h3 data-es="Arranque" data-en="Start">Arranque</h3><div class="package-for" data-es="Primera web seria" data-en="First solid website">Primera web seria</div><div class="price">$290</div><p class="package-desc" data-es="Web rápida + base de Maps." data-en="Fast site + Maps foundation.">Web rápida + base de Maps.</p><ul><li data-es="Web 1 página responsive" data-en="1-page responsive site">Web 1 página responsive</li><li data-es="WhatsApp y llamada visibles" data-en="Visible WhatsApp and call">WhatsApp y llamada visibles</li><li data-es="Optimización básica de ficha Google" data-en="Basic Google profile setup">Optimización básica de ficha Google</li><li data-es="Dominio + hosting 1 año*" data-en="Domain + hosting 1 year*">Dominio + hosting 1 año*</li></ul><a class="btn btn-primary btn-sm" style="margin-top:auto" href="https://wa.me/593978868363?text=Paquete%20Arranque" data-es="Quiero Arranque" data-en="I want Start">Quiero Arranque</a></div>
+<div class="package featured"><div class="badge" data-es="Más elegido" data-en="Most chosen">Más elegido</div><h3 data-es="Presencia + Resultados" data-en="Presence + Results">Presencia + Resultados</h3><div class="package-for" data-es="Web completa + Maps fuerte" data-en="Full site + strong Maps">Web completa + Maps fuerte</div><div class="price">$500</div><p class="package-desc" data-es="El paquete que recomendamos para la mayoría." data-en="The package we recommend for most.">El paquete que recomendamos para la mayoría.</p><ul><li data-es="Todo de Arranque" data-en="Everything in Start">Todo de Arranque</li><li data-es="Secciones de servicios y prueba social" data-en="Services and social proof sections">Secciones de servicios y prueba social</li><li data-es="Google Business optimizado a fondo" data-en="In-depth Google Business optimization">Google Business optimizado a fondo</li><li data-es="Fotos y textos orientados a conversión" data-en="Conversion-oriented photos and copy">Fotos y textos orientados a conversión</li></ul><a class="btn btn-primary btn-sm" style="margin-top:auto" href="https://wa.me/593978868363?text=Paquete%20Presencia" data-es="Quiero este paquete" data-en="I want this package">Quiero este paquete</a></div>
+<div class="package"><h3 data-es="Continuo" data-en="Ongoing">Continuo</h3><div class="package-for" data-es="Mantenimiento mensual" data-en="Monthly maintenance">Mantenimiento mensual</div><div class="price">$49<span class="price-period" data-es="/mes" data-en="/mo">/mes</span></div><p class="package-desc" data-es="Para no quedarte desactualizado." data-en="So you don’t fall behind.">Para no quedarte desactualizado.</p><ul><li data-es="Cambios menores de contenido" data-en="Minor content updates">Cambios menores de contenido</li><li data-es="Revisión de Maps" data-en="Maps review">Revisión de Maps</li><li data-es="Soporte por WhatsApp" data-en="WhatsApp support">Soporte por WhatsApp</li></ul><a class="btn btn-outline btn-sm" style="margin-top:auto" href="https://wa.me/593978868363?text=Paquete%20Continuo" data-es="Consultar Continuo" data-en="Ask about Ongoing">Consultar Continuo</a></div>
+</div>
+<p class="packages-note" data-es="*Dominio y hosting sujetos a disponibilidad y políticas del registrador." data-en="*Domain and hosting subject to availability and registrar policies.">*Dominio y hosting sujetos a disponibilidad y políticas del registrador.</p>
+</div></section>
+<section class="section" id="equipo"><div class="container">
+<h2 data-es="Equipo y colaboración" data-en="Team and collaboration">Equipo y colaboración</h2>
+<p class="sub" data-es="Trabajo directo contigo. Sin capas innecesarias." data-en="Direct work with you. No unnecessary layers.">Trabajo directo contigo. Sin capas innecesarias.</p>
+<div class="collab-grid">
+<div class="collab"><div class="avatar">BM</div><h3>Benito Montoya</h3><div class="role" data-es="Fundador · MLand Software" data-en="Founder · MLand Software">Fundador · MLand Software</div><p data-es="Diseño, desarrollo y posicionamiento local para negocios de habla hispana." data-en="Design, development and local visibility for Spanish-speaking businesses.">Diseño, desarrollo y posicionamiento local para negocios de habla hispana.</p></div>
+<div class="collab join"><div class="avatar">+</div><h3 data-es="¿Trabajamos juntos?" data-en="Shall we work together?">¿Trabajamos juntos?</h3><div class="role" data-es="Siguiente paso" data-en="Next step">Siguiente paso</div><p data-es="Cuéntame tu negocio y te digo qué paquete encaja." data-en="Tell me about your business and I’ll suggest a package.">Cuéntame tu negocio y te digo qué paquete encaja.</p><a class="btn btn-primary btn-sm" href="https://wa.me/593978868363?text=Hola%20Benito" data-es="Escribir por WhatsApp" data-en="Message on WhatsApp">Escribir por WhatsApp</a></div>
+</div>
+</div></section>
+<section class="section section-alt"><div class="container">
+<div class="cta-band">
+<h2 data-es="¿Listo para que te encuentren?" data-en="Ready to get found?">¿Listo para que te encuentren?</h2>
+<p data-es="Escríbeme por WhatsApp. En minutos sabes si tiene sentido empezar." data-en="Message me on WhatsApp. In minutes you’ll know if it makes sense to start.">Escríbeme por WhatsApp. En minutos sabes si tiene sentido empezar.</p>
+<a class="btn btn-wa" href="https://wa.me/593978868363?text=Hola%2C%20quiero%20aparecer%20en%20Google%20y%20Maps" data-es="Hablar por WhatsApp" data-en="Chat on WhatsApp">Hablar por WhatsApp</a>
+</div>
+</div></section>
+<footer><div class="container footer-inner">
+<div><strong>MLand Software</strong><br><span data-es="Web + Google Maps · Habla hispana · 100% remoto" data-en="Website + Google Maps · Spanish-speaking · 100% remote">Web + Google Maps · Habla hispana · 100% remoto</span></div>
+<div><a href="https://wa.me/593978868363">WhatsApp +593 978 868 363</a></div>
+</div></footer>
+<a class="float-wa" href="https://wa.me/593978868363?text=Hola%2C%20vengo%20de%20tu%20web" aria-label="WhatsApp">💬</a>
+<script src="/js/i18n.js"></script>
+</body>
+</html>
