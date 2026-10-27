@@ -1,48 +1,318 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Demo · Hotel | MLand Software</title><meta name="robots" content="noindex,follow">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Demo · Hotel | MLand Software</title>
+<meta name="robots" content="noindex,follow">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--gold:#b08d57;--cream:#faf7f2;--charcoal:#2c2c2c;--soft:#6b6560}*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Source Sans 3",system-ui,sans-serif;background:var(--cream);color:var(--charcoal);line-height:1.6}a{color:inherit;text-decoration:none}
-.mland-note{background:#2c2c2c;color:#a8a29e;font-size:.75rem;text-align:center;padding:.5rem 1rem;display:flex;flex-wrap:wrap;gap:.35rem;justify-content:center;align-items:center}
-.mland-note a{color:var(--gold);font-weight:600}
-.lang-switch{display:inline-flex;border:1.5px solid #555;border-radius:999px;overflow:hidden;font-size:.72rem;font-weight:700}
-.lang-btn{border:0;background:transparent;color:#a8a29e;padding:.28rem .55rem;cursor:pointer;font:inherit}
-.lang-btn.active{background:var(--gold);color:#fff}
-.top{text-align:center;padding:1.75rem 1rem 1.25rem;border-bottom:1px solid #e8e2d9}
-.top .name{font-family:"Cormorant Garamond",serif;font-size:1.85rem;letter-spacing:.12em;text-transform:uppercase}
-.top .tag{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:.35rem}
-.hero{height:280px;background:linear-gradient(to top,rgba(44,44,44,.55),transparent),url("https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=80") center/cover}
-.intro{max-width:640px;margin:2rem auto;padding:0 1.25rem;text-align:center}
-.intro h1{font-family:"Cormorant Garamond",serif;font-size:clamp(1.75rem,4vw,2.35rem);font-weight:600;line-height:1.2;margin-bottom:.6rem}
-.intro p{color:var(--soft);font-size:.95rem}
-.rooms{max-width:720px;margin:0 auto 2.5rem;padding:0 1.25rem}
-.room{display:grid;grid-template-columns:140px 1fr;gap:1.25rem;padding:1.35rem 0;border-bottom:1px solid #e8e2d9;align-items:center}
-@media(max-width:520px){.room{grid-template-columns:1fr}.room .ph{height:160px}}
-.room .ph{height:110px;border-radius:4px;background-size:cover;background-position:center}
-.room h3{font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:600;margin-bottom:.25rem}
-.room p{font-size:.88rem;color:var(--soft);margin-bottom:.5rem}
-.room .row{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem;justify-content:space-between}
-.room .price{font-weight:600;color:var(--gold);font-size:1.05rem}
-.room .btn{border:1.5px solid var(--charcoal);padding:.4rem .9rem;font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
-.cta-band{text-align:center;padding:2rem 1rem 2.5rem}
-.cta-band a{display:inline-block;background:var(--charcoal);color:#fff;padding:.75rem 1.5rem;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
-footer{text-align:center;padding:1rem;font-size:.78rem;color:var(--soft);border-top:1px solid #e8e2d9}
-</style></head><body>
-<div class="mland-note"><span data-es="Demo de estilo · MLand Software" data-en="Style demo · MLand Software">Demo de estilo · MLand Software</span> · <a href="/#demos" data-es="Volver al portafolio" data-en="Back to portfolio">Volver al portafolio</a> · <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20hotel" data-es="Pedir este estilo" data-en="Request this style">Pedir este estilo</a> · <span class="lang-switch"><button type="button" class="lang-btn active" data-set-lang="es">ES</button><button type="button" class="lang-btn" data-set-lang="en">EN</button></span></div>
-<div class="top"><div class="name">Casa Marina</div><div class="tag" data-es="Hotel boutique · Demo" data-en="Boutique hotel · Demo">Hotel boutique · Demo</div></div>
-<div class="hero"></div>
-<div class="intro">
-<h1 data-es="Descanso con la elegancia de estar en casa" data-en="Rest with the elegance of being at home">Descanso con la elegancia de estar en casa</h1>
-<p data-es="Habitaciones, ubicación y reserva directa. Sin intermediarios." data-en="Rooms, location and direct booking. No middlemen.">Habitaciones, ubicación y reserva directa. Sin intermediarios.</p>
+:root{
+  --aqua:#0891b2;--deep:#0e7490;--foam:#f0f9ff;--sand:#fffbeb;
+  --ink:#0c4a6e;--muted:#64748b;--line:#e0f2fe;--coral:#f97316;
+  --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Work Sans",system-ui,sans-serif;background:var(--foam);color:var(--ink);line-height:1.6}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.mland-note{background:var(--deep);color:#94a3b8;font-size:.75rem;text-align:center;padding:.55rem 1rem;display:flex;flex-wrap:wrap;gap:.35rem;justify-content:center;align-items:center}
+.mland-note a{color:#67e8f9;font-weight:600}
+.lang-switch{display:inline-flex;border:1.5px solid currentColor;border-radius:999px;overflow:hidden;font-size:.72rem;font-weight:700}
+.lang-btn{border:0;background:transparent;color:inherit;padding:.28rem .55rem;cursor:pointer;font:inherit;opacity:.55}
+.lang-btn.active{opacity:1;background:rgba(255,255,255,.2);color:#fff}
+.top{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.35rem;background:rgba(240,249,255,.92);backdrop-filter:blur(10px);position:sticky;top:0;z-index:40;border-bottom:1px solid var(--line);gap:.75rem;flex-wrap:wrap}
+.logo{font-family:"Playfair Display",serif;font-size:1.35rem;font-weight:600;color:var(--deep);letter-spacing:.02em}
+.logo span{color:var(--aqua)}
+.nav-mini{display:none;gap:1.15rem;font-size:.82rem;font-weight:600;color:var(--muted)}
+@media(min-width:760px){.nav-mini{display:flex}}
+.nav-mini a:hover{color:var(--aqua)}
+.wa{background:var(--aqua);color:#fff;font-weight:700;padding:.5rem 1.1rem;font-size:.8rem;border-radius:999px}
+.hero{
+  position:relative;min-height:88vh;display:flex;align-items:flex-end;
+  background:linear-gradient(to top,rgba(12,74,110,.88) 0%,rgba(14,116,144,.35) 45%,rgba(8,145,178,.15) 100%),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80") center/cover no-repeat;
+  padding:0 1.35rem 3.5rem;color:#fff;
+}
+.hero-inner{max-width:720px;margin:0 auto;width:100%;text-align:center}
+.hero .k{font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#a5f3fc;margin-bottom:.75rem}
+.hero h1{font-family:"Playfair Display",serif;font-size:clamp(2.2rem,7vw,3.6rem);font-weight:600;line-height:1.12;margin-bottom:.85rem}
+.hero p{max-width:38ch;margin:0 auto 1.6rem;opacity:.92;font-size:1.05rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.65rem;justify-content:center}
+.cta{display:inline-block;background:#fff;color:var(--deep);font-weight:700;padding:.8rem 1.5rem;border-radius:999px;font-size:.9rem}
+.cta.ghost{background:transparent;border:1.5px solid #fff;color:#fff}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;padding:0 1.25rem;margin-top:-1.4rem;position:relative;z-index:5}
+.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:.65rem 1.1rem;font-size:.8rem;font-weight:600;color:var(--deep);box-shadow:0 8px 24px rgba(14,116,144,.08)}
+.chip strong{color:var(--aqua)}
+.sec{max-width:1000px;margin:0 auto;padding:3.25rem 1.35rem 0}
+.sec h2{font-family:"Playfair Display",serif;font-size:clamp(1.55rem,3.5vw,2.1rem);font-weight:600;text-align:center;margin-bottom:.4rem;color:var(--ink)}
+.sec h2 em{font-style:italic;color:var(--aqua)}
+.sec .sub{text-align:center;color:var(--muted);font-size:.95rem;margin-bottom:1.85rem;max-width:42ch;margin-left:auto;margin-right:auto}
+.about{display:grid;grid-template-columns:1.05fr 1fr;gap:1.75rem;align-items:center}
+@media(max-width:720px){.about{grid-template-columns:1fr}}
+.about .ph{border-radius:1.25rem;min-height:320px;background:url("https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1000&q=80") center/cover;box-shadow:0 20px 50px rgba(14,116,144,.15)}
+.about-copy h2{text-align:left;margin-bottom:.75rem}
+.about-copy p{color:var(--muted);margin-bottom:.85rem;font-size:.95rem}
+.about-copy .meta{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.about-copy .meta span{background:var(--sand);color:var(--deep);font-size:.75rem;font-weight:700;padding:.4rem .75rem;border-radius:999px}
+.rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:1.15rem}
+@media(max-width:800px){.rooms{grid-template-columns:1fr}}
+.room{background:#fff;border-radius:1.15rem;overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 30px rgba(14,116,144,.06);display:flex;flex-direction:column}
+.room .ph{height:190px;background-size:cover;background-position:center}
+.room .body{padding:1.25rem 1.2rem 1.4rem;flex:1;display:flex;flex-direction:column}
+.room h3{font-family:"Playfair Display",serif;font-size:1.25rem;font-weight:600;margin-bottom:.35rem}
+.room p{font-size:.88rem;color:var(--muted);margin-bottom:.75rem;flex:1}
+.room .row{display:flex;justify-content:space-between;align-items:center;gap:.5rem;flex-wrap:wrap}
+.room .price{font-weight:700;color:var(--aqua);font-size:1.05rem}
+.room .price span{font-size:.75rem;font-weight:500;color:var(--muted)}
+.room a{font-size:.8rem;font-weight:700;color:var(--deep);border-bottom:1.5px solid var(--aqua)}
+.amenities{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem}
+@media(max-width:800px){.amenities{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.amenities{grid-template-columns:1fr}}
+.am{background:#fff;border:1px solid var(--line);border-radius:1rem;padding:1.25rem 1.1rem;text-align:center}
+.am .ico{font-size:1.6rem;margin-bottom:.5rem}
+.am h3{font-size:.92rem;font-weight:700;margin-bottom:.25rem;color:var(--deep)}
+.am p{font-size:.8rem;color:var(--muted)}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:140px;gap:.55rem}
+@media(max-width:640px){.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:120px}}
+.gallery .g{border-radius:.85rem;background-size:cover;background-position:center;border:1px solid var(--line)}
+.gallery .g.wide{grid-column:span 2}
+.gallery .g.tall{grid-row:span 2}
+.exp{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+@media(max-width:720px){.exp{grid-template-columns:1fr}}
+.exp-card{position:relative;min-height:260px;border-radius:1.15rem;overflow:hidden}
+.exp-card .ph{position:absolute;inset:0;background-size:cover;background-position:center}
+.exp-card .shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,74,110,.9),rgba(12,74,110,.15))}
+.exp-card .txt{position:relative;z-index:2;height:100%;padding:1.35rem;display:flex;flex-direction:column;justify-content:flex-end;color:#fff}
+.exp-card h3{font-family:"Playfair Display",serif;font-size:1.3rem;margin-bottom:.3rem}
+.exp-card p{font-size:.85rem;opacity:.9}
+.loc{display:grid;grid-template-columns:1fr 1.1fr;gap:1.5rem;align-items:stretch}
+@media(max-width:720px){.loc{grid-template-columns:1fr}}
+.loc-map{border-radius:1.15rem;min-height:300px;background:url("https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1000&q=80") center/cover;border:1px solid var(--line);position:relative;overflow:hidden}
+.loc-map .pin{position:absolute;bottom:1rem;left:1rem;right:1rem;background:rgba(255,255,255,.95);border-radius:.85rem;padding:1rem 1.1rem;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+.loc-map .pin strong{display:block;font-size:.95rem;color:var(--deep);margin-bottom:.2rem}
+.loc-map .pin span{font-size:.8rem;color:var(--muted)}
+.loc-copy{background:#fff;border:1px solid var(--line);border-radius:1.15rem;padding:1.5rem 1.4rem}
+.loc-copy h3{font-family:"Playfair Display",serif;font-size:1.35rem;margin-bottom:.75rem;color:var(--deep)}
+.loc-copy p{font-size:.9rem;color:var(--muted);margin-bottom:.85rem}
+.loc-copy ul{list-style:none;margin-bottom:1.15rem}
+.loc-copy li{font-size:.88rem;padding:.4rem 0;border-bottom:1px dashed var(--line);padding-left:1.15rem;position:relative;color:var(--ink)}
+.loc-copy li::before{content:"○";position:absolute;left:0;color:var(--aqua);font-size:.7rem;top:.55rem}
+.loc-copy a.map-btn{display:inline-block;background:var(--aqua);color:#fff;font-weight:700;padding:.65rem 1.2rem;border-radius:999px;font-size:.85rem}
+.social{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem}
+.soc{display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--line);border-radius:999px;padding:.7rem 1.2rem;font-weight:600;font-size:.88rem;color:var(--deep);transition:border-color .15s}
+.soc:hover{border-color:var(--aqua);color:var(--aqua)}
+.soc .dot{width:8px;height:8px;border-radius:50%;background:var(--aqua)}
+.quotes{display:grid;gap:1rem}
+@media(min-width:700px){.quotes{grid-template-columns:1fr 1fr}}
+.quote{background:#fff;border:1px solid var(--line);border-radius:1.1rem;padding:1.4rem 1.35rem;border-top:3px solid var(--aqua)}
+.quote .stars{color:var(--coral);letter-spacing:1px;margin-bottom:.4rem;font-size:.85rem}
+.quote p{font-size:.9rem;color:var(--muted);font-style:italic;margin-bottom:.85rem}
+.quote strong{font-size:.86rem;display:block;color:var(--ink)}
+.quote span{font-size:.74rem;color:#94a3b8}
+.enroll{
+  margin:3.25rem 1.35rem 0;max-width:1000px;margin-left:auto;margin-right:auto;
+  background:linear-gradient(135deg,var(--deep),var(--aqua));
+  border-radius:1.5rem;padding:2.5rem 1.5rem;text-align:center;color:#fff;
+}
+.enroll h2{font-family:"Playfair Display",serif;font-size:clamp(1.5rem,3.5vw,2rem);margin-bottom:.5rem}
+.enroll p{opacity:.9;margin-bottom:1.25rem;max-width:36ch;margin-left:auto;margin-right:auto}
+.enroll a{display:inline-block;background:#fff;color:var(--deep);font-weight:700;padding:.8rem 1.6rem;border-radius:999px}
+footer{text-align:center;padding:2.25rem 1rem 2.75rem;font-size:.75rem;color:#94a3b8}
+.float-wa{position:fixed;bottom:1.2rem;right:1.2rem;z-index:50;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 8px 24px rgba(37,211,102,.4)}
+</style>
+</head>
+<body>
+
+<div class="mland-note">
+  <span data-es="Demo de estilo · MLand Software" data-en="Style demo · MLand Software">Demo de estilo · MLand Software</span> ·
+  <a href="/#demos" data-es="Volver al portafolio" data-en="Back to portfolio">Volver al portafolio</a> ·
+  <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20estilo%20hotel" data-es="Pedir este estilo" data-en="Request this style">Pedir este estilo</a> ·
+  <span class="lang-switch">
+    <button type="button" class="lang-btn active" data-set-lang="es">ES</button>
+    <button type="button" class="lang-btn" data-set-lang="en">EN</button>
+  </span>
 </div>
-<div class="rooms">
-<div class="room"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&q=80')"></div><div><h3 data-es="Habitación estándar" data-en="Standard room">Habitación estándar</h3><p>2 personas · WiFi · Desayuno opcional</p><div class="row"><span class="price">Desde $45 / noche</span><a class="btn" href="https://wa.me/593978868363?text=Hotel%20estandar" data-es="Consultar" data-en="Inquire">Consultar</a></div></div></div>
-<div class="room"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=400&q=80')"></div><div><h3 data-es="Superior con vista" data-en="Superior with view">Superior con vista</h3><p>Hasta 3 personas · Aire · Terraza</p><div class="row"><span class="price">Desde $65 / noche</span><a class="btn" href="https://wa.me/593978868363?text=Hotel%20superior" data-es="Consultar" data-en="Inquire">Consultar</a></div></div></div>
-<div class="room"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&q=80')"></div><div><h3 data-es="Suite familiar" data-en="Family suite">Suite familiar</h3><p data-es="Más espacio · Ideal familias" data-en="More space · Ideal for families">Más espacio · Ideal familias</p><div class="row"><span class="price" data-es="Consultar tarifa" data-en="Ask for rates">Consultar tarifa</span><a class="btn" href="https://wa.me/593978868363?text=Hotel%20suite" data-es="Consultar" data-en="Inquire">Consultar</a></div></div></div>
+
+<header class="top">
+  <div class="logo">Costa <span>Salinas</span></div>
+  <nav class="nav-mini">
+    <a href="#habitaciones" data-es="Habitaciones" data-en="Rooms">Habitaciones</a>
+    <a href="#experiencias" data-es="Experiencias" data-en="Experiences">Experiencias</a>
+    <a href="#ubicacion" data-es="Ubicación" data-en="Location">Ubicación</a>
+    <a href="#redes" data-es="Redes" data-en="Social">Redes</a>
+  </nav>
+  <a class="wa" href="https://wa.me/593978868363?text=reserva%20hotel%20Salinas" data-es="Reservar" data-en="Book">Reservar</a>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="k" data-es="Salinas · Playa · Pacífico ecuatoriano" data-en="Salinas · Beach · Ecuadorian Pacific">Salinas · Playa · Pacífico ecuatoriano</div>
+    <h1 data-es="Despierta frente al océano" data-en="Wake up facing the ocean">Despierta frente al océano</h1>
+    <p data-es="Hotel boutique a pasos de la playa. Arena, brisa y atardeceres que se quedan. Reserva por WhatsApp en minutos." data-en="Boutique hotel steps from the beach. Sand, breeze and sunsets that stay with you. Book on WhatsApp in minutes.">Hotel boutique a pasos de la playa. Arena, brisa y atardeceres que se quedan. Reserva por WhatsApp en minutos.</p>
+    <div class="hero-actions">
+      <a class="cta" href="https://wa.me/593978868363?text=reserva%20Costa%20Salinas" data-es="Reservar estancia" data-en="Book a stay">Reservar estancia</a>
+      <a class="cta ghost" href="#habitaciones" data-es="Ver habitaciones" data-en="See rooms">Ver habitaciones</a>
+    </div>
+  </div>
+</section>
+
+<div class="chips">
+  <div class="chip"><strong data-es="Playa" data-en="Beach">Playa</strong> · <span data-es="a 2 min a pie" data-en="2 min walk">a 2 min a pie</span></div>
+  <div class="chip"><strong data-es="Malecón" data-en="Boardwalk">Malecón</strong> · Salinas</div>
+  <div class="chip"><strong data-es="Wi‑Fi" data-en="Wi‑Fi">Wi‑Fi</strong> · <span data-es="gratis" data-en="free">gratis</span></div>
+  <div class="chip"><strong data-es="Desayuno" data-en="Breakfast">Desayuno</strong> · <span data-es="incluido*" data-en="included*">incluido*</span></div>
 </div>
-<div class="cta-band"><a href="https://wa.me/593978868363?text=Hola%2C%20estilo%20hotel" data-es="Reservar por WhatsApp" data-en="Book on WhatsApp">Reservar por WhatsApp</a></div>
-<footer data-es="Ejemplo de estilo hotel · MLand Software" data-en="Hotel style example · MLand Software">Ejemplo de estilo hotel · MLand Software</footer>
+
+<section class="sec">
+  <div class="about">
+    <div class="ph" role="img" aria-label="Hotel frente al mar"></div>
+    <div class="about-copy">
+      <h2 data-es-html="Tu base en la <em>costa</em>" data-en-html="Your base on the <em>coast</em>">Tu base en la <em>costa</em></h2>
+      <p data-es="Costa Salinas es un hotel pequeño pensado para quienes quieren la playa sin complicaciones: habitaciones luminosas, terraza con vista y personal que te indica dónde comer y qué hacer al anochecer." data-en="Costa Salinas is a small hotel for guests who want the beach without hassle: bright rooms, a terrace with a view, and staff who point you to where to eat and what to do at dusk.">Costa Salinas es un hotel pequeño pensado para quienes quieren la playa sin complicaciones: habitaciones luminosas, terraza con vista y personal que te indica dónde comer y qué hacer al anochecer.</p>
+      <p data-es="Estás a dos minutos del malecón y de la arena. Ideal para escapadas de fin de semana, familias y viajeros que combinan sol y ciudad." data-en="You’re two minutes from the boardwalk and the sand. Ideal for weekend getaways, families and travelers mixing sun and town.">Estás a dos minutos del malecón y de la arena. Ideal para escapadas de fin de semana, familias y viajeros que combinan sol y ciudad.</p>
+      <div class="meta">
+        <span data-es="Frente a la playa" data-en="Beachfront area">Frente a la playa</span>
+        <span data-es="Salinas, Ecuador" data-en="Salinas, Ecuador">Salinas, Ecuador</span>
+        <span data-es="Check-in 14:00" data-en="Check-in 2:00 pm">Check-in 14:00</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="habitaciones">
+  <h2 data-es-html="Habitaciones con <em>brisa</em>" data-en-html="Rooms with a <em>breeze</em>">Habitaciones con <em>brisa</em></h2>
+  <p class="sub" data-es="Elige la que mejor se adapte a tu viaje. Todas con A/C, Wi‑Fi y baño privado." data-en="Pick what fits your trip. All with A/C, Wi‑Fi and private bathroom.">Elige la que mejor se adapte a tu viaje. Todas con A/C, Wi‑Fi y baño privado.</p>
+  <div class="rooms">
+    <article class="room">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&q=80')"></div>
+      <div class="body">
+        <h3 data-es="Doble estándar" data-en="Standard double">Doble estándar</h3>
+        <p data-es="Cama queen, luz natural y todo lo esencial para descansar después de la playa." data-en="Queen bed, natural light and the essentials after a day on the beach.">Cama queen, luz natural y todo lo esencial para descansar después de la playa.</p>
+        <div class="row">
+          <div class="price">$65 <span data-es="/ noche" data-en="/ night">/ noche</span></div>
+          <a href="https://wa.me/593978868363?text=reserva%20doble%20estandar" data-es="Reservar" data-en="Book">Reservar</a>
+        </div>
+      </div>
+    </article>
+    <article class="room">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80')"></div>
+      <div class="body">
+        <h3 data-es="Suite océano" data-en="Ocean suite">Suite océano</h3>
+        <p data-es="Vista al mar, balcón privado y espacio extra. La favorita para parejas." data-en="Ocean view, private balcony and extra space. Couples’ favorite.">Vista al mar, balcón privado y espacio extra. La favorita para parejas.</p>
+        <div class="row">
+          <div class="price">$95 <span data-es="/ noche" data-en="/ night">/ noche</span></div>
+          <a href="https://wa.me/593978868363?text=reserva%20suite%20oceano" data-es="Reservar" data-en="Book">Reservar</a>
+        </div>
+      </div>
+    </article>
+    <article class="room">
+      <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80')"></div>
+      <div class="body">
+        <h3 data-es="Familiar" data-en="Family room">Familiar</h3>
+        <p data-es="Dos ambientes, ideal para 3–4 personas. Cerca del desayuno y de la terraza." data-en="Two spaces, ideal for 3–4 guests. Near breakfast and the terrace.">Dos ambientes, ideal para 3–4 personas. Cerca del desayuno y de la terraza.</p>
+        <div class="row">
+          <div class="price">$110 <span data-es="/ noche" data-en="/ night">/ noche</span></div>
+          <a href="https://wa.me/593978868363?text=reserva%20familiar" data-es="Reservar" data-en="Book">Reservar</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="sec">
+  <h2 data-es-html="Lo que incluye tu <em>estancia</em>" data-en-html="What’s in your <em>stay</em>">Lo que incluye tu <em>estancia</em></h2>
+  <p class="sub" data-es="Comodidades pensadas para la costa: fresco, práctico y sin sorpresas." data-en="Coast-ready comforts: cool, practical and no surprises.">Comodidades pensadas para la costa: fresco, práctico y sin sorpresas.</p>
+  <div class="amenities">
+    <div class="am"><div class="ico">🌊</div><h3 data-es="Cerca del mar" data-en="Near the sea">Cerca del mar</h3><p data-es="Playa y malecón a 2 minutos a pie" data-en="Beach and boardwalk a 2-minute walk">Playa y malecón a 2 minutos a pie</p></div>
+    <div class="am"><div class="ico">☕</div><h3 data-es="Desayuno*" data-en="Breakfast*">Desayuno*</h3><p data-es="Café, frutas y opciones locales" data-en="Coffee, fruit and local options">Café, frutas y opciones locales</p></div>
+    <div class="am"><div class="ico">📶</div><h3 data-es="Wi‑Fi rápido" data-en="Fast Wi‑Fi">Wi‑Fi rápido</h3><p data-es="En habitaciones y áreas comunes" data-en="In rooms and common areas">En habitaciones y áreas comunes</p></div>
+    <div class="am"><div class="ico">❄️</div><h3 data-es="Aire acondicionado" data-en="Air conditioning">Aire acondicionado</h3><p data-es="Todas las habitaciones" data-en="Every room">Todas las habitaciones</p></div>
+    <div class="am"><div class="ico">🌅</div><h3 data-es="Terraza" data-en="Terrace">Terraza</h3><p data-es="Atardeceres y zona de estar" data-en="Sunsets and lounge area">Atardeceres y zona de estar</p></div>
+    <div class="am"><div class="ico">🅿️</div><h3 data-es="Estacionamiento" data-en="Parking">Estacionamiento</h3><p data-es="Sujeto a disponibilidad" data-en="Subject to availability">Sujeto a disponibilidad</p></div>
+    <div class="am"><div class="ico">🧳</div><h3 data-es="Late check-out" data-en="Late check-out">Late check-out</h3><p data-es="Pregunta al reservar" data-en="Ask when booking">Pregunta al reservar</p></div>
+    <div class="am"><div class="ico">🗺️</div><h3 data-es="Tips locales" data-en="Local tips">Tips locales</h3><p data-es="Restaurantes, tours y playas" data-en="Restaurants, tours and beaches">Restaurantes, tours y playas</p></div>
+  </div>
+</section>
+
+<section class="sec" id="experiencias">
+  <h2 data-es-html="Experiencias en <em>Salinas</em>" data-en-html="Experiences in <em>Salinas</em>">Experiencias en <em>Salinas</em></h2>
+  <p class="sub" data-es="No solo duermes aquí: la costa se vive. Te orientamos según tu ritmo." data-en="You don’t just sleep here—you live the coast. We’ll guide you to your pace.">No solo duermes aquí: la costa se vive. Te orientamos según tu ritmo.</p>
+  <div class="exp">
+    <article class="exp-card"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80')"></div><div class="shade"></div><div class="txt"><h3 data-es="Playa y malecón" data-en="Beach & boardwalk">Playa y malecón</h3><p data-es="Caminatas al atardecer, vendedores de cocada y el Pacífico de frente." data-en="Sunset walks, coconut sweets and the Pacific in front of you.">Caminatas al atardecer, vendedores de cocada y el Pacífico de frente.</p></div></article>
+    <article class="exp-card"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80')"></div><div class="shade"></div><div class="txt"><h3 data-es="Mariscos y costa" data-en="Seafood & coast">Mariscos y costa</h3><p data-es="Ceviche, encebollado y terraza con vista. Te decimos dónde ir según el día." data-en="Ceviche, encebollado and terrace views. We’ll tell you where to go by day.">Ceviche, encebollado y terraza con vista. Te decimos dónde ir según el día.</p></div></article>
+    <article class="exp-card"><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=800&q=80')"></div><div class="shade"></div><div class="txt"><h3 data-es="Día de playa" data-en="Beach day">Día de playa</h3><p data-es="Sombrilla, baño y siesta. O un tour corto si quieres salir de la ciudad." data-en="Umbrella, swim and nap. Or a short tour if you want out of town.">Sombrilla, baño y siesta. O un tour corto si quieres salir de la ciudad.</p></div></article>
+  </div>
+</section>
+
+<section class="sec">
+  <h2 data-es-html="Galería <em>costera</em>" data-en-html="Coastal <em>gallery</em>">Galería <em>costera</em></h2>
+  <p class="sub" data-es="Luz, arena y el hotel como se ve cuando llegas." data-en="Light, sand and the hotel as it looks when you arrive.">Luz, arena y el hotel como se ve cuando llegas.</p>
+  <div class="gallery">
+    <div class="g wide tall" style="background-image:url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1000&q=80')"></div>
+    <div class="g" style="background-image:url('https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=500&q=80')"></div>
+    <div class="g" style="background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500&q=80')"></div>
+    <div class="g wide" style="background-image:url('https://images.unsplash.com/photo-1499793983690-e8b21eabdf32?w=900&q=80')"></div>
+    <div class="g" style="background-image:url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=500&q=80')"></div>
+    <div class="g" style="background-image:url('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=500&q=80')"></div>
+  </div>
+</section>
+
+<section class="sec" id="ubicacion">
+  <h2 data-es-html="Ubicación: <em>Salinas, Ecuador</em>" data-en-html="Location: <em>Salinas, Ecuador</em>">Ubicación: <em>Salinas, Ecuador</em></h2>
+  <p class="sub" data-es="En la costa del Pacífico, provincia de Santa Elena. Fácil acceso desde Guayaquil." data-en="On the Pacific coast, Santa Elena province. Easy access from Guayaquil.">En la costa del Pacífico, provincia de Santa Elena. Fácil acceso desde Guayaquil.</p>
+  <div class="loc">
+    <div class="loc-map" role="img" aria-label="Zona de playa Salinas">
+      <div class="pin">
+        <strong data-es="Costa Salinas · cerca del malecón" data-en="Costa Salinas · near the boardwalk">Costa Salinas · cerca del malecón</strong>
+        <span data-es="Salinas, Santa Elena, Ecuador · Playa a ~2 min a pie" data-en="Salinas, Santa Elena, Ecuador · Beach ~2 min walk">Salinas, Santa Elena, Ecuador · Playa a ~2 min a pie</span>
+      </div>
+    </div>
+    <div class="loc-copy">
+      <h3 data-es="Cómo llegar" data-en="How to get here">Cómo llegar</h3>
+      <p data-es="Salinas es uno de los destinos de playa más conocidos del Ecuador. El hotel está en zona peatonal hacia el malecón: ideal si no quieres depender del auto todo el día." data-en="Salinas is one of Ecuador’s best-known beach destinations. The hotel sits in a walkable area toward the boardwalk—ideal if you don’t want to rely on a car all day.">Salinas es uno de los destinos de playa más conocidos del Ecuador. El hotel está en zona peatonal hacia el malecón: ideal si no quieres depender del auto todo el día.</p>
+      <ul>
+        <li data-es="Desde Guayaquil: ~2–2.5 h en auto / bus" data-en="From Guayaquil: ~2–2.5 h by car / bus">Desde Guayaquil: ~2–2.5 h en auto / bus</li>
+        <li data-es="Referencia: malecón y sector playa" data-en="Landmark: boardwalk and beach area">Referencia: malecón y sector playa</li>
+        <li data-es="Te enviamos pin exacto al confirmar reserva" data-en="We send the exact pin when you confirm">Te enviamos pin exacto al confirmar reserva</li>
+        <li data-es="Taxis y apps locales disponibles" data-en="Taxis and local apps available">Taxis y apps locales disponibles</li>
+      </ul>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Malecón+de+Salinas+Ecuador" target="_blank" rel="noopener" data-es="Ver Salinas en Google Maps" data-en="See Salinas on Google Maps">Ver Salinas en Google Maps</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="redes">
+  <h2 data-es-html="Síguenos en <em>redes</em>" data-en-html="Follow us on <em>social</em>">Síguenos en <em>redes</em></h2>
+  <p class="sub" data-es="Fotos reales del hotel, la playa y disponibilidad del día." data-en="Real photos of the hotel, the beach and same-day availability.">Fotos reales del hotel, la playa y disponibilidad del día.</p>
+  <div class="social">
+    <a class="soc" href="https://www.instagram.com/" target="_blank" rel="noopener"><span class="dot"></span> Instagram</a>
+    <a class="soc" href="https://www.facebook.com/" target="_blank" rel="noopener"><span class="dot"></span> Facebook</a>
+    <a class="soc" href="https://www.tiktok.com/" target="_blank" rel="noopener"><span class="dot"></span> TikTok</a>
+    <a class="soc" href="https://wa.me/593978868363?text=Hola%20Costa%20Salinas" target="_blank" rel="noopener"><span class="dot"></span> WhatsApp</a>
+  </div>
+</section>
+
+<section class="sec">
+  <h2 data-es-html="Huéspedes que ya <em>volvieron</em>" data-en-html="Guests who <em>came back</em>">Huéspedes que ya <em>volvieron</em></h2>
+  <p class="sub" data-es="Lo que más repiten: ubicación, limpieza y trato." data-en="What they repeat most: location, cleanliness and care.">Lo que más repiten: ubicación, limpieza y trato.</p>
+  <div class="quotes">
+    <article class="quote"><div class="stars">★★★★★</div><p data-es="“A dos minutos de la playa y el malecón. La suite con vista valió cada dólar. Reservamos por WhatsApp sin fricción.”" data-en="“Two minutes from the beach and boardwalk. The ocean suite was worth every dollar. WhatsApp booking was frictionless.”">“A dos minutos de la playa y el malecón. La suite con vista valió cada dólar. Reservamos por WhatsApp sin fricción.”</p><strong data-es="Valeria & Andrés" data-en="Valeria & Andrés">Valeria & Andrés</strong><span data-es="Suite océano · 3 noches" data-en="Ocean suite · 3 nights">Suite océano · 3 noches</span></article>
+    <article class="quote"><div class="stars">★★★★★</div><p data-es="“Ideal con niños. Habitación familiar amplia y tips de dónde comer sin pagar turista.”" data-en="“Great with kids. Spacious family room and tips on where to eat without tourist prices.”">“Ideal con niños. Habitación familiar amplia y tips de dónde comer sin pagar turista.”</p><strong data-es="Familia Méndez" data-en="Méndez family">Familia Méndez</strong><span data-es="Familiar · fin de semana" data-en="Family · weekend">Familiar · fin de semana</span></article>
+    <article class="quote"><div class="stars">★★★★★</div><p data-es="“Llegamos desde Guayaquil el viernes y no queríamos irnos. Terraza perfecta para el atardecer.”" data-en="“We arrived from Guayaquil on Friday and didn’t want to leave. Perfect terrace for sunset.”">“Llegamos desde Guayaquil el viernes y no queríamos irnos. Terraza perfecta para el atardecer.”</p><strong>Carolina R.</strong><span data-es="Doble · 2 noches" data-en="Double · 2 nights">Doble · 2 noches</span></article>
+    <article class="quote"><div class="stars">★★★★★</div><p data-es="“Limpio, fresco y bien ubicado. Volveremos en feriado.”" data-en="“Clean, cool and well located. We’ll be back on the next holiday.”">“Limpio, fresco y bien ubicado. Volveremos en feriado.”</p><strong>Diego P.</strong><span data-es="Doble · 4 noches" data-en="Double · 4 nights">Doble · 4 noches</span></article>
+  </div>
+</section>
+
+<div class="enroll">
+  <h2 data-es="Tu próxima escapada a Salinas" data-en="Your next getaway to Salinas">Tu próxima escapada a Salinas</h2>
+  <p data-es="Dinos fechas y tipo de habitación. Te confirmamos disponibilidad por WhatsApp." data-en="Tell us dates and room type. We’ll confirm availability on WhatsApp.">Dinos fechas y tipo de habitación. Te confirmamos disponibilidad por WhatsApp.</p>
+  <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20reservar%20en%20Costa%20Salinas" data-es="Reservar por WhatsApp" data-en="Book on WhatsApp">Reservar por WhatsApp</a>
+</div>
+
+<footer data-es="Ejemplo de estilo hotel · MLand Software · No es un sitio de cliente real · *Desayuno según plan" data-en="Hotel style example · MLand Software · Not a real client site · *Breakfast per plan">Ejemplo de estilo hotel · MLand Software · No es un sitio de cliente real · *Desayuno según plan</footer>
+
+<a class="float-wa" href="https://wa.me/593978868363?text=Hola%2C%20vengo%20de%20la%20demo%20hotel" aria-label="WhatsApp">💬</a>
 <script src="/js/i18n.js"></script>
-</body></html>
+</body>
+</html>
