@@ -1,1 +1,344 @@
-PLACEHOLDER_WILL_FAIL
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Línea Técnica · Servicios técnicos y mantenimiento | Demo MLand</title>
+<meta name="description" content="Servicios técnicos, mantenimiento y reparaciones. Solicita presupuesto por WhatsApp o teléfono. Atención a particulares y empresas.">
+<meta name="robots" content="noindex,follow">
+<meta property="og:title" content="Línea Técnica · Servicios técnicos y mantenimiento">
+<meta property="og:description" content="Presupuestos claros, trabajo profesional. Contacto por WhatsApp y teléfono.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f172a;--slate:#1e293b;--muted:#64748b;--line:#e2e8f0;--bg:#f1f5f9;--white:#fff;--accent:#ea580c;--accent-dark:#c2410c;--accent-soft:#fff7ed;--ok:#0d9488;--wa:#25D366;--radius:12px;--shadow:0 10px 30px rgba(15,23,42,.08)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:"Source Sans 3",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+button,input,textarea,select{font:inherit}
+.mland-note{background:var(--slate);color:#94a3b8;font-size:.72rem;text-align:center;padding:.5rem 1rem;display:flex;flex-wrap:wrap;gap:.35rem;justify-content:center;align-items:center}
+.mland-note a{color:#fdba74;font-weight:600}
+.lang-switch{display:inline-flex;border:1.5px solid #475569;border-radius:999px;overflow:hidden;font-size:.7rem;font-weight:700}
+.lang-btn{border:0;background:transparent;color:#94a3b8;padding:.25rem .5rem;cursor:pointer;font:inherit;opacity:.75}
+.lang-btn.active{opacity:1;background:var(--accent);color:#fff}
+.topbar{background:var(--slate);color:#cbd5e1;font-size:.8rem;padding:.4rem 1rem}
+.topbar .inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.75rem 1.25rem;justify-content:space-between;align-items:center}
+.topbar a{color:#fdba74;font-weight:600}
+header.site{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.nav{max-width:1100px;margin:0 auto;padding:.75rem 1.15rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.65rem;font-family:Barlow,sans-serif;font-weight:700;font-size:1.15rem;color:var(--slate)}
+.brand .mark{width:36px;height:36px;border-radius:9px;background:linear-gradient(145deg,var(--accent),var(--accent-dark));display:grid;place-items:center;color:#fff;font-size:.85rem}
+.nav-links{display:none;gap:1.1rem;font-size:.88rem;font-weight:600;color:var(--muted)}
+@media(min-width:820px){.nav-links{display:flex}}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;font-weight:700;font-size:.88rem;padding:.65rem 1.15rem;border-radius:999px;border:none;cursor:pointer;transition:.15s ease}
+.btn-accent{background:var(--accent);color:#fff}.btn-accent:hover{background:var(--accent-dark)}
+.btn-ghost{background:transparent;border:1.5px solid var(--line);color:var(--slate)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-outline-light{background:transparent;border:1.5px solid rgba(255,255,255,.45);color:#fff}
+.btn-lg{padding:.85rem 1.4rem;font-size:.95rem}.btn-sm{padding:.5rem .95rem;font-size:.8rem}
+.hero{background:var(--slate);color:#fff;position:relative;overflow:hidden}
+.hero-grid{max-width:1100px;margin:0 auto;padding:2.75rem 1.15rem 3rem;display:grid;gap:2rem;align-items:center}
+@media(min-width:880px){.hero-grid{grid-template-columns:1.05fr .95fr;gap:2.5rem}}
+.hero .badge{display:inline-block;background:rgba(234,88,12,.2);color:#fdba74;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.35rem .75rem;border-radius:999px;margin-bottom:1rem}
+.hero h1{font-family:Barlow,sans-serif;font-size:clamp(1.75rem,4.2vw,2.55rem);font-weight:700;line-height:1.15;margin-bottom:.85rem}
+.hero h1 span{color:#fdba74}
+.hero .lead{color:#cbd5e1;font-size:1.05rem;max-width:40ch;margin-bottom:1.35rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.65rem;margin-bottom:1.25rem}
+.hero-meta{display:flex;flex-wrap:wrap;gap:.75rem 1.25rem;font-size:.85rem;color:#94a3b8}
+.hero-meta strong{color:#e2e8f0;font-weight:600}
+.hero-visual{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:#334155;box-shadow:var(--shadow)}
+.hero-visual img{width:100%;height:100%;object-fit:cover}
+.hero-card{position:absolute;bottom:1rem;left:1rem;right:1rem;background:rgba(255,255,255,.96);color:var(--ink);border-radius:10px;padding:.9rem 1rem;display:flex;gap:.85rem;align-items:center;box-shadow:var(--shadow)}
+.hero-card .ico{width:42px;height:42px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:1.2rem;flex-shrink:0}
+.hero-card strong{display:block;font-size:.9rem;font-weight:700}
+.hero-card span{font-size:.78rem;color:var(--muted)}
+.sec{max-width:1100px;margin:0 auto;padding:3rem 1.15rem 0}
+.sec-head{text-align:center;max-width:36rem;margin:0 auto 1.75rem}
+.sec-head h2{font-family:Barlow,sans-serif;font-size:clamp(1.35rem,3vw,1.75rem);font-weight:700;color:var(--slate);margin-bottom:.4rem}
+.sec-head p{color:var(--muted);font-size:.95rem}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.svc{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:1.35rem 1.25rem;display:flex;flex-direction:column;transition:border-color .15s,box-shadow .15s}
+.svc:hover{border-color:#fdba74;box-shadow:var(--shadow)}
+.svc .ico{width:44px;height:44px;border-radius:10px;background:var(--accent-soft);color:var(--accent-dark);display:grid;place-items:center;font-size:1.25rem;margin-bottom:.85rem}
+.svc h3{font-family:Barlow,sans-serif;font-size:1.05rem;font-weight:700;color:var(--slate);margin-bottom:.35rem}
+.svc p{font-size:.88rem;color:var(--muted);flex:1;margin-bottom:.85rem}
+.svc .benefit{font-size:.8rem;font-weight:600;color:var(--ok);margin-bottom:.9rem}
+.svc .btn{width:100%}
+.why{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:1.5rem 1.25rem}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.15rem}
+.why-item h3{font-size:.95rem;font-weight:700;color:var(--slate);margin-bottom:.3rem;display:flex;align-items:center;gap:.45rem}
+.why-item h3::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.why-item p{font-size:.85rem;color:var(--muted)}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.g-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.g-card .ph{aspect-ratio:4/3;background:#cbd5e1;position:relative}
+.g-card .ph img{width:100%;height:100%;object-fit:cover}
+.g-card .ph .tag{position:absolute;top:.65rem;left:.65rem;background:rgba(15,23,42,.85);color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .55rem;border-radius:6px}
+.g-card .body{padding:1rem 1.05rem}
+.g-card h3{font-size:.92rem;font-weight:700;color:var(--slate);margin-bottom:.25rem}
+.g-card p{font-size:.8rem;color:var(--muted)}
+.zones{display:grid;gap:1.25rem}
+@media(min-width:700px){.zones{grid-template-columns:1.2fr .8fr;align-items:start}}
+.zone-list{display:flex;flex-wrap:wrap;gap:.5rem}
+.zone-list span{background:var(--white);border:1px solid var(--line);border-radius:999px;padding:.45rem .9rem;font-size:.85rem;font-weight:600;color:var(--slate)}
+.zone-cta{background:var(--slate);color:#fff;border-radius:var(--radius);padding:1.35rem 1.25rem}
+.zone-cta h3{font-family:Barlow,sans-serif;font-size:1.1rem;margin-bottom:.4rem}
+.zone-cta p{font-size:.88rem;color:#cbd5e1;margin-bottom:1rem}
+.process{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.85rem}
+.step{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem 1.1rem}
+.step .num{font-family:Barlow,sans-serif;font-size:1.5rem;font-weight:700;color:var(--accent);margin-bottom:.35rem}
+.step h3{font-size:.95rem;font-weight:700;color:var(--slate);margin-bottom:.25rem}
+.step p{font-size:.82rem;color:var(--muted)}
+.reviews-box{background:var(--white);border:1px dashed #cbd5e1;border-radius:var(--radius);padding:1.5rem 1.25rem;text-align:center}
+.reviews-box p{color:var(--muted);font-size:.92rem;max-width:36ch;margin:0 auto .85rem}
+.reviews-box .hint{font-size:.8rem;color:#94a3b8}
+.faq{display:grid;gap:.65rem;max-width:720px;margin:0 auto}
+.faq details{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:1rem 1.15rem}
+.faq summary{font-weight:700;color:var(--slate);cursor:pointer;list-style:none;font-size:.95rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq details[open] summary{margin-bottom:.5rem}
+.faq details p{font-size:.88rem;color:var(--muted)}
+.contact-grid{display:grid;gap:1.25rem}
+@media(min-width:760px){.contact-grid{grid-template-columns:1fr 1.05fr}}
+.contact-info,.contact-form{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem 1.3rem}
+.contact-info h3,.contact-form h3{font-family:Barlow,sans-serif;font-size:1.15rem;margin-bottom:1rem;color:var(--slate)}
+.contact-form h3{margin-bottom:.35rem}
+.contact-form .sub{font-size:.85rem;color:var(--muted);margin-bottom:1.1rem}
+.contact-info dl{display:grid;gap:.75rem}
+.contact-info dt{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.contact-info dd{font-size:.95rem;font-weight:600;color:var(--slate);margin:0}
+.contact-info a{color:var(--accent)}
+.form-row{display:grid;gap:.75rem;margin-bottom:.75rem}
+@media(min-width:500px){.form-row.two{grid-template-columns:1fr 1fr}}
+.form-row label{display:block;font-size:.8rem;font-weight:600;color:var(--slate);margin-bottom:.3rem}
+.form-row input,.form-row textarea,.form-row select{width:100%;padding:.7rem .85rem;border:1.5px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
+.form-row input:focus,.form-row textarea:focus,.form-row select:focus{outline:none;border-color:var(--accent)}
+.form-row textarea{min-height:110px;resize:vertical}
+.form-note{font-size:.78rem;color:var(--muted);margin-top:.75rem}
+.band{max-width:1100px;margin:3rem auto 0;padding:0 1.15rem}
+.band-inner{background:linear-gradient(135deg,var(--slate),#334155);color:#fff;border-radius:16px;padding:2.25rem 1.5rem;text-align:center}
+.band-inner h2{font-family:Barlow,sans-serif;font-size:clamp(1.25rem,3vw,1.6rem);margin-bottom:.45rem}
+.band-inner p{color:#cbd5e1;margin-bottom:1.25rem;max-width:38ch;margin-left:auto;margin-right:auto}
+.band-actions{display:flex;flex-wrap:wrap;gap:.65rem;justify-content:center}
+footer.site{margin-top:3.5rem;background:var(--slate);color:#94a3b8;padding:2.25rem 1.15rem 2rem;font-size:.85rem}
+.foot-inner{max-width:1100px;margin:0 auto;display:grid;gap:1.5rem}
+@media(min-width:700px){.foot-inner{grid-template-columns:1.4fr 1fr 1fr}}
+.foot-inner strong{color:#e2e8f0;display:block;margin-bottom:.5rem;font-size:.95rem}
+.foot-inner a{display:block;padding:.2rem 0}
+.foot-inner a:hover{color:#fdba74}
+.foot-bottom{max-width:1100px;margin:1.5rem auto 0;padding-top:1.25rem;border-top:1px solid #334155;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:space-between;font-size:.78rem}
+.float-wa{position:fixed;bottom:1.15rem;right:1.15rem;z-index:60;width:56px;height:56px;border-radius:50%;background:var(--wa);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.55rem;box-shadow:0 8px 24px rgba(37,211,102,.4)}
+@media(max-width:480px){.hero-actions .btn{width:100%}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Línea Técnica","description":"Servicios técnicos, mantenimiento y reparaciones. Página de demostración de estilo.","url":"https://mland-landing.montoyasud.workers.dev/demos/local.html","telephone":"+593978868363","areaServed":"Zona local (demo)","priceRange":"$$"}
+</script>
+</head>
+<body>
+<div class="mland-note">
+  <span data-es="Demo de estilo · MLand Software · Datos de ejemplo, sustituibles" data-en="Style demo · MLand Software · Sample data, replaceable">Demo de estilo · MLand Software · Datos de ejemplo, sustituibles</span> ·
+  <a href="/#demos" data-es="Volver al portafolio" data-en="Back to portfolio">Volver al portafolio</a> ·
+  <a href="https://wa.me/593978868363?text=Hola%2C%20quiero%20web%20estilo%20servicios%20tecnicos" data-es="Pedir este estilo" data-en="Request this style">Pedir este estilo</a> ·
+  <span class="lang-switch">
+    <button type="button" class="lang-btn active" data-set-lang="es">ES</button>
+    <button type="button" class="lang-btn" data-set-lang="en">EN</button>
+  </span>
+</div>
+<div class="topbar"><div class="inner">
+  <span data-es="Atención a particulares y empresas · Presupuesto sin compromiso" data-en="Serving homes and businesses · No-obligation quote">Atención a particulares y empresas · Presupuesto sin compromiso</span>
+  <span><a href="tel:+593978868363" data-es="Llamar" data-en="Call">Llamar</a> · <a href="https://wa.me/593978868363?text=Hola%2C%20he%20visitado%20vuestra%20p%C3%A1gina%20web%20y%20quisiera%20solicitar%20informaci%C3%B3n%20sobre%20vuestros%20servicios." data-es="WhatsApp" data-en="WhatsApp">WhatsApp</a></span>
+</div></div>
+<header class="site"><div class="nav">
+  <a class="brand" href="#inicio"><span class="mark">LT</span><span>Línea <span style="color:var(--accent)">Técnica</span></span></a>
+  <nav class="nav-links" aria-label="Principal">
+    <a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+    <a href="#trabajos" data-es="Trabajos" data-en="Work">Trabajos</a>
+    <a href="#zonas" data-es="Zonas" data-en="Areas">Zonas</a>
+    <a href="#proceso" data-es="Proceso" data-en="Process">Proceso</a>
+    <a href="#faq" data-es="FAQ" data-en="FAQ">FAQ</a>
+    <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+  </nav>
+  <div class="nav-cta">
+    <a class="btn btn-ghost btn-sm" href="tel:+593978868363" data-es="Llamar" data-en="Call">Llamar</a>
+    <a class="btn btn-wa btn-sm" href="https://wa.me/593978868363?text=Hola%2C%20he%20visitado%20vuestra%20p%C3%A1gina%20web%20y%20quisiera%20solicitar%20un%20presupuesto." data-es="WhatsApp" data-en="WhatsApp">WhatsApp</a>
+  </div>
+</div></header>
+<section class="hero" id="inicio"><div class="hero-grid">
+<div>
+  <div class="badge" data-es="Mantenimiento · Reparaciones · Instalaciones" data-en="Maintenance · Repairs · Installations">Mantenimiento · Reparaciones · Instalaciones</div>
+  <h1 data-es-html="Servicios técnicos <span>claros y directos</span> para tu hogar o negocio" data-en-html="Clear, direct <span>technical services</span> for your home or business">Servicios técnicos <span>claros y directos</span> para tu hogar o negocio</h1>
+  <p class="lead" data-es="Electricidad, fontanería, climatización y mantenimiento general. Cuéntanos el problema y te respondemos con un presupuesto orientativo." data-en="Electrical, plumbing, HVAC and general maintenance. Tell us the issue and we’ll reply with an indicative quote.">Electricidad, fontanería, climatización y mantenimiento general. Cuéntanos el problema y te respondemos con un presupuesto orientativo.</p>
+  <div class="hero-actions">
+    <a class="btn btn-accent btn-lg" href="https://wa.me/593978868363?text=Hola%2C%20he%20visitado%20vuestra%20p%C3%A1gina%20web%20y%20quisiera%20solicitar%20un%20presupuesto." data-es="Solicitar presupuesto" data-en="Request a quote">Solicitar presupuesto</a>
+    <a class="btn btn-outline-light btn-lg" href="tel:+593978868363" data-es="Llamar ahora" data-en="Call now">Llamar ahora</a>
+  </div>
+  <div class="hero-meta">
+    <span><strong data-es="Particulares y empresas" data-en="Homes and businesses">Particulares y empresas</strong></span>
+    <span><strong data-es="Presupuesto por WhatsApp o teléfono" data-en="Quote via WhatsApp or phone">Presupuesto por WhatsApp o teléfono</strong></span>
+    <span><strong data-es="Zona local (configurable)" data-en="Local area (configurable)">Zona local (configurable)</strong></span>
+  </div>
+</div>
+<div class="hero-visual">
+  <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=900&q=80" width="900" height="675" alt="Técnico trabajando en instalación eléctrica" loading="eager">
+  <div class="hero-card"><div class="ico">✓</div><div>
+    <strong data-es="Presupuesto orientativo sin compromiso" data-en="Indicative quote, no obligation">Presupuesto orientativo sin compromiso</strong>
+    <span data-es="Describe el trabajo y te respondemos" data-en="Describe the job and we’ll get back to you">Describe el trabajo y te respondemos</span>
+  </div></div>
+</div>
+</div></section>
+<section class="sec" id="servicios">
+  <div class="sec-head"><h2 data-es="Servicios principales" data-en="Main services">Servicios principales</h2>
+  <p data-es="Adapta esta lista al oficio real del negocio: un solo foco convierte mejor que un catálogo interminable." data-en="Adapt this list to the real trade: one clear focus converts better than an endless catalog.">Adapta esta lista al oficio real del negocio: un solo foco convierte mejor que un catálogo interminable.</p></div>
+  <div class="svc-grid">
+    <article class="svc"><div class="ico" aria-hidden="true">⚡</div><h3 data-es="Electricidad" data-en="Electrical">Electricidad</h3><p data-es="Averías, cuadros, iluminación, tomas y revisiones en vivienda o local." data-en="Faults, panels, lighting, outlets and inspections at home or commercial sites.">Averías, cuadros, iluminación, tomas y revisiones en vivienda o local.</p><div class="benefit" data-es="Beneficio: menos riesgos y continuidad del servicio" data-en="Benefit: fewer risks and continuity of service">Beneficio: menos riesgos y continuidad del servicio</div><a class="btn btn-ghost btn-sm" href="https://wa.me/593978868363?text=Hola%2C%20quisiera%20presupuesto%20de%20electricidad" data-es="Pedir presupuesto" data-en="Get a quote">Pedir presupuesto</a></article>
+    <article class="svc"><div class="ico" aria-hidden="true">🔧</div><h3 data-es="Fontanería" data-en="Plumbing">Fontanería</h3><p data-es="Fugas, grifería, desagües, cisternas y revisiones de instalaciones." data-en="Leaks, fixtures, drains, tanks and installation checks.">Fugas, grifería, desagües, cisternas y revisiones de instalaciones.</p><div class="benefit" data-es="Beneficio: menos daños por agua y mayor confort" data-en="Benefit: less water damage and more comfort">Beneficio: menos daños por agua y mayor confort</div><a class="btn btn-ghost btn-sm" href="https://wa.me/593978868363?text=Hola%2C%20quisiera%20presupuesto%20de%20fontaneria" data-es="Pedir presupuesto" data-en="Get a quote">Pedir presupuesto</a></article>
+    <article class="svc"><div class="ico" aria-hidden="true">❄</div><h3 data-es="Climatización" data-en="HVAC">Climatización</h3><p data-es="Instalación, revisión y mantenimiento de equipos de aire acondicionado." data-en="Installation, inspection and maintenance of air-conditioning units.">Instalación, revisión y mantenimiento de equipos de aire acondicionado.</p><div class="benefit" data-es="Beneficio: equipos más eficientes y duraderos" data-en="Benefit: more efficient, longer-lasting equipment">Beneficio: equipos más eficientes y duraderos</div><a class="btn btn-ghost btn-sm" href="https://wa.me/593978868363?text=Hola%2C%20quisiera%20presupuesto%20de%20climatizacion" data-es="Pedir presupuesto" data-en="Get a quote">Pedir presupuesto</a></article>
+    <article class="svc"><div class="ico" aria-hidden="true">🏠</div><h3 data-es="Mantenimiento general" data-en="General maintenance">Mantenimiento general</h3><p data-es="Reparaciones menores, ajustes y mejoras en el día a día del inmueble." data-en="Minor repairs, adjustments and everyday property upkeep.">Reparaciones menores, ajustes y mejoras en el día a día del inmueble.</p><div class="benefit" data-es="Beneficio: un solo interlocutor para varias tareas" data-en="Benefit: one contact for several tasks">Beneficio: un solo interlocutor para varias tareas</div><a class="btn btn-ghost btn-sm" href="https://wa.me/593978868363?text=Hola%2C%20quisiera%20presupuesto%20de%20mantenimiento" data-es="Pedir presupuesto" data-en="Get a quote">Pedir presupuesto</a></article>
+    <article class="svc"><div class="ico" aria-hidden="true">🏢</div><h3 data-es="Servicios para empresas" data-en="Business services">Servicios para empresas</h3><p data-es="Mantenimiento de locales, oficinas e instalaciones de uso comercial." data-en="Maintenance for shops, offices and commercial facilities.">Mantenimiento de locales, oficinas e instalaciones de uso comercial.</p><div class="benefit" data-es="Beneficio: menos interrupciones en la operación" data-en="Benefit: fewer interruptions to operations">Beneficio: menos interrupciones en la operación</div><a class="btn btn-ghost btn-sm" href="https://wa.me/593978868363?text=Hola%2C%20soy%20empresa%20y%20quisiera%20informacion%20de%20mantenimiento" data-es="Pedir presupuesto" data-en="Get a quote">Pedir presupuesto</a></article>
+    <article class="svc"><div class="ico" aria-hidden="true">🛠</div><h3 data-es="Instalaciones" data-en="Installations">Instalaciones</h3><p data-es="Montaje de equipos y puntos nuevos según el alcance acordado." data-en="Equipment setup and new points within the agreed scope.">Montaje de equipos y puntos nuevos según el alcance acordado.</p><div class="benefit" data-es="Beneficio: trabajo planificado y documentado" data-en="Benefit: planned, documented work">Beneficio: trabajo planificado y documentado</div><a class="btn btn-ghost btn-sm" href="https://wa.me/593978868363?text=Hola%2C%20quisiera%20presupuesto%20de%20instalacion" data-es="Pedir presupuesto" data-en="Get a quote">Pedir presupuesto</a></article>
+  </div>
+</section>
+<section class="sec" id="por-que">
+  <div class="sec-head"><h2 data-es="Por qué trabajar con nosotros" data-en="Why work with us">Por qué trabajar con nosotros</h2>
+  <p data-es="Ventajas editables. En un proyecto real solo se publican afirmaciones que el negocio pueda respaldar." data-en="Editable advantages. On a live project, only publish claims the business can support.">Ventajas editables. En un proyecto real solo se publican afirmaciones que el negocio pueda respaldar.</p></div>
+  <div class="why"><div class="why-grid">
+    <div class="why-item"><h3 data-es="Atención personalizada" data-en="Personal attention">Atención personalizada</h3><p data-es="Escuchamos el problema antes de proponer una solución." data-en="We listen to the issue before proposing a solution.">Escuchamos el problema antes de proponer una solución.</p></div>
+    <div class="why-item"><h3 data-es="Presupuestos claros" data-en="Clear quotes">Presupuestos claros</h3><p data-es="Alcance y condiciones explicados antes de iniciar el trabajo." data-en="Scope and terms explained before work starts.">Alcance y condiciones explicados antes de iniciar el trabajo.</p></div>
+    <div class="why-item"><h3 data-es="Trabajo profesional" data-en="Professional work">Trabajo profesional</h3><p data-es="Procedimientos ordenados y comunicación durante el servicio." data-en="Orderly procedures and communication during the job.">Procedimientos ordenados y comunicación durante el servicio.</p></div>
+    <div class="why-item"><h3 data-es="Particulares y empresas" data-en="Homes and businesses">Particulares y empresas</h3><p data-es="Misma calidad de respuesta en vivienda y en locales comerciales." data-en="The same response quality for homes and commercial sites.">Misma calidad de respuesta en vivienda y en locales comerciales.</p></div>
+    <div class="why-item"><h3 data-es="Cobertura local" data-en="Local coverage">Cobertura local</h3><p data-es="Operamos en la zona definida por el negocio (configurable)." data-en="We operate in the area defined by the business (configurable).">Operamos en la zona definida por el negocio (configurable).</p></div>
+    <div class="why-item"><h3 data-es="Contacto directo" data-en="Direct contact">Contacto directo</h3><p data-es="WhatsApp y teléfono para consultas y visitas técnicas." data-en="WhatsApp and phone for inquiries and site visits.">WhatsApp y teléfono para consultas y visitas técnicas.</p></div>
+  </div></div>
+</section>
+<section class="sec" id="trabajos">
+  <div class="sec-head"><h2 data-es="Ejemplos de trabajos" data-en="Sample work">Ejemplos de trabajos</h2>
+  <p data-es="Imágenes de demostración. El cliente sustituye por fotos reales de sus intervenciones." data-en="Demo images. The client replaces them with real photos of their jobs.">Imágenes de demostración. El cliente sustituye por fotos reales de sus intervenciones.</p></div>
+  <div class="gallery">
+    <article class="g-card"><div class="ph"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80" width="700" height="525" alt="Instalación eléctrica en obra" loading="lazy"><span class="tag" data-es="Electricidad" data-en="Electrical">Electricidad</span></div><div class="body"><h3 data-es="Cuadro e iluminación" data-en="Panel and lighting">Cuadro e iluminación</h3><p data-es="Foto de muestra · sustituir por trabajo real" data-en="Sample photo · replace with real work">Foto de muestra · sustituir por trabajo real</p></div></article>
+    <article class="g-card"><div class="ph"><img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=700&q=80" width="700" height="525" alt="Trabajo de fontanería" loading="lazy"><span class="tag" data-es="Fontanería" data-en="Plumbing">Fontanería</span></div><div class="body"><h3 data-es="Reparación de instalación" data-en="Installation repair">Reparación de instalación</h3><p data-es="Foto de muestra · sustituir por trabajo real" data-en="Sample photo · replace with real work">Foto de muestra · sustituir por trabajo real</p></div></article>
+    <article class="g-card"><div class="ph"><img src="https://images.unsplash.com/photo-1631545806609-35e6b2c3c0c8?w=700&q=80" width="700" height="525" alt="Unidad de aire acondicionado" loading="lazy"><span class="tag" data-es="Climatización" data-en="HVAC">Climatización</span></div><div class="body"><h3 data-es="Equipo de climatización" data-en="HVAC unit">Equipo de climatización</h3><p data-es="Foto de muestra · sustituir por trabajo real" data-en="Sample photo · replace with real work">Foto de muestra · sustituir por trabajo real</p></div></article>
+    <article class="g-card"><div class="ph"><img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=700&q=80" width="700" height="525" alt="Mantenimiento técnico" loading="lazy"><span class="tag" data-es="Mantenimiento" data-en="Maintenance">Mantenimiento</span></div><div class="body"><h3 data-es="Revisión en local" data-en="On-site inspection">Revisión en local</h3><p data-es="Foto de muestra · sustituir por trabajo real" data-en="Sample photo · replace with real work">Foto de muestra · sustituir por trabajo real</p></div></article>
+  </div>
+</section>
+<section class="sec" id="zonas">
+  <div class="sec-head"><h2 data-es="Zonas de cobertura" data-en="Service areas">Zonas de cobertura</h2>
+  <p data-es="Sustituye por ciudades, barrios o radio real de atención del negocio." data-en="Replace with the real cities, neighborhoods or service radius.">Sustituye por ciudades, barrios o radio real de atención del negocio.</p></div>
+  <div class="zones">
+    <div class="zone-list">
+      <span data-es="Centro" data-en="Downtown">Centro</span><span data-es="Norte" data-en="North">Norte</span><span data-es="Sur" data-en="South">Sur</span><span data-es="Este" data-en="East">Este</span><span data-es="Oeste" data-en="West">Oeste</span><span data-es="Zona industrial" data-en="Industrial area">Zona industrial</span><span data-es="Alrededores (consultar)" data-en="Surroundings (ask)">Alrededores (consultar)</span>
+    </div>
+    <div class="zone-cta">
+      <h3 data-es="¿Atendemos tu zona?" data-en="Do we cover your area?">¿Atendemos tu zona?</h3>
+      <p data-es="Indica tu ubicación y el tipo de servicio. Te confirmamos disponibilidad." data-en="Share your location and the type of service. We’ll confirm availability.">Indica tu ubicación y el tipo de servicio. Te confirmamos disponibilidad.</p>
+      <a class="btn btn-accent" href="https://wa.me/593978868363?text=Hola%2C%20quiero%20consultar%20si%20atienden%20en%20mi%20zona" data-es="Consultar disponibilidad" data-en="Check availability">Consultar disponibilidad</a>
+    </div>
+  </div>
+</section>
+<section class="sec" id="proceso">
+  <div class="sec-head"><h2 data-es="Cómo contratarnos" data-en="How to hire us">Cómo contratarnos</h2>
+  <p data-es="Proceso simple, pensado para móviles y para quien tiene prisa." data-en="A simple process, built for mobile and for people in a hurry.">Proceso simple, pensado para móviles y para quien tiene prisa.</p></div>
+  <div class="process">
+    <div class="step"><div class="num">1</div><h3 data-es="Contactas" data-en="You contact us">Contactas</h3><p data-es="WhatsApp, llamada o formulario. Cuéntanos qué necesitas." data-en="WhatsApp, call or form. Tell us what you need.">WhatsApp, llamada o formulario. Cuéntanos qué necesitas.</p></div>
+    <div class="step"><div class="num">2</div><h3 data-es="Describes el trabajo" data-en="You describe the job">Describes el trabajo</h3><p data-es="Ubicación, tipo de avería o servicio y, si puedes, fotos." data-en="Location, type of issue or service and photos if possible.">Ubicación, tipo de avería o servicio y, si puedes, fotos.</p></div>
+    <div class="step"><div class="num">3</div><h3 data-es="Presupuesto" data-en="Quote">Presupuesto</h3><p data-es="Evaluamos y te enviamos una propuesta orientativa o visita." data-en="We assess and send an indicative proposal or schedule a visit.">Evaluamos y te enviamos una propuesta orientativa o visita.</p></div>
+    <div class="step"><div class="num">4</div><h3 data-es="Coordinación" data-en="Coordination">Coordinación</h3><p data-es="Acordamos fecha y se ejecuta el trabajo según lo pactado." data-en="We agree a date and carry out the work as agreed.">Acordamos fecha y se ejecuta el trabajo según lo pactado.</p></div>
+  </div>
+</section>
+<section class="sec" id="opiniones">
+  <div class="sec-head"><h2 data-es="Opiniones de clientes" data-en="Customer reviews">Opiniones de clientes</h2>
+  <p data-es="Espacio preparado para reseñas reales (Google, WhatsApp, etc.)." data-en="Space ready for real reviews (Google, WhatsApp, etc.).">Espacio preparado para reseñas reales (Google, WhatsApp, etc.).</p></div>
+  <div class="reviews-box">
+    <p data-es="Aquí se publicarán reseñas verificables del negocio. No inventamos nombres ni puntuaciones en la demo." data-en="Verified business reviews will go here. We don’t invent names or ratings in the demo.">Aquí se publicarán reseñas verificables del negocio. No inventamos nombres ni puntuaciones en la demo.</p>
+    <p class="hint" data-es="Cliente: aporta capturas o enlaces de Google Business Profile." data-en="Client: provide screenshots or Google Business Profile links.">Cliente: aporta capturas o enlaces de Google Business Profile.</p>
+  </div>
+</section>
+<section class="sec" id="faq">
+  <div class="sec-head"><h2 data-es="Preguntas frecuentes" data-en="FAQ">Preguntas frecuentes</h2>
+  <p data-es="Respuestas editables según horarios, zona y política real del negocio." data-en="Editable answers based on the business’s real hours, area and policy.">Respuestas editables según horarios, zona y política real del negocio.</p></div>
+  <div class="faq">
+    <details open><summary data-es="¿Qué servicios ofrecen?" data-en="What services do you offer?">¿Qué servicios ofrecen?</summary><p data-es="Electricidad, fontanería, climatización, mantenimiento general e instalaciones, adaptados al alcance que publique el negocio." data-en="Electrical, plumbing, HVAC, general maintenance and installations, within the scope the business publishes.">Electricidad, fontanería, climatización, mantenimiento general e instalaciones, adaptados al alcance que publique el negocio.</p></details>
+    <details><summary data-es="¿En qué zonas trabajan?" data-en="Which areas do you cover?">¿En qué zonas trabajan?</summary><p data-es="En las zonas listadas en esta página. Si estás fuera, consulta por WhatsApp para confirmar." data-en="In the areas listed on this page. If you’re outside them, ask on WhatsApp to confirm.">En las zonas listadas en esta página. Si estás fuera, consulta por WhatsApp para confirmar.</p></details>
+    <details><summary data-es="¿Cómo pido un presupuesto?" data-en="How do I request a quote?">¿Cómo pido un presupuesto?</summary><p data-es="Por WhatsApp, teléfono o el formulario de contacto. Indica el tipo de trabajo y la ubicación." data-en="Via WhatsApp, phone or the contact form. Include the type of job and location.">Por WhatsApp, teléfono o el formulario de contacto. Indica el tipo de trabajo y la ubicación.</p></details>
+    <details><summary data-es="¿Cuáles son los horarios?" data-en="What are your hours?">¿Cuáles son los horarios?</summary><p data-es="Horario de atención configurable. En la demo: lunes a sábado en horario comercial habitual." data-en="Configurable business hours. In the demo: Monday–Saturday during regular business hours.">Horario de atención configurable. En la demo: lunes a sábado en horario comercial habitual.</p></details>
+    <details><summary data-es="¿Atienden empresas?" data-en="Do you serve businesses?">¿Atienden empresas?</summary><p data-es="Sí. Locales, oficinas e instalaciones comerciales según disponibilidad." data-en="Yes. Shops, offices and commercial facilities subject to availability.">Sí. Locales, oficinas e instalaciones comerciales según disponibilidad.</p></details>
+    <details><summary data-es="¿Hacen visita técnica?" data-en="Do you do site visits?">¿Hacen visita técnica?</summary><p data-es="Cuando el trabajo lo requiere, se coordina una visita previa. Consulta condiciones por WhatsApp." data-en="When the job requires it, a prior visit is arranged. Ask about terms on WhatsApp.">Cuando el trabajo lo requiere, se coordina una visita previa. Consulta condiciones por WhatsApp.</p></details>
+  </div>
+</section>
+<section class="sec" id="contacto">
+  <div class="sec-head"><h2 data-es="Contacto" data-en="Contact">Contacto</h2>
+  <p data-es="Elige el canal que te resulte más cómodo." data-en="Choose the channel that works best for you.">Elige el canal que te resulte más cómodo.</p></div>
+  <div class="contact-grid">
+    <div class="contact-info"><h3 data-es="Datos de contacto" data-en="Contact details">Datos de contacto</h3>
+      <dl>
+        <div><dt data-es="Teléfono" data-en="Phone">Teléfono</dt><dd><a href="tel:+593978868363">+593 978 868 363</a></dd></div>
+        <div><dt>WhatsApp</dt><dd><a href="https://wa.me/593978868363?text=Hola%2C%20he%20visitado%20vuestra%20p%C3%A1gina%20web%20y%20quisiera%20solicitar%20informaci%C3%B3n%20sobre%20vuestros%20servicios." data-es="Escribir por WhatsApp" data-en="Message on WhatsApp">Escribir por WhatsApp</a></dd></div>
+        <div><dt data-es="Correo" data-en="Email">Correo</dt><dd><a href="mailto:contacto@ejemplo-demo.com">contacto@ejemplo-demo.com</a></dd></div>
+        <div><dt data-es="Horario (demo)" data-en="Hours (demo)">Horario (demo)</dt><dd data-es="Lun–Sáb · horario comercial" data-en="Mon–Sat · business hours">Lun–Sáb · horario comercial</dd></div>
+        <div><dt data-es="Dirección" data-en="Address">Dirección</dt><dd data-es="Configurable · sin oficina pública en la demo" data-en="Configurable · no public office in the demo">Configurable · sin oficina pública en la demo</dd></div>
+      </dl>
+    </div>
+    <div class="contact-form">
+      <h3 data-es="Solicitar información" data-en="Request information">Solicitar información</h3>
+      <p class="sub" data-es="En un sitio real este formulario se conecta a correo o CRM. Aquí abre WhatsApp con tus datos." data-en="On a live site this form connects to email or CRM. Here it opens WhatsApp with your details.">En un sitio real este formulario se conecta a correo o CRM. Aquí abre WhatsApp con tus datos.</p>
+      <form id="quote-form" action="#" method="get">
+        <div class="form-row two">
+          <div><label for="nombre" data-es="Nombre" data-en="Name">Nombre</label><input id="nombre" name="nombre" type="text" required autocomplete="name" placeholder="Tu nombre"></div>
+          <div><label for="telefono" data-es="Teléfono" data-en="Phone">Teléfono</label><input id="telefono" name="telefono" type="tel" autocomplete="tel" placeholder="+593…"></div>
+        </div>
+        <div class="form-row"><label for="servicio" data-es="Tipo de servicio" data-en="Service type">Tipo de servicio</label>
+          <select id="servicio" name="servicio"><option value="">Selecciona…</option><option>Electricidad</option><option>Fontanería</option><option>Climatización</option><option>Mantenimiento</option><option>Empresas</option><option>Otro</option></select>
+        </div>
+        <div class="form-row"><label for="mensaje" data-es="Describe el trabajo" data-en="Describe the job">Describe el trabajo</label><textarea id="mensaje" name="mensaje" required placeholder="Ej.: fuga en baño, zona Centro…"></textarea></div>
+        <button type="submit" class="btn btn-accent btn-lg" style="width:100%" data-es="Enviar por WhatsApp" data-en="Send via WhatsApp">Enviar por WhatsApp</button>
+        <p class="form-note" data-es="Al enviar se abre WhatsApp con el mensaje preparado. Número configurable en el proyecto real." data-en="Submit opens WhatsApp with a prepared message. Number is configurable on a live project.">Al enviar se abre WhatsApp con el mensaje preparado. Número configurable en el proyecto real.</p>
+      </form>
+    </div>
+  </div>
+</section>
+<div class="band"><div class="band-inner">
+  <h2 data-es="¿Necesitas un presupuesto o una visita?" data-en="Need a quote or a visit?">¿Necesitas un presupuesto o una visita?</h2>
+  <p data-es="Escríbenos o llama. Te orientamos sobre el siguiente paso." data-en="Message or call us. We’ll guide you on the next step.">Escríbenos o llama. Te orientamos sobre el siguiente paso.</p>
+  <div class="band-actions">
+    <a class="btn btn-wa btn-lg" href="https://wa.me/593978868363?text=Hola%2C%20he%20visitado%20vuestra%20p%C3%A1gina%20web%20y%20quisiera%20solicitar%20informaci%C3%B3n%20sobre%20vuestros%20servicios." data-es="WhatsApp" data-en="WhatsApp">WhatsApp</a>
+    <a class="btn btn-outline-light btn-lg" href="tel:+593978868363" data-es="Llamar" data-en="Call">Llamar</a>
+  </div>
+</div></div>
+<footer class="site">
+  <div class="foot-inner">
+    <div><strong>Línea Técnica</strong><span data-es="Servicios técnicos y mantenimiento · Demo de estilo MLand Software" data-en="Technical services and maintenance · MLand Software style demo">Servicios técnicos y mantenimiento · Demo de estilo MLand Software</span></div>
+    <div><strong data-es="Navegación" data-en="Navigation">Navegación</strong><a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a><a href="#trabajos" data-es="Trabajos" data-en="Work">Trabajos</a><a href="#zonas" data-es="Zonas" data-en="Areas">Zonas</a><a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a></div>
+    <div><strong data-es="Contacto" data-en="Contact">Contacto</strong><a href="tel:+593978868363">+593 978 868 363</a><a href="https://wa.me/593978868363">WhatsApp</a><a href="mailto:contacto@ejemplo-demo.com">contacto@ejemplo-demo.com</a></div>
+  </div>
+  <div class="foot-bottom">
+    <span data-es="© Demo · No es un negocio real · Política de privacidad (placeholder)" data-en="© Demo · Not a real business · Privacy policy (placeholder)">© Demo · No es un negocio real · Política de privacidad (placeholder)</span>
+    <span data-es="Aviso legal (placeholder)" data-en="Legal notice (placeholder)">Aviso legal (placeholder)</span>
+  </div>
+</footer>
+<a class="float-wa" href="https://wa.me/593978868363?text=Hola%2C%20he%20visitado%20vuestra%20p%C3%A1gina%20web%20y%20quisiera%20solicitar%20informaci%C3%B3n%20sobre%20vuestros%20servicios." aria-label="WhatsApp">💬</a>
+<script src="/js/i18n.js"></script>
+<script>
+(function(){
+  var WA="593978868363";
+  var form=document.getElementById("quote-form");
+  if(!form)return;
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    var n=(form.nombre&&form.nombre.value||"").trim();
+    var t=(form.telefono&&form.telefono.value||"").trim();
+    var s=(form.servicio&&form.servicio.value||"").trim();
+    var m=(form.mensaje&&form.mensaje.value||"").trim();
+    var msg="Hola, he visitado vuestra página web y quisiera solicitar información.\n";
+    if(n)msg+="Nombre: "+n+"\n";
+    if(t)msg+="Teléfono: "+t+"\n";
+    if(s)msg+="Servicio: "+s+"\n";
+    if(m)msg+="Detalle: "+m;
+    window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg),"_blank","noopener");
+  });
+})();
+</script>
+</body>
+</html>
