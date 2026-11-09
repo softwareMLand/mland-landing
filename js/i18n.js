@@ -1,6 +1,6 @@
 (function(){
   var KEY="mland_lang";
-  function getLang(){try{var s=localStorage.getItem(KEY);if(s==="en"||s==="es")return s}catch(e){}return"es"}
+  function getLang(){try{var s=localStorage.getItem(KEY);if(s==="en"||s==="es")return s}catch(e){}return"en"}
   function apply(lang){
     document.documentElement.lang=lang;
     document.querySelectorAll("[data-es]").forEach(function(el){var v=el.getAttribute("data-"+lang);if(v!=null)el.textContent=v});
